@@ -15,3 +15,4 @@ Substituir/expandir `data/servita.json` com os dados consolidados do `santoral.j
 
 ## Publicação
 Envie o conteúdo deste pacote para a raiz do repositório `charlieleitao-spec/hoje-familia-servita`. Depois, ative GitHub Pages apontando para a branch `main` e a pasta raiz.
+Publicação inicial do GitHub Pages.
