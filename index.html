@@ -36,7 +36,7 @@ footer{text-align:center;padding:25px 18px 40px;color:#6c655b;font-size:.85rem}@
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 let current=new Date(), records={};
 const fallback='Neste dia, recordamos nossa vocação de permanecer com Maria aos pés das cruzes do mundo, atentos à Palavra de Deus e às necessidades dos irmãos.';
-async function load(){try{const r=await fetch('./data/servita.json');records=await r.json()}catch(e){} render()}
+async function load(){try{const r=await fetch('./servita.json');records=await r.json()}catch(e){} render()}
 function render(){
  document.getElementById('date').textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());
  const k=String(current.getMonth()+1).padStart(2,'0')+'-'+String(current.getDate()).padStart(2,'0'), s=records[k];
