@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173b67">
+<meta name="description" content="Hoje na Família Servita — calendário, memória e espiritualidade dos Servos de Maria.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Hoje na Família Servita</title>
+<style>
+:root{--azul:#173b67;--ouro:#b89448;--papel:#f7f4ed;--texto:#222}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--texto);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:linear-gradient(145deg,var(--azul),#0f2948);color:#fff;text-align:center;padding:30px 18px 24px;border-bottom:4px solid var(--ouro)}
+.mark{width:70px;height:70px;border:2px solid #d9c18c;border-radius:50%;display:grid;place-items:center;margin:auto;font:700 22px Georgia,serif}
+.ey{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;opacity:.8;margin-top:13px}
+h1{font:700 clamp(1.7rem,7vw,2.5rem) Georgia,serif;margin:4px}.sub{color:#e9dfc8;margin:0}
+main{max-width:760px;margin:auto;padding:18px}.datebar{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center}
+.datebar button,.today{border:1px solid #d7d0c3;background:#fff;border-radius:12px;min-height:46px;font-weight:700;color:var(--azul)}
+.today{text-align:center;padding:11px}.card{background:#fff;border:1px solid #e0d9cc;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #0000000b}
+.label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#6d655a;font-weight:800}.card h2{font:700 1.45rem Georgia,serif;color:var(--azul);margin:5px 0 8px}
+.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--azul);font-size:.8rem;font-weight:700}
+.quote{border-left:3px solid var(--ouro);padding-left:14px;font-family:Georgia,serif}.actions{display:grid;gap:10px;margin-top:18px}
+.actions a{display:block;text-align:center;text-decoration:none;padding:13px;border-radius:12px;font-weight:800}.primary{background:var(--azul);color:#fff}.secondary{border:1px solid var(--azul);color:var(--azul)}
+footer{text-align:center;padding:25px 18px 40px;color:#6c655b;font-size:.85rem}@media(min-width:600px){.actions{grid-template-columns:1fr 1fr}}
+</style></head>
+<body>
+<header><div class="mark">OSM</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
+<main>
+<div class="datebar"><button id="prev" aria-label="Dia anterior">‹</button><div class="today" id="date"></div><button id="next" aria-label="Dia seguinte">›</button></div>
+<section class="card"><div class="label">Celebração do dia</div><h2 id="title">Calendário litúrgico</h2><span class="badge" id="rank">Família Servita</span><p id="intro">A vida litúrgica conduz a Família Servita à escuta da Palavra, à comunhão fraterna e ao serviço.</p></section>
+<section class="card"><div class="label">Na Família Servita</div><h2 id="memory">Memória e espiritualidade</h2><p id="text"></p></section>
+<section class="card"><div class="label">Para rezar hoje</div><h2>Oração</h2><p class="quote">Senhor, fazei-nos servos atentos à vossa Palavra, unidos em fraternidade e disponíveis para o serviço, sob o olhar de Santa Maria.</p>
+<div class="actions"><a class="primary" href="https://github.com/charlieleitao-spec/liturgia-osm">Abrir Liturgia OSM</a><a class="secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 1.0</small></footer>
+<script>
+const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+let current=new Date(), records={};
+const fallback='Neste dia, recordamos nossa vocação de permanecer com Maria aos pés das cruzes do mundo, atentos à Palavra de Deus e às necessidades dos irmãos.';
+async function load(){try{const r=await fetch('./data/servita.json');records=await r.json()}catch(e){} render()}
+function render(){
+ document.getElementById('date').textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());
+ const k=String(current.getMonth()+1).padStart(2,'0')+'-'+String(current.getDate()).padStart(2,'0'), s=records[k];
+ document.getElementById('title').textContent=s?.titulo||'Calendário litúrgico';
+ document.getElementById('rank').textContent=s?.grau||'Família Servita';
+ document.getElementById('memory').textContent=s?.titulo||'Memória e espiritualidade';
+ document.getElementById('text').textContent=s?.texto||fallback;
+}
+prev.onclick=()=>{current.setDate(current.getDate()-1);render()}; next.onclick=()=>{current.setDate(current.getDate()+1);render()};
+load(); if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
+</script></body></html>
