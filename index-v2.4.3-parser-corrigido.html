@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173b67"><link rel="manifest" href="manifest.webmanifest">
+<title>Hoje na Família Servita</title>
+<style>
+:root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#252525;--m:#6c655b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--p);color:var(--t);font:16px/1.62 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:linear-gradient(145deg,var(--a),#102a49);color:#fff;text-align:center;padding:27px 18px 23px;border-bottom:4px solid var(--o)}
+.mark{width:68px;height:68px;border:2px solid #d9c18c;border-radius:50%;display:grid;place-items:center;margin:auto;font:700 21px Georgia,serif}
+.ey{letter-spacing:.15em;text-transform:uppercase;font-size:.69rem;opacity:.82;margin-top:11px}h1{font:700 clamp(1.65rem,7vw,2.45rem) Georgia,serif;margin:4px}.sub{color:#e9dfc8;margin:0}
+main{max-width:800px;margin:auto;padding:16px}.nav{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}.nav button,.date{min-height:46px;border:1px solid #d7d0c3;background:#fff;border-radius:12px;color:var(--a);font-weight:800}.date{display:grid;place-items:center;text-align:center;padding:8px}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.quick button{border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:10px;font-weight:800}
+.card{background:#fff;border:1px solid var(--b);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #0000000b}.label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);font-weight:800}
+h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--a);font-size:.79rem;font-weight:800}
+.bio{white-space:pre-line}.muted{color:var(--m)}.actions{display:grid;gap:9px;margin-top:17px}.action{display:block;width:100%;border-radius:12px;padding:13px;text-align:center;text-decoration:none;font-weight:800;border:0;font-size:.95rem}
+.gold{background:#f4ead5;color:#654e1f;border:1px solid #dac28d}.secondary{border:1px solid var(--a);color:var(--a);background:#fff}
+#reader[hidden],#calendarCard[hidden]{display:none}.hours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:4px 0 14px;width:100%;max-width:100%;overflow:hidden}
+.hours button{white-space:normal;min-width:0;width:100%;max-width:100%;overflow-wrap:anywhere;min-height:43px;border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:8px 9px;font-weight:800;line-height:1.2}
+.hours button.active{background:var(--a);color:#fff}
+@media(min-width:620px){.hours{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.section{border-top:1px solid var(--b);padding:17px 0;scroll-margin-top:78px}.section:first-child{border-top:0}.section h3{font:700 1.22rem Georgia,serif;color:var(--a);margin:0 0 13px}
+.litblock{padding:18px 0;border-top:1px solid var(--b)}.litblock:first-child{border-top:0}
+.litheading{font:700 1.08rem Georgia,serif;color:var(--a);letter-spacing:.045em;margin:0 0 12px;text-transform:uppercase}
+.littext{white-space:pre-wrap;font-family:Georgia,serif;line-height:1.78;font-size:1.06rem}
+.antiphon{background:#f7f3e9;border-left:3px solid var(--o);padding:11px 13px;margin:10px 0;border-radius:0 9px 9px 0;font-family:Georgia,serif;line-height:1.65}
+.psalm-title{font:700 1.04rem Georgia,serif;color:#514a40;margin:15px 0 8px}
+.verse{display:block;margin:0 0 7px;font-family:Georgia,serif;line-height:1.72}
+.rubric{font-style:italic;color:var(--m);margin:10px 0}
+.response{padding-left:12px;border-left:2px solid #d7d0c3;margin:8px 0;font-family:Georgia,serif}.reading-ref{font-weight:700;color:#514a40;margin:0 0 5px;font-family:Georgia,serif}.reading-title{font-style:italic;color:var(--m);margin:0 0 12px;font-family:Georgia,serif}.doxology{margin-top:9px;font-style:italic;font-family:Georgia,serif}.hymn-line{display:block;margin:0 0 3px;font-family:Georgia,serif;line-height:1.72}.hymn-stanza-line{display:block;margin:0 0 8px;font-family:Georgia,serif;line-height:1.72}.hymn-stanza{margin:0 0 26px}.reading-body{font-family:Georgia,serif;line-height:1.78;font-size:1.06rem;font-weight:400;white-space:pre-wrap}.series-picker{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 15px}.series-picker button{border:1px solid var(--o);background:#fff;color:#654e1f;border-radius:999px;padding:7px 12px;font-weight:800}.series-picker button.active{background:#f4ead5}
+.lit-warning{margin:12px 0;padding:10px 12px;border:1px solid #e0d3b7;background:#fbf7ed;border-radius:10px;color:#655633;font-size:.9rem}
+.toolbar{position:sticky;top:0;background:#fff;padding:0 0 10px;z-index:3;border-bottom:1px solid #f0ece4;margin-bottom:10px}.toolbar button{border:1px solid #d7d0c3;background:#fff;color:var(--a);border-radius:9px;padding:8px 11px;font-weight:800}
+.upcoming{display:grid;gap:8px;margin-top:12px}.event{border:1px solid var(--b);background:#fff;border-radius:12px;padding:11px;text-align:left}.event strong{display:block;color:var(--a)}input[type=date]{width:100%;padding:12px;border:1px solid var(--b);border-radius:11px;font:inherit}
+footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
+@media(max-width:420px){main{padding:12px}.card{padding:17px 15px}.littext{font-size:1.03rem;line-height:1.74}.litblock{padding:16px 0}.antiphon{padding:10px 11px}}
+
+/* v2.3.8 — composição hínica: versos unidos, estrofes separadas */
+
+.hymn-stanza{margin:0 0 40px}
+.hymn-stanza .hymn-stanza-line:last-child{margin-bottom:0}
+
+
+/* v2.4.0 — estrofes explícitas */
+.hymn-stanza{
+  display:block;
+  margin:0 0 40px;
+}
+.hymn-stanza:last-child{
+  margin-bottom:0;
+}
+.hymn-stanza .hymn-stanza-line{
+  display:block;
+  margin:0 0 8px;
+}
+.hymn-stanza .hymn-stanza-line:last-child{
+  margin-bottom:0;
+}
+
+
+/* v2.4.2 — correção definitiva do espaçamento hínico */
+.hymn-stanza{
+  display:block !important;
+  margin:0 0 36px 0 !important;
+  padding:0 !important;
+}
+.hymn-stanza:last-child{
+  margin-bottom:0 !important;
+}
+.hymn-stanza > .hymn-stanza-line{
+  display:block !important;
+  margin:0 0 8px 0 !important;
+  padding:0 !important;
+  line-height:1.55 !important;
+}
+.hymn-stanza > .hymn-stanza-line:last-child{
+  margin-bottom:0 !important;
+}
+
+
+/* v2.4.3 — parser consolidado: HINO + SALMODIA + LEITURA BREVE + RESPONSÓRIOS
+   Correção da separação real de estrofes (não era CSS, era o parser)
+   A fonte já traz cada verso em sua própria linha e usa uma linha em branco
+   para separar estrofes; o parser descartava as linhas em branco antes de
+   processar o HINO, então cada verso virava sua própria "estrofe" de 1 linha
+   e o espaçamento maior nunca aparecia entre estrofes reais. */
+
+</style></head><body>
+<header><div class="mark">OSM</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
+<main>
+<div class="nav"><button id="prev">‹</button><div class="date" id="date"></div><button id="next">›</button></div>
+<div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn">Calendário</button></div>
+<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date"></section>
+<section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
+<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div>
+<div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
+<section class="card" id="reader" hidden>
+ <div class="toolbar"><button id="closeReader">Fechar</button></div>
+ <div class="label" id="readerLabel">Liturgia</div><h2 id="readerTitle"></h2>
+ <div id="hours" class="hours"></div><div id="content"></div>
+</section>
+<section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.4.3 · leitor litúrgico</small></footer>
+<script>
+const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
+let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const hourNames={invitatorio:'Invitatório',oficio_leituras:'Ofício das Leituras',laudes:'Laudes',hora_media:'Hora Média',vesperas:'Vésperas',completas:'Completas'};
+async function load(){try{let r=await fetch('./servita.json',{cache:'no-store'});records=await r.json()}catch(e){status.textContent='Não foi possível carregar a base.'}render()}
+function labelType(t){return t==='oficio_proprio'?'Ofício próprio':t==='textos_proprios'?'Textos próprios':'Família Servita'}
+function render(){
+ date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
+ title.textContent=active?.titulo||'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';status.textContent=active?.data||'';
+ memory.textContent=active?.titulo||'Memória e espiritualidade';bio.textContent=active?.bio||'Hoje não há memória servita cadastrada nesta base.';
+ materialBtn.hidden=true; materialBtn.textContent='';
+ if(active?.tipo_material==='oficio_proprio'){materialBtn.hidden=false;materialBtn.textContent='Rezar o Ofício'}
+ else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent='Ver textos próprios'};
+ reader.hidden=true;picker.value=`${current.getFullYear()}-${pad(current.getMonth()+1)}-${pad(current.getDate())}`;renderUpcoming()
+}
+function openMaterial(){
+ if(!active)return;readerTitle.textContent=active.titulo;hours.innerHTML='';content.innerHTML='';
+ if(active.tipo_material==='oficio_proprio'){
+   readerLabel.textContent='Liturgia das Horas';let hs=Object.keys(active.material.horas);
+   hs.forEach((h,i)=>{let b=document.createElement('button');b.textContent=hourNames[h]||h;b.onclick=()=>showHour(h,b);hours.appendChild(b);if(i===0)setTimeout(()=>b.click(),0)})
+ } else {
+   readerLabel.textContent='Textos próprios';hours.innerHTML='';
+   active.material.secoes.forEach(s=>addSection(s.titulo,s.texto))
+ }
+ reader.hidden=false;reader.scrollIntoView({behavior:'smooth'})
+}
+function showHour(h,btn){
+ [...hours.children].forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+ content.innerHTML='';let obj=active.material.horas[h];renderLiturgicalHour(obj.titulo,obj.texto)
+}
+const litHeads=/^(?:\d+[.)-]?\s*)?(HINO|SALMODIA|PRIMEIRA LEITURA|SEGUNDA LEITURA|LEITURA BREVE|RESPONS[ÓO]RIO(?: BREVE)?(?:\s+.*)?|C[ÂA]NTICO EVANG[ÉE]LICO|PRECES|PAI[- ]NOSSO|ORA[ÇC][ÃA]O|CONCLUS[ÃA]O)\s*[:.-]?\s*$/i;
+function renderLiturgicalHour(title,txt){
+ let wrap=document.createElement('section');wrap.className='section';
+ let h=document.createElement('h3');h.textContent=title;wrap.appendChild(h);
+ let lines=String(txt||'').replace(/\r/g,'').split('\n'),block=null,currentHead='',series=null,seriesBlocks={},hymnStanza=null;
+ function startBlock(label=''){
+   currentHead=label.replace(/^\d+[.)-]?\s*/,'').trim().toUpperCase();
+   block=document.createElement('div');block.className='litblock';
+   if(label){let x=document.createElement('div');x.className='litheading';x.textContent=label;block.appendChild(x)}
+   wrap.appendChild(block);
+ }
+ function addText(text,cls='littext',target=block){
+   if(!target){startBlock();target=block}
+   let d=document.createElement('div');d.className=cls;d.textContent=text;target.appendChild(d);return d
+ }
+ function splitReadingLine(line){
+   // Referência bíblica + corpo podem vir achatados na mesma linha.
+   // Aceita cf., sufixos a/b, intervalos, múltiplas referências e travessão.
+   const ref=/^((?:cf\.\s*)?(?:[1-3]\s*)?[A-ZÁÉÍÓÚÂÊÔÃÕÇ][A-Za-zÁ-ú.]*\s+\d{1,3}[,.:]\d{1,3}[a-z]?(?:[-–]\d{1,3}[a-z]?)?(?:\s*;\s*(?:\d{1,3}[,.:])?\d{1,3}[a-z]?(?:[-–]\d{1,3}[a-z]?)?)*)(?:\s+[—–-]\s+|\s+)(.+)$/i;
+   let m=line.match(ref);
+   if(!m)m=line.match(/^((?:Da|Do|Dos|Das)\s+[^.;:]{3,120}?(?:\d{1,3}[,.:]\d{1,3}[a-z]?(?:[-–]\d{1,3}[a-z]?)?))\s+(.+)$/i);
+   if(m){addText(m[1].trim(),'reading-ref');addText(m[2].trim(),'reading-body');return true}
+   return false
+ }
+ function addHinoLine(line){
+   if(!block)startBlock('HINO');
+   // Fonte legada: hino achatado numa única linha longa, sem quebras reais.
+   // Detecta esse caso pela quantidade de pontuação final acumulada na linha
+   // e reconstrói estrofes agrupando 4 versos por bloco.
+   let sentEnds=(line.match(/[.!?]/g)||[]).length;
+   if(line.length>200 || sentEnds>=5){
+     let parts=(line.match(/[^.!?]+[.!?]+(?:["'”’])?|[^.!?]+$/g)||[line])
+       .map(p=>p.trim()).filter(Boolean);
+     for(let i=0;i<parts.length;i+=4){
+       let stanza=document.createElement('div');
+       stanza.className='hymn-stanza';
+       block.appendChild(stanza);
+       parts.slice(i,i+4).forEach(p=>addText(p,'hymn-stanza-line',stanza));
+     }
+     hymnStanza=null;
+     return
+   }
+   // Fonte atual: cada verso já é uma linha própria, e uma linha em branco
+   // separa as estrofes (tratada no início do forEach).
+   if(!hymnStanza){
+     hymnStanza=document.createElement('div');
+     hymnStanza.className='hymn-stanza';
+     block.appendChild(hymnStanza);
+   }
+   addText(line,'hymn-stanza-line',hymnStanza);
+ }
+ lines.forEach(raw=>{
+   if(!raw.trim()){ if(currentHead==='HINO') hymnStanza=null; return }
+   let line=raw.trim(); line=line.replace(/^[•▪◦]\s*/,'').trim();
+
+   // Cabeçalhos que podem trazer referência/conteúdo na mesma linha.
+   let lb=line.match(/^LEITURA BREVE\b\s*[:.-]?\s*(.*)$/i);
+   if(lb){
+     series=null;hymnStanza=null;startBlock('LEITURA BREVE');
+     let rest=(lb[1]||'').trim();
+     if(rest && !splitReadingLine(rest))addText(rest,'reading-body');
+     return;
+   }
+   let rb=line.match(/^(RESPONS[ÓO]RIO BREVE|RESPONS[ÓO]RIO)\b\s*[:.-]?\s*(.*)$/i);
+   if(rb){
+     series=null;hymnStanza=null;
+     let label=/BREVE/i.test(rb[1])?'RESPONSÓRIO BREVE':'RESPONSÓRIO';
+     startBlock(label);
+     let rest=(rb[2]||'').trim();
+     if(rest){
+       let rm=rest.match(/^((?:cf\.\s*)?(?:[1-3]\s*)?[A-ZÁÉÍÓÚÂÊÔÃÕÇ][A-Za-zÁ-ú.]*\s+\d{1,3}[,.:]\d{1,3}[a-z]?(?:[-–]\d{1,3}[a-z]?)?(?:\s*;\s*(?:\d{1,3}[,.:])?\d{1,3}[a-z]?(?:[-–]\d{1,3}[a-z]?)?)*)\s*(.*)$/i);
+       if(rm){addText(rm[1].trim(),'reading-ref');if(rm[2].trim())addText(rm[2].trim(),'response')}
+       else addText(rest,'response');
+     }
+     return;
+   }
+   let salh=line.match(/^SALMODIA\b\s*(?:[—–-]\s*)?(.*)$/i);
+   if(salh){
+     series=null;hymnStanza=null;startBlock('SALMODIA');
+     let rest=(salh[1]||'').trim();
+     if(rest){
+       let sx=rest.match(/^Série\s+([ABC])\b[:.-]?\s*(.*)$/i);
+       if(sx){
+         series=sx[1].toUpperCase();
+         let holder=document.createElement('div');holder.dataset.series=series;holder.className='antiphon-series';
+         block.appendChild(holder);seriesBlocks[series]=holder;
+         if(sx[2])addText(sx[2],'rubric',holder);
+       }else addText(rest,'rubric');
+     }
+     return;
+   }
+
+   let sm=line.match(/^Série\s+([ABC])\b[:.-]?\s*(.*)$/i);
+   if(sm){
+     series=sm[1].toUpperCase();
+     let holder=document.createElement('div');holder.dataset.series=series;holder.className='antiphon-series';
+     if(!block)startBlock('SALMODIA');block.appendChild(holder);seriesBlocks[series]=holder;
+     if(sm[2]) addText(sm[2],'rubric',holder);
+     return;
+   }
+   if(litHeads.test(line)){series=null;startBlock(line);hymnStanza=null;return}
+
+   // Fonte legada: cabeçalho "HINO" com rubrica e/ou o hino inteiro colados
+   // na mesma linha (ex.: "HINO (repete-se o hino...)" ou "HINO (Título) texto...").
+   let hm=/^HINO\b\s*(\([^)]*\))?\s*(.*)$/.exec(line);
+   if(hm){
+     series=null;startBlock('HINO');hymnStanza=null;
+     let rubricPart=hm[1]?hm[1].replace(/^\(|\)$/g,'').trim():'';
+     let bodyPart=(hm[2]||'').trim();
+     if(rubricPart)addText(rubricPart,'rubric');
+     if(bodyPart)addHinoLine(bodyPart);
+     return;
+   }
+
+   // Na Hora Média, uma leitura breve pode ser seguida por nova salmodia.
+   if(currentHead==='LEITURA BREVE' && /^(?:Série\s+[ABC]\b|Ant\.|Antífona|Salmo|C[âa]ntico|SALMODIA|HINO|RESPONS[ÓO]RIO|PRECES|ORA[ÇC][ÃA]O|CONCLUS[ÃA]O)/i.test(line)){
+     currentHead='';
+   }
+   if(series && /^(?:Ant\.|Antífona)\s*\d*/i.test(line)){addText(line,'antiphon',seriesBlocks[series]);return}
+   if(/^(?:Ant\.|Antífona)\s*\d*/i.test(line)){addText(line,'antiphon');return}
+   if(/^(Salmo|Cântico|C[âa]ntico)\s+/i.test(line)){addText(line,'psalm-title');return}
+   if(/^(V\.|R\.)\s*/.test(line)){addText(line,'response');return}
+   if(/^(Glória ao Pai|Glória seja ao Pai)/i.test(line)){addText(line,'doxology');return}
+
+   if(/^(PRIMEIRA LEITURA|SEGUNDA LEITURA|LEITURA BREVE)$/i.test(currentHead)){
+     if(splitReadingLine(line))return;
+     if(/^(Da|Do|Dos|Das)\s+(Livro|Carta|Primeira Carta|Segunda Carta|Profecia|Homilias?|Sermões?|Tratado|Obras?)\b/i.test(line) && line.length<180){addText(line,'reading-ref');return}
+     addText(line,'reading-body');return;
+   }
+
+   if(/^(Escolhe-se|Salmos do|Salmos e cântico|Salmos e c[âa]ntico|Como no|Do Comum|Quando esta memória|Antífona e salmos)/i.test(line)){addText(line,'rubric');return}
+   if(/[†*]/.test(line)){addText(line,'verse');return}
+   if(currentHead==='HINO'){addHinoLine(line);return}
+   addText(line)
+ });
+ enhanceSeries(wrap);
+ content.appendChild(wrap);
+ diagnoseHour(txt,wrap)
+}
+function enhanceSeries(wrap){
+ let groups=[...wrap.querySelectorAll('.antiphon-series')];if(!groups.length)return;
+ let names=[...new Set(groups.map(g=>g.dataset.series))];
+ let picker=document.createElement('div');picker.className='series-picker';
+ let sal=groups[0].closest('.litblock');sal.insertBefore(picker,groups[0]);
+ names.forEach((name,i)=>{
+   let b=document.createElement('button');b.textContent='Série '+name;
+   b.onclick=()=>{groups.forEach(g=>g.hidden=g.dataset.series!==name);[...picker.children].forEach(x=>x.classList.remove('active'));b.classList.add('active')};
+   picker.appendChild(b);if(i===0)b.click()
+ })
+}
+function diagnoseHour(txt,wrap){
+ if(/\bSALMODIA\b/i.test(txt)){
+   let ants=(txt.match(/^Ant\.\s*\d+/gmi)||[]).length;
+   let ps=(txt.match(/^(Salmo|Cântico|Cântico)\s+/gmi)||[]).length;
+   if(ants>=3 && ps===0){
+     let w=document.createElement('div');w.className='lit-warning';
+     w.textContent='A fonte contém antífonas, mas não traz os salmos desta salmodia neste registro.';
+     wrap.appendChild(w)
+   }
+ }
+}
+function addSection(t,txt){let s=document.createElement('section');s.className='section';let h=t?`<h3>${escapeHtml(t)}</h3>`:'';s.innerHTML=h+`<div class="littext">${escapeHtml(txt)}</div>`;content.appendChild(s)}
+function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(x.titulo)}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:'smooth'})};upcoming.appendChild(b)})}
+prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
+calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden};picker.onchange=e=>{let [y,m,d]=e.target.value.split('-').map(Number);current=new Date(y,m-1,d);render();calendarCard.hidden=true};
+materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:'smooth'})};load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
+</script>
+
+
+</body></html>
