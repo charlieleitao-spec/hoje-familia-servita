@@ -34,16 +34,16 @@ h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display
 footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 @media(max-width:420px){main{padding:12px}.card{padding:17px 15px}.littext{font-size:1.03rem;line-height:1.74}.litblock{padding:16px 0}.antiphon{padding:10px 11px}}
 
-/* v2.7.0 — composição litúrgica consolidada */
-.hymn-stanza{display:block;margin:0 0 34px;padding:0}
+/* v2.7.2 — quebras do texto-fonte e ritmo entre estrofes */
+.hymn-stanza{display:block;margin:0 0 24px;padding:0}
 .hymn-stanza:last-child{margin-bottom:0}
-.hymn-stanza-line{display:block;margin:0 0 6px;font-family:Georgia,serif;line-height:1.58}
+.hymn-stanza-line{display:block;margin:0;font-family:Georgia,serif;line-height:1.48}
 .hymn-stanza-line:last-child{margin-bottom:0}
-.psalm-stanza{display:block;margin:0 0 24px}
+.psalm-stanza{display:block;margin:0 0 22px}
 .psalm-stanza:last-child{margin-bottom:0}
-.psalm-verse{display:block;margin:0;font-family:Georgia,serif;line-height:1.72}
-.psalm-verse + .psalm-verse{margin-top:5px}
-.psalm-legacy .psalm-verse{margin-bottom:16px}
+.psalm-verse{display:block;margin:0;font-family:Georgia,serif;line-height:1.5}
+.psalm-verse + .psalm-verse{margin-top:0}
+.psalm-legacy .psalm-verse{margin-bottom:4px}
 .psalm-legacy .psalm-verse:last-child{margin-bottom:0}
 
 </style></head><body>
@@ -61,7 +61,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.7.1 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.7.2 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
