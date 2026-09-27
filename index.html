@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#173b67"><link rel="manifest" href="manifest.webmanifest">
 <title>Hoje na Família Servita</title>
 <style>
-:root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#252525;--m:#6c655b}
+:root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--p);color:var(--t);font:16px/1.62 system-ui,-apple-system,Segoe UI,sans-serif}
 header{background:linear-gradient(145deg,var(--a),#102a49);color:#fff;text-align:center;padding:27px 18px 23px;border-bottom:4px solid var(--o)}
 .mark{width:68px;height:68px;border:2px solid #d9c18c;border-radius:50%;display:grid;place-items:center;margin:auto;font:700 21px Georgia,serif}
@@ -46,6 +46,17 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 .psalm-legacy .psalm-verse{margin-bottom:4px}
 .psalm-legacy .psalm-verse:last-child{margin-bottom:0}
 
+/* v2.8.0 — composição visual inspirada na Liturgia das Horas */
+.litheading{text-align:center;color:var(--r);letter-spacing:.075em}
+.hymn-stanza,.psalm-stanza,.psalm-legacy{text-align:center;color:var(--lit);max-width:680px;margin-left:auto;margin-right:auto}
+.hymn-stanza-line,.psalm-verse{color:var(--lit)}
+.psalm-title{text-align:center;color:var(--a);margin:22px auto 13px;max-width:680px}
+.antiphon{text-align:center;color:var(--lit);border-left:0;border-top:2px solid var(--o);border-bottom:1px solid #e5dac1;border-radius:10px;padding:12px 15px;margin:14px auto;max-width:680px}
+.rubric{text-align:center;color:var(--r);font-style:italic}
+.response,.doxology,.preces-intro,.preces-response,.preces-intention{text-align:center;color:var(--lit);max-width:680px;margin-left:auto;margin-right:auto}
+.response,.preces-response{border-left:0;border-top:1px solid #dbc9cc;padding:9px 12px}
+.reading-ref,.reading-title,.reading-body{text-align:left}
+
 </style></head><body>
 <header><div class="mark">OSM</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
 <main>
@@ -61,7 +72,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.7.4 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.0 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
