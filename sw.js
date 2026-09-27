@@ -1,4 +1,4 @@
-const ASSETS=['./','./index.html','./manifest.webmanifest','./data/servita.json'];
+const ASSETS=['./','./index.html','./manifest.webmanifest','./servita.json'];
 
 // v3: o nome do cache não é mais um número fixo escrito à mão — ele é lido
 // direto do rodapé do index.html ("Versão X.Y.Z"). Assim, publicar uma nova
