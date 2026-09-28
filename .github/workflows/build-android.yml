@@ -1,0 +1,60 @@
+name: Build APK Família Servita
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "android-source.zip"
+      - ".github/workflows/build-android.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar fontes Android
+        run: unzip -q android-source.zip
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Compilar APK
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
+      - name: Preparar nome público
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.8.9.apk
+
+      - name: Guardar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: Familia-Servita-2.8.9
+          path: Familia-Servita-2.8.9.apk
+
+      - name: Publicar versão Android
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: android-v2.8.9
+          name: Família Servita 2.8.9 para Android
+          body: |
+            APK próprio do Hoje na Família Servita.
+
+            - identidade visual OSM;
+            - abertura independente do navegador;
+            - conteúdo sincronizado com o site;
+            - tela de contingência quando não houver conexão.
+          files: Familia-Servita-2.8.9.apk
