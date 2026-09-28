@@ -20,3 +20,9 @@ Os textos-fonte são preservados integralmente. Registros que fornecem antífona
 ## Publicação
 
 O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta raiz.
+
+## Aplicativo Android
+
+O diretório `android/` contém o aplicativo próprio **Família Servita**. O fluxo
+`Build APK Família Servita` compila a versão 2.8.9 e publica o arquivo
+`Familia-Servita-2.8.9.apk` na área de versões do GitHub.
