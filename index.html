@@ -74,7 +74,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.5 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.6 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -93,17 +93,22 @@ function render(){
 function openMaterial(){
  if(!active)return;readerTitle.textContent=active.titulo;hours.innerHTML='';content.innerHTML='';
  if(active.tipo_material==='oficio_proprio'){
-   readerLabel.textContent='Liturgia das Horas';let hs=Object.keys(active.material.horas);
-   hs.forEach((h,i)=>{let b=document.createElement('button');b.textContent=hourNames[h]||h;b.onclick=()=>showHour(h,b);hours.appendChild(b);if(i===0)setTimeout(()=>b.click(),0)})
+   readerLabel.textContent='Liturgia das Horas';let entries=[];
+   Object.entries(active.material.horas).forEach(([key,obj])=>{
+     let parts=String(obj.texto||'').split(/^II Vésperas\s*$/im);
+     entries.push({key,titulo:obj.titulo,texto:parts[0].trim()});
+     if(parts.length>1)entries.push({key:'vesperas',titulo:'II Vésperas',texto:parts.slice(1).join('\n').trim()});
+   });
+   entries.forEach((entry,i)=>{let b=document.createElement('button');b.textContent=entry.titulo==='II Vésperas'?'II Vésperas':hourNames[entry.key]||entry.titulo||entry.key;b.onclick=()=>showHour(entry,b);hours.appendChild(b);if(i===0)setTimeout(()=>b.click(),0)})
  } else {
    readerLabel.textContent='Textos próprios';hours.innerHTML='';
    active.material.secoes.forEach(s=>addSection(s.titulo,s.texto))
  }
  reader.hidden=false;reader.scrollIntoView({behavior:'smooth'})
 }
-function showHour(h,btn){
+function showHour(entry,btn){
  [...hours.children].forEach(x=>x.classList.remove('active'));btn.classList.add('active');
- content.innerHTML='';let obj=active.material.horas[h];renderLiturgicalHour(obj.titulo,obj.texto)
+ content.innerHTML='';renderLiturgicalHour(entry.titulo,entry.texto)
 }
 const litHeads=/^(?:\d+[.)-]?\s*)?(HINO|SALMODIA|PRIMEIRA LEITURA|SEGUNDA LEITURA|LEITURA BREVE|RESPONS[ÓO]RIO(?: BREVE)?(?:\s+.*)?|C[ÂA]NTICO EVANG[ÉE]LICO|PRECES|PAI[- ]NOSSO|ORA[ÇC][ÃA]O|CONCLUS[ÃA]O)\s*[:.-]?\s*$/i;
 function renderLiturgicalHour(title,txt){
