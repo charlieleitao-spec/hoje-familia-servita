@@ -74,7 +74,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.4 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.5 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -190,6 +190,13 @@ function renderLiturgicalHour(title,txt){
    if(oh){
      flushPsalmBuffer(false);series=null;hymnStanza=null;startBlock('ORAÇÃO');
      addText(oh[2].replace(/^\(|\)$/g,'').trim(),'rubric');
+     return;
+   }
+   let ce=line.match(/^(C[ÂA]NTICO EVANG[ÉE]LICO)\s*(\([^)]*\))\s*$/i);
+   if(ce){
+     flushPsalmBuffer(false);series=null;hymnStanza=null;
+     startBlock('CÂNTICO EVANGÉLICO');
+     addText(ce[2].replace(/^\(|\)$/g,'').trim(),'rubric');
      return;
    }
 
