@@ -57,6 +57,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 .reading-ref,.reading-title,.reading-body{text-align:left}
 .prayer-block .littext,.prayer-block .verse{text-align:center;color:var(--lit);max-width:680px;margin-left:auto;margin-right:auto}
 .preces-block .littext,.preces-block .verse{text-align:center;color:var(--lit);max-width:680px;margin-left:auto;margin-right:auto}
+.preces-block .preces-intention{padding:0 8px}
 
 </style></head><body>
 <header><div class="mark">OSM</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
@@ -73,7 +74,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.3 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.4 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -146,7 +147,7 @@ function renderLiturgicalHour(title,txt){
    renderPsalmGroup(lines,seriesBlocks[series]||block,structured);
  }
 
-  function addHinoLine(line){
+ function addHinoLine(line){
    if(!block)startBlock('HINO');
    // Fonte legada: hino achatado numa única linha longa, sem quebras reais.
    // Detecta esse caso pela quantidade de pontuação final acumulada na linha
@@ -173,9 +174,24 @@ function renderLiturgicalHour(title,txt){
    }
    addText(line,'hymn-stanza-line',hymnStanza);
  }
+ function addPrecesLine(line){
+   // Algumas preces da fonte chegaram numa única linha. Separa somente
+   // as invocações explicitamente identificáveis, sem alterar as palavras.
+   let parts=line.split(/(?<=\.)\s+(?=(?:Pastor eterno|Senhor Jesus|Cristo(?: ressuscitado)?),)/);
+   if(parts.length===1){addText(line);return}
+   parts.forEach(part=>addText(part,'preces-intention'));
+ }
  lines.forEach(raw=>{
    if(!raw.trim()){if(currentHead==='HINO')hymnStanza=null;if(currentHead==='SALMODIA')flushPsalmBuffer(true);return}
    let line=raw.trim(); line=line.replace(/^[•▪◦]\s*/,'').trim();
+
+   // Cabeçalhos litúrgicos com observação entre parênteses.
+   let oh=line.match(/^(ORA[ÇC][ÃA]O)\s*(\([^)]*\))\s*$/i);
+   if(oh){
+     flushPsalmBuffer(false);series=null;hymnStanza=null;startBlock('ORAÇÃO');
+     addText(oh[2].replace(/^\(|\)$/g,'').trim(),'rubric');
+     return;
+   }
 
    // Cabeçalhos que podem trazer referência/conteúdo na mesma linha.
    let lb=line.match(/^LEITURA BREVE\b\s*[:.-]?\s*(.*)$/i);
@@ -259,6 +275,7 @@ function renderLiturgicalHour(title,txt){
    if(/^(Escolhe-se|Salmos do|Salmos e cântico|Salmos e c[âa]ntico|Como no|Do Comum|Quando esta memória|Antífona e salmos)/i.test(line)){flushPsalmBuffer(false);addText(line,'rubric');return}
    if(/[†*]/.test(line)){addText(line,'verse');return}
    if(currentHead==='HINO'){addHinoLine(line);return}
+   if(currentHead==='PRECES'){addPrecesLine(line);return}
    addText(line)
  });
  flushPsalmBuffer(false);
