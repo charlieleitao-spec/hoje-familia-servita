@@ -1,18 +1,22 @@
 # Hoje na Família Servita
 
-PWA inicial que funciona como ponte entre **Liturgia OSM** e **Somos Servos**.
+PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia das Horas da Família Servita.
 
-## Versão 1.0
-- tela diária responsiva;
-- navegação entre datas;
-- base JSON separada;
-- funcionamento offline básico;
-- manifesto PWA;
-- links para Liturgia OSM e Somos Servos.
+## Versão estável 2.8.9
 
-## Próxima etapa
-Substituir/expandir `data/servita.json` com os dados consolidados do `santoral.json` e `oficios-osm.json` do projeto Liturgia OSM, mantendo uma única fonte de dados.
+- calendário diário e próximas celebrações;
+- biografias e espiritualidade servita;
+- leitor da Liturgia das Horas organizado por hora litúrgica;
+- hinos, salmodias, leituras, preces e orações com composição própria;
+- instalação no celular com ícones OSM;
+- funcionamento offline dos arquivos essenciais;
+- navegação acessível entre datas;
+- integração com o blog **Somos Servos**.
+
+## Observação editorial
+
+Os textos-fonte são preservados integralmente. Registros que fornecem antífonas, mas não trazem os respectivos salmos, permanecem sinalizados e não são completados por reconstrução automática.
 
 ## Publicação
-Envie o conteúdo deste pacote para a raiz do repositório `charlieleitao-spec/hoje-familia-servita`. Depois, ative GitHub Pages apontando para a branch `main` e a pasta raiz.
-Publicação inicial do GitHub Pages.
+
+O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta raiz.

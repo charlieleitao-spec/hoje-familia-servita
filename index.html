@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.8.8"><link rel="apple-touch-icon" href="icon-192.png?v=2.8.8">
+<link rel="manifest" href="manifest.webmanifest?v=2.8.9"><link rel="apple-touch-icon" href="icon-192.png?v=2.8.9">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -76,7 +76,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.8 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.8.9 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
