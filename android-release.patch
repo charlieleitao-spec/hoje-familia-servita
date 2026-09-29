@@ -36,11 +36,6 @@ index ff35a84..569d4f0 100644
      defaultConfig {
          applicationId "br.org.servitas.familia"
          minSdk 24
-         targetSdk 35
-         versionCode 289
-         versionName "2.8.9"
-     }
- }
 diff --git a/android/app/src/main/AndroidManifest.xml b/android/app/src/main/AndroidManifest.xml
 index 6391ead..445611c 100644
 --- a/android/app/src/main/AndroidManifest.xml
@@ -54,20 +49,6 @@ index 6391ead..445611c 100644
          android:icon="@mipmap/ic_launcher"
          android:label="Família Servita"
          android:roundIcon="@mipmap/ic_launcher"
-         android:supportsRtl="true"
-         android:theme="@style/AppTheme"
-         android:usesCleartextTraffic="false">
-         <activity
-             android:name=".MainActivity"
-             android:exported="true"
-             android:screenOrientation="unspecified">
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-         </activity>
-     </application>
- </manifest>
 diff --git a/android/app/src/main/res/drawable/ic_launcher_foreground.xml b/android/app/src/main/res/drawable/ic_launcher_foreground.xml
 new file mode 100644
 index 0000000..c0a49a0
