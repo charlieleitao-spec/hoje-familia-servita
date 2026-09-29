@@ -32,17 +32,28 @@ jobs:
         with:
           gradle-version: "8.9"
 
-      - name: Compilar APK
+      - name: Restaurar keystore de release
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.KS_PASS }}
+        run: |
+          test -n "$ANDROID_KEYSTORE_BASE64" || { echo "Configure o secret ANDROID_KEYSTORE_BASE64."; exit 1; }
+          test -n "$KS_PASS" || { echo "Configure o secret KS_PASS."; exit 1; }
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/app/servita.jks
+
+      - name: Compilar APK release assinado
         working-directory: android
-        run: gradle --no-daemon assembleDebug
+        env:
+          KS_PASS: ${{ secrets.KS_PASS }}
+        run: gradle --no-daemon assembleRelease
 
       - name: Preparar nome público
-        run: cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.8.9.apk
+        run: cp android/app/build/outputs/apk/release/app-release.apk Familia-Servita-2.8.9.apk
 
       - name: Guardar artefato
         uses: actions/upload-artifact@v4
         with:
-          name: Familia-Servita-2.8.9
+          name: Familia-Servita-2.8.9-release
           path: Familia-Servita-2.8.9.apk
 
       - name: Publicar versão Android
@@ -51,10 +62,9 @@ jobs:
           tag_name: android-v2.8.9
           name: Família Servita 2.8.9 para Android
           body: |
-            APK próprio do Hoje na Família Servita.
+            APK release assinado do Hoje na Família Servita.
 
-            - identidade visual OSM;
-            - abertura independente do navegador;
-            - conteúdo sincronizado com o site;
-            - tela de contingência quando não houver conexão.
+            - ícone adaptativo OSM;
+            - backup de dados desativado;
+            - assinatura release persistente.
           files: Familia-Servita-2.8.9.apk
