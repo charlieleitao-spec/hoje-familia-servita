@@ -21,6 +21,12 @@ jobs:
       - name: Preparar fontes Android
         run: unzip -q android-source.zip
 
+      - name: Validar fontes Android de release
+        run: |
+          grep -q 'signingConfigs' android/app/build.gradle || { echo "Atualize android-source.zip com a configuração release."; exit 1; }
+          grep -q 'android:allowBackup="false"' android/app/src/main/AndroidManifest.xml || { echo "Atualize android-source.zip com allowBackup=false."; exit 1; }
+          test -f android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml || { echo "Atualize android-source.zip com os ícones adaptativos."; exit 1; }
+
       - name: Configurar Java 17
         uses: actions/setup-java@v4
         with:
