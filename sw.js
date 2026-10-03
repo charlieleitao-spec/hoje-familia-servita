@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.8.9';
-const ASSETS=['./','./index.html','./manifest.webmanifest?v=2.8.9','./servita.json','./icon-192.png','./icon-512.png'];
+const CACHE='familia-servita-2.9.0';
+const ASSETS=['./','./index.html','./manifest.webmanifest?v=2.9.0','./servita.json','./icon-192.png','./icon-512.png'];
 
 self.addEventListener('install',e=>{
   self.skipWaiting();
