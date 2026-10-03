@@ -548,8 +548,23 @@
     "titulo": "B. Maria Guadalupe Ricart Olmos",
     "nome_original": "B. MARIA GUADALUPE RICART OLMOS",
     "bio": "Maria Guadalupe Ricart Olmos nasceu em Albal (Valência, Espanha) aos 23 de fevereiro de 1881, filha de Francisco Ricart e de Maria Olmos, modestos agricultores. No batismo recebeu o nome de Maria Francisca. Aos 4 anos, ficou órfã de pai.\n\nDesejosa de consagrar-se ao Senhor, aos 11 de junho de 1896, ingressou no mosteiro “Pie de la Cruz” de Valência, das monjas Servas de Maria, onde emitiu os votos perpétuos em 19 de junho de 1900. Ocupou no mosteiro vários cargos: desde roupeira até mestra de noviças e priora. Distinguiu-se por uma vida simples, fiel aos compromissos, solícita com as coirmãs, principalmente com as mais jovens, e ciosamente apegada à espiritualidade da Ordem.\n\nEm 1936, em plena guerra civil espanhola, um grupo de milicianos invadiu o mosteiro. Ela e suas coirmãs foram obrigadas a refugiar-se em casa de parentes. Na noite de 2 de outubro de 1936, quatro milicianos armados invadiram a casa onde ela se encontrava e lhe perguntaram se era religiosa. “Sim - respondeu ela - sou monja e, se tivesse que nascer mil vezes, voltaria a sê-lo no mosteiro de «Pie de la Cruz»”.\n\nFoi então presa pelos milicianos e arrastada para um lugar deserto, onde a trucidaram sem piedade. Seu corpo, totalmente desfigurado pelos algozes, foi sepultado numa fossa comum do cemitério de Silla, em Valência. Em fevereiro de 1940, foi trasladado para o cemitério de “Pie de la Cruz”. Finalmente, em 1959, com a transferência do mosteiro de Valência para Mislata, seus restos mortais foram solenemente sepultados ao lado do altar-mor da igreja deste mosteiro.\n\nO processo de beatificação e canonização foi iniciado em 20 de junho de 1959 e seu martírio foi oficialmente reconhecido pela Sé Apostólica em 1999. Dia 11 de março de 2000 foi beatificada pelo papa João Paulo II.",
-    "tipo_material": "sem_material_proprio",
-    "material": {},
+    "tipo_material": "textos_proprios",
+    "material": {
+      "secoes": [
+        {
+          "titulo": "Ofício das Leituras — Leitura hagiográfica",
+          "texto": "Maria Guadalupe Ricart Olmos nasceu em Albal (Valência, Espanha) aos 23 de fevereiro de 1881, filha de Francisco Ricart e de Maria Olmos, modestos agricultores. No batismo recebeu o nome de Maria Francisca. Aos 4 anos, ficou órfã de pai.\n\nDesejosa de consagrar-se ao Senhor, aos 11 de junho de 1896, ingressou no mosteiro “Pie de la Cruz” de Valência, das monjas Servas de Maria, onde emitiu os votos perpétuos em 19 de junho de 1900. Ocupou no mosteiro vários cargos: desde roupeira até mestra de noviças e priora. Distinguiu-se por uma vida simples, fiel aos compromissos, solícita com as coirmãs, principalmente com as mais jovens, e ciosamente apegada à espiritualidade da Ordem.\n\nEm 1936, em plena guerra civil espanhola, um grupo de milicianos invadiu o mosteiro. Ela e suas coirmãs foram obrigadas a refugiar-se em casa de parentes. Na noite de 2 de outubro de 1936, quatro milicianos armados invadiram a casa onde ela se encontrava e lhe perguntaram se era religiosa. “Sim - respondeu ela - sou monja e, se tivesse que nascer mil vezes, voltaria a sê-lo no mosteiro de «Pie de la Cruz»”.\n\nFoi então presa pelos milicianos e arrastada para um lugar deserto, onde a trucidaram sem piedade. Seu corpo, totalmente desfigurado pelos algozes, foi sepultado numa fossa comum do cemitério de Silla, em Valência. Em fevereiro de 1940, foi trasladado para o cemitério de “Pie de la Cruz”. Finalmente, em 1959, com a transferência do mosteiro de Valência para Mislata, seus restos mortais foram solenemente sepultados ao lado do altar-mor da igreja deste mosteiro.\n\nO processo de beatificação e canonização foi iniciado em 20 de junho de 1959 e seu martírio foi oficialmente reconhecido pela Sé Apostólica em 1999. Dia 11 de março de 2000 foi beatificada pelo papa João Paulo II."
+        },
+        {
+          "titulo": "Responsório",
+          "texto": "R. Se nós vivemos, vivemos para o Senhor; se nós morremos, morremos para o Senhor.\nV. Ele nos amou primeiro.\nR. Se nós morremos, morremos para o Senhor."
+        },
+        {
+          "titulo": "Oração",
+          "texto": "Ó Pai, em cujas mãos está nossa vida, por um insondável desígnio do vosso amor, a bem-aventurada Maria Guadalupe, discípula fiel e monja Serva de Santa Maria, associou-se à paixão de Cristo. Dai-nos compreender o mistério do Filho do Homem e percorrer o caminho estreito que conduz à vida. Por Cristo nosso Senhor. Amém!"
+        }
+      ]
+    },
     "prayer": "Ó Pai, em cujas mãos está nossa vida, por um insondável desígnio do vosso amor, a bem-aventurada Maria Guadalupe, discípula fiel e monja Serva de Santa Maria, associou-se à paixão de Cristo. Dai-nos compreender o mistério do Filho do Homem e percorrer o caminho estreito que conduz à vida. Por Cristo nosso Senhor. Amém!"
   },
   "10-25": {
