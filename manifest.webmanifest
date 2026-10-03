@@ -1,8 +1,8 @@
 {
   "name": "Hoje na Família Servita",
   "short_name": "Família Servita",
-  "id": "./app-v2.8.9",
-  "start_url": "./?pwa=2.8.9",
+  "id": "./app-v2.9.0",
+  "start_url": "./?pwa=2.9.0",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f7f4ed",
