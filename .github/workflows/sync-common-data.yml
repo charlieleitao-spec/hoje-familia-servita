@@ -1,0 +1,36 @@
+name: Sincronizar base comum OSM
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar base canônica do Liturgia OSM
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/main/www/data/hoje-familia-servita.json \
+            --output servita.json
+
+      - name: Validar JSON
+        run: node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('servita.json','utf8')); if(!x || typeof x!=='object' || Array.isArray(x) || Object.keys(x).length<30) process.exit(1); console.log('Base válida:',Object.keys(x).length,'celebrações');"
+
+      - name: Publicar somente se houver mudança
+        run: |
+          if git diff --quiet -- servita.json; then
+            echo "Base já sincronizada."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add servita.json
+          git commit -m "Sincroniza base comum a partir do Liturgia OSM"
+          git push
