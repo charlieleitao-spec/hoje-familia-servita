@@ -89,7 +89,7 @@ function render(){
  memory.textContent=active?.titulo||'Memória e espiritualidade';bio.textContent=active?.bio||'Hoje não há memória servita cadastrada nesta base.';const prayer=active?.prayer||active?.oracao||'';saintPrayer.hidden=!prayer;saintPrayerText.textContent=prayer;
  materialBtn.hidden=true; materialBtn.textContent='';
  if(active?.tipo_material==='oficio_proprio'){materialBtn.hidden=false;materialBtn.textContent='Rezar o Ofício'}
- else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent='Ver textos próprios'};
+ else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent=active?.material?.secoes?.some(s=>/Ofício das Leituras/i.test(s.titulo||''))?'Ofício das Leituras':'Ver textos próprios'};
  reader.hidden=true;picker.value=`${current.getFullYear()}-${pad(current.getMonth()+1)}-${pad(current.getDate())}`;renderUpcoming()
 }
 function openMaterial(){
