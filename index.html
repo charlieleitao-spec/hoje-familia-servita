@@ -68,7 +68,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 <div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn">Calendário</button></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date"></section>
 <section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
-<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div>
+<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div>
 <div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
 <section class="card" id="reader" hidden>
  <div class="toolbar"><button id="closeReader">Fechar</button></div>
@@ -86,7 +86,7 @@ function labelType(t){return t==='oficio_proprio'?'Ofício próprio':t==='textos
 function render(){
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
  title.textContent=active?.titulo||'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';status.textContent=active?.data||'';
- memory.textContent=active?.titulo||'Memória e espiritualidade';bio.textContent=active?.bio||'Hoje não há memória servita cadastrada nesta base.';
+ memory.textContent=active?.titulo||'Memória e espiritualidade';bio.textContent=active?.bio||'Hoje não há memória servita cadastrada nesta base.';const prayer=active?.prayer||active?.oracao||'';saintPrayer.hidden=!prayer;saintPrayerText.textContent=prayer;
  materialBtn.hidden=true; materialBtn.textContent='';
  if(active?.tipo_material==='oficio_proprio'){materialBtn.hidden=false;materialBtn.textContent='Rezar o Ofício'}
  else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent='Ver textos próprios'};
