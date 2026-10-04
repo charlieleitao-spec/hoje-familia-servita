@@ -13,7 +13,7 @@ header{background:linear-gradient(145deg,var(--a),#102a49);color:#fff;text-align
 main{max-width:800px;margin:auto;padding:16px}.nav{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}.nav button,.date{min-height:46px;border:1px solid #d7d0c3;background:#fff;border-radius:12px;color:var(--a);font-weight:800}.date{display:grid;place-items:center;text-align:center;padding:8px}
 .quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.quick button{border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:10px;font-weight:800}
 .card{background:#fff;border:1px solid var(--b);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #0000000b}.label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);font-weight:800}
-h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--a);font-size:.79rem;font-weight:800}.bio{white-space:pre-line;text-align:justify;hyphens:auto;text-justify:inter-word}.muted{color:var(--m)}.actions{display:grid;gap:9px;margin-top:17px}.action{display:block;width:100%;border-radius:12px;padding:13px;text-align:center;text-decoration:none;font-weight:800;border:0;font-size:.95rem}
+h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--a);font-size:.79rem;font-weight:800}.bio{white-space:pre-line;text-align:justify;hyphens:auto;text-justify:inter-word}.muted{color:var(--m)}.source-line{margin-top:13px;color:var(--m);font-size:.79rem;line-height:1.45}.editorial-note{margin-top:10px;padding:10px 12px;border:1px solid #e0d3b7;background:#fbf7ed;border-radius:10px;color:#655633;font-size:.9rem;line-height:1.5}.actions{display:grid;gap:9px;margin-top:17px}.action{display:block;width:100%;border-radius:12px;padding:13px;text-align:center;text-decoration:none;font-weight:800;border:0;font-size:.95rem}
 .gold{background:#f4ead5;color:#654e1f;border:1px solid #dac28d}.secondary{border:1px solid var(--a);color:var(--a);background:#fff}
 #reader[hidden],#calendarCard[hidden]{display:none}.hours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:4px 0 14px;width:100%;max-width:100%;overflow:hidden}
 .hours button{white-space:normal;min-width:0;width:100%;max-width:100%;overflow-wrap:anywhere;min-height:43px;border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:8px 9px;font-weight:800;line-height:1.2}
@@ -68,7 +68,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 <div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn">Calendário</button></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date"></section>
 <section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
-<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div>
+<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
 <div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
 <section class="card" id="reader" hidden>
  <div class="toolbar"><button id="closeReader">Fechar</button></div>
@@ -83,10 +83,27 @@ let current=new Date(),records={},active=null;const pad=n=>String(n).padStart(2,
 const hourNames={invitatorio:'Invitatório',oficio_leituras:'Ofício das Leituras',laudes:'Laudes',hora_media:'Hora Média',vesperas:'Vésperas',completas:'Completas'};
 async function load(){try{let r=await fetch('./servita.json',{cache:'no-store'});records=await r.json()}catch(e){status.textContent='Não foi possível carregar a base.'}render()}
 function labelType(t){return t==='oficio_proprio'?'Ofício próprio':t==='textos_proprios'?'Textos próprios':'Família Servita'}
+function sourceLabel(source){
+ if(source.startsWith('Livro de Oração dos Servos de Maria'))return 'Livro de Oração';
+ if(source.startsWith('Santoral do app Liturgia OSM'))return 'Santoral do app';
+ return source
+}
 function render(){
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
  title.textContent=active?.titulo||'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';status.textContent=active?.data||'';
- memory.textContent=active?.titulo||'Memória e espiritualidade';bio.textContent=active?.bio||'Hoje não há memória servita cadastrada nesta base.';const prayer=active?.prayer||active?.oracao||'';saintPrayer.hidden=!prayer;saintPrayerText.textContent=prayer;
+ memory.textContent=active?.titulo||'Memória e espiritualidade';
+ const memoria=active?.memoria_liturgica;
+ const bioText=memoria?.breve_vida||active?.bio||'Hoje não há memória servita cadastrada nesta base.';
+ bio.textContent=bioText;
+ const prayer=memoria?.oracao_propria||active?.prayer||active?.oracao||'';
+ saintPrayer.hidden=!prayer;saintPrayerText.textContent=prayer;
+ const fontes=memoria?.fontes||{},sourceItems=[];
+ if(bioText&&fontes.biografia)sourceItems.push('Biografia: '+sourceLabel(fontes.biografia));
+ if(prayer&&fontes.oracao)sourceItems.push('Oração: '+sourceLabel(fontes.oracao));
+ memSources.hidden=!sourceItems.length;memSources.textContent=sourceItems.join(' · ');
+ memSources.title=[fontes.biografia,fontes.oracao].filter(Boolean).join(' · ');
+ const note=memoria?.editorial_note||'';
+ memEditorialNote.hidden=!note;memEditorialNote.textContent=note;
  materialBtn.hidden=true; materialBtn.textContent='';
  if(active?.tipo_material==='oficio_proprio'){materialBtn.hidden=false;materialBtn.textContent='Rezar o Ofício'}
  else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent=active?.material?.secoes?.some(s=>/Ofício das Leituras/i.test(s.titulo||''))?'Ofício das Leituras':'Ver textos próprios'};
