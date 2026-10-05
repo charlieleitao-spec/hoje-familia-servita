@@ -46,7 +46,7 @@ function render(items){
   return '<article class="person"><h2>'+esc(x.title)+'</h2><div class="meta"><strong>Celebração:</strong> '+esc(x.date)+'</div>'+(line?'<div class="date-line">'+esc(line)+'</div>':'')+'<div class="subhead">Memória</div><div class="bio">'+esc(remainder)+'</div>'+prayer+status+'<div class="actions"><a href="./index.html?data='+iso+'">Abrir a data da celebração</a></div></article>';
  }).join('');
 }
-fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral.json indisponível');return r.json()}).then(render).catch(()=>{list.innerHTML='<div class="error">Não foi possível carregar o santoral oficial. Verifique a conexão e tente novamente.</div>'});
+fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral.json indisponível');return r.json()}).then(items=>{render(items);try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}}).catch(()=>{try{const cached=JSON.parse(localStorage.getItem('familiaServitaSantoralCache')||'null');if(Array.isArray(cached)){render(cached);return}}catch(e){}list.innerHTML='<div class="error">Não foi possível carregar o santoral oficial. Verifique a conexão e tente novamente.</div>'});
 </script>
 </body>
 </html>
