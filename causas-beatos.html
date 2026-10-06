@@ -8,12 +8,12 @@
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
 header{background:linear-gradient(145deg,var(--blue),#102a49);color:#fff;text-align:center;padding:24px 16px 20px;border-bottom:4px solid var(--gold)}
 header p{margin:0;color:#e9dfc8;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem}
-h1{font:700 clamp(1.7rem,6vw,2.4rem) Georgia,serif;margin:5px 0}
+h1{font:700 clamp(1.35rem,4.8vw,1.85rem) Georgia,serif;margin:5px 0}
 main{max-width:850px;margin:auto;padding:14px}.intro,.person{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #0000000b}
 .intro{color:var(--muted)}.person h2{font:700 1.38rem Georgia,serif;color:var(--blue);margin:0 0 5px}
 .meta{color:var(--muted);font-size:.94rem;margin:4px 0}.bio{white-space:pre-wrap;text-align:justify;hyphens:auto;margin-top:13px}
 .date-line{border-left:3px solid var(--gold);background:#fbf7ed;padding:8px 11px;margin:10px 0;color:#554925;font-family:Georgia,serif}
-.subhead{font:700 .78rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#8b2635;margin:18px 0 4px}
+.subhead{font:700 .78rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#8b2635;margin:18px 0 4px}.cause-prayer{margin:17px 0 8px;padding:14px 15px;background:#fbf7ed;border:1px solid #d8c38f;border-left:4px solid var(--gold);border-radius:12px}.cause-prayer .subhead{margin:0 0 8px;text-align:center}.cause-prayer .prayer{font-weight:600}
 .prayer{white-space:pre-wrap;text-align:center;font-family:Georgia,serif;line-height:1.75;margin:5px auto;max-width:680px}
 .status{border-top:1px solid var(--line);padding-top:12px;margin-top:14px;color:var(--muted);font-size:.92rem}
 .actions{margin-top:14px}.actions a,footer a{color:var(--blue);font-weight:700}
@@ -34,12 +34,16 @@ const SOURCE='https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateLineOf=bio=>{const m=String(bio||'').match(/^(\*\s*.*?†\s*.*?)(?=\s+(?:Padre|Frei|Irmã|Irma|Irmão|Irmao|Fr\.)\b)/);return m?m[1].trim():''};
 const order=(a,b)=>Number(a.month)-Number(b.month)||Number(a.day)-Number(b.day)||String(a.title).localeCompare(String(b.title),'pt-BR');
-const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o/i.test(String(text||''));
+const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o(?:\s+e\s+canoniza[cç][aã]o)?/i.test(String(text||''));
+const promotedCauses=new Set(['Servo de Deus Frei Paolino Maria Baldassari','Servo de Deus Frei Egídio Maria Moscini']);
 function render(items){
- const matches=items.filter(x=>/^(Servo de Deus|B\.)/i.test(String(x.title||'').trim())).sort(order);
+ const matches=items.filter(x=>promotedCauses.has(String(x.title||'').trim())).sort(order);
  list.innerHTML=matches.map(x=>{
   const line=dateLineOf(x.bio), remainder=line?String(x.bio).slice(line.length).trimStart():String(x.bio||'');
-  const prayer=beatificationPrayer(x.prayer)?'<div class="subhead">Oração pela beatificação</div><div class="prayer">'+esc(x.prayer)+'</div>':'';
+  const prayerSource=String(x.prayer||'');
+  const prayerHeading=prayerSource.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
+  const prayerBody=prayerHeading?prayerSource.slice(prayerHeading[0].length).trimStart():prayerSource;
+  const prayer=beatificationPrayer(prayerSource)?'<div class="cause-prayer"><div class="subhead">'+esc(prayerHeading?.[1]||'Oração pela beatificação e canonização')+'</div><div class="prayer">'+esc(prayerBody)+'</div></div>':'';
   const hasStatus=String(x.situacao_causa||'').trim()&&String(x.fonte_situacao||'').trim()&&String(x.data_fonte||'').trim();
   const status=/^Servo de Deus/i.test(x.title||'')?'<div class="status"><strong>Situação da causa:</strong> '+(hasStatus?esc(x.situacao_causa)+' — '+esc(x.fonte_situacao)+' ('+esc(x.data_fonte)+')':'consulte a Postulação Geral')+'</div>':'';
   const iso=new Date(2000,Number(x.month)-1,Number(x.day),12).toISOString().slice(0,10);
