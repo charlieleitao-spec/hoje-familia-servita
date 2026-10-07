@@ -81,9 +81,9 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 const causePrayer=document.getElementById('causePrayer');
-const initialDate=new URLSearchParams(location.search).get('data');let current=(()=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(initialDate||'');return m?new Date(+m[1],+m[2]-1,+m[3],12):new Date()})(),records={},active=null;const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const initialDate=new URLSearchParams(location.search).get('data');let current=(()=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(initialDate||'');return m?new Date(+m[1],+m[2]-1,+m[3],12):new Date()})(),records={},active=null,loadError='';const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const hourNames={invitatorio:'Invitatório',oficio_leituras:'Ofício das Leituras',laudes:'Laudes',hora_media:'Hora Média',vesperas:'Vésperas',completas:'Completas'};
-function updateConnectionNotice(){\n const offline=!navigator.onLine;\n connectionNotice.hidden=!offline;\n connectionNotice.textContent=offline?'Sem conexão. O app está usando os arquivos salvos neste aparelho.':'';\n}\nasync function load(){try{let r=await fetch('./servita.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);records=await r.json()}catch(e){status.textContent=navigator.onLine?'Não foi possível carregar a base. Verifique a conexão e tente novamente.':'Sem conexão e sem uma cópia da base disponível neste aparelho.'}render()}
+function updateConnectionNotice(){\n const offline=!navigator.onLine;\n connectionNotice.hidden=!offline;\n connectionNotice.textContent=offline?'Sem conexão. O app está usando os arquivos salvos neste aparelho.':'';\n}\nasync function load(){try{let r=await fetch('./servita.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);records=await r.json();loadError=''}catch(e){loadError=navigator.onLine?'Não foi possível carregar a base. Verifique a conexão e tente novamente.':'Sem conexão e sem uma cópia da base disponível neste aparelho.'}render()}
 function labelType(t){return t==='oficio_proprio'?'Ofício próprio':t==='textos_proprios'?'Textos próprios':'Família Servita'}
 function sourceLabel(source){
  if(source.startsWith('Livro de Oração dos Servos de Maria'))return 'Livro de Oração';
@@ -92,7 +92,7 @@ function sourceLabel(source){
 }
 function render(){
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
- title.textContent=active?.titulo||'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';status.textContent=active?.data||'';
+ title.textContent=active?.titulo||'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';status.textContent=active?.data||loadError;
  memory.textContent=active?.titulo||'Memória e espiritualidade';
  const memoria=active?.memoria_liturgica;
  const bioText=memoria?.breve_vida||active?.bio||'Hoje não há memória servita cadastrada nesta base.';
