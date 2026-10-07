@@ -13,16 +13,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validar JSON derivado
+      - name: Validar base derivada e estrutura do Ofício
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const x=JSON.parse(fs.readFileSync('servita.json','utf8'));
           const keys=Object.keys(x);
-          if(!x || typeof x!=='object' || Array.isArray(x) || keys.length<30) {
-            throw new Error('Base servita incompleta');
+          const types=new Set(['oficio_proprio','textos_proprios','sem_material_proprio']);
+          const fail=(msg)=>{throw new Error(msg)};
+          if(!x || typeof x!=='object' || Array.isArray(x) || keys.length<30) fail('Base servita incompleta');
+          if(x['12-14']) fail('Data antiga de Boaventura (14/12) reintroduzida');
+          if(!x['12-15']) fail('Boaventura (15/12) ausente');
+          for(const [key,item] of Object.entries(x)){
+            if(!/^\\d{2}-\\d{2}$/.test(key)) fail('Chave de data inválida: '+key);
+            const [month,day]=key.split('-').map(Number);
+            const date=new Date(2000,month-1,day);
+            if(date.getMonth()!==month-1||date.getDate()!==day) fail('Data inexistente: '+key);
+            if(!item || typeof item.titulo!=='string' || !item.titulo.trim() || typeof item.data!=='string' || !item.data.trim()) fail('Identificação incompleta: '+key);
+            if(!types.has(item.tipo_material)) fail('tipo_material inválido: '+key);
+            if(item.tipo_material==='oficio_proprio'){
+              const hours=item.material?.horas;
+              if(!hours || typeof hours!=='object' || Array.isArray(hours) || !Object.keys(hours).length) fail('Ofício sem horas: '+key);
+              for(const [hour,section] of Object.entries(hours)){
+                if(!section || typeof section.titulo!=='string' || !section.titulo.trim() || typeof section.texto!=='string' || !section.texto.trim()) fail('Hora incompleta em '+key+': '+hour);
+              }
+            }
+            if(item.tipo_material==='textos_proprios'){
+              const hours=item.material?.horas;
+              if(!hours || typeof hours!=='object' || Array.isArray(hours) || !Object.keys(hours).length) fail('Textos próprios sem seção: '+key);
+              for(const [section,body] of Object.entries(hours)){
+                if(!body || !['texto','oracao','rubrica','alternativas'].some(field=>typeof body[field]==='string'&&body[field].trim())) fail('Seção sem conteúdo em '+key+': '+section);
+              }
+            }
           }
-          if(x['12-14']) throw new Error('Data antiga de Boaventura (14/12) reintroduzida');
-          if(!x['12-15']) throw new Error('Boaventura (15/12) ausente');
-          console.log('Base derivada válida:',keys.length,'celebrações');
+          console.log('Base derivada válida:',keys.length,'celebrações; horas e seções conferidas.');
           NODE
