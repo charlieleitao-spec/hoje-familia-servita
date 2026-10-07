@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "servita.json"\n      - "index.html"
+      - "servita.json"
+      - "index.html"
       - ".github/workflows/sync-common-data.yml"
 
 jobs:
@@ -48,14 +49,17 @@ jobs:
           }
           console.log('Base derivada válida:',keys.length,'celebrações; horas e seções conferidas.');
           NODE
-\n      - name: Validar sintaxe JavaScript do leitor
+
+
+      - name: Validar sintaxe JavaScript do leitor
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const vm=require('vm');
           const html=fs.readFileSync('index.html','utf8');
-          const scripts=[...html.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)];
-          if(!scripts.length) throw new Error('Script do leitor não encontrado');
-          scripts.forEach((match,index)=>new vm.Script(match[1],{filename:'index.html<script-'+index+'>'}));
-          console.log('Sintaxe JavaScript válida em',scripts.length,'bloco(s).');
+          const start=html.indexOf('<script>');
+          const end=html.indexOf('</script>',start);
+          if(start<0||end<0) throw new Error('Script do leitor não encontrado');
+          new vm.Script(html.slice(start+8,end),{filename:'index.html'});
+          console.log('Sintaxe JavaScript do leitor válida.');
           NODE
