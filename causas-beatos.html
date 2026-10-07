@@ -35,9 +35,14 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;
 const dateLineOf=bio=>{const m=String(bio||'').match(/^(\*\s*.*?†\s*.*?)(?=\s+(?:Padre|Frei|Irmã|Irma|Irmão|Irmao|Fr\.)\b)/);return m?m[1].trim():''};
 const order=(a,b)=>Number(a.month)-Number(b.month)||Number(a.day)-Number(b.day)||String(a.title).localeCompare(String(b.title),'pt-BR');
 const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o(?:\s+e\s+canoniza[cç][aã]o)?/i.test(String(text||''));
-const promotedCauses=new Set(['Servo de Deus Frei Paolino Maria Baldassari','Servo de Deus Frei Egídio Maria Moscini']);
+const normalizeTitle=value=>String(value||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+const promotedCauses=new Set([
+ 'Servo de Deus Frei Paulino Maria Baldassarri',
+ 'Servo de Deus Frei Paolino Maria Baldassari',
+ 'Servo de Deus Frei Egídio Maria Moscini'
+].map(normalizeTitle));
 function render(items){
- const matches=items.filter(x=>promotedCauses.has(String(x.title||'').trim())).sort(order);
+ const matches=items.filter(x=>promotedCauses.has(normalizeTitle(x.title))).sort(order);
  list.innerHTML=matches.map(x=>{
   const line=dateLineOf(x.bio), remainder=line?String(x.bio).slice(line.length).trimStart():String(x.bio||'');
   const prayerSource=String(x.prayer||'');
