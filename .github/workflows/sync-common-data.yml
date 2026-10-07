@@ -25,7 +25,7 @@ jobs:
           if(x['12-14']) fail('Data antiga de Boaventura (14/12) reintroduzida');
           if(!x['12-15']) fail('Boaventura (15/12) ausente');
           for(const [key,item] of Object.entries(x)){
-            if(!/^\\d{2}-\\d{2}$/.test(key)) fail('Chave de data inválida: '+key);
+          if(!/^[0-9]{2}-[0-9]{2}$/.test(key)) fail('Chave de data inválida: '+key);
             const [month,day]=key.split('-').map(Number);
             const date=new Date(2000,month-1,day);
             if(date.getMonth()!==month-1||date.getDate()!==day) fail('Data inexistente: '+key);
