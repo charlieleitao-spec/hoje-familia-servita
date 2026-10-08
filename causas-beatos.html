@@ -37,8 +37,7 @@ const order=(a,b)=>Number(a.month)-Number(b.month)||Number(a.day)-Number(b.day)|
 const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o(?:\s+e\s+canoniza[cç][aã]o)?/i.test(String(text||''));
 const normalizeTitle=value=>String(value||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const promotedCauses=new Set([
- 'Servo de Deus Frei Paulino Maria Baldassarri',
- 'Servo de Deus Frei Paolino Maria Baldassari',
+ 'Servo de Deus Frei Paulino M. Baldassarri',
  'Servo de Deus Frei Egídio Maria Moscini'
 ].map(normalizeTitle));
 function render(items){
