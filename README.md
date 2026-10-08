@@ -2,7 +2,7 @@
 
 PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia das Horas da Família Servita.
 
-## Versão estável 2.8.9
+## Site estável 2.9.2
 
 - calendário diário e próximas celebrações;
 - biografias e espiritualidade servita;
