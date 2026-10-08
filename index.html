@@ -98,7 +98,7 @@ function sourceLabel(source){
 }
 function renderBio(text){
  bio.replaceChildren();
- const paragraphs=String(text||'').replace(/\r/g,'').split(/\n[ \\t]*\n+/).map(p=>p.trim()).filter(Boolean);
+ const paragraphs=String(text||'').replace(/\r/g,'').split(/\n[ \t]*\n+/).map(p=>p.trim()).filter(Boolean);
  paragraphs.forEach(text=>{const p=document.createElement('p');p.textContent=text;bio.appendChild(p)});
 }
 function render(){
