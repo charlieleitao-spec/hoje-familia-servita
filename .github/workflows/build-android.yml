@@ -148,6 +148,9 @@ jobs:
           echo "Baseline: $ANTERIOR_BADGING"
           test "$ATUAL_CODE" = "$APP_VERSION_CODE"
           test "$ATUAL_CODE" -gt "$ANTERIOR_CODE"
+          "$AAPT" dump resources "$APK" > apk-resources.txt
+          for resource in ic_launcher ic_launcher_round ic_launcher_monochrome; do grep -q "mipmap/$resource" apk-resources.txt; done
+          grep -E "mipmap/ic_launcher(_round|_monochrome)?" apk-resources.txt | head -12
           echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
       - name: Guardar artefato
         uses: actions/upload-artifact@v4
