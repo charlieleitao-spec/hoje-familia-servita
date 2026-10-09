@@ -2,7 +2,7 @@
 
 PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia das Horas da Família Servita.
 
-## Site estável 2.9.4
+## Site estável 2.9.5
 
 - calendário diário e próximas celebrações;
 - biografias e espiritualidade servita;
@@ -11,7 +11,7 @@ PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia d
 - instalação no celular com ícones OSM;
 - funcionamento offline dos arquivos essenciais;
 - navegação acessível entre datas;
-- atalho para o índice oficial dos formulários das Missas Próprias OSM;
+- catálogo pesquisável com acesso aos formulários em PDF das Missas Próprias OSM;
 - integração com o blog **Somos Servos**.
 
 ## Observação editorial
