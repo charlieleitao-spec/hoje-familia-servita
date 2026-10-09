@@ -25,7 +25,6 @@ input{width:100%;border:1px solid #cfc6b7;border-radius:10px;padding:12px;font:i
 .mass h2{font:700 1.12rem Georgia,serif;color:var(--navy);margin:0 0 4px}
 .meta{font-size:.88rem;color:var(--muted)}
 .open{flex:0 0 auto;display:inline-block;background:var(--navy);color:#fff;border-radius:10px;padding:10px 12px;text-decoration:none;font-weight:800;font-size:.9rem}
-.message{padding:15px;background:#fbf7ed;border:1px solid #e0d3b7;border-radius:12px;color:#655633}
 @media(max-width:540px){.mass{align-items:flex-start;flex-direction:column}.open{width:100%;text-align:center}}
 </style>
 </head>
@@ -33,18 +32,17 @@ input{width:100%;border:1px solid #cfc6b7;border-radius:10px;padding:12px;font:i
 <header><div>ORDEM DOS SERVOS DE MARIA</div><h1>Missas Próprias OSM</h1><p>Formulários do Missal da Ordem</p></header>
 <main>
 <div class="top"><a class="back" href="./">‹ Voltar ao Hoje</a><span class="count" id="count"></span></div>
-<div class="intro">Escolha uma celebração para abrir seu formulário. Os textos são do catálogo Missas OSM do projeto Liturgia OSM; os PDFs correspondentes estão hospedados no repositório do projeto. A abertura do PDF requer conexão com a internet.</div>
+<div class="intro">Catálogo com 32 formulários próprios da Ordem, incluindo celebrações fixas, móveis e Missas de Santa Maria no Sábado. Os PDFs são cópias dos formulários oficiais, hospedadas no projeto Liturgia OSM. A abertura do PDF requer conexão com a internet.</div>
 <section class="intro">
 <label for="search">Buscar celebração</label>
 <input id="search" type="search" placeholder="Nome, data ou categoria" autocomplete="off">
 </section>
-<div id="list" aria-live="polite"><div class="message">Carregando o catálogo…</div></div>
+<div id="list" aria-live="polite"></div>
 </main>
 <script>
-const DATA_URL='https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/main/www/data/missas-osm.json';
-const PDF_BASE='https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/main/www/data/pdfs/missal/';
+const celebrations=[{"date":"01-12","title":"Santo Antônio Maria Pucci","rank":"Festa","pdf":"antonio.pdf"},{"date":"01-15","title":"B. Tiago de \"Città della Pieve\"","rank":"Beato(a)","pdf":"villa.pdf"},{"date":"02-03","title":"B. Joaquim de Sena","rank":"Beato(a)","pdf":"joaquin.pdf"},{"date":"02-17","title":"Sete Santos Fundadores","rank":"Solenidade","pdf":"fundadores.pdf"},{"date":"02-19","title":"B. Isabel Picenardi","rank":"Beato(a)","pdf":"isabel.pdf"},{"date":"05-04","title":"São Peregrino de Forlì","rank":"São","pdf":"peregrino.pdf"},{"date":"05-08","title":"B.A. Virgem Maria, Mãe e Medianeira","rank":"Memória facultativa","pdf":"mariagracia.pdf"},{"date":"05-11","title":"B. Benincasa de Montepulciano","rank":"Beato(a)","pdf":"benincasa.pdf"},{"date":"05-12","title":"B. Francisco de Sena","rank":"Beato(a)","pdf":"francisco.pdf"},{"date":"05-30","title":"B. Tiago Filipe de Faenza","rank":"Beato(a)","pdf":"tiago.pdf"},{"date":"06-19","title":"Santa Juliana de Florença","rank":"Santa","pdf":"juliana.pdf"},{"date":"06-27","title":"B. Tomás de Orvieto","rank":"Beato(a)","pdf":"tomas.pdf"},{"date":"07-04","title":"B. Ubaldo de Sansepolcro","rank":"Beato(a)","pdf":"ubaldo.pdf"},{"date":"07-13","title":"Santa Clélia Barbieri","rank":"Santa","pdf":"clelia.pdf"},{"date":"08-23","title":"São Filipe Benizi","rank":"São","pdf":"filipe.pdf"},{"date":"08-28","title":"Santo Agostinho","rank":"Festa · Bispo, Doutor e Legislador Monástico","pdf":"agustin.pdf"},{"date":"08-31","title":"B. André de Sansepolcro","rank":"Beato(a)","pdf":"andres.pdf"},{"date":"09-01","title":"B. Joana de Florença","rank":"Beato(a)","pdf":"juana.pdf"},{"date":"09-06","title":"B. Boaventura de Forlì","rank":"Beato(a)","pdf":"bonaforli.pdf"},{"date":"09-15","title":"Nossa Senhora das Dores","rank":"Solenidade · Padroeira principal da Ordem","pdf":"dolorosa.pdf"},{"date":"09-22","title":"Dedicação da Basílica de Monte Senário","rank":"Memória facultativa","pdf":"msenario.pdf"},{"date":"10-25","title":"B. João Ângelo de Milão","rank":"Beato(a)","pdf":"juanangel.pdf"},{"date":"11-16","title":"Todos os Santos e Santas da Ordem","rank":"Solenidade","pdf":"todosantos.pdf"},{"date":"11-17","title":"Comemoração dos Defuntos da Ordem","rank":"Comemoração","pdf":"difuntos.pdf"},{"date":"12-10","title":"B. Jerônimo de Sant'Angelo in Vado","rank":"Beato(a)","pdf":"jeronimo.pdf"},{"date":"12-15","title":"B. Boaventura de Pistoia","rank":"Beato(a)","pdf":"bonapistoia.pdf"},{"date":"movel-ao-pe-da-cruz","title":"Bem-aventurada Virgem Maria ao Pé da Cruz","rank":"Celebração móvel","pdf":"piecruz.pdf"},{"date":"sabado-mariano-advento","title":"Santa Maria na Anunciação do Senhor","rank":"Santa Maria no Sábado","pdf":"adviento.pdf"},{"date":"sabado-mariano-comum-i","title":"Santa Maria, Refúgio dos Servos","rank":"Santa Maria no Sábado","pdf":"maria1.pdf"},{"date":"sabado-mariano-comum-ii","title":"Santa Maria, Serva do Senhor","rank":"Santa Maria no Sábado","pdf":"maria2.pdf"},{"date":"sabado-mariano-natal","title":"Santa Maria Virgem de Caná","rank":"Santa Maria no Sábado","pdf":"navidad.pdf"},{"date":"sabado-mariano-pascal","title":"Santa Maria Virgem do Cenáculo","rank":"Santa Maria no Sábado","pdf":"pascua.pdf"}];
+const pdfBase='https://github.com/charlieleitao-spec/liturgia-osm/blob/main/www/data/pdfs/missal/';
 const monthNames=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
-let celebrations=[];
 function esc(value){return String(value||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function dateLabel(value){
  const fixed=String(value||'').match(/^(\d{2})-(\d{2})$/);
@@ -56,33 +54,19 @@ function dateLabel(value){
  }
  return String(value||'Celebração móvel').replace(/-/g,' ');
 }
-function pdfName(item){
- const match=String(item.source||'').match(/\(([a-z0-9]+\.pdf)\)/i);
- if(match)return match[1];
- if(/ant[oô]nio/i.test(item.title||''))return 'antonio.pdf';
- return '';
-}
 function render(){
  const query=(document.getElementById('search').value||'').trim().toLocaleLowerCase('pt-BR');
  const filtered=celebrations.filter(function(item){
    return [item.title,item.rank,item.date,dateLabel(item.date)].join(' ').toLocaleLowerCase('pt-BR').includes(query);
  });
  document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
- if(!filtered.length){document.getElementById('list').innerHTML='<div class="message">Nenhuma celebração encontrada.</div>';return}
  document.getElementById('list').innerHTML=filtered.map(function(item){
-   const pdf=pdfName(item);
-   const link=pdf?'<a class="open" target="_blank" rel="noopener noreferrer" href="'+PDF_BASE+encodeURIComponent(pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>':'<span class="meta">PDF indisponível</span>';
+   const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>';
    return '<article class="mass"><div><h2>'+esc(item.title)+'</h2><div class="meta">'+esc(dateLabel(item.date))+(item.rank?' · '+esc(item.rank):'')+'</div></div>'+link+'</article>';
  }).join('');
 }
 document.getElementById('search').addEventListener('input',render);
-fetch(DATA_URL,{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()}).then(function(data){
- if(!Array.isArray(data.celebrations))throw new Error('Formato de catálogo inesperado');
- celebrations=data.celebrations;render();
-}).catch(function(){
- document.getElementById('count').textContent='';
- document.getElementById('list').innerHTML='<div class="message">Não foi possível carregar o catálogo. Verifique a conexão e tente novamente.</div>';
-});
+render();
 </script>
 </body>
 </html>
