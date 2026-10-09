@@ -127,14 +127,28 @@ jobs:
       - name: Preparar nome público
         run: cp android/app/build/outputs/apk/release/app-release.apk "Familia-Servita-${APP_VERSION}.apk"
 
-      - name: Verificar APK assinado e versão
+      - name: Verificar assinatura e compatibilidade do APK
         run: |
           APKSIGNER="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/apksigner"
           AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
           APK="Familia-Servita-${APP_VERSION}.apk"
-          "$APKSIGNER" verify --verbose --print-certs "$APK"
-          "$AAPT" dump badging "$APK" | grep '^package:'
-
+          PREVIOUS=Familia-Servita-2.8.9.apk
+          curl -fsSL https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.8.9/Familia-Servita-2.8.9.apk -o "$PREVIOUS"
+          "$APKSIGNER" verify --verbose --print-certs "$APK" > atual.txt
+          "$APKSIGNER" verify --verbose --print-certs "$PREVIOUS" > anterior.txt
+          cat atual.txt
+          ATUAL_CERT=$(sed -n 's/.*certificate SHA-256 digest: //p' atual.txt | head -1)
+          ANTERIOR_CERT=$(sed -n 's/.*certificate SHA-256 digest: //p' anterior.txt | head -1)
+          test -n "$ATUAL_CERT" && test "$ATUAL_CERT" = "$ANTERIOR_CERT"
+          ATUAL_BADGING=$("$AAPT" dump badging "$APK" | head -1)
+          ANTERIOR_BADGING=$("$AAPT" dump badging "$PREVIOUS" | head -1)
+          ATUAL_CODE=$(echo "$ATUAL_BADGING" | sed -n "s/.*versionCode='\\([^']*\\)'.*/\\1/p")
+          ANTERIOR_CODE=$(echo "$ANTERIOR_BADGING" | sed -n "s/.*versionCode='\\([^']*\\)'.*/\\1/p")
+          echo "$ATUAL_BADGING"
+          echo "Baseline: $ANTERIOR_BADGING"
+          test "$ATUAL_CODE" = "$APP_VERSION_CODE"
+          test "$ATUAL_CODE" -gt "$ANTERIOR_CODE"
+          echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
       - name: Guardar artefato
         uses: actions/upload-artifact@v4
         with:
