@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173b67">
+<meta name="description" content="Catálogo dos formulários das Missas Próprias OSM">
+<title>Missas Próprias OSM · Hoje na Família Servita</title>
+<style>
+:root{--navy:#173b67;--gold:#b89448;--cream:#f7f4ed;--ink:#2f2b27;--muted:#6c655b;--line:#e1d9ca}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:linear-gradient(145deg,var(--navy),#102a49);color:#fff;text-align:center;padding:25px 16px 21px;border-bottom:4px solid var(--gold)}
+h1{font:700 clamp(1.7rem,7vw,2.3rem) Georgia,serif;margin:8px 0 5px}
+header p{margin:0;color:#e9dfc8}
+main{max-width:780px;margin:auto;padding:14px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.back{display:inline-block;padding:10px 13px;border:1px solid var(--navy);border-radius:10px;background:#fff;color:var(--navy);font-weight:800;text-decoration:none}
+.count{color:var(--muted);font-size:.9rem}
+.intro,.mass{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;margin:12px 0;box-shadow:0 4px 14px #00000009}
+.intro{color:var(--muted);font-size:.94rem}
+label{display:block;font-weight:800;color:var(--navy);margin-bottom:7px}
+input{width:100%;border:1px solid #cfc6b7;border-radius:10px;padding:12px;font:inherit;background:#fff}
+.mass{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.mass h2{font:700 1.12rem Georgia,serif;color:var(--navy);margin:0 0 4px}
+.meta{font-size:.88rem;color:var(--muted)}
+.open{flex:0 0 auto;display:inline-block;background:var(--navy);color:#fff;border-radius:10px;padding:10px 12px;text-decoration:none;font-weight:800;font-size:.9rem}
+@media(max-width:540px){.mass{align-items:flex-start;flex-direction:column}.open{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<header><div>ORDEM DOS SERVOS DE MARIA</div><h1>Missas Próprias OSM</h1><p>Formulários do Missal da Ordem</p></header>
+<main>
+<div class="top"><a class="back" href="./">‹ Voltar ao Hoje</a><span class="count" id="count"></span></div>
+<div class="intro">Catálogo com 32 formulários próprios da Ordem, incluindo celebrações fixas, móveis e Missas de Santa Maria no Sábado. Os PDFs são cópias dos formulários oficiais, hospedadas no projeto Liturgia OSM. A abertura do PDF requer conexão com a internet.</div>
+<section class="intro">
+<label for="search">Buscar celebração</label>
+<input id="search" type="search" placeholder="Nome, data ou categoria" autocomplete="off">
+</section>
+<div id="list" aria-live="polite"></div>
+</main>
+<script>
+const celebrations=[{"date":"01-12","title":"Santo Antônio Maria Pucci","rank":"Festa","pdf":"antonio.pdf"},{"date":"01-15","title":"B. Tiago de \"Città della Pieve\"","rank":"Beato(a)","pdf":"villa.pdf"},{"date":"02-03","title":"B. Joaquim de Sena","rank":"Beato(a)","pdf":"joaquin.pdf"},{"date":"02-17","title":"Sete Santos Fundadores","rank":"Solenidade","pdf":"fundadores.pdf"},{"date":"02-19","title":"B. Isabel Picenardi","rank":"Beato(a)","pdf":"isabel.pdf"},{"date":"05-04","title":"São Peregrino de Forlì","rank":"São","pdf":"peregrino.pdf"},{"date":"05-08","title":"B.A. Virgem Maria, Mãe e Medianeira","rank":"Memória facultativa","pdf":"mariagracia.pdf"},{"date":"05-11","title":"B. Benincasa de Montepulciano","rank":"Beato(a)","pdf":"benincasa.pdf"},{"date":"05-12","title":"B. Francisco de Sena","rank":"Beato(a)","pdf":"francisco.pdf"},{"date":"05-30","title":"B. Tiago Filipe de Faenza","rank":"Beato(a)","pdf":"tiago.pdf"},{"date":"06-19","title":"Santa Juliana de Florença","rank":"Santa","pdf":"juliana.pdf"},{"date":"06-27","title":"B. Tomás de Orvieto","rank":"Beato(a)","pdf":"tomas.pdf"},{"date":"07-04","title":"B. Ubaldo de Sansepolcro","rank":"Beato(a)","pdf":"ubaldo.pdf"},{"date":"07-13","title":"Santa Clélia Barbieri","rank":"Santa","pdf":"clelia.pdf"},{"date":"08-23","title":"São Filipe Benizi","rank":"São","pdf":"filipe.pdf"},{"date":"08-28","title":"Santo Agostinho","rank":"Festa · Bispo, Doutor e Legislador Monástico","pdf":"agustin.pdf"},{"date":"08-31","title":"B. André de Sansepolcro","rank":"Beato(a)","pdf":"andres.pdf"},{"date":"09-01","title":"B. Joana de Florença","rank":"Beato(a)","pdf":"juana.pdf"},{"date":"09-06","title":"B. Boaventura de Forlì","rank":"Beato(a)","pdf":"bonaforli.pdf"},{"date":"09-15","title":"Nossa Senhora das Dores","rank":"Solenidade · Padroeira principal da Ordem","pdf":"dolorosa.pdf"},{"date":"09-22","title":"Dedicação da Basílica de Monte Senário","rank":"Memória facultativa","pdf":"msenario.pdf"},{"date":"10-25","title":"B. João Ângelo de Milão","rank":"Beato(a)","pdf":"juanangel.pdf"},{"date":"11-16","title":"Todos os Santos e Santas da Ordem","rank":"Solenidade","pdf":"todosantos.pdf"},{"date":"11-17","title":"Comemoração dos Defuntos da Ordem","rank":"Comemoração","pdf":"difuntos.pdf"},{"date":"12-10","title":"B. Jerônimo de Sant'Angelo in Vado","rank":"Beato(a)","pdf":"jeronimo.pdf"},{"date":"12-15","title":"B. Boaventura de Pistoia","rank":"Beato(a)","pdf":"bonapistoia.pdf"},{"date":"movel-ao-pe-da-cruz","title":"Bem-aventurada Virgem Maria ao Pé da Cruz","rank":"Celebração móvel","pdf":"piecruz.pdf"},{"date":"sabado-mariano-advento","title":"Santa Maria na Anunciação do Senhor","rank":"Santa Maria no Sábado","pdf":"adviento.pdf"},{"date":"sabado-mariano-comum-i","title":"Santa Maria, Refúgio dos Servos","rank":"Santa Maria no Sábado","pdf":"maria1.pdf"},{"date":"sabado-mariano-comum-ii","title":"Santa Maria, Serva do Senhor","rank":"Santa Maria no Sábado","pdf":"maria2.pdf"},{"date":"sabado-mariano-natal","title":"Santa Maria Virgem de Caná","rank":"Santa Maria no Sábado","pdf":"navidad.pdf"},{"date":"sabado-mariano-pascal","title":"Santa Maria Virgem do Cenáculo","rank":"Santa Maria no Sábado","pdf":"pascua.pdf"}];
+const pdfBase='https://github.com/charlieleitao-spec/liturgia-osm/blob/main/www/data/pdfs/missal/';
+const monthNames=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+function esc(value){return String(value||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function dateLabel(value){
+ const fixed=String(value||'').match(/^(\d{2})-(\d{2})$/);
+ if(fixed)return Number(fixed[1])+' de '+monthNames[Number(fixed[2])-1];
+ if(value==='movel-ao-pe-da-cruz')return 'Celebração móvel · sexta-feira após o 5º domingo da Quaresma';
+ if(String(value).indexOf('sabado-mariano-')===0){
+   const season=String(value).replace('sabado-mariano-','').replace(/-/g,' ');
+   return 'Santa Maria no Sábado · '+season;
+ }
+ return String(value||'Celebração móvel').replace(/-/g,' ');
+}
+function render(){
+ const query=(document.getElementById('search').value||'').trim().toLocaleLowerCase('pt-BR');
+ const filtered=celebrations.filter(function(item){
+   return [item.title,item.rank,item.date,dateLabel(item.date)].join(' ').toLocaleLowerCase('pt-BR').includes(query);
+ });
+ document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
+ document.getElementById('list').innerHTML=filtered.map(function(item){
+   const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>';
+   return '<article class="mass"><div><h2>'+esc(item.title)+'</h2><div class="meta">'+esc(dateLabel(item.date))+(item.rank?' · '+esc(item.rank):'')+'</div></div>'+link+'</article>';
+ }).join('');
+}
+document.getElementById('search').addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
