@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.9.6-datas-catalogo-missas-osm';
-const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.6','./servita.json','./icon-192.png','./icon-512.png'];
+const CACHE='familia-servita-2.9.7-icones-unificados';
+const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.7','./servita.json','./icon-192.png?v=2.9.7','./icon-512.png?v=2.9.7','./favicon-32.png?v=2.9.7','./favicon-64.png?v=2.9.7'];
 
 self.addEventListener('install',e=>{
   self.skipWaiting();

@@ -2,11 +2,33 @@ name: Build APK Família Servita
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "android-source.zip"
+      - "android-release.patch"
+      - "familia-servita-android-icons.zip"
+      - "index.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "icon-192.png"
+      - "icon-512.png"
+      - "favicon-32.png"
+      - "favicon-64.png"
+      - ".github/workflows/build-android.yml"
   push:
     branches: [main]
     paths:
       - "android-source.zip"
       - "android-release.patch"
+      - "familia-servita-android-icons.zip"
+      - "index.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "icon-192.png"
+      - "icon-512.png"
+      - "favicon-32.png"
+      - "favicon-64.png"
       - ".github/workflows/build-android.yml"
 
 permissions:
@@ -25,11 +47,56 @@ jobs:
       - name: Aplicar ajustes de release
         run: git apply --check android-release.patch && git apply android-release.patch
 
+      - name: Aplicar ícones Servitas
+        run: |
+          find android/app/src/main/res -type f -name 'ic_launcher*' -delete
+          unzip -oq familia-servita-android-icons.zip -d icon-pacote
+          cp -R icon-pacote/res/. android/app/src/main/res/
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('android/app/src/main/AndroidManifest.xml')
+          s = p.read_text()
+          s = re.sub(r'android:allowBackup="[^"]+"', 'android:allowBackup="false"', s)
+          if 'android:allowBackup=' not in s:
+              s = s.replace('<application', '<application android:allowBackup="false"', 1)
+          if 'android:icon="@mipmap/ic_launcher"' not in s:
+              raise SystemExit('Manifesto sem android:icon @mipmap/ic_launcher')
+          if re.search(r'android:roundIcon="[^"]+"', s):
+              s = re.sub(r'android:roundIcon="[^"]+"', 'android:roundIcon="@mipmap/ic_launcher_round"', s)
+          else:
+              s = s.replace('<application', '<application android:roundIcon="@mipmap/ic_launcher_round"', 1)
+          p.write_text(s)
+          PY
+
+      - name: Atualizar versão do APK
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os, re
+          p = Path('android/app/build.gradle')
+          s = p.read_text()
+          m = re.search(r'versionCode\s+(\d+)', s)
+          if not m:
+              raise SystemExit('versionCode não encontrado')
+          code = int(m.group(1)) + 1
+          s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
+          if not re.search(r'versionName\s+"[^"]+"', s):
+              raise SystemExit('versionName não encontrado')
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.7"', s, count=1)
+          p.write_text(s)
+          with open(os.environ['GITHUB_ENV'], 'a') as env:
+              env.write('APP_VERSION=2.9.7\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.7 versionCode=' + str(code))
+          PY
       - name: Validar fontes Android de release
         run: |
           grep -q 'signingConfigs' android/app/build.gradle || { echo "Falta signingConfig.release."; exit 1; }
           grep -q 'android:allowBackup="false"' android/app/src/main/AndroidManifest.xml || { echo "Falta allowBackup=false."; exit 1; }
           test -f android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml || { echo "Falta o ícone adaptativo."; exit 1; }
+          test -f android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml || { echo "Falta o ícone redondo adaptativo."; exit 1; }
+          test -f android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_monochrome.png || { echo "Falta o ícone monocromático."; exit 1; }
+          grep -q 'android:roundIcon="@mipmap/ic_launcher_round"' android/app/src/main/AndroidManifest.xml || { echo "Manifesto sem roundIcon correto."; exit 1; }
 
       - name: Configurar Java 17
         uses: actions/setup-java@v4
@@ -58,23 +125,49 @@ jobs:
         run: gradle --no-daemon assembleRelease
 
       - name: Preparar nome público
-        run: cp android/app/build/outputs/apk/release/app-release.apk Familia-Servita-2.8.9.apk
+        run: cp android/app/build/outputs/apk/release/app-release.apk "Familia-Servita-${APP_VERSION}.apk"
 
+      - name: Verificar assinatura e compatibilidade do APK
+        run: |
+          APKSIGNER="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/apksigner"
+          AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
+          APK="Familia-Servita-${APP_VERSION}.apk"
+          PREVIOUS=Familia-Servita-2.8.9.apk
+          curl -fsSL https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.8.9/Familia-Servita-2.8.9.apk -o "$PREVIOUS"
+          "$APKSIGNER" verify --verbose --print-certs "$APK" > atual.txt
+          "$APKSIGNER" verify --verbose --print-certs "$PREVIOUS" > anterior.txt
+          cat atual.txt
+          ATUAL_CERT=$(sed -n 's/.*certificate SHA-256 digest: //p' atual.txt | head -1)
+          ANTERIOR_CERT=$(sed -n 's/.*certificate SHA-256 digest: //p' anterior.txt | head -1)
+          test -n "$ATUAL_CERT" && test "$ATUAL_CERT" = "$ANTERIOR_CERT"
+          ATUAL_BADGING=$("$AAPT" dump badging "$APK" | head -1)
+          ANTERIOR_BADGING=$("$AAPT" dump badging "$PREVIOUS" | head -1)
+          ATUAL_CODE=$(echo "$ATUAL_BADGING" | sed -n "s/.*versionCode='\\([^']*\\)'.*/\\1/p")
+          ANTERIOR_CODE=$(echo "$ANTERIOR_BADGING" | sed -n "s/.*versionCode='\\([^']*\\)'.*/\\1/p")
+          echo "$ATUAL_BADGING"
+          echo "Baseline: $ANTERIOR_BADGING"
+          test "$ATUAL_CODE" = "$APP_VERSION_CODE"
+          test "$ATUAL_CODE" -gt "$ANTERIOR_CODE"
+          "$AAPT" dump resources "$APK" > apk-resources.txt
+          for resource in ic_launcher ic_launcher_round ic_launcher_monochrome; do grep -q "mipmap/$resource" apk-resources.txt; done
+          grep -E "mipmap/ic_launcher(_round|_monochrome)?" apk-resources.txt | head -12
+          echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
       - name: Guardar artefato
         uses: actions/upload-artifact@v4
         with:
-          name: Familia-Servita-2.8.9-release
-          path: Familia-Servita-2.8.9.apk
+          name: Familia-Servita-${{ env.APP_VERSION }}-release
+          path: Familia-Servita-${{ env.APP_VERSION }}.apk
 
       - name: Publicar versão Android
+        if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: android-v2.8.9
-          name: Família Servita 2.8.9 para Android
+          tag_name: android-v${{ env.APP_VERSION }}
+          name: Família Servita ${{ env.APP_VERSION }} para Android
           body: |
             APK release assinado do Hoje na Família Servita.
 
-            - ícone adaptativo OSM;
+            - ícone adaptativo, redondo e monocromático unificados;
             - backup de dados desativado;
             - assinatura release persistente.
-          files: Familia-Servita-2.8.9.apk
+          files: Familia-Servita-${{ env.APP_VERSION }}.apk
