@@ -46,7 +46,7 @@ const monthNames=['janeiro','fevereiro','março','abril','maio','junho','julho',
 function esc(value){return String(value||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function dateLabel(value){
  const fixed=String(value||'').match(/^(\d{2})-(\d{2})$/);
- if(fixed)return Number(fixed[1])+' de '+monthNames[Number(fixed[2])-1];
+ if(fixed)return Number(fixed[2])+' de '+monthNames[Number(fixed[1])-1];
  if(value==='movel-ao-pe-da-cruz')return 'Celebração móvel · sexta-feira após o 5º domingo da Quaresma';
  if(String(value).indexOf('sabado-mariano-')===0){
    const season=String(value).replace('sabado-mariano-','').replace(/-/g,' ');
@@ -62,7 +62,8 @@ function render(){
  document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
  document.getElementById('list').innerHTML=filtered.map(function(item){
    const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>';
-   return '<article class="mass"><div><h2>'+esc(item.title)+'</h2><div class="meta">'+esc(dateLabel(item.date))+(item.rank?' · '+esc(item.rank):'')+'</div></div>'+link+'</article>';
+   const category=item.rank&&!dateLabel(item.date).toLocaleLowerCase('pt-BR').includes(item.rank.toLocaleLowerCase('pt-BR'))?' · '+esc(item.rank):'';
+   return '<article class="mass"><div><h2>'+esc(item.title)+'</h2><div class="meta">'+esc(dateLabel(item.date))+category+'</div></div>'+link+'</article>';
  }).join('');
 }
 document.getElementById('search').addEventListener('input',render);
