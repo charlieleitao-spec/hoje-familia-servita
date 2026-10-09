@@ -57,6 +57,9 @@ jobs:
           import re
           p = Path('android/app/src/main/AndroidManifest.xml')
           s = p.read_text()
+          s = re.sub(r'android:allowBackup="[^"]+"', 'android:allowBackup="false"', s)
+          if 'android:allowBackup=' not in s:
+              s = s.replace('<application', '<application android:allowBackup="false"', 1)
           if 'android:icon="@mipmap/ic_launcher"' not in s:
               raise SystemExit('Manifesto sem android:icon @mipmap/ic_launcher')
           if re.search(r'android:roundIcon="[^"]+"', s):
