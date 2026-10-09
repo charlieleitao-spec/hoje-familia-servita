@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.9.3-paulino-baldassarri';
-const ASSETS=['./','./index.html','./causas-beatos.html','./manifest.webmanifest?v=2.9.3','./servita.json','./icon-192.png','./icon-512.png'];
+const CACHE='familia-servita-2.9.4-missas-proprias-osm';
+const ASSETS=['./','./index.html','./causas-beatos.html','./manifest.webmanifest?v=2.9.4','./servita.json','./icon-192.png','./icon-512.png'];
 
 self.addEventListener('install',e=>{
   self.skipWaiting();
