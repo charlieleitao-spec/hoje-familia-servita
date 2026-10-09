@@ -48,7 +48,7 @@ index 6391ead..445611c 100644
 +        android:allowBackup="false"
          android:icon="@mipmap/ic_launcher"
          android:label="Família Servita"
-         android:roundIcon="@mipmap/ic_launcher"
+         android:roundIcon="@mipmap/ic_launcher_round"
 diff --git a/android/app/src/main/res/drawable/ic_launcher_foreground.xml b/android/app/src/main/res/drawable/ic_launcher_foreground.xml
 new file mode 100644
 index 0000000..7624c73
