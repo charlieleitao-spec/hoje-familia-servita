@@ -135,7 +135,7 @@ jobs:
           AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
           APK="Familia-Servita-${APP_VERSION}.apk"
           PREVIOUS=Familia-Servita-anterior.apk
-          PREVIOUS_URL=$(curl -fsSL -H "Accept: application/vnd.github+json" "https://api.github.com/repos/\${GITHUB_REPOSITORY}/releases/latest" | jq -r '[.assets[] | select(.name | endswith(".apk"))][0].browser_download_url // empty')
+          PREVIOUS_URL=$(curl -fsSL -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r '[.assets[] | select(.name | endswith(".apk"))][0].browser_download_url // empty')
           test -n "$PREVIOUS_URL" || { echo "Não foi possível localizar o APK da última release."; exit 1; }
           echo "Comparando com: $PREVIOUS_URL"
           curl -fsSL "$PREVIOUS_URL" -o "$PREVIOUS"
