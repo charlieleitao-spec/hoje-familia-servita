@@ -83,10 +83,13 @@ function dateLabel(value){
  }
  return String(value||'Celebração móvel').replace(/-/g,' ');
 }
+function normalizeSearch(value){
+ return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+}
 function render(){
- const query=(document.getElementById('search').value||'').trim().toLocaleLowerCase('pt-BR');
+ const query=normalizeSearch(document.getElementById('search').value.trim());
  const filtered=celebrations.filter(function(item){
-   return [item.title,item.rank,item.date,dateLabel(item.date)].join(' ').toLocaleLowerCase('pt-BR').includes(query);
+   return normalizeSearch([item.title,item.rank,item.date,dateLabel(item.date)].join(' ')).includes(query);
  });
  document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
  document.getElementById('list').innerHTML=filtered.map(function(item){

@@ -81,15 +81,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = int(m.group(1)) + 4  # base 289; 2.9.8 usa 291; 2.9.12 usa 293
+          code = int(m.group(1)) + 5  # base 289; 2.9.13 usa 294
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.12"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.13"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.12\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.12 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.13\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.13 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -134,8 +134,11 @@ jobs:
           APKSIGNER="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/apksigner"
           AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
           APK="Familia-Servita-${APP_VERSION}.apk"
-          PREVIOUS=Familia-Servita-2.8.9.apk
-          curl -fsSL https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.8.9/Familia-Servita-2.8.9.apk -o "$PREVIOUS"
+          PREVIOUS=Familia-Servita-anterior.apk
+          PREVIOUS_URL=$(curl -fsSL -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest" | jq -r '[.assets[] | select(.name | endswith(".apk"))][0].browser_download_url // empty')
+          test -n "$PREVIOUS_URL" || { echo "Não foi possível localizar o APK da última release."; exit 1; }
+          echo "Comparando com: $PREVIOUS_URL"
+          curl -fsSL "$PREVIOUS_URL" -o "$PREVIOUS"
           "$APKSIGNER" verify --verbose --print-certs "$APK" > atual.txt
           "$APKSIGNER" verify --verbose --print-certs "$PREVIOUS" > anterior.txt
           cat atual.txt
@@ -169,8 +172,8 @@ jobs:
           body: |
             APK release assinado do Hoje na Família Servita.
 
-            - tipografia global uniforme, com leitura ajustada para celular;
-            - ícone adaptativo, redondo e monocromático unificados;
-            - backup de dados desativado;
-            - assinatura release persistente.
+            - tipografia uniforme e leitura ajustada para celular;
+            - busca do catálogo de Missas sem distinção de acentos;
+            - versionCode progressivo verificado contra a última release;
+            - ícone servita adaptativo e assinatura release persistente.
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
