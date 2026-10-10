@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.9.9-causas-ui';
-const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.9','./servita.json','./icon-192.png?v=2.9.9','./icon-512.png?v=2.9.9','./favicon-32.png?v=2.9.9','./favicon-64.png?v=2.9.9'];
+const CACHE='familia-servita-2.9.10-causas-ui';
+const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.10','./servita.json','./icon-192.png?v=2.9.10','./icon-512.png?v=2.9.10','./favicon-32.png?v=2.9.10','./favicon-64.png?v=2.9.10'];
 
 self.addEventListener('install',e=>{
   self.skipWaiting();
