@@ -45,43 +45,106 @@ footer{font-size:13px!important;line-height:1.5!important}
   .antiphon,.verse,.psalm-verse,.hymn-stanza-line,.response,.preces-intro,.preces-response,.preces-intention{font-size:16px!important;line-height:1.6!important}
   button,input,select,textarea,.action,.back,.open,.nav button,.quick button,.quick a,.hours button{font-size:15px!important}
 }
+
+.search-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0;box-shadow:0 5px 18px #0000000b}
+.search-panel label{display:block;color:var(--blue);font-weight:700;margin-bottom:7px}
+.search-panel input{width:100%;border:1px solid #cfc6b7;border-radius:10px;padding:11px 12px;background:#fff;color:var(--ink);font:inherit}
+.result-count{color:var(--muted);font-size:.9rem;margin:8px 2px}
+.group{margin:22px 0}
+.group-title{font:700 1.25rem/1.3 Georgia,serif;color:var(--blue);margin:18px 4px 10px}
+.person{padding:0;overflow:hidden}
+.person summary{position:relative;display:block;cursor:pointer;list-style:none;padding:15px 52px 15px 18px}
+.person summary::-webkit-details-marker{display:none}
+.person summary::after{content:"+";position:absolute;right:18px;top:13px;color:var(--blue);font:400 1.5rem/1 Georgia,serif}
+.person[open] summary::after{content:"−"}
+.person-title{display:block;color:var(--blue);font:700 1.16rem/1.3 Georgia,serif}
+.person-summary-date{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
+.person-content{border-top:1px solid var(--line);padding:0 18px 18px}
+.person-content .date-line{margin-top:14px}
+.person-content .cause-prayer{margin:14px 0 12px;border-left-width:5px}
+.person-content .cause-prayer .subhead{text-align:left;letter-spacing:.06em}
+.person-content .prayer{text-align:left;margin:0;max-width:none}
+.person-content .bio{margin-top:5px}
+.person-content .subhead{margin-top:16px}
+.empty-results{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;color:var(--muted)}
+@media(max-width:700px){.person-title{font-size:1.08rem}.person-content{padding:0 15px 16px}}
+
 </style>
 </head>
 <body>
 <header><p>Ordem dos Servos de Maria</p><h1>Causas</h1></header>
 <main>
-<div class="intro">Índice atualizado automaticamente a partir do santoral do Liturgia OSM: Beatos e Servos de Deus, com seus textos biográficos e orações conforme a fonte. Para informações atuais sobre as causas, consulte a Postulação Geral.</div>
+<div class="intro">Índice atualizado automaticamente a partir do santoral do Liturgia OSM. Abra um nome para consultar a ficha; nos Servos de Deus, a oração pela beatificação e canonização aparece em destaque.</div>
+<section class="search-panel" aria-label="Buscar nas causas"><label for="search">Buscar por nome ou data</label><input id="search" type="search" placeholder="Nome ou data da celebração" autocomplete="off"></section>
+<div id="resultCount" class="result-count" aria-live="polite"></div>
 <div id="list" aria-live="polite">Carregando o santoral…</div>
 </main>
 <footer><a href="./index.html">Voltar ao Hoje na Família Servita</a></footer>
 <script>
 const list=document.getElementById('list');
+const search=document.getElementById('search');
+const resultCount=document.getElementById('resultCount');
 const SOURCE='https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/main/www/data/santoral.json';
+let allItems=[];
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
 const dateLineOf=bio=>{const m=String(bio||'').match(/^(\*\s*.*?†\s*.*?)(?=\s+(?:Padre|Frei|Irmã|Irma|Irmão|Irmao|Fr\.)\b)/);return m?m[1].trim():''};
 const order=(a,b)=>Number(a.month)-Number(b.month)||Number(a.day)-Number(b.day)||String(a.title).localeCompare(String(b.title),'pt-BR');
 const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o(?:\s+e\s+canoniza[cç][aã]o)?/i.test(String(text||''));
-function render(items){
- const matches=items.filter(x=>
-  x.categoria==='beato'||x.categoria==='servo_de_deus'||
-  x.rank==='Beato(a)'||x.rank==='Servo de Deus'
- ).sort(order);
- list.innerHTML=matches.map(x=>{
-  const line=dateLineOf(x.bio), remainder=line?String(x.bio).slice(line.length).trimStart():String(x.bio||'');
-  const prayerSource=String(x.prayer||'');
-  const prayerHeading=prayerSource.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
-  const prayerBody=prayerHeading?prayerSource.slice(prayerHeading[0].length).trimStart():prayerSource;
-  const prayer=beatificationPrayer(prayerSource)?'<div class="cause-prayer"><div class="subhead">'+esc(prayerHeading?.[1]||'Oração pela beatificação e canonização')+'</div><div class="prayer">'+esc(prayerBody)+'</div></div>':'';
-  const displayTitle=x.categoria==='servo_de_deus'||/^Servo de Deus$/i.test(x.rank||'')
-   ? 'Servo de Deus '+x.title
-   : (x.genero==='f'?'Beata ':'Beato ')+x.title;
-  const hasStatus=String(x.situacao_causa||'').trim()&&String(x.fonte_situacao||'').trim()&&String(x.data_fonte||'').trim();
-  const status=/^Servo de Deus/i.test(x.title||'')?'<div class="status"><strong>Situação da causa:</strong> '+(hasStatus?esc(x.situacao_causa)+' — '+esc(x.fonte_situacao)+' ('+esc(x.data_fonte)+')':'consulte a Postulação Geral')+'</div>':'';
-  const iso=new Date(2000,Number(x.month)-1,Number(x.day),12).toISOString().slice(0,10);
-  return '<article class="person"><h2>'+esc(displayTitle)+'</h2><div class="meta"><strong>Celebração:</strong> '+esc(x.date)+'</div>'+(line?'<div class="date-line">'+esc(line)+'</div>':'')+'<div class="subhead">Memória</div><div class="bio">'+esc(remainder)+'</div>'+prayer+status+'<div class="actions"><a href="./index.html?data='+iso+'">Abrir a data da celebração</a></div></article>';
- }).join('');
+const isServo=x=>x.categoria==='servo_de_deus'||x.rank==='Servo de Deus';
+function withoutPrefix(value,prefixes){
+ let name=String(value||'').trim();
+ for(const prefix of prefixes){
+  if(name.toLocaleLowerCase('pt-BR').startsWith(prefix.toLocaleLowerCase('pt-BR')+' ')){name=name.slice(prefix.length+1);break}
+ }
+ return name;
 }
-fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral.json indisponível');return r.json()}).then(items=>{render(items);try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}}).catch(()=>{try{const cached=JSON.parse(localStorage.getItem('familiaServitaSantoralCache')||'null');if(Array.isArray(cached)){render(cached);return}}catch(e){}list.innerHTML='<div class="error">Não foi possível carregar o santoral oficial. Verifique a conexão e tente novamente.</div>'});
+function displayTitle(x){
+ if(isServo(x)){
+  const prefix=x.genero==='f'?'Serva de Deus':'Servo de Deus';
+  return prefix+' '+withoutPrefix(x.title,['Servo de Deus','Serva de Deus']);
+ }
+ const prefix=x.genero==='f'?'Beata':'Beato';
+ return prefix+' '+withoutPrefix(x.title,['Beato','Beata','B.','B.A.']);
+}
+function personCard(x){
+ const line=dateLineOf(x.bio),remainder=line?String(x.bio).slice(line.length).trimStart():String(x.bio||'');
+ const prayerSource=String(x.prayer||'');
+ const prayerHeading=prayerSource.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
+ const prayerBody=prayerHeading?prayerSource.slice(prayerHeading[0].length).trimStart():prayerSource;
+ const prayer=beatificationPrayer(prayerSource)
+  ?'<div class="cause-prayer"><div class="subhead">'+esc(prayerHeading?.[1]||'Oração pela beatificação e canonização')+'</div><div class="prayer">'+esc(prayerBody)+'</div></div>'
+  :'';
+ const hasStatus=String(x.situacao_causa||'').trim()&&String(x.fonte_situacao||'').trim()&&String(x.data_fonte||'').trim();
+ const status=isServo(x)?'<div class="status"><strong>Situação da causa:</strong> '+(hasStatus?esc(x.situacao_causa)+' — '+esc(x.fonte_situacao)+' ('+esc(x.data_fonte)+')':'consulte a Postulação Geral')+'</div>':'';
+ const iso=new Date(2000,Number(x.month)-1,Number(x.day),12).toISOString().slice(0,10);
+ const birth=line?'<div class="date-line">'+esc(line)+'</div>':'';
+ return '<details class="person"><summary><span class="person-title">'+esc(displayTitle(x))+'</span><span class="person-summary-date">'+esc(x.date)+'</span></summary><div class="person-content">'+birth+prayer+'<div class="subhead">Memória</div><div class="bio">'+esc(remainder)+'</div>'+status+'<div class="actions"><a href="./index.html?data='+iso+'">Abrir a data da celebração</a></div></div></details>';
+}
+function render(items){
+ const query=normalize(search.value.trim());
+ const matches=items.filter(x=>{
+  const cause=isServo(x)||x.categoria==='beato'||x.rank==='Beato(a)';
+  return cause&&(!query||normalize([x.title,x.date,x.bio].join(' ')).includes(query));
+ }).sort(order);
+ resultCount.textContent=matches.length+' '+(matches.length===1?'ficha':'fichas');
+ const groups=[
+  {title:'Beatos e Beatas',items:matches.filter(x=>!isServo(x))},
+  {title:'Servos de Deus',items:matches.filter(isServo)}
+ ];
+ list.innerHTML=groups.map(group=>group.items.length
+  ?'<section class="group"><h2 class="group-title">'+group.title+'</h2>'+group.items.map(personCard).join('')+'</section>'
+  :''
+ ).join('')||'<div class="empty-results">Nenhuma ficha encontrada para essa busca.</div>';
+}
+search.addEventListener('input',()=>render(allItems));
+fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral.json indisponível');return r.json()}).then(items=>{
+ allItems=items;render(allItems);
+ try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}
+}).catch(()=>{
+ try{const cached=JSON.parse(localStorage.getItem('familiaServitaSantoralCache')||'null');if(Array.isArray(cached)){allItems=cached;render(allItems);return}}catch(e){}
+ list.innerHTML='<div class="error">Não foi possível carregar o santoral oficial. Verifique a conexão e tente novamente.</div>'
+});
 </script>
 </body>
 </html>
