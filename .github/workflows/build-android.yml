@@ -9,6 +9,7 @@ on:
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
       - "index.html"
+      - "causas-beatos.html"
       - "manifest.webmanifest"
       - "sw.js"
       - "icon-192.png"
@@ -23,6 +24,7 @@ on:
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
       - "index.html"
+      - "causas-beatos.html"
       - "manifest.webmanifest"
       - "sw.js"
       - "icon-192.png"
@@ -79,15 +81,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = int(m.group(1)) + 2  # 2.8.9 base 289, published 2.9.7 code 290, next code 291
+          code = int(m.group(1)) + 4  # base 289; 2.9.8 usa 291; 2.9.9 usa 293
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.8"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.9"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.8\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.8 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.9\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.9 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |

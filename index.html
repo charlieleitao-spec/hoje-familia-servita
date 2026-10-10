@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.9.8"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.8"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.8"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.8">
+<link rel="manifest" href="manifest.webmanifest?v=2.9.9"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.9"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.9"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.9"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.9">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -15,6 +15,7 @@ main{max-width:800px;margin:auto;padding:16px}.nav{display:grid;grid-template-co
 .card{background:#fff;border:1px solid var(--b);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #0000000b}.label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);font-weight:800}
 h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--a);font-size:.79rem;font-weight:800}.cause-prayer{margin:14px 0 0;padding:15px 16px;background:#fbf7ed;border:1px solid #d8c38f;border-left:4px solid var(--o);border-radius:12px}.cause-prayer-title{text-align:center;text-transform:uppercase;letter-spacing:.08em;color:#7b2632;font-size:.76rem;font-weight:900;margin-bottom:8px}.cause-prayer-text{white-space:pre-line;text-align:center;font:1.04rem/1.75 Georgia,serif;color:#3c3324}
 .bio{text-align:justify;hyphens:auto;text-justify:inter-word}.bio p{margin:0 0 .95em;white-space:pre-line}.bio p:last-child{margin-bottom:0}.muted{color:var(--m)}.source-line{margin-top:13px;color:var(--m);font-size:.79rem;line-height:1.45}.editorial-note{margin-top:10px;padding:10px 12px;border:1px solid #e0d3b7;background:#fbf7ed;border-radius:10px;color:#655633;font-size:.9rem;line-height:1.5}.actions{display:grid;gap:9px;margin-top:17px}.action{display:block;width:100%;border-radius:12px;padding:13px;text-align:center;text-decoration:none;font-weight:800;border:0;font-size:.95rem}
+.action[hidden]{display:none!important}
 .gold{background:#f4ead5;color:#654e1f;border:1px solid #dac28d}.secondary{border:1px solid var(--a);color:var(--a);background:#fff}
 #reader[hidden],#calendarCard[hidden]{display:none}.hours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:4px 0 14px;width:100%;max-width:100%;overflow:hidden}
 .hours button{white-space:normal;min-width:0;width:100%;max-width:100%;overflow-wrap:anywhere;min-height:43px;border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:8px 9px;font-weight:800;line-height:1.2}
@@ -105,7 +106,7 @@ footer{font-size:13px!important;line-height:1.5!important}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.8 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.9 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 const causePrayer=document.getElementById('causePrayer');
