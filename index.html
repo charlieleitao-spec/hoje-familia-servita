@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.9.7"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.7"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.7"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.7"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.7">
+<link rel="manifest" href="manifest.webmanifest?v=2.9.8"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.8"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.8"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.8"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.8">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -63,6 +63,32 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
 .preces-block .preces-intention{padding:0 8px}
 .minor-hour-block .littext,.minor-hour-block .verse{text-align:center;color:var(--lit);max-width:680px;margin-left:auto;margin-right:auto}
 
+
+/* Sistema tipográfico global — alinhado ao padrão editorial do Somos Servos */
+:root{--ss-reading-font:Georgia,"Noto Serif","Times New Roman",serif;--ss-body-size:17px}
+html,body{font-family:var(--ss-reading-font)!important;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:17px!important;line-height:1.65!important}
+body *{font-family:var(--ss-reading-font)!important}
+header h1{font-size:clamp(29px,4vw,40px)!important;line-height:1.12!important;letter-spacing:0!important}
+h1{font-size:clamp(27px,4vw,36px)!important;line-height:1.18!important}
+h2{font-size:26px!important;line-height:1.25!important}
+h3,.section h3{font-size:22px!important;line-height:1.3!important}
+.litheading,.subhead{font-size:15px!important;line-height:1.4!important;letter-spacing:.04em!important}
+.psalm-title{font-size:19px!important;line-height:1.35!important}
+.bio,.bio p,.prayer,.cause-prayer-text,.littext,.reading-body{font-size:17px!important;line-height:1.68!important}
+.antiphon,.verse,.psalm-verse,.hymn-stanza-line,.response,.preces-intro,.preces-response,.preces-intention{font-size:17px!important;line-height:1.62!important}
+button,input,select,textarea,.action,.back,.open,.nav button,.quick button,.quick a,.hours button{font-size:15px!important;line-height:1.4!important}
+.label,.ey,.source-line,.editorial-note,.cause-prayer-title,.meta,.status,.count,.badge,.muted{font-size:13px!important;line-height:1.5!important}
+footer{font-size:13px!important;line-height:1.5!important}
+@media(max-width:700px){
+  :root{--ss-body-size:16px}
+  body{font-size:16px!important;line-height:1.62!important}
+  header h1{font-size:clamp(25px,7vw,31px)!important;line-height:1.15!important}
+  h1{font-size:26px!important}h2{font-size:23px!important}h3,.section h3{font-size:20px!important}
+  .bio,.bio p,.prayer,.cause-prayer-text,.littext,.reading-body{font-size:16px!important;line-height:1.66!important}
+  .antiphon,.verse,.psalm-verse,.hymn-stanza-line,.response,.preces-intro,.preces-response,.preces-intention{font-size:16px!important;line-height:1.6!important}
+  button,input,select,textarea,.action,.back,.open,.nav button,.quick button,.quick a,.hours button{font-size:15px!important}
+}
 </style></head><body>
 <header><div class="mark">OSM</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
 <main>
@@ -79,7 +105,7 @@ footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.7 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.8 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 const causePrayer=document.getElementById('causePrayer');
