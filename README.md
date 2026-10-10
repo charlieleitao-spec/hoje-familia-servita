@@ -2,7 +2,7 @@
 
 PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia das Horas da Família Servita.
 
-## Site estável 2.9.8
+## Site estável 2.9.9
 
 - calendário diário e próximas celebrações;
 - biografias e espiritualidade servita;
@@ -13,7 +13,9 @@ PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia d
 - navegação acessível entre datas;
 - catálogo pesquisável com acesso aos formulários em PDF das Missas Próprias OSM;
 - integração com o blog **Somos Servos**;
-- tipografia uniforme em todas as páginas, com leitura ajustada para celular.
+- tipografia uniforme em todas as páginas, com leitura ajustada para celular;
+- índice de Beatos e Servos de Deus atualizado diretamente do santoral canônico;
+- correção da exibição dos controles ocultos.
 
 ## Observação editorial
 
@@ -25,4 +27,4 @@ O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta ra
 
 ## Aplicativo Android
 
-O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.8 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
+O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.9 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
