@@ -81,15 +81,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = int(m.group(1)) + 4  # base 289; 2.9.8 usa 291; 2.9.11 usa 293
+          code = int(m.group(1)) + 4  # base 289; 2.9.8 usa 291; 2.9.12 usa 293
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.11"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.12"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.11\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.11 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.12\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.12 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
