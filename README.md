@@ -25,6 +25,4 @@ O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta ra
 
 ## Aplicativo Android
 
-O diretório `android/` contém o aplicativo próprio **Família Servita**. O fluxo
-`Build APK Família Servita` compila a versão 2.8.9 e publica o arquivo
-`Familia-Servita-2.8.9.apk` na área de versões do GitHub.
+O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.8 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
