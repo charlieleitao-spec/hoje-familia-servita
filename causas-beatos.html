@@ -64,7 +64,7 @@ const beatificationPrayer=text=>/ora[cç][aã]o pela beatifica[cç][aã]o(?:\s+e
 function render(items){
  const matches=items.filter(x=>
   x.categoria==='beato'||x.categoria==='servo_de_deus'||
-  /^Beato(?:\\(a\\))?$/i.test(x.rank||'')||/^Servo de Deus$/i.test(x.rank||'')
+  x.rank==='Beato(a)'||x.rank==='Servo de Deus'
  ).sort(order);
  list.innerHTML=matches.map(x=>{
   const line=dateLineOf(x.bio), remainder=line?String(x.bio).slice(line.length).trimStart():String(x.bio||'');
