@@ -92,15 +92,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 296  # 2.9.14 usa 295; manter progressivo
+          code = 297  # 2.9.15 usa 296; manter progressivo
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.15"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.16"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.15\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.15 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.16\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.16 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -183,6 +183,8 @@ jobs:
           body: |
             APK release assinado do Hoje na Família Servita.
 
+            - fichas das Causas com as orações dos Beatos e busca pelos títulos completos;
+            - acesso direto aos 32 formulários PDF das Missas;
             - calendário com a data da celebração exibida corretamente;
             - datas inválidas protegidas e títulos sem prefixos duplicados;
             - Causas e catálogo de Missas com base local para consulta offline;
