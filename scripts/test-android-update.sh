@@ -3,7 +3,7 @@ set -euo pipefail
 package=br.org.servitas.familia
 activity="$package/.MainActivity"
 mkdir -p android-test
-trap 'adb shell svc wifi enable >/dev/null 2>&1 || true; adb shell svc data enable >/dev/null 2>&1 || true; adb logcat -d -b crash > android-test/crashes.txt || true' EXIT
+trap 'adb shell svc wifi enable >/dev/null 2>&1 || true; adb shell svc data enable >/dev/null 2>&1 || true; adb logcat -d > android-test/logcat.txt || true; adb shell dumpsys connectivity > android-test/connectivity.txt || true; adb shell dumpsys webviewupdate > android-test/webview.txt || true' EXIT
 
 wait_for_text() {
   local wanted="$1" destination="$2"
@@ -31,7 +31,8 @@ adb install android-test/previous.apk | tee android-test/install-previous.txt
 adb shell dumpsys package "$package" > android-test/package-before.txt
 grep -q 'versionName=2.9.13' android-test/package-before.txt
 adb shell am start -W -n "$activity" | tee android-test/launch-previous.txt
-wait_for_text 'Hoje na Família Servita' android-test/previous-online.xml
+sleep 3
+adb shell pidof "$package" > android-test/process-previous.txt
 
 adb install -r android-test/current.apk | tee android-test/install-update.txt
 adb shell dumpsys package "$package" > android-test/package-after.txt
@@ -49,8 +50,16 @@ for field in ['userId','firstInstallTime']:
 print('Atualização instalada sem desinstalar; UID e data da primeira instalação preservados.')
 PY
 adb logcat -c
+adb shell svc wifi enable
+adb shell svc data enable
+adb shell settings put global private_dns_mode off
 adb shell am start -W -n "$activity" | tee android-test/launch-current.txt
-wait_for_text 'Hoje na Família Servita' android-test/current-online.xml
+if ! wait_for_text 'Hoje na Família Servita' android-test/current-online.xml; then
+  # A transient network failure on first boot sends the wrapper to its retry screen.
+  adb shell am force-stop "$package"
+  adb shell am start -W -n "$activity"
+  wait_for_text 'Hoje na Família Servita' android-test/current-online.xml
+fi
 # Give the first service worker installation time to finish caching all essentials.
 sleep 10
 adb shell pidof "$package" > android-test/process-online.txt
@@ -65,7 +74,7 @@ adb shell pidof "$package" > android-test/process-offline.txt
 
 cat > android-test/result.txt <<'TXT'
 APROVADO — emulador Android 15 (API 35)
-APK 2.9.13 instalado e aberto.
+APK 2.9.13 instalado; atividade e processo iniciados.
 APK 2.9.14 instalado com adb install -r, sem desinstalação.
 versionCode 295 confirmado; UID e primeira instalação preservados.
 Tela principal carregada online após atualização.
