@@ -1,4 +1,4 @@
-name: Testar atualização Android 2.9.14
+name: Testar atualização Android 2.9.15
 
 on:
   workflow_dispatch:
@@ -31,9 +31,9 @@ jobs:
         run: |
           mkdir -p android-test
           curl --fail --location --retry 3 'https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.13/Familia-Servita-2.9.13.apk' -o android-test/previous.apk
-          curl --fail --location --retry 3 'https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.14/Familia-Servita-2.9.14.apk' -o android-test/current.apk
+          curl --fail --location --retry 3 'https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.15/Familia-Servita-2.9.15.apk' -o android-test/current.apk
           echo 'abe63756a2bf6f3defcafbe6363dcbb0a61afe510ee0891985d9b0ab0ebb8d25  android-test/previous.apk' | sha256sum --check
-          echo '04cd813dacc043f0010a08ccc1a6fc510704ab1ba70b5711e0ac673eda9f9d6d  android-test/current.apk' | sha256sum --check
+          echo 'c8ebaebfe65472e98cbb079ee6702a5efc52e57985a5cbe6bf811761ba455d5c  android-test/current.apk' | sha256sum --check
       - name: Instalar, atualizar e testar o aplicativo
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -48,7 +48,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: teste-atualizacao-2.9.14
+          name: teste-atualizacao-2.9.15
           path: |
             android-test/*.txt
             android-test/*.xml

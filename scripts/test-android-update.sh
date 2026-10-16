@@ -36,17 +36,21 @@ adb shell pidof "$package" > android-test/process-previous.txt
 
 adb install -r android-test/current.apk | tee android-test/install-update.txt
 adb shell dumpsys package "$package" > android-test/package-after.txt
-grep -q 'versionName=2.9.14' android-test/package-after.txt
-grep -q 'versionCode=295' android-test/package-after.txt
+grep -q 'versionName=2.9.15' android-test/package-after.txt
+grep -q 'versionCode=296' android-test/package-after.txt
 python3 - <<'PY'
 import re
 from pathlib import Path
 before=Path('android-test/package-before.txt').read_text()
 after=Path('android-test/package-after.txt').read_text()
-for field in ['userId','firstInstallTime']:
+for field in ['appId','firstInstallTime','ceDataInode']:
     a=re.search(r'\b'+field+r'=(.+)',before)
     b=re.search(r'\b'+field+r'=(.+)',after)
-    assert a and b and a[1]==b[1], f'{field} mudou durante a atualização'
+    assert a and b, f'Campo {field} não encontrado no relatório do Android'
+    # ceDataInode may share a line with other per-user fields; compare its numeric value.
+    left=a[1].split()[0] if field!='firstInstallTime' else a[1]
+    right=b[1].split()[0] if field!='firstInstallTime' else b[1]
+    assert left==right, f'{field} mudou durante a atualização: {left!r} / {right!r}'
 print('Atualização instalada sem desinstalar; UID e data da primeira instalação preservados.')
 PY
 adb logcat -c
@@ -75,8 +79,8 @@ adb shell pidof "$package" > android-test/process-offline.txt
 cat > android-test/result.txt <<'TXT'
 APROVADO — emulador Android 15 (API 35)
 APK 2.9.13 instalado; atividade e processo iniciados.
-APK 2.9.14 instalado com adb install -r, sem desinstalação.
-versionCode 295 confirmado; UID e primeira instalação preservados.
+APK 2.9.15 instalado com adb install -r, sem desinstalação.
+versionCode 296 confirmado; UID e primeira instalação preservados.
 Tela principal carregada online após atualização.
 Aplicativo reaberto com Wi-Fi e dados desativados; aviso Sem conexão exibido.
 Processo permaneceu ativo nas verificações online e offline.
