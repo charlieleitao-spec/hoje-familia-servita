@@ -89,21 +89,22 @@ function normalizeSearch(value){
 function render(){
  const query=normalizeSearch(document.getElementById('search').value.trim());
  const filtered=celebrations.filter(function(item){
-   return normalizeSearch([item.title,item.rank,item.date,dateLabel(item.date)].join(' ')).includes(query);
+   const canonical=canonicalByDate.get(item.date);
+   return normalizeSearch([item.title,item.rank,item.date,dateLabel(item.date),canonical?.title,canonical?.categoria==='beato'?((canonical.genero==='f'?'Beata ':'Beato ')+canonical.title):''].join(' ')).includes(query);
  });
  document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
  document.getElementById('list').innerHTML=filtered.map(function(item){
    const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>';
    const canonical=canonicalByDate.get(item.date);
    const fullRank=canonical?.categoria==='beato'?(canonical.genero==='f'?'Beata':'Beato'):item.rank;
-   const fullTitle=canonical?.categoria==='beato'?fullRank+' '+canonical.title:item.title;
+   const fullTitle=canonical?.categoria==='beato'?fullRank+' '+String(canonical.title).replace(/^(?:B\.|Beato|Beata)\s+/i,''):item.title;
    const category=fullRank&&!dateLabel(item.date).toLocaleLowerCase('pt-BR').includes(fullRank.toLocaleLowerCase('pt-BR'))?' · '+esc(fullRank):'';
    return '<article class="mass"><div><h2>'+esc(fullTitle)+'</h2><div class="meta">'+esc(dateLabel(item.date))+category+'</div></div>'+link+'</article>';
- }).join('');
+ }).join('')||'<div class="intro">Nenhum formulário encontrado para essa busca.</div>';
 }
 document.getElementById('search').addEventListener('input',render);
 render();
-fetch(canonicalUrl,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral indisponível');return r.json()}).then(items=>{canonicalByDate=new Map(items.map(x=>[String(x.month).padStart(2,'0')+'-'+String(x.day).padStart(2,'0'),x]));try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}render()}).catch(()=>{});
+fetch(canonicalUrl,{cache:'no-store'}).catch(()=>fetch('./santoral.json')).then(r=>{if(!r.ok)return fetch('./santoral.json').then(local=>{if(!local.ok)throw new Error('santoral indisponível');return local.json()});return r.json()}).then(items=>{canonicalByDate=new Map(items.map(x=>[String(x.month).padStart(2,'0')+'-'+String(x.day).padStart(2,'0'),x]));try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}render()}).catch(()=>{});
 </script>
 </body>
 </html>

@@ -96,3 +96,43 @@ index 0000000..38033fc
 +    <background android:drawable="@color/servita_cream" />
 +    <foreground android:drawable="@drawable/ic_launcher_foreground" />
 +</adaptive-icon>
+diff --git a/android/app/src/main/java/br/org/servitas/familia/MainActivity.java b/android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+--- a/android/app/src/main/java/br/org/servitas/familia/MainActivity.java
++++ b/android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+@@ -2,6 +2,8 @@
+ 
+ import android.app.Activity;
+ import android.content.Intent;
++import android.content.ActivityNotFoundException;
++import android.widget.Toast;
+ import android.graphics.Color;
+ import android.net.Uri;
+ import android.os.Bundle;
+@@ -38,8 +40,16 @@
+             @Override
+             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                 Uri uri = request.getUrl();
+-                if ("charlieleitao-spec.github.io".equals(uri.getHost())) return false;
+-                startActivity(new Intent(Intent.ACTION_VIEW, uri));
++                String scheme = uri.getScheme();
++                if ("https".equals(scheme) && "charlieleitao-spec.github.io".equals(uri.getHost())
++                        && uri.getPath() != null && uri.getPath().startsWith("/hoje-familia-servita/")) return false;
++                if (!"https".equals(scheme) && !"http".equals(scheme)
++                        && !"mailto".equals(scheme) && !"tel".equals(scheme)) return true;
++                try {
++                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
++                } catch (ActivityNotFoundException e) {
++                    Toast.makeText(MainActivity.this, "Nenhum aplicativo disponível para abrir este link.", Toast.LENGTH_LONG).show();
++                }
+                 return true;
+             }
+ 
+@@ -51,7 +61,7 @@
+         });
+ 
+         if (savedInstanceState == null) webView.loadUrl(HOME);
+-        else webView.restoreState(savedInstanceState);
++        else if (webView.restoreState(savedInstanceState) == null) webView.loadUrl(HOME);
+     }
+ 
+     @Override

@@ -117,7 +117,7 @@ function personCard(x){
   :'';
  const hasStatus=String(x.situacao_causa||'').trim()&&String(x.fonte_situacao||'').trim()&&String(x.data_fonte||'').trim();
  const status=isServo(x)?'<div class="status"><strong>Situação da causa:</strong> '+(hasStatus?esc(x.situacao_causa)+' — '+esc(x.fonte_situacao)+' ('+esc(x.data_fonte)+')':'consulte a Postulação Geral')+'</div>':'';
- const iso=new Date(2000,Number(x.month)-1,Number(x.day),12).toISOString().slice(0,10);
+ const iso=new Date().getFullYear()+'-'+String(x.month).padStart(2,'0')+'-'+String(x.day).padStart(2,'0');
  const birth=line?'<div class="date-line">'+esc(line)+'</div>':'';
  return '<details class="person"><summary><span class="person-title">'+esc(displayTitle(x))+'</span><span class="person-summary-date">'+esc(x.date)+'</span></summary><div class="person-content">'+birth+prayer+'<div class="subhead">Memória</div><div class="bio">'+esc(remainder)+'</div>'+status+'<div class="actions"><a href="./index.html?data='+iso+'">Abrir a data da celebração</a></div></div></details>';
 }
@@ -138,7 +138,7 @@ function render(items){
  ).join('')||'<div class="empty-results">Nenhuma ficha encontrada para essa busca.</div>';
 }
 search.addEventListener('input',()=>render(allItems));
-fetch(SOURCE,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('santoral.json indisponível');return r.json()}).then(items=>{
+fetch(SOURCE,{cache:'no-store'}).catch(()=>fetch('./santoral.json')).then(r=>{if(!r.ok)return fetch('./santoral.json').then(local=>{if(!local.ok)throw new Error('santoral.json indisponível');return local.json()});return r.json()}).then(items=>{
  allItems=items;render(allItems);
  try{localStorage.setItem('familiaServitaSantoralCache',JSON.stringify(items))}catch(e){}
 }).catch(()=>{

@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.9.13"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.13"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.13"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.13"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.13">
+<link rel="manifest" href="manifest.webmanifest?v=2.9.14"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.14"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.14"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.14"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.14">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -94,8 +94,8 @@ footer{font-size:13px!important;line-height:1.5!important}
 <main>
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
-<div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
-<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date"></section>
+<div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
+<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
 <section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
 <section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
 <div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
@@ -105,25 +105,31 @@ footer{font-size:13px!important;line-height:1.5!important}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.13 · leitor litúrgico</small></footer>
+</main><footer>Hoje na Família Servita · OSM<br><small>Versão 2.9.14 · leitor litúrgico</small></footer>
 <script>
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 const causePrayer=document.getElementById('causePrayer');
-const initialDate=new URLSearchParams(location.search).get('data');let current=(()=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(initialDate||'');return m?new Date(+m[1],+m[2]-1,+m[3],12):new Date()})(),records={},active=null,loadError='';const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
+function parseDate(value){
+ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(value||'');
+ if(!m||+m[1]<100)return null;
+ const date=new Date(+m[1],+m[2]-1,+m[3],12);
+ return date.getFullYear()===+m[1]&&date.getMonth()===+m[2]-1&&date.getDate()===+m[3]?date:null;
+}
+const initialDate=new URLSearchParams(location.search).get('data');let current=parseDate(initialDate)||new Date(),records={},active=null,loadError='';const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const hourNames={invitatorio:'Invitatório',oficio_leituras:'Ofício das Leituras',laudes:'Laudes',hora_media:'Hora Média',vesperas:'Vésperas',completas:'Completas'};
 function updateConnectionNotice(){
  const offline=!navigator.onLine;
  connectionNotice.hidden=!offline;
- connectionNotice.textContent=offline?'Sem conexão. O app está usando os arquivos salvos neste aparelho.':'';
+ connectionNotice.textContent=offline?'Sem conexão. Os conteúdos salvos neste aparelho continuam disponíveis.':'';
 }
 async function load(){try{let r=await fetch('./servita.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);records=await r.json();loadError=''}catch(e){loadError=navigator.onLine?'Não foi possível carregar a base. Verifique a conexão e tente novamente.':'Sem conexão e sem uma cópia da base disponível neste aparelho.'}render()}
 function displayCelebrationTitle(item){
  const raw=String(item?.titulo||'').trim();
  if(item?.categoria==='beato'){
-  const name=raw.replace(/^(?:B\\.|Beato|Beata)\\s+/i,'');
+  const name=raw.replace(/^(?:B\.|Beato|Beata)\s+/i,'');
   return (item.genero==='f'?'Beata ':'Beato ')+name;
  }
- if(item?.categoria==='servo_de_deus')return 'Servo de Deus '+raw.replace(/^Servo de Deus\\s+/i,'');
+ if(item?.categoria==='servo_de_deus')return (item.genero==='f'?'Serva de Deus ':'Servo de Deus ')+raw.replace(/^(?:Servo|Serva) de Deus\s+/i,'');
  return raw;
 }
 function labelType(t){return t==='oficio_proprio'?'Ofício próprio':t==='textos_proprios'?'Textos próprios':'Família Servita'}
@@ -145,7 +151,7 @@ function render(){
  const bioText=memoria?.breve_vida||active?.bio||'Hoje não há memória servita cadastrada nesta base.';
  renderBio(bioText);
  const causeText=active?.oracao_causa||'';causePrayer.hidden=true;causePrayer.innerHTML='';
- if(/^Servo de Deus\b/i.test(active?.titulo||'')&&causeText){
+ if((active?.categoria==='servo_de_deus'||/^(?:Servo|Serva) de Deus\b/i.test(active?.titulo||''))&&causeText){
    const sourcePrayer=String(causeText),heading=sourcePrayer.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
    const prayerBody=heading?sourcePrayer.slice(heading[0].length).trimStart():sourcePrayer;
    causePrayer.hidden=false;causePrayer.innerHTML='<div class="cause-prayer-title">'+escapeHtml(heading?.[1]||'Oração pela beatificação e canonização')+'</div><div class="cause-prayer-text">'+escapeHtml(prayerBody)+'</div>';
@@ -419,8 +425,8 @@ function addSection(t,txt){let s=document.createElement('section');s.className='
 function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:'smooth'})};upcoming.appendChild(b)})}
 prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
-calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden};picker.onchange=e=>{let [y,m,d]=e.target.value.split('-').map(Number);current=new Date(y,m-1,d);render();calendarCard.hidden=true};
-materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:'smooth'})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');
+calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden))};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
+materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:'smooth'})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 
 

@@ -1,9 +1,8 @@
-const CACHE='familia-servita-2.9.13-causas-ui';
-const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.13','./servita.json','./icon-192.png?v=2.9.13','./icon-512.png?v=2.9.13','./favicon-32.png?v=2.9.13','./favicon-64.png?v=2.9.13'];
+const CACHE='familia-servita-2.9.14-review';
+const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.14','./servita.json','./santoral.json','./icon-192.png?v=2.9.14','./icon-512.png?v=2.9.14','./favicon-32.png?v=2.9.14','./favicon-64.png?v=2.9.14'];
 
 self.addEventListener('install',e=>{
-  self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
+  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
 
 self.addEventListener('activate',e=>{
@@ -15,14 +14,20 @@ self.addEventListener('activate',e=>{
 });
 
 self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  e.respondWith(
-    fetch(e.request).then(res=>{
-      if(res.ok && new URL(e.request.url).origin===self.location.origin){
-        const copy=res.clone();
-        caches.open(CACHE).then(c=>c.put(e.request,copy));
-      }
-      return res;
-    }).catch(()=>caches.match(e.request).then(cached=>cached||(e.request.mode==='navigate'?caches.match('./index.html'):Response.error())))
-  );
+  if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;
+  e.respondWith((async()=>{
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),8000);
+    const cache=await caches.open(CACHE);
+    const cached=await cache.match(e.request)
+      ||(e.request.mode==='navigate'?await cache.match(e.request,{ignoreSearch:true}):null);
+    try{
+      const response=await fetch(e.request,{signal:controller.signal});
+      if(response.ok)e.waitUntil(cache.put(e.request,response.clone()).catch(()=>{}));
+      if(!response.ok&&cached)return cached;
+      return response;
+    }catch(error){
+      return cached||Response.error();
+    }finally{clearTimeout(timeout)}
+  })());
 });
