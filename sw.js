@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.9.16-review';
-const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.16','./servita.json','./santoral.json','./icon-192.png?v=2.9.16','./icon-512.png?v=2.9.16','./favicon-32.png?v=2.9.16','./favicon-64.png?v=2.9.16'];
+const CACHE='familia-servita-2.9.17-review';
+const ASSETS=['./','./index.html','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.17','./servita.json','./santoral.json','./icon-192.png?v=2.9.17','./icon-512.png?v=2.9.17','./favicon-32.png?v=2.9.17','./favicon-64.png?v=2.9.17'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
