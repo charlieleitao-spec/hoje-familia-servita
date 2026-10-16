@@ -3,7 +3,7 @@ set -euo pipefail
 package=br.org.servitas.familia
 activity="$package/.MainActivity"
 mkdir -p android-test
-trap 'adb shell svc wifi enable >/dev/null 2>&1 || true; adb shell svc data enable >/dev/null 2>&1 || true; adb logcat -d > android-test/logcat.txt || true; adb shell dumpsys connectivity > android-test/connectivity.txt || true; adb shell dumpsys webviewupdate > android-test/webview.txt || true' EXIT
+trap 'adb logcat -d > android-test/logcat.txt || true; adb shell dumpsys connectivity > android-test/connectivity.txt || true; adb shell dumpsys webviewupdate > android-test/webview.txt || true; adb shell cmd connectivity airplane-mode disable >/dev/null 2>&1 || true; adb shell svc wifi enable >/dev/null 2>&1 || true; adb shell svc data enable >/dev/null 2>&1 || true' EXIT
 
 wait_for_text() {
   local wanted="$1" destination="$2"
@@ -68,12 +68,41 @@ fi
 sleep 10
 adb shell pidof "$package" > android-test/process-online.txt
 
+adb shell cmd connectivity airplane-mode enable
 adb shell svc wifi disable
 adb shell svc data disable
-sleep 3
+sleep 5
+adb shell dumpsys connectivity > android-test/connectivity-offline.txt
+python3 - <<'NET'
+import re
+from pathlib import Path
+text=Path('android-test/connectivity-offline.txt').read_text()
+m=re.search(r'Active default network:\s*(\S+)',text)
+assert m and m[1] in ('none','null','(none)','-1'), 'O emulador ainda tem uma rede ativa: '+str(m[1] if m else 'estado desconhecido')
+print('Android confirmou ausência de rede padrão ativa.')
+NET
 adb shell am force-stop "$package"
 adb shell am start -W -n "$activity" | tee android-test/launch-offline.txt
-wait_for_text 'Sem conexão.' android-test/current-offline.xml
+wait_for_text 'Hoje na Família Servita' android-test/current-offline.xml
+wait_for_text 'Beato João Ângelo de Milão' android-test/current-offline.xml
+# The calendar data must remain usable, beyond merely displaying the cached shell.
+adb shell input swipe 520 1900 520 700 500
+adb shell uiautomator dump /sdcard/window.xml >/dev/null
+adb pull /sdcard/window.xml android-test/upcoming-offline.xml >/dev/null
+read -r tap_x tap_y < <(python3 - <<'TAP'
+import re, xml.etree.ElementTree as ET
+for node in ET.parse('android-test/upcoming-offline.xml').iter():
+    if node.attrib.get('text','').startswith('Beato João Ângelo de Milão'):
+        bounds=list(map(int,re.findall(r'\d+',node.attrib.get('bounds',''))))
+        if len(bounds)==4 and bounds[2]>bounds[0] and bounds[3]>bounds[1]:
+            print((bounds[0]+bounds[2])//2,(bounds[1]+bounds[3])//2)
+            break
+else:
+    raise SystemExit('Celebração não está visível para seleção')
+TAP
+)
+adb shell input tap "$tap_x" "$tap_y"
+wait_for_text '25 de outubro' android-test/celebration-offline.xml
 adb shell pidof "$package" > android-test/process-offline.txt
 
 cat > android-test/result.txt <<'TXT'
@@ -82,7 +111,9 @@ APK 2.9.13 instalado; atividade e processo iniciados.
 APK 2.9.15 instalado com adb install -r, sem desinstalação.
 versionCode 296 confirmado; UID e primeira instalação preservados.
 Tela principal carregada online após atualização.
-Aplicativo reaberto com Wi-Fi e dados desativados; aviso Sem conexão exibido.
+Android confirmou ausência de rede padrão ativa.
+Aplicativo reaberto sem internet; calendário salvo carregado.
+Celebração de 25 de outubro selecionada e aberta sem conexão.
 Processo permaneceu ativo nas verificações online e offline.
 TXT
 cat android-test/result.txt
