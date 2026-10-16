@@ -2,7 +2,7 @@
 
 PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia das Horas da Família Servita.
 
-## Site estável 2.9.16
+## Site estável 2.9.17
 
 - calendário diário e próximas celebrações;
 - biografias e espiritualidade servita;
@@ -17,7 +17,10 @@ PWA responsiva com o calendário, o santoral e os textos próprios da Liturgia d
 - índice de Beatos e Servos de Deus atualizado diretamente do santoral canônico;
 - correção da exibição dos controles ocultos.
 
-## Revisão 2.9.16
+## Revisão 2.9.17
+
+- acesso à página comum dos recursos digitais da família servita pelo rodapé;
+- código Android 298 e cache atualizado para a nova versão;
 
 - orações dos Beatos exibidas nas fichas, preservando o destaque das orações pelas causas;
 - busca de Causas também pelos títulos completos Beato, Beata e Servo de Deus;
@@ -43,4 +46,4 @@ O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta ra
 
 ## Aplicativo Android
 
-O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.16 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
+O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.17 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
