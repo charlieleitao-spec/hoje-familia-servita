@@ -1,0 +1,5232 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Familia Servita//Santoral OSM//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Família Servita — Santoral e Celebrações
+BEGIN:VEVENT
+UID:servita-0-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260112
+DTEND;VALUE=DATE:20260113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260115
+DTEND;VALUE=DATE:20260116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260203
+DTEND;VALUE=DATE:20260204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260408
+DTEND;VALUE=DATE:20260409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260504
+DTEND;VALUE=DATE:20260505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260508
+DTEND;VALUE=DATE:20260509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260511
+DTEND;VALUE=DATE:20260512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260619
+DTEND;VALUE=DATE:20260620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260627
+DTEND;VALUE=DATE:20260628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260704
+DTEND;VALUE=DATE:20260705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260713
+DTEND;VALUE=DATE:20260714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260823
+DTEND;VALUE=DATE:20260824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260906
+DTEND;VALUE=DATE:20260907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20260923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260103@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260110@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260117@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260117
+DTEND;VALUE=DATE:20260118
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260124@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260124
+DTEND;VALUE=DATE:20260125
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260131@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260131
+DTEND;VALUE=DATE:20260201
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260207@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260207
+DTEND;VALUE=DATE:20260208
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260214@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260214
+DTEND;VALUE=DATE:20260215
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260221@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260221
+DTEND;VALUE=DATE:20260222
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260228@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260228
+DTEND;VALUE=DATE:20260301
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260307@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260307
+DTEND;VALUE=DATE:20260308
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260314@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260314
+DTEND;VALUE=DATE:20260315
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260321@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260328@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260328
+DTEND;VALUE=DATE:20260329
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260404@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260404
+DTEND;VALUE=DATE:20260405
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260411@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260411
+DTEND;VALUE=DATE:20260412
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260418@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260418
+DTEND;VALUE=DATE:20260419
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260425@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260425
+DTEND;VALUE=DATE:20260426
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260502@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260502
+DTEND;VALUE=DATE:20260503
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260509@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260509
+DTEND;VALUE=DATE:20260510
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260516@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260516
+DTEND;VALUE=DATE:20260517
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260523@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260524
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260606@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260606
+DTEND;VALUE=DATE:20260607
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260613@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260620@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260620
+DTEND;VALUE=DATE:20260621
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260711@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260711
+DTEND;VALUE=DATE:20260712
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260718@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260718
+DTEND;VALUE=DATE:20260719
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260725@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260725
+DTEND;VALUE=DATE:20260726
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260801@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260801
+DTEND;VALUE=DATE:20260802
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260808@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260808
+DTEND;VALUE=DATE:20260809
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260815@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260815
+DTEND;VALUE=DATE:20260816
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260822@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260823
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260829@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260830
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260912@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260919@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20260926@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261010@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261017@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261024@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261107@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261114@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261121@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261128@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261205@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261212@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261219@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20261226@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-0-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270203
+DTEND;VALUE=DATE:20270204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270408
+DTEND;VALUE=DATE:20270409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270504
+DTEND;VALUE=DATE:20270505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270511
+DTEND;VALUE=DATE:20270512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270512
+DTEND;VALUE=DATE:20270513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270619
+DTEND;VALUE=DATE:20270620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270701
+DTEND;VALUE=DATE:20270702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270704
+DTEND;VALUE=DATE:20270705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270713
+DTEND;VALUE=DATE:20270714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270823
+DTEND;VALUE=DATE:20270824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270828
+DTEND;VALUE=DATE:20270829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270901
+DTEND;VALUE=DATE:20270902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270905
+DTEND;VALUE=DATE:20270906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270906
+DTEND;VALUE=DATE:20270907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270915
+DTEND;VALUE=DATE:20270916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270917
+DTEND;VALUE=DATE:20270918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271003
+DTEND;VALUE=DATE:20271004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271025
+DTEND;VALUE=DATE:20271026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271116
+DTEND;VALUE=DATE:20271117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271210
+DTEND;VALUE=DATE:20271211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271215
+DTEND;VALUE=DATE:20271216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270102@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270109@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270116@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270123@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270130@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270206@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270213@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270220@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270227@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270306@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270313@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270320@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270327@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270327
+DTEND;VALUE=DATE:20270328
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270403@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270410@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270417@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270424@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270501@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270515@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270522@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270522
+DTEND;VALUE=DATE:20270523
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270529@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270529
+DTEND;VALUE=DATE:20270530
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270605@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270612@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270612
+DTEND;VALUE=DATE:20270613
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270626@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270626
+DTEND;VALUE=DATE:20270627
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270703@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270703
+DTEND;VALUE=DATE:20270704
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270710@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270710
+DTEND;VALUE=DATE:20270711
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270717@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270717
+DTEND;VALUE=DATE:20270718
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270724@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270724
+DTEND;VALUE=DATE:20270725
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270731@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270807@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270807
+DTEND;VALUE=DATE:20270808
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270814@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270814
+DTEND;VALUE=DATE:20270815
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270821@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270821
+DTEND;VALUE=DATE:20270822
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270904@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270904
+DTEND;VALUE=DATE:20270905
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270911@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270911
+DTEND;VALUE=DATE:20270912
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270918@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270918
+DTEND;VALUE=DATE:20270919
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20270925@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20270925
+DTEND;VALUE=DATE:20270926
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271002@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271002
+DTEND;VALUE=DATE:20271003
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271009@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271009
+DTEND;VALUE=DATE:20271010
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271016@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271016
+DTEND;VALUE=DATE:20271017
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271023@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271023
+DTEND;VALUE=DATE:20271024
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271030
+DTEND;VALUE=DATE:20271031
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271106@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271106
+DTEND;VALUE=DATE:20271107
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271113@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271113
+DTEND;VALUE=DATE:20271114
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271120@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271120
+DTEND;VALUE=DATE:20271121
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271127@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271127
+DTEND;VALUE=DATE:20271128
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271204@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271204
+DTEND;VALUE=DATE:20271205
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271211@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271211
+DTEND;VALUE=DATE:20271212
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271218@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271218
+DTEND;VALUE=DATE:20271219
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20271225@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20271225
+DTEND;VALUE=DATE:20271226
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-0-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280112
+DTEND;VALUE=DATE:20280113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280115
+DTEND;VALUE=DATE:20280116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280203
+DTEND;VALUE=DATE:20280204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280217
+DTEND;VALUE=DATE:20280218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280219
+DTEND;VALUE=DATE:20280220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280408
+DTEND;VALUE=DATE:20280409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280504
+DTEND;VALUE=DATE:20280505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280508
+DTEND;VALUE=DATE:20280509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280511
+DTEND;VALUE=DATE:20280512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280512
+DTEND;VALUE=DATE:20280513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280530
+DTEND;VALUE=DATE:20280531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280619
+DTEND;VALUE=DATE:20280620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280627
+DTEND;VALUE=DATE:20280628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280701
+DTEND;VALUE=DATE:20280702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280713
+DTEND;VALUE=DATE:20280714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280823
+DTEND;VALUE=DATE:20280824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280825
+DTEND;VALUE=DATE:20280826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280828
+DTEND;VALUE=DATE:20280829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280831
+DTEND;VALUE=DATE:20280901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280901
+DTEND;VALUE=DATE:20280902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280905
+DTEND;VALUE=DATE:20280906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280906
+DTEND;VALUE=DATE:20280907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280915
+DTEND;VALUE=DATE:20280916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280917
+DTEND;VALUE=DATE:20280918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280922
+DTEND;VALUE=DATE:20280923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281003
+DTEND;VALUE=DATE:20281004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281025
+DTEND;VALUE=DATE:20281026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281116
+DTEND;VALUE=DATE:20281117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281210
+DTEND;VALUE=DATE:20281211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281215
+DTEND;VALUE=DATE:20281216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280101@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280101
+DTEND;VALUE=DATE:20280102
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280108@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280108
+DTEND;VALUE=DATE:20280109
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280122@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280122
+DTEND;VALUE=DATE:20280123
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280129@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280129
+DTEND;VALUE=DATE:20280130
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280205@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280205
+DTEND;VALUE=DATE:20280206
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280212@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280212
+DTEND;VALUE=DATE:20280213
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280226@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280226
+DTEND;VALUE=DATE:20280227
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280304@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280304
+DTEND;VALUE=DATE:20280305
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280311@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280311
+DTEND;VALUE=DATE:20280312
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280318@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280318
+DTEND;VALUE=DATE:20280319
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280325@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280325
+DTEND;VALUE=DATE:20280326
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280401@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280401
+DTEND;VALUE=DATE:20280402
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280415@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280415
+DTEND;VALUE=DATE:20280416
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280422@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280429@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280429
+DTEND;VALUE=DATE:20280430
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280506@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280513@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280513
+DTEND;VALUE=DATE:20280514
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280520@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280520
+DTEND;VALUE=DATE:20280521
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280527@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280527
+DTEND;VALUE=DATE:20280528
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280603@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280603
+DTEND;VALUE=DATE:20280604
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280610@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280610
+DTEND;VALUE=DATE:20280611
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280617@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280617
+DTEND;VALUE=DATE:20280618
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280624@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280624
+DTEND;VALUE=DATE:20280625
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280708@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280708
+DTEND;VALUE=DATE:20280709
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280715@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280715
+DTEND;VALUE=DATE:20280716
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280722@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280729@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280729
+DTEND;VALUE=DATE:20280730
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280805@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280805
+DTEND;VALUE=DATE:20280806
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280812@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280819@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280819
+DTEND;VALUE=DATE:20280820
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280826@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280826
+DTEND;VALUE=DATE:20280827
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280902@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280902
+DTEND;VALUE=DATE:20280903
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280909@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280909
+DTEND;VALUE=DATE:20280910
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280916@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280916
+DTEND;VALUE=DATE:20280917
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280923@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280923
+DTEND;VALUE=DATE:20280924
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20280930@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20280930
+DTEND;VALUE=DATE:20281001
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281007@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281007
+DTEND;VALUE=DATE:20281008
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281014@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281014
+DTEND;VALUE=DATE:20281015
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281021@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281028@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281028
+DTEND;VALUE=DATE:20281029
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281104@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281104
+DTEND;VALUE=DATE:20281105
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281111@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281111
+DTEND;VALUE=DATE:20281112
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281118@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281118
+DTEND;VALUE=DATE:20281119
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281125@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281125
+DTEND;VALUE=DATE:20281126
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281202@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281202
+DTEND;VALUE=DATE:20281203
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281209@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281209
+DTEND;VALUE=DATE:20281210
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281216@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281216
+DTEND;VALUE=DATE:20281217
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281223@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281223
+DTEND;VALUE=DATE:20281224
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20281230@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20281230
+DTEND;VALUE=DATE:20281231
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-0-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290112
+DTEND;VALUE=DATE:20290113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290115
+DTEND;VALUE=DATE:20290116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290203
+DTEND;VALUE=DATE:20290204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290217
+DTEND;VALUE=DATE:20290218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290219
+DTEND;VALUE=DATE:20290220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290408
+DTEND;VALUE=DATE:20290409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290504
+DTEND;VALUE=DATE:20290505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290508
+DTEND;VALUE=DATE:20290509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290511
+DTEND;VALUE=DATE:20290512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290512
+DTEND;VALUE=DATE:20290513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290530
+DTEND;VALUE=DATE:20290531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290619
+DTEND;VALUE=DATE:20290620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290627
+DTEND;VALUE=DATE:20290628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290701
+DTEND;VALUE=DATE:20290702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290713
+DTEND;VALUE=DATE:20290714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290823
+DTEND;VALUE=DATE:20290824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290825
+DTEND;VALUE=DATE:20290826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290828
+DTEND;VALUE=DATE:20290829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290901
+DTEND;VALUE=DATE:20290902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290905
+DTEND;VALUE=DATE:20290906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290906
+DTEND;VALUE=DATE:20290907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290915
+DTEND;VALUE=DATE:20290916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290917
+DTEND;VALUE=DATE:20290918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290922
+DTEND;VALUE=DATE:20290923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291003
+DTEND;VALUE=DATE:20291004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291025
+DTEND;VALUE=DATE:20291026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291116
+DTEND;VALUE=DATE:20291117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291210
+DTEND;VALUE=DATE:20291211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2029@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291215
+DTEND;VALUE=DATE:20291216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290106@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290106
+DTEND;VALUE=DATE:20290107
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290113@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290113
+DTEND;VALUE=DATE:20290114
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290120@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290120
+DTEND;VALUE=DATE:20290121
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290127@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290127
+DTEND;VALUE=DATE:20290128
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290210@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290210
+DTEND;VALUE=DATE:20290211
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290224@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290224
+DTEND;VALUE=DATE:20290225
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290303@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290303
+DTEND;VALUE=DATE:20290304
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290310@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290310
+DTEND;VALUE=DATE:20290311
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290317@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290317
+DTEND;VALUE=DATE:20290318
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290324@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290324
+DTEND;VALUE=DATE:20290325
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290331@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290331
+DTEND;VALUE=DATE:20290401
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290407@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290407
+DTEND;VALUE=DATE:20290408
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290414@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290414
+DTEND;VALUE=DATE:20290415
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290421@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290421
+DTEND;VALUE=DATE:20290422
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290428@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290428
+DTEND;VALUE=DATE:20290429
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290505@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290505
+DTEND;VALUE=DATE:20290506
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290519@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290519
+DTEND;VALUE=DATE:20290520
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290526@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290526
+DTEND;VALUE=DATE:20290527
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290602@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290602
+DTEND;VALUE=DATE:20290603
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290609@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290609
+DTEND;VALUE=DATE:20290610
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290616@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290616
+DTEND;VALUE=DATE:20290617
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290623@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290623
+DTEND;VALUE=DATE:20290624
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290630@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290630
+DTEND;VALUE=DATE:20290701
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290707@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290707
+DTEND;VALUE=DATE:20290708
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290714@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290714
+DTEND;VALUE=DATE:20290715
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290721@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290721
+DTEND;VALUE=DATE:20290722
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290728@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290728
+DTEND;VALUE=DATE:20290729
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290804@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290804
+DTEND;VALUE=DATE:20290805
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290811@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290811
+DTEND;VALUE=DATE:20290812
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290818@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290818
+DTEND;VALUE=DATE:20290819
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290908@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290908
+DTEND;VALUE=DATE:20290909
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20290929@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20290929
+DTEND;VALUE=DATE:20290930
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291006@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291006
+DTEND;VALUE=DATE:20291007
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291013@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291013
+DTEND;VALUE=DATE:20291014
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291020@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291020
+DTEND;VALUE=DATE:20291021
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291027@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291027
+DTEND;VALUE=DATE:20291028
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291103@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291103
+DTEND;VALUE=DATE:20291104
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291110@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291110
+DTEND;VALUE=DATE:20291111
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291124@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291124
+DTEND;VALUE=DATE:20291125
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291201@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291201
+DTEND;VALUE=DATE:20291202
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291208@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291208
+DTEND;VALUE=DATE:20291209
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291222@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20291229@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20291229
+DTEND;VALUE=DATE:20291230
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-0-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300112
+DTEND;VALUE=DATE:20300113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300115
+DTEND;VALUE=DATE:20300116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300203
+DTEND;VALUE=DATE:20300204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300217
+DTEND;VALUE=DATE:20300218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300219
+DTEND;VALUE=DATE:20300220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300408
+DTEND;VALUE=DATE:20300409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300504
+DTEND;VALUE=DATE:20300505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300508
+DTEND;VALUE=DATE:20300509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300511
+DTEND;VALUE=DATE:20300512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300512
+DTEND;VALUE=DATE:20300513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300530
+DTEND;VALUE=DATE:20300531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300619
+DTEND;VALUE=DATE:20300620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300627
+DTEND;VALUE=DATE:20300628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300701
+DTEND;VALUE=DATE:20300702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300713
+DTEND;VALUE=DATE:20300714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300823
+DTEND;VALUE=DATE:20300824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300825
+DTEND;VALUE=DATE:20300826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300828
+DTEND;VALUE=DATE:20300829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300831
+DTEND;VALUE=DATE:20300901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300901
+DTEND;VALUE=DATE:20300902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300905
+DTEND;VALUE=DATE:20300906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300906
+DTEND;VALUE=DATE:20300907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300915
+DTEND;VALUE=DATE:20300916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300917
+DTEND;VALUE=DATE:20300918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300922
+DTEND;VALUE=DATE:20300923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301003
+DTEND;VALUE=DATE:20301004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301025
+DTEND;VALUE=DATE:20301026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301116
+DTEND;VALUE=DATE:20301117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301210
+DTEND;VALUE=DATE:20301211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2030@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301215
+DTEND;VALUE=DATE:20301216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300105@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300105
+DTEND;VALUE=DATE:20300106
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300119@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300119
+DTEND;VALUE=DATE:20300120
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300126@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300126
+DTEND;VALUE=DATE:20300127
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300202@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300202
+DTEND;VALUE=DATE:20300203
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300209@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300209
+DTEND;VALUE=DATE:20300210
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300216@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300216
+DTEND;VALUE=DATE:20300217
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300223@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300223
+DTEND;VALUE=DATE:20300224
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300302@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300302
+DTEND;VALUE=DATE:20300303
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300309@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300309
+DTEND;VALUE=DATE:20300310
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300316@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300316
+DTEND;VALUE=DATE:20300317
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300323@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300323
+DTEND;VALUE=DATE:20300324
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300330@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300330
+DTEND;VALUE=DATE:20300331
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300406@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300406
+DTEND;VALUE=DATE:20300407
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300413@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300413
+DTEND;VALUE=DATE:20300414
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300420@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300420
+DTEND;VALUE=DATE:20300421
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300427@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300427
+DTEND;VALUE=DATE:20300428
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300518@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300518
+DTEND;VALUE=DATE:20300519
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300525@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300525
+DTEND;VALUE=DATE:20300526
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300601@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300608@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300608
+DTEND;VALUE=DATE:20300609
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300615@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300622@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300622
+DTEND;VALUE=DATE:20300623
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300629@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300629
+DTEND;VALUE=DATE:20300630
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300706@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300706
+DTEND;VALUE=DATE:20300707
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300720@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300720
+DTEND;VALUE=DATE:20300721
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300727@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300727
+DTEND;VALUE=DATE:20300728
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300803@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300803
+DTEND;VALUE=DATE:20300804
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300810@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300810
+DTEND;VALUE=DATE:20300811
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300817@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300817
+DTEND;VALUE=DATE:20300818
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300824@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300824
+DTEND;VALUE=DATE:20300825
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300907@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300907
+DTEND;VALUE=DATE:20300908
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300914@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300914
+DTEND;VALUE=DATE:20300915
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300921@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300921
+DTEND;VALUE=DATE:20300922
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20300928@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20300928
+DTEND;VALUE=DATE:20300929
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301005@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301005
+DTEND;VALUE=DATE:20301006
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301012@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301012
+DTEND;VALUE=DATE:20301013
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301019@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301019
+DTEND;VALUE=DATE:20301020
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301026@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301026
+DTEND;VALUE=DATE:20301027
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301102@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301102
+DTEND;VALUE=DATE:20301103
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301109@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301109
+DTEND;VALUE=DATE:20301110
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301123@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301123
+DTEND;VALUE=DATE:20301124
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301130@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301130
+DTEND;VALUE=DATE:20301201
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301207@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301207
+DTEND;VALUE=DATE:20301208
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301214@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301221@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301221
+DTEND;VALUE=DATE:20301222
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20301228@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20301228
+DTEND;VALUE=DATE:20301229
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-0-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310112
+DTEND;VALUE=DATE:20310113
+SUMMARY:Santo Antônio Maria Pucci
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-1-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310115
+DTEND;VALUE=DATE:20310116
+SUMMARY:Tiago de "Città della Pieve"
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-2-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310203
+DTEND;VALUE=DATE:20310204
+SUMMARY:Joaquim de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-3-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310217
+DTEND;VALUE=DATE:20310218
+SUMMARY:Sete Santos Fundadores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-4-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310219
+DTEND;VALUE=DATE:20310220
+SUMMARY:Isabel Picenardi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-5-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310408
+DTEND;VALUE=DATE:20310409
+SUMMARY:Frei Paulino M. Baldassarri
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-6-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310504
+DTEND;VALUE=DATE:20310505
+SUMMARY:São Peregrino de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-7-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310508
+DTEND;VALUE=DATE:20310509
+SUMMARY:Virgem Maria\, Mãe e Medianeira
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-8-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310511
+DTEND;VALUE=DATE:20310512
+SUMMARY:Benincasa de Montepulciano
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-9-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310512
+DTEND;VALUE=DATE:20310513
+SUMMARY:Francisco de Sena
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-10-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310530
+DTEND;VALUE=DATE:20310531
+SUMMARY:Tiago Filipe de Faenza
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-11-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310619
+DTEND;VALUE=DATE:20310620
+SUMMARY:Santa Juliana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-12-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310627
+DTEND;VALUE=DATE:20310628
+SUMMARY:Tomás de Orvieto
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-13-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310701
+DTEND;VALUE=DATE:20310702
+SUMMARY:Fernando Maria Baccilieri
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-14-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Ubaldo de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-15-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310713
+DTEND;VALUE=DATE:20310714
+SUMMARY:Santa Clélia Barbieri
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-16-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310823
+DTEND;VALUE=DATE:20310824
+SUMMARY:São Filipe Benizi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-17-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310825
+DTEND;VALUE=DATE:20310826
+SUMMARY:Frei Egídio Maria Moscini
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-18-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310828
+DTEND;VALUE=DATE:20310829
+SUMMARY:Santo Agostinho
+DESCRIPTION:Grau: festa. Celebração da Família Servita. Consulte o aplic
+ ativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-19-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310831
+DTEND;VALUE=DATE:20310901
+SUMMARY:André de Sansepolcro
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-20-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310901
+DTEND;VALUE=DATE:20310902
+SUMMARY:Joana de Florença
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-21-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310905
+DTEND;VALUE=DATE:20310906
+SUMMARY:Maria Madalena da Paixão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-22-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310906
+DTEND;VALUE=DATE:20310907
+SUMMARY:Boaventura de Forlì
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-23-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310915
+DTEND;VALUE=DATE:20310916
+SUMMARY:Nossa Senhora das Dores
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-24-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310917
+DTEND;VALUE=DATE:20310918
+SUMMARY:Cecília Eusepi
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-25-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310922
+DTEND;VALUE=DATE:20310923
+SUMMARY:Dedicação da Basílica de Monte Senário
+DESCRIPTION:Grau: memoria_facultativa. Celebração da Família Servita. Co
+ nsulte o aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-26-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311003
+DTEND;VALUE=DATE:20311004
+SUMMARY:Maria Guadalupe Ricart Olmos
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-27-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311025
+DTEND;VALUE=DATE:20311026
+SUMMARY:João Ângelo de Milão
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-28-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311116
+DTEND;VALUE=DATE:20311117
+SUMMARY:Todos os Santos e Santas da Ordem
+DESCRIPTION:Grau: solenidade. Celebração da Família Servita. Consulte o 
+ aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-29-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Comemoração dos Defuntos da Ordem
+DESCRIPTION:Grau: comemoracao. Celebração da Família Servita. Consulte o
+  aplicativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-30-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311210
+DTEND;VALUE=DATE:20311211
+SUMMARY:Jerônimo de Sant'Angelo in Vado
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:servita-31-2031@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311215
+DTEND;VALUE=DATE:20311216
+SUMMARY:Boaventura de Pistoia
+DESCRIPTION:Grau: memoria. Celebração da Família Servita. Consulte o apl
+ icativo.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310104@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310104
+DTEND;VALUE=DATE:20310105
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310111@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310111
+DTEND;VALUE=DATE:20310112
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310118@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310118
+DTEND;VALUE=DATE:20310119
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310125@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310125
+DTEND;VALUE=DATE:20310126
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310201@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310201
+DTEND;VALUE=DATE:20310202
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310208@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310208
+DTEND;VALUE=DATE:20310209
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310215@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310215
+DTEND;VALUE=DATE:20310216
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310222@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310222
+DTEND;VALUE=DATE:20310223
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310301@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310301
+DTEND;VALUE=DATE:20310302
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310308@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310308
+DTEND;VALUE=DATE:20310309
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310315@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310315
+DTEND;VALUE=DATE:20310316
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310322@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310322
+DTEND;VALUE=DATE:20310323
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310329@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310329
+DTEND;VALUE=DATE:20310330
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310405@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310405
+DTEND;VALUE=DATE:20310406
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310412@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310412
+DTEND;VALUE=DATE:20310413
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310419@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310419
+DTEND;VALUE=DATE:20310420
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310426@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310426
+DTEND;VALUE=DATE:20310427
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310503@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310503
+DTEND;VALUE=DATE:20310504
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310510@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310510
+DTEND;VALUE=DATE:20310511
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310517@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310517
+DTEND;VALUE=DATE:20310518
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310524@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310524
+DTEND;VALUE=DATE:20310525
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310531@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310531
+DTEND;VALUE=DATE:20310601
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310607@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310607
+DTEND;VALUE=DATE:20310608
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310614@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310614
+DTEND;VALUE=DATE:20310615
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310621@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310621
+DTEND;VALUE=DATE:20310622
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310628@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310628
+DTEND;VALUE=DATE:20310629
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310705@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310705
+DTEND;VALUE=DATE:20310706
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310712@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310712
+DTEND;VALUE=DATE:20310713
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310719@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310719
+DTEND;VALUE=DATE:20310720
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310726@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310726
+DTEND;VALUE=DATE:20310727
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310802@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310802
+DTEND;VALUE=DATE:20310803
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310809@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310809
+DTEND;VALUE=DATE:20310810
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310816@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310816
+DTEND;VALUE=DATE:20310817
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310830@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310830
+DTEND;VALUE=DATE:20310831
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310913@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310913
+DTEND;VALUE=DATE:20310914
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310920@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310920
+DTEND;VALUE=DATE:20310921
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20310927@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20310927
+DTEND;VALUE=DATE:20310928
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311004@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311004
+DTEND;VALUE=DATE:20311005
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311011@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311011
+DTEND;VALUE=DATE:20311012
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311018@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311018
+DTEND;VALUE=DATE:20311019
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311101@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311101
+DTEND;VALUE=DATE:20311102
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311108@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311108
+DTEND;VALUE=DATE:20311109
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311115@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311115
+DTEND;VALUE=DATE:20311116
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311122@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311122
+DTEND;VALUE=DATE:20311123
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311129@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311129
+DTEND;VALUE=DATE:20311130
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311206@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311206
+DTEND;VALUE=DATE:20311207
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311213@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311213
+DTEND;VALUE=DATE:20311214
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311220@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311220
+DTEND;VALUE=DATE:20311221
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sabado-mariano-20311227@familiaservita
+DTSTAMP:20261017T170000Z
+DTSTART;VALUE=DATE:20311227
+DTEND;VALUE=DATE:20311228
+SUMMARY:Sábado Mariano — devoção (quando permitido)
+DESCRIPTION:Recordação devocional de Nossa Senhora. A celebração litúr
+ gica depende das normas e precedências do calendário oficial.
+URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
