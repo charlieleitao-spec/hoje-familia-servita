@@ -27,8 +27,8 @@ def event(uid, day, title, description, stamp):
             "SUMMARY:" + esc(title), "DESCRIPTION:" + esc(description),
             "URL:" + BASE, "TRANSP:TRANSPARENT", "END:VEVENT"]
 def generate(source, output, start_year, end_year):
-    records = json.loads(source.read_text(encoding="utf-8"))
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    if start_year > end_year:\n        raise ValueError("O ano inicial deve ser menor ou igual ao final")\n    records = json.loads(source.read_text(encoding="utf-8"))
+    stamp = datetime(start_year, 1, 1, tzinfo=timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     rows = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Familia Servita//Santoral OSM//PT-BR",
             "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
             "X-WR-CALNAME:Família Servita — Santoral e Celebrações",
@@ -52,8 +52,8 @@ def generate(source, output, start_year, end_year):
         while day.year == year:
             if day.weekday() == 5 and day not in occupied:
                 rows.extend(event(f"sabado-mariano-{day:%Y%m%d}@familiaservita", day,
-                    "Sábado Mariano — devoção (quando permitido)",
-                    "Recordação devocional de Nossa Senhora. A Missa votiva ou memória facultativa depende das normas litúrgicas e do calendário do dia; este lembrete não substitui o calendário oficial.", stamp))
+                    "Sábado Mariano — recordação devocional",
+                    "Recordação devocional, não celebração litúrgica agendada. A memória facultativa de Santa Maria no sábado só pode ser celebrada quando as normas e o calendário litúrgico do dia o permitem. Consulte o calendário oficial.", stamp))
             day += timedelta(days=1)
     rows.append("END:VCALENDAR")
     output.write_bytes(("\r\n".join(line(row) for row in rows) + "\r\n").encode("utf-8"))
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=ROOT / "santoral.json")
     parser.add_argument("--output", type=Path, default=ROOT / "servitas.ics")
-    parser.add_argument("--start-year", type=int, default=date.today().year)
-    parser.add_argument("--end-year", type=int, default=date.today().year + 5)
+    parser.add_argument("--start-year", type=int, default=2026)
+    parser.add_argument("--end-year", type=int, default=2031)
     args = parser.parse_args()
     generate(args.source, args.output, args.start_year, args.end_year)
