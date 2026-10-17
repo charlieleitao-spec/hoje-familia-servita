@@ -28,7 +28,7 @@ def event(uid, day, title, description, stamp):
             "URL:" + BASE, "TRANSP:TRANSPARENT", "END:VEVENT"]
 def generate(source, output, start_year, end_year):
     records = json.loads(source.read_text(encoding="utf-8"))
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp = datetime(start_year, 1, 1, tzinfo=timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     rows = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Familia Servita//Santoral OSM//PT-BR",
             "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
             "X-WR-CALNAME:Família Servita — Santoral e Celebrações",
@@ -52,8 +52,8 @@ def generate(source, output, start_year, end_year):
         while day.year == year:
             if day.weekday() == 5 and day not in occupied:
                 rows.extend(event(f"sabado-mariano-{day:%Y%m%d}@familiaservita", day,
-                    "Sábado Mariano — devoção (quando permitido)",
-                    "Recordação devocional de Nossa Senhora. A Missa votiva ou memória facultativa depende das normas litúrgicas e do calendário do dia; este lembrete não substitui o calendário oficial.", stamp))
+                    "Sábado Mariano — recordação devocional",
+                    "Recordação devocional, não celebração litúrgica agendada. A memória facultativa de Santa Maria no sábado só pode ser celebrada quando as normas e o calendário litúrgico do dia o permitem. Consulte o calendário oficial.", stamp))
             day += timedelta(days=1)
     rows.append("END:VCALENDAR")
     output.write_bytes(("\r\n".join(line(row) for row in rows) + "\r\n").encode("utf-8"))
