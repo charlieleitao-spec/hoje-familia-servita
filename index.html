@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.9.17"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.17"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.17"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.17"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.17">
+<link rel="manifest" href="manifest.webmanifest?v=2.9.18"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.18"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.18"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.18"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.18">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -89,10 +89,21 @@ footer{font-size:13px!important;line-height:1.5!important}
   .antiphon,.verse,.psalm-verse,.hymn-stanza-line,.response,.preces-intro,.preces-response,.preces-intention{font-size:16px!important;line-height:1.6!important}
   button,input,select,textarea,.action,.back,.open,.nav button,.quick button,.quick a,.hours button{font-size:15px!important}
 }
+
+/* Acessibilidade: controles compactos, foco visível e movimento reduzido. */
+button,.quick button,.hours button,.toolbar button,.series-picker button,.back,.open,.actions a,footer a{min-height:44px}
+.back,.open,.actions a,footer a{display:inline-flex;align-items:center;justify-content:center}
+input[type=search],input[type=date]{font-size:16px!important;min-height:44px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8b2635;outline-offset:3px}
+.person summary:focus-visible,.hours button:focus-visible{outline-offset:-4px}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:20;padding:10px 14px;background:#fff;color:#173b67;border:2px solid #173b67;border-radius:8px}
+.skip-link:focus{top:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
-<main>
-<div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
+<main id="conteudo" tabindex="-1">
+<div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
@@ -105,8 +116,9 @@ footer{font-size:13px!important;line-height:1.5!important}
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer><nav aria-label="Recursos da família servita"><a href="https://charlieleitao-spec.github.io/somos-servos-app/recursos.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Recursos da família servita</a></nav>Hoje na Família Servita · OSM<br><small>Versão 2.9.17 · leitor litúrgico</small></footer>
+</main><footer><nav aria-label="Recursos da família servita"><a href="https://charlieleitao-spec.github.io/somos-servos-app/recursos.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Recursos da família servita</a></nav>Hoje na Família Servita · OSM<br><small>Versão 2.9.18 · leitor litúrgico</small></footer>
 <script>
+const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
 const causePrayer=document.getElementById('causePrayer');
 const celebrationStatus=document.getElementById('status');
@@ -199,7 +211,7 @@ function openMaterial(){
      }
    }
  }
- reader.hidden=false;reader.scrollIntoView({behavior:'smooth'})
+ reader.hidden=false;reader.scrollIntoView({behavior:scrollBehavior()})
 }
 function showHour(entry,btn){
  [...hours.children].forEach(x=>x.classList.remove('active'));btn.classList.add('active');
@@ -424,11 +436,12 @@ function diagnoseHour(txt,wrap){
 }
 function addSection(t,txt){let s=document.createElement('section');s.className='section';let h=t?`<h3>${escapeHtml(t)}</h3>`:'';s.innerHTML=h+`<div class="littext">${escapeHtml(txt)}</div>`;content.appendChild(s)}
 function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:'smooth'})};upcoming.appendChild(b)})}
+function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
 prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
 calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden))};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
-materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:'smooth'})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:scrollBehavior()})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 
 
 </body></html>
+

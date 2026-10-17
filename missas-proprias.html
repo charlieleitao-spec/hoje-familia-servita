@@ -52,11 +52,22 @@ footer{font-size:13px!important;line-height:1.5!important}
   .antiphon,.verse,.psalm-verse,.hymn-stanza-line,.response,.preces-intro,.preces-response,.preces-intention{font-size:16px!important;line-height:1.6!important}
   button,input,select,textarea,.action,.back,.open,.nav button,.quick button,.quick a,.hours button{font-size:15px!important}
 }
+
+/* Acessibilidade: controles compactos, foco visível e movimento reduzido. */
+button,.quick button,.hours button,.toolbar button,.series-picker button,.back,.open,.actions a,footer a{min-height:44px}
+.back,.open,.actions a,footer a{display:inline-flex;align-items:center;justify-content:center}
+input[type=search],input[type=date]{font-size:16px!important;min-height:44px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8b2635;outline-offset:3px}
+.person summary:focus-visible,.hours button:focus-visible{outline-offset:-4px}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:20;padding:10px 14px;background:#fff;color:#173b67;border:2px solid #173b67;border-radius:8px}
+.skip-link:focus{top:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div>ORDEM DOS SERVOS DE MARIA</div><h1>Missas Próprias OSM</h1><p>Formulários do Missal da Ordem</p></header>
-<main>
+<main id="conteudo" tabindex="-1">
 <div class="top"><a class="back" href="./">‹ Voltar ao Hoje</a><span class="count" id="count"></span></div>
 <div class="intro">Catálogo com 32 formulários próprios da Ordem, incluindo celebrações fixas, móveis e Missas de Santa Maria no Sábado. Os PDFs são cópias dos formulários oficiais, hospedadas no projeto Liturgia OSM. A abertura do PDF requer conexão com a internet.</div>
 <section class="intro">

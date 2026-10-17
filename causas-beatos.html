@@ -69,11 +69,22 @@ footer{font-size:13px!important;line-height:1.5!important}
 .empty-results{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;color:var(--muted)}
 @media(max-width:700px){.person-title{font-size:1.08rem}.person-content{padding:0 15px 16px}}
 
+
+/* Acessibilidade: controles compactos, foco visível e movimento reduzido. */
+button,.quick button,.hours button,.toolbar button,.series-picker button,.back,.open,.actions a,footer a{min-height:44px}
+.back,.open,.actions a,footer a{display:inline-flex;align-items:center;justify-content:center}
+input[type=search],input[type=date]{font-size:16px!important;min-height:44px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8b2635;outline-offset:3px}
+.person summary:focus-visible,.hours button:focus-visible{outline-offset:-4px}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:20;padding:10px 14px;background:#fff;color:#173b67;border:2px solid #173b67;border-radius:8px}
+.skip-link:focus{top:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><p>Ordem dos Servos de Maria</p><h1>Causas</h1></header>
-<main>
+<main id="conteudo" tabindex="-1">
 <div class="intro">Índice atualizado automaticamente a partir do santoral do Liturgia OSM. Abra um nome para consultar a ficha; nos Servos de Deus, a oração pela beatificação e canonização aparece em destaque.</div>
 <section class="search-panel" aria-label="Buscar nas causas"><label for="search">Buscar por nome ou data</label><input id="search" type="search" placeholder="Nome ou data da celebração" autocomplete="off"></section>
 <div id="resultCount" class="result-count" aria-live="polite"></div>
