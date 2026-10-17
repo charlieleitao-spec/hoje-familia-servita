@@ -109,6 +109,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
+<section class="card" aria-labelledby="subscribeTitle">
+<div class="label">Calendário da Família Servita</div>
+<h2 id="subscribeTitle">Assinar celebrações servitas</h2>
+<p>Receba as celebrações próprias da Ordem e os lembretes devocionais do Sábado Mariano no seu calendário. A assinatura acompanha as atualizações publicadas.</p>
+<div class="actions">
+<a class="action gold" href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noopener noreferrer">Assinar no Google Calendar</a>
+<a class="action secondary" href="./servitas.ics" type="text/calendar">Abrir calendário (.ics) — iPhone e outros</a>
+</div>
+<p class="source-line">Google Calendar: em “Adicionar calendário &gt; Do URL”, cole o endereço abaixo. No iPhone, escolha adicionar um calendário por assinatura, usando o mesmo endereço. Importar o arquivo não é o mesmo que assinar.</p>
+<p class="source-line"><a href="https://charlieleitao-spec.github.io/hoje-familia-servita/servitas.ics">https://charlieleitao-spec.github.io/hoje-familia-servita/servitas.ics</a></p>
+</section>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
 <section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
 <section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
