@@ -92,15 +92,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 300  # 2.9.18 usa 299; manter progressivo
+          code = 301  # 2.9.19 usa 300; manter progressivo
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.19"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.20"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.19\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.19 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.20\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.20 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -183,11 +183,9 @@ jobs:
           body: |
             APK release assinado do Hoje na Família Servita.
 
-            - controles de navegação e leitura com área mínima de toque de 44 px;
-            - campos de busca e data com letras de 16 px;
-            - foco de teclado visível e acesso direto ao conteúdo;
-            - rolagem respeita a preferência por movimento reduzido;
-            - data selecionada anunciada por leitores de tela;
-            - assinatura e versão progressiva verificadas contra a última release.
+            - rodapé mais próximo da última seção, com menos espaço vazio;
+            - margem inferior adaptada à área de navegação do celular;
+            - identificação e versão em linhas próprias, com quebra de texto;
+            - mantém os controles acessíveis e ajustes do leitor da versão anterior.
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
 

@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173b67"><meta name="description" content="Calendário e Liturgia das Horas da Família Servita">
-<link rel="manifest" href="manifest.webmanifest?v=2.9.19"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.19"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.19"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.19"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.19">
+<link rel="manifest" href="manifest.webmanifest?v=2.9.20"><link rel="apple-touch-icon" href="icon-192.png?v=2.9.20"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2.9.20"><link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png?v=2.9.20"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=2.9.20">
 <title>Hoje na Família Servita</title>
 <style>
 :root{--a:#173b67;--o:#b89448;--p:#f7f4ed;--b:#e1d9ca;--t:#2f2b27;--m:#6c655b;--r:#8b2635;--lit:#3b3631}
@@ -32,7 +32,10 @@ h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display
 .lit-warning{margin:12px 0;padding:10px 12px;border:1px solid #e0d3b7;background:#fbf7ed;border-radius:10px;color:#655633;font-size:.9rem}
 .toolbar{position:sticky;top:0;background:#fff;padding:0 0 10px;z-index:3;border-bottom:1px solid #f0ece4;margin-bottom:10px}.toolbar button{border:1px solid #d7d0c3;background:#fff;color:var(--a);border-radius:9px;padding:8px 11px;font-weight:800}
 .upcoming{display:grid;gap:8px;margin-top:12px}.event{border:1px solid var(--b);background:#fff;border-radius:12px;padding:11px;text-align:left}.event strong{display:block;color:var(--a)}input[type=date]{width:100%;padding:12px;border:1px solid var(--b);border-radius:11px;font:inherit}
-footer{text-align:center;padding:22px 18px 36px;color:var(--m);font-size:.84rem}
+main{padding-bottom:4px}main>.card:last-child{margin-bottom:8px}
+footer{display:grid;gap:4px;text-align:center;padding:4px 16px calc(28px + env(safe-area-inset-bottom,0px));color:var(--m);font-size:.84rem;overflow-wrap:anywhere}
+footer nav{min-width:0}footer small{display:block;font-size:12px;line-height:1.5}
+footer nav a{max-width:100%;white-space:normal}
 @media(max-width:620px){.hours{position:sticky;top:56px;z-index:3;background:#fff;padding-top:8px}}
 @media(max-width:420px){main{padding:12px}.card{padding:17px 15px}.littext{font-size:1.03rem;line-height:1.74}.litblock{padding:16px 0}.antiphon{padding:10px 11px}}
 
@@ -116,7 +119,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
 <section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
-</main><footer><nav aria-label="Recursos da família servita"><a href="https://charlieleitao-spec.github.io/somos-servos-app/recursos.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Recursos da família servita</a></nav>Hoje na Família Servita · OSM<br><small>Versão 2.9.19 · leitor litúrgico</small></footer>
+</main><footer><nav aria-label="Recursos da família servita"><a href="https://charlieleitao-spec.github.io/somos-servos-app/recursos.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Recursos da família servita</a></nav><div>Hoje na Família Servita · OSM</div><small>Versão 2.9.20 · leitor litúrgico</small></footer>
 <script>
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
 const fmt=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),sf=new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'});
