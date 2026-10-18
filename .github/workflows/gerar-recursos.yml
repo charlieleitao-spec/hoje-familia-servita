@@ -1,0 +1,37 @@
+name: Gerar folhas e JSON público
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, feat/recursos-publicos]
+    paths:
+      - santoral.json
+      - scripts/gerar-folha-mensal.py
+      - scripts/gerar-recursos.py
+      - scripts/requirements-recursos.txt
+      - recursos/LEIAME.md
+      - .github/workflows/gerar-recursos.yml
+permissions:
+  contents: write
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r scripts/requirements-recursos.txt
+      - run: python scripts/gerar-recursos.py
+      - name: Registrar recursos derivados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add recursos/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Atualiza folhas mensais e JSON público da fonte OSM'
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recursos-familia-servita
+          path: recursos/
