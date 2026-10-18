@@ -47,3 +47,9 @@ O projeto é publicado pelo GitHub Pages a partir da branch `main` e da pasta ra
 ## Aplicativo Android
 
 O diretório `android-source.zip` contém as fontes do aplicativo próprio **Família Servita**. O workflow `build-android.yml` gera o APK 2.9.17 em pull requests como artefato de teste e publica a versão assinada após a integração à `main`.
+
+## Correções da comunidade
+
+Para informar erros de nomes, datas, graus, textos ou links, use o [canal de correções](https://github.com/charlieleitao-spec/hoje-familia-servita/issues/new?template=correcao-conteudo.md). É necessária uma conta do GitHub; os registros são públicos e passam por revisão antes de qualquer alteração.
+
+Consulte as [orientações de contribuição e conferência das fontes](CONTRIBUTING.md).
