@@ -44,8 +44,11 @@ def generate(source, output, start_year, end_year):
             title = record.get("title") or record.get("name")
             if not title:
                 continue
-            grade = str(record.get("grau", "")).replace("_", " ").strip()
-            desc = ("Grau: " + grade.capitalize() + ". " if grade else "") + "Celebração da Família Servita. Consulte os textos e informações no aplicativo."
+            if record.get("categoria") == "servo_de_deus":
+                desc = "Memória biográfica de Servo de Deus; não constitui celebração litúrgica aprovada. Consulte a biografia e a oração devocional no aplicativo."
+            else:
+                grade = str(record.get("grau", "")).replace("_", " ").strip()
+                desc = ("Grau: " + grade.capitalize() + ". " if grade else "") + "Celebração da Família Servita. Consulte os textos e informações no aplicativo."
             rows.extend(event(f"servita-{record.get('id', day.strftime('%m%d'))}-{year}@familiaservita", day, title, desc, stamp))
         # Indicação devocional, NÃO afirma celebração litúrgica em sábados impedidos.
         day = date(year, 1, 1)
