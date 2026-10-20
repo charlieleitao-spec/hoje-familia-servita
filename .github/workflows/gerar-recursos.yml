@@ -6,6 +6,7 @@ on:
     paths:
       - santoral.json
       - scripts/gerar-folha-mensal.py
+      - scripts/gerar-calendario.py
       - scripts/gerar-recursos.py
       - scripts/requirements-recursos.txt
       - recursos/LEIAME.md
@@ -22,11 +23,23 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r scripts/requirements-recursos.txt
       - run: python scripts/gerar-recursos.py
+      - run: python scripts/gerar-calendario.py
+      - name: Validar memória biográfica no ICS
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          data=Path('servitas.ics').read_text(encoding='utf-8').replace('\r\n ', '')
+          for name in ('FREI PAULINO M. BALDASSARRI', 'FREI EGÍDIO MARIA MOSCINI'):
+              assert name.casefold() in data.casefold(), name
+          assert data.count('Memória biográfica de Servo de Deus') >= 12
+          assert 'BEGIN:VCALENDAR' in data and 'END:VCALENDAR' in data
+          print('Calendário ICS validado')
+          PY
       - name: Registrar recursos derivados
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add recursos/
+          git add recursos/ servitas.ics
           if ! git diff --cached --quiet; then
             git commit -m 'Atualiza folhas mensais e JSON público da fonte OSM'
             git push
