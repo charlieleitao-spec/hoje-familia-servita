@@ -75,7 +75,7 @@ def selo(e):
 
 
 def linha_data(e):
-    grau = GRAU.get(e.get("grau"), "")
+    grau = "Memória biográfica" if e.get("categoria") == "servo_de_deus" else GRAU.get(e.get("grau"), "")
     nota = e.get("nota_data")
     base = f"{e['day']} de {MESES[e['month'] - 1]}"
     partes = [base] + ([grau] if grau else [])
