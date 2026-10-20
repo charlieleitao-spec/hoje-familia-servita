@@ -27,7 +27,9 @@ def event(uid, day, title, description, stamp):
             "SUMMARY:" + esc(title), "DESCRIPTION:" + esc(description),
             "URL:" + BASE, "TRANSP:TRANSPARENT", "END:VEVENT"]
 def generate(source, output, start_year, end_year):
-    if start_year > end_year:\n        raise ValueError("O ano inicial deve ser menor ou igual ao final")\n    records = json.loads(source.read_text(encoding="utf-8"))
+    if start_year > end_year:
+        raise ValueError("O ano inicial deve ser menor ou igual ao final")
+    records = json.loads(source.read_text(encoding="utf-8"))
     stamp = datetime(start_year, 1, 1, tzinfo=timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     rows = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Familia Servita//Santoral OSM//PT-BR",
             "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
