@@ -92,7 +92,7 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 305  # 2.9.25 sucede 2.9.25 (304)
+          code = 306  # 2.9.25 sucede 2.9.24 (305)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
