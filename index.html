@@ -102,14 +102,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .skip-link{position:absolute;left:12px;top:-100px;z-index:20;padding:10px 14px;background:#fff;color:#173b67;border:2px solid #173b67;border-radius:8px}
 .skip-link:focus{top:12px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.section-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:12px 0 2px}.section-links a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:8px 4px;border-radius:10px;border:1px solid var(--b);background:#fff;color:var(--a);font-size:13px;font-weight:700;text-decoration:none}.section-links a:focus-visible{outline:3px solid var(--r);outline-offset:2px}#celebracao,#memoria,#proximas,#recursos{scroll-margin-top:18px}@media(max-width:380px){.section-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style></head><body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria • Fraternidade • Serviço</p></header>
 <main id="conteudo" tabindex="-1">
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
+<nav class="section-links" aria-label="Navegação da página"><a href="#celebracao">Celebração</a><a href="#memoria">Memória</a><a href="#proximas">Próximas</a><a href="#recursos">Recursos</a></nav>
 <div class="quick"><button id="todayBtn">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
-<section class="card" aria-labelledby="calendarDownloadTitle">
+<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
+<section class="card" id="celebracao"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
+<section class="card" id="memoria"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
+<div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
+<section class="card" id="reader" hidden>
+ <div class="toolbar"><button id="closeReader">Fechar</button></div>
+ <div class="label" id="readerLabel">Liturgia</div><h2 id="readerTitle"></h2>
+ <div id="hours" class="hours"></div><div id="content"></div>
+</section>
+<section class="card" id="proximas"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
+<section class="card" id="recursos" aria-labelledby="calendarDownloadTitle">
 <div class="label">Calendário da Família Servita</div>
 <h2 id="calendarDownloadTitle">Celebrações servitas na sua agenda</h2>
 <p>Acompanhe as 32 celebrações do santoral da Ordem dos Servos de Maria ao longo do ano.</p>
@@ -123,16 +136,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <details><summary style="min-height:44px;cursor:pointer">Folhas mensais e dados públicos</summary><ul><li><a href="./recursos/pdfs/folha-servita-01-janeiro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Janeiro</a></li><li><a href="./recursos/pdfs/folha-servita-02-fevereiro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Fevereiro</a></li><li><a href="./recursos/pdfs/folha-servita-03-marco.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Março</a></li><li><a href="./recursos/pdfs/folha-servita-04-abril.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Abril</a></li><li><a href="./recursos/pdfs/folha-servita-05-maio.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Maio</a></li><li><a href="./recursos/pdfs/folha-servita-06-junho.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Junho</a></li><li><a href="./recursos/pdfs/folha-servita-07-julho.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Julho</a></li><li><a href="./recursos/pdfs/folha-servita-08-agosto.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Agosto</a></li><li><a href="./recursos/pdfs/folha-servita-09-setembro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Setembro</a></li><li><a href="./recursos/pdfs/folha-servita-10-outubro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Outubro</a></li><li><a href="./recursos/pdfs/folha-servita-11-novembro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Novembro</a></li><li><a href="./recursos/pdfs/folha-servita-12-dezembro.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Dezembro</a></li></ul><p><a href="./recursos/santoral-servita.json" download style="color:var(--a)">Baixar santoral em JSON</a> · <a href="./recursos/LEIAME.md" style="color:var(--a)">Descrição dos arquivos</a></p></details>
 <p class="source-line">O Sábado Mariano é apresentado como recordação devocional. Sua celebração litúrgica depende das normas e precedências do calendário oficial.</p>
 </section>
-<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
-<section class="card"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
-<section class="card"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
-<div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
-<section class="card" id="reader" hidden>
- <div class="toolbar"><button id="closeReader">Fechar</button></div>
- <div class="label" id="readerLabel">Liturgia</div><h2 id="readerTitle"></h2>
- <div id="hours" class="hours"></div><div id="content"></div>
-</section>
-<section class="card"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
 </main><footer><nav aria-label="Recursos da família servita"><a href="https://charlieleitao-spec.github.io/somos-servos-app/recursos.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--a)">Recursos da família servita</a></nav><div>Hoje na Família Servita · OSM</div><small>Versão 2.9.22 · leitor litúrgico</small></footer>
 <script>
 const scrollBehavior=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
