@@ -176,23 +176,67 @@ main{max-width:740px;padding:14px 18px 42px}
 #calendarCard{background:#fff;padding:18px;border:1px solid var(--b);border-radius:8px;margin:10px 0}
 @media(min-width:620px){header{padding:29px 18px 26px}.quick{display:flex}.card{padding:26px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Identidade visual mariana: hierarquia de leitura, ações funcionais e navegação fixa */
+:root{--a:#102f54;--o:#b88a36;--p:#f7f4ed;--b:#e7dfd1;--t:#2e3540;--m:#656b72}
+body{background:linear-gradient(#f5f1e9,#fbfaf7 40%,#f6f3eb);color:var(--t)}
+header{overflow:hidden;position:relative;background:radial-gradient(circle at 88% 0%,#34587c 0%,transparent 46%),linear-gradient(130deg,#0c2949,#173e68);padding:25px 18px 31px;border-bottom:0;text-align:center}
+header:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #d3ad6345;border-radius:50%;right:-140px;top:-100px;box-shadow:0 0 0 25px #d3ad630a,0 0 0 51px #d3ad6308;pointer-events:none}
+header .brand-mark{font-size:1.5rem;color:#d9b56c}
+header .ey{margin-top:3px;color:#f2d8a3;opacity:1;font-size:.66rem;letter-spacing:.19em}
+header h1{font:500 clamp(1.85rem,7vw,2.6rem)/1.07 Georgia,serif;letter-spacing:-.03em;margin:10px auto 9px}
+header .sub{color:#e2c58e;font-size:.74rem;letter-spacing:.12em}
+.header-ornament{color:#d9b56c;font-size:1.05rem;margin-top:9px}
+main{max-width:790px;padding:15px 16px 90px}
+.nav{grid-template-columns:45px minmax(0,1fr) 45px;align-items:center;margin:0 0 15px;border-radius:18px;background:#fff;border:1px solid #ece4d7;box-shadow:0 5px 19px #243c5610;padding:4px}
+.nav button{background:transparent;border:0;font-size:1.7rem;font-weight:400;color:#16385f;min-height:46px}
+.date{background:transparent;border:0;font:600 1.04rem/1.3 Georgia,serif;color:#17385c;box-shadow:none}
+#celebracao{background:linear-gradient(120deg,#fff 5%,#fffaf1 100%);border:1px solid #eadfcd;border-radius:23px;box-shadow:0 12px 32px #1d335017;padding:30px 24px 26px;overflow:hidden;position:relative;margin:0 0 18px}
+#celebracao:after{content:"✧";position:absolute;right:17px;top:10px;color:#bd985541;font:100px Georgia,serif;pointer-events:none}
+#celebracao:before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:4px;border-radius:5px;background:#b58b42}
+#celebracao .label{color:#98752e;font-size:.72rem;letter-spacing:.14em}
+#celebracao h2{font:500 clamp(1.8rem,7vw,2.75rem)/1.15 Georgia,serif;color:#10355d;letter-spacing:-.03em;margin:15px 0 20px;position:relative;z-index:1}
+#celebracao .badge{border-radius:6px;background:#f1e8d6;color:#6b5227;padding:6px 11px}
+#celebracao #status{margin-top:15px}
+#memoria{padding:20px 7px 28px;border:0;background:transparent}
+#memoria .label{color:#a17d39;letter-spacing:.17em}
+#memoria h2{font:500 clamp(1.7rem,6vw,2.3rem)/1.2 Georgia,serif;color:#12385e;margin:12px 0 18px}
+#memoria .bio{font:1.07rem/1.8 Georgia,serif;color:#343b43}
+#memoria .actions .secondary{border-color:#d6c5a5;background:#fffdf9}
+.feature-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:5px 0 20px}
+.feature-links a{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:3px;padding:16px 8px;min-height:120px;border-radius:19px;background:#fff;border:1px solid #ebe4d9;box-shadow:0 4px 15px #142c4510;text-decoration:none;color:#14375c}
+.feature-links a span{font-size:1.7rem;color:#a17b3d}.feature-links strong{font:600 1.08rem Georgia,serif}.feature-links small{font-size:.75rem;color:#5e6671}
+#proximas,#recursos{border-top:1px solid #e0d5c4;background:transparent;padding:25px 4px}
+#proximas h2,#recursos h2{font:500 1.55rem Georgia,serif}
+.quick{position:fixed;z-index:20;left:0;right:0;bottom:0;margin:0;padding:7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;background:#102f54;border:0;border-radius:18px 18px 0 0;box-shadow:0 -8px 26px #11294429}
+.quick a,.quick button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:transparent;color:#fff;border:0;border-radius:9px;min-width:0;min-height:53px;padding:4px 1px;text-decoration:none;font:500 1.45rem/1.1 Georgia,serif}
+.quick small{display:block;font:500 .65rem/1.2 system-ui,sans-serif;white-space:nowrap}
+.quick .nav-home,.quick .nav-home small{color:#f0c677}
+.quick .today-reset{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.quick .today-reset:focus-visible{position:fixed;left:10px;bottom:90px;width:auto;height:auto;clip:auto;margin:0;background:#fff;color:#102f54;padding:12px}
+#calendarCard{scroll-margin-top:20px}
+#reader{background:#fff;border-radius:16px;padding:18px}
+footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+@media(min-width:800px){.quick{left:50%;transform:translateX(-50%);max-width:790px;border-radius:18px 18px 0 0}}
+@media(max-width:420px){#celebracao{padding:26px 19px 23px}#memoria{padding:19px 3px}.feature-links a{min-height:104px}}
 </style></head><body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-<header><div class="brand-mark" aria-hidden="true">✦</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família Servita</h1><p class="sub">Maria · Fraternidade · Serviço</p></header>
+<header><div class="brand-mark" aria-hidden="true">✦</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família<br>Servita</h1><p class="sub">Maria · Fraternidade · Serviço</p><div class="header-ornament" aria-hidden="true">✧</div></header>
 <main id="conteudo" tabindex="-1">
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
-<section class="card" id="celebracao"><div class="label">Celebração servita</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
-<div class="quick" aria-label="Acessos principais"><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false">Calendário</button><a href="./missas-proprias.html" aria-label="Abrir o catálogo dos formulários das Missas Próprias OSM">Missas OSM</a><button onclick="location.href='./causas-beatos.html'">Causas</button></div>
+<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
+<nav class="quick" aria-label="Navegação principal"><a class="nav-home" href="#conteudo" aria-label="Início">⌂<small>Início</small></a><a class="nav-liturgia" href="#celebracao" aria-label="Celebração">✝<small>Liturgia</small></a><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false"><span aria-hidden="true">▦</span><small>Calendário</small></button><a href="./causas-beatos.html" aria-label="Causas servitas"><span aria-hidden="true">♧</span><small>Causas</small></a><a href="#recursos" aria-label="Recursos"><span aria-hidden="true">•••</span><small>Mais</small></a></nav>
 
-<section class="card" id="memoria"><div class="label">Memória e espiritualidade</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
+<section class="card" id="memoria"><div class="label">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
 <div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
 <section class="card" id="reader" hidden>
  <div class="toolbar"><button id="closeReader">Fechar</button></div>
  <div class="label" id="readerLabel">Liturgia</div><h2 id="readerTitle"></h2>
  <div id="hours" class="hours"></div><div id="content"></div>
 </section>
+<div class="feature-links" aria-label="Outros conteúdos"><a href="./missas-proprias.html"><span aria-hidden="true">✝</span><strong>Missas OSM</strong><small>Formulários próprios</small></a><a href="#proximas"><span aria-hidden="true">▦</span><strong>Próximas datas</strong><small>Calendário servita</small></a></div>
 <section class="card" id="proximas"><div class="label">Calendário da Ordem</div><h2>Próximas celebrações servitas</h2><div id="upcoming" class="upcoming"></div></section>
 <section class="card" id="recursos" aria-labelledby="calendarDownloadTitle">
 <div class="label">Calendário da Família Servita</div>
