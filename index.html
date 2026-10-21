@@ -254,6 +254,7 @@ main{padding-top:12px}
 .quick a:focus-visible,.quick button:focus-visible{outline:2px solid #e9c779}
 .quick small{font-size:.67rem}
 #calendarCard{scroll-margin-top:12px}
+#memoria.empty-memory{padding:12px 3px 8px}#memoria.empty-memory .label{margin-bottom:3px}#memoria.empty-memory h2{font-size:1.2rem;margin:4px 0 6px}#memoria.empty-memory .bio{font-size:.87rem;color:#62676d;line-height:1.4}#memoria.empty-memory .actions{margin-top:10px}.feature-links{scroll-margin-bottom:110px}html{scroll-padding-bottom:120px}main{padding-bottom:max(150px,calc(130px + env(safe-area-inset-bottom,0px)))}
 </style></head><body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="brand-mark" aria-hidden="true">✦</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família<br>Servita</h1><p class="sub">Maria · Fraternidade · Serviço</p><div class="header-ornament" aria-hidden="true">✧</div></header>
@@ -261,7 +262,7 @@ main{padding-top:12px}
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
-<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="./missas-proprias.html">Consultar Missas Próprias <span aria-hidden="true">→</span></a></section>
+<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="https://liturgiadiaria.cnbb.org.br/" target="_blank" rel="noopener noreferrer">Consultar liturgia do dia <span aria-hidden="true">↗</span></a></section>
 <nav class="quick" aria-label="Navegação principal"><a class="nav-home" href="#conteudo" aria-label="Início">⌂<small>Início</small></a><a class="nav-liturgia" href="#celebracao" aria-label="Celebração">✝<small>Liturgia</small></a><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false"><span aria-hidden="true">▦</span><small>Calendário</small></button><a href="./causas-beatos.html" aria-label="Causas servitas"><span aria-hidden="true">♧</span><small>Causas</small></a><a href="#recursos" aria-label="Recursos"><span aria-hidden="true">•••</span><small>Mais</small></a></nav>
 
 <section class="card" id="memoria"><div class="label">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
@@ -327,6 +328,7 @@ function renderBio(text){
  const paragraphs=String(text||'').replace(/\r/g,'').split(/\n[ \t]*\n+/).map(p=>p.trim()).filter(Boolean);
  paragraphs.forEach(text=>{const p=document.createElement('p');p.textContent=text;bio.appendChild(p)});
 }
+const memoriaSection=document.getElementById('memoria');
 function render(){
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
  title.textContent=active?displayCelebrationTitle(active):'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';celebrationStatus.textContent=active?.data||loadError;
@@ -334,6 +336,7 @@ function render(){
  const memoria=active?.memoria_liturgica;
  const bioText=memoria?.breve_vida||active?.bio||'Hoje não há memória servita cadastrada nesta base.';
  renderBio(bioText);
+ memoriaSection.classList.toggle('empty-memory',!active);
  const causeText=active?.oracao_causa||'';causePrayer.hidden=true;causePrayer.innerHTML='';
  if((active?.categoria==='servo_de_deus'||/^(?:Servo|Serva) de Deus\b/i.test(active?.titulo||''))&&causeText){
    const sourcePrayer=String(causeText),heading=sourcePrayer.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
