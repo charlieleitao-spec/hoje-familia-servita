@@ -12,8 +12,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260112
 DTEND;VALUE=DATE:20260113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -23,8 +23,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260115
 DTEND;VALUE=DATE:20260116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -79,8 +79,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260504
 DTEND;VALUE=DATE:20260505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -101,8 +101,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260511
 DTEND;VALUE=DATE:20260512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -134,8 +134,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260619
 DTEND;VALUE=DATE:20260620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -145,8 +145,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260627
 DTEND;VALUE=DATE:20260628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -167,8 +167,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260704
 DTEND;VALUE=DATE:20260705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -178,8 +178,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260713
 DTEND;VALUE=DATE:20260714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -189,8 +189,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260823
 DTEND;VALUE=DATE:20260824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -223,8 +223,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -234,8 +234,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20260902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -289,8 +289,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260922
 DTEND;VALUE=DATE:20260923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -322,8 +322,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -344,8 +344,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -355,8 +355,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20261215
 DTEND;VALUE=DATE:20261216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -977,8 +977,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270112
 DTEND;VALUE=DATE:20270113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -988,8 +988,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1044,8 +1044,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270504
 DTEND;VALUE=DATE:20270505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1066,8 +1066,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270511
 DTEND;VALUE=DATE:20270512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1099,8 +1099,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270619
 DTEND;VALUE=DATE:20270620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1110,8 +1110,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270627
 DTEND;VALUE=DATE:20270628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1132,8 +1132,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270704
 DTEND;VALUE=DATE:20270705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1143,8 +1143,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270713
 DTEND;VALUE=DATE:20270714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1154,8 +1154,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270823
 DTEND;VALUE=DATE:20270824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1188,8 +1188,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270831
 DTEND;VALUE=DATE:20270901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1199,8 +1199,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270901
 DTEND;VALUE=DATE:20270902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1254,8 +1254,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270922
 DTEND;VALUE=DATE:20270923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1287,8 +1287,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20271116
 DTEND;VALUE=DATE:20271117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1309,8 +1309,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20271210
 DTEND;VALUE=DATE:20271211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1320,8 +1320,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20271215
 DTEND;VALUE=DATE:20271216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1968,8 +1968,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280112
 DTEND;VALUE=DATE:20280113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -1979,8 +1979,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280115
 DTEND;VALUE=DATE:20280116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2035,8 +2035,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280504
 DTEND;VALUE=DATE:20280505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2057,8 +2057,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280511
 DTEND;VALUE=DATE:20280512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2090,8 +2090,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280619
 DTEND;VALUE=DATE:20280620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2101,8 +2101,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280627
 DTEND;VALUE=DATE:20280628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2123,8 +2123,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280704
 DTEND;VALUE=DATE:20280705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2134,8 +2134,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280713
 DTEND;VALUE=DATE:20280714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2145,8 +2145,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280823
 DTEND;VALUE=DATE:20280824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2179,8 +2179,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280831
 DTEND;VALUE=DATE:20280901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2190,8 +2190,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280901
 DTEND;VALUE=DATE:20280902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2245,8 +2245,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20280922
 DTEND;VALUE=DATE:20280923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2278,8 +2278,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20281116
 DTEND;VALUE=DATE:20281117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2300,8 +2300,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20281210
 DTEND;VALUE=DATE:20281211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2311,8 +2311,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20281215
 DTEND;VALUE=DATE:20281216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2959,8 +2959,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290112
 DTEND;VALUE=DATE:20290113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -2970,8 +2970,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290115
 DTEND;VALUE=DATE:20290116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3026,8 +3026,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290504
 DTEND;VALUE=DATE:20290505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3048,8 +3048,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290511
 DTEND;VALUE=DATE:20290512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3081,8 +3081,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290619
 DTEND;VALUE=DATE:20290620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3092,8 +3092,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290627
 DTEND;VALUE=DATE:20290628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3114,8 +3114,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290704
 DTEND;VALUE=DATE:20290705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3125,8 +3125,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290713
 DTEND;VALUE=DATE:20290714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3136,8 +3136,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290823
 DTEND;VALUE=DATE:20290824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3170,8 +3170,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290831
 DTEND;VALUE=DATE:20290901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3181,8 +3181,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290901
 DTEND;VALUE=DATE:20290902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3236,8 +3236,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20290922
 DTEND;VALUE=DATE:20290923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3269,8 +3269,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20291116
 DTEND;VALUE=DATE:20291117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3291,8 +3291,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20291210
 DTEND;VALUE=DATE:20291211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3302,8 +3302,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20291215
 DTEND;VALUE=DATE:20291216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3872,8 +3872,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300112
 DTEND;VALUE=DATE:20300113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3883,8 +3883,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300115
 DTEND;VALUE=DATE:20300116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3939,8 +3939,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300504
 DTEND;VALUE=DATE:20300505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3961,8 +3961,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300511
 DTEND;VALUE=DATE:20300512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -3994,8 +3994,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300619
 DTEND;VALUE=DATE:20300620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4005,8 +4005,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300627
 DTEND;VALUE=DATE:20300628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4027,8 +4027,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300704
 DTEND;VALUE=DATE:20300705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4038,8 +4038,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300713
 DTEND;VALUE=DATE:20300714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4049,8 +4049,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300823
 DTEND;VALUE=DATE:20300824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4083,8 +4083,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300831
 DTEND;VALUE=DATE:20300901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4094,8 +4094,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300901
 DTEND;VALUE=DATE:20300902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4149,8 +4149,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20300922
 DTEND;VALUE=DATE:20300923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4182,8 +4182,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20301116
 DTEND;VALUE=DATE:20301117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4204,8 +4204,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20301210
 DTEND;VALUE=DATE:20301211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4215,8 +4215,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20301215
 DTEND;VALUE=DATE:20301216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4824,8 +4824,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310112
 DTEND;VALUE=DATE:20310113
 SUMMARY:Santo Antônio Maria Pucci
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4835,8 +4835,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310115
 DTEND;VALUE=DATE:20310116
 SUMMARY:Tiago de "Città della Pieve"
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4891,8 +4891,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310504
 DTEND;VALUE=DATE:20310505
 SUMMARY:São Peregrino de Forlì
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4913,8 +4913,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310511
 DTEND;VALUE=DATE:20310512
 SUMMARY:Benincasa de Montepulciano
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4946,8 +4946,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310619
 DTEND;VALUE=DATE:20310620
 SUMMARY:Santa Juliana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4957,8 +4957,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310627
 DTEND;VALUE=DATE:20310628
 SUMMARY:Tomás de Orvieto
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4979,8 +4979,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310704
 DTEND;VALUE=DATE:20310705
 SUMMARY:Ubaldo de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -4990,8 +4990,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310713
 DTEND;VALUE=DATE:20310714
 SUMMARY:Santa Clélia Barbieri
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5001,8 +5001,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310823
 DTEND;VALUE=DATE:20310824
 SUMMARY:São Filipe Benizi
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5035,8 +5035,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310831
 DTEND;VALUE=DATE:20310901
 SUMMARY:André de Sansepolcro
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5046,8 +5046,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310901
 DTEND;VALUE=DATE:20310902
 SUMMARY:Joana de Florença
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5101,8 +5101,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20310922
 DTEND;VALUE=DATE:20310923
 SUMMARY:Dedicação da Basílica de Monte Senário
-DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
- nsulte os textos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
+ xtos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5134,8 +5134,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20311116
 DTEND;VALUE=DATE:20311117
 SUMMARY:Todos os Santos e Santas da Ordem
-DESCRIPTION:Grau: Solenidade. Celebração da Família Servita. Consulte os
-  textos e informações no aplicativo.
+DESCRIPTION:Grau: Festa. Celebração da Família Servita. Consulte os text
+ os e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5156,8 +5156,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20311210
 DTEND;VALUE=DATE:20311211
 SUMMARY:Jerônimo de Sant'Angelo in Vado
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -5167,8 +5167,8 @@ DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20311215
 DTEND;VALUE=DATE:20311216
 SUMMARY:Boaventura de Pistoia
-DESCRIPTION:Grau: Memoria. Celebração da Família Servita. Consulte os te
- xtos e informações no aplicativo.
+DESCRIPTION:Grau: Memoria facultativa. Celebração da Família Servita. Co
+ nsulte os textos e informações no aplicativo.
 URL:https://charlieleitao-spec.github.io/hoje-familia-servita/
 TRANSP:TRANSPARENT
 END:VEVENT

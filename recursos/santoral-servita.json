@@ -3,7 +3,7 @@
   "titulo": "Santoral da Família Servita",
   "fonte": "Liturgia OSM",
   "fonte_url": "https://github.com/charlieleitao-spec/liturgia-osm/blob/main/www/data/santoral.json",
-  "fonte_sha256": "7500b3d5389fa87cb366adc20935d7bb8ceb3fe2666ffe611ec77f913e0e86e6",
+  "fonte_sha256": "a548d3cff668353cf29af9c9301a3ed121d0fff0166602f9af2b146c83504d6d",
   "nota": "Datas de referência. Observar o calendário oficial e suas precedências.",
   "celebracoes": [
     {
@@ -13,7 +13,7 @@
       "nome": "Santo Antônio Maria Pucci",
       "categoria": "santo",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "festa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -24,7 +24,7 @@
       "nome": "Tiago de \"Città della Pieve\"",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -80,7 +80,7 @@
       "nome": "São Peregrino de Forlì",
       "categoria": "santo",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "festa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -102,7 +102,7 @@
       "nome": "Benincasa de Montepulciano",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -135,7 +135,7 @@
       "nome": "Santa Juliana de Florença",
       "categoria": "santo",
       "genero": "f",
-      "grau": "memoria",
+      "grau": "festa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -146,7 +146,7 @@
       "nome": "Tomás de Orvieto",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -168,7 +168,7 @@
       "nome": "Ubaldo de Sansepolcro",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -179,7 +179,7 @@
       "nome": "Santa Clélia Barbieri",
       "categoria": "santo",
       "genero": "f",
-      "grau": "memoria_facultativa",
+      "grau": "memoria",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -190,7 +190,7 @@
       "nome": "São Filipe Benizi",
       "categoria": "santo",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "festa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -224,7 +224,7 @@
       "nome": "André de Sansepolcro",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -235,7 +235,7 @@
       "nome": "Joana de Florença",
       "categoria": "beato",
       "genero": "f",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -290,7 +290,7 @@
       "nome": "Dedicação da Basílica de Monte Senário",
       "categoria": null,
       "genero": null,
-      "grau": "memoria_facultativa",
+      "grau": "memoria",
       "grau_confirmado": true,
       "exibir_selo": false
     },
@@ -323,7 +323,7 @@
       "nome": "Todos os Santos e Santas da Ordem",
       "categoria": "santo",
       "genero": "m",
-      "grau": "solenidade",
+      "grau": "festa",
       "grau_confirmado": true,
       "exibir_selo": false
     },
@@ -345,7 +345,7 @@
       "nome": "Jerônimo de Sant'Angelo in Vado",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     },
@@ -356,7 +356,7 @@
       "nome": "Boaventura de Pistoia",
       "categoria": "beato",
       "genero": "m",
-      "grau": "memoria",
+      "grau": "memoria_facultativa",
       "grau_confirmado": true,
       "exibir_selo": true
     }
