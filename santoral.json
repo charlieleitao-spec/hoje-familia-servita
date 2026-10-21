@@ -12,7 +12,7 @@
     "image": "media/servite-12.webp",
     "categoria": "santo",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "festa",
     "grau_confirmado": true
   },
   {
@@ -27,7 +27,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/tiago-citta-della-pieve.webp"
   },
@@ -114,7 +114,7 @@
     "image": "media/servite-10.webp",
     "categoria": "santo",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "festa",
     "grau_confirmado": true
   },
   {
@@ -146,7 +146,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/benincasa-montepulciano.webp"
   },
@@ -195,7 +195,7 @@
     "image": "media/servite-06.webp",
     "categoria": "santo",
     "genero": "f",
-    "grau": "memoria",
+    "grau": "festa",
     "grau_confirmado": true
   },
   {
@@ -211,7 +211,7 @@
     "image": "media/servite-09.webp",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true
   },
   {
@@ -242,7 +242,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/ubaldo-de-sansepolcro.webp"
   },
@@ -258,7 +258,7 @@
     "rank": "Santa",
     "categoria": "santo",
     "genero": "f",
-    "grau": "memoria_facultativa",
+    "grau": "memoria",
     "grau_confirmado": true,
     "image": "media/santa-clelia-barbieri.webp"
   },
@@ -275,7 +275,7 @@
     "image": "media/servite-08.webp",
     "categoria": "santo",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "festa",
     "grau_confirmado": true
   },
   {
@@ -327,7 +327,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/andre-sansepolcro.webp"
   },
@@ -344,7 +344,7 @@
     "image": "media/servite-05.webp",
     "categoria": "beato",
     "genero": "f",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true
   },
   {
@@ -424,7 +424,7 @@
     "prayer": "Ó Deus, no alto do Monte Senário quisestes que nossos Sete Primeiros Pais vos construíssem uma igreja, dedicada a Santa Maria. Aos que sobem a este monte para rezar, movidos pelo amor à Virgem, concedei que cresçam no conhecimento do vosso Filho e propaguem em toda parte o seu reino. Por nosso Senhor.",
     "categoria": null,
     "genero": null,
-    "grau": "memoria_facultativa",
+    "grau": "memoria",
     "grau_confirmado": true,
     "exibir_selo": false,
     "image": "media/monte-senario-basilica.webp"
@@ -474,7 +474,7 @@
     "image": "media/servite-02.webp",
     "categoria": "santo",
     "genero": "m",
-    "grau": "solenidade",
+    "grau": "festa",
     "grau_confirmado": true,
     "exibir_selo": false
   },
@@ -507,7 +507,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/jeronimo-sant-angelo-in-vado.webp"
   },
@@ -523,7 +523,7 @@
     "rank": "Beato(a)",
     "categoria": "beato",
     "genero": "m",
-    "grau": "memoria",
+    "grau": "memoria_facultativa",
     "grau_confirmado": true,
     "image": "media/boaventura-de-pistoia.webp"
   }
