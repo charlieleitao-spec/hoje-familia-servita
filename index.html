@@ -219,6 +219,41 @@ main{max-width:790px;padding:15px 16px 90px}
 footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
 @media(min-width:800px){.quick{left:50%;transform:translateX(-50%);max-width:790px;border-radius:18px 18px 0 0}}
 @media(max-width:420px){#celebracao{padding:26px 19px 23px}#memoria{padding:19px 3px}.feature-links a{min-height:104px}}
+
+/* Refinamento Samsung A56: reduzir áreas vazias e corrigir navegação */
+header{padding:12px 16px 16px}
+header .brand-mark{font-size:1rem;line-height:1}
+header .ey{font-size:.58rem;letter-spacing:.14em;margin-top:1px}
+header h1{font-size:clamp(1.65rem,6vw,2.15rem);line-height:1.08;margin:6px auto}
+header .sub{font-size:.67rem;letter-spacing:.06em}
+.header-ornament{display:none}
+header:after{width:160px;height:160px;right:-100px;top:-85px}
+main{padding-top:12px}
+.nav{margin-bottom:12px}
+#celebracao{padding:20px 19px 18px;margin-bottom:8px;border-radius:17px}
+#celebracao:before{top:19px;bottom:19px}
+#celebracao:after{font-size:68px;right:14px;top:12px}
+#celebracao h2{font-size:clamp(1.55rem,6vw,2.15rem);margin:8px 0 11px;max-width:85%}
+#celebracao .badge{font-size:.74rem;padding:4px 8px}
+#celebracao #status:empty{display:none}
+.celebration-link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:9px 13px;border-radius:9px;background:#173b67;color:#fff;text-decoration:none;font-size:.81rem;font-weight:700;min-height:42px}
+#memoria{padding:14px 3px 14px}
+#memoria h2{font-size:clamp(1.35rem,5.1vw,1.9rem);margin:6px 0 10px}
+#memoria .bio{font-size:1rem;line-height:1.55}
+#memoria .bio p{margin-bottom:.5em}
+#memoria .actions{margin-top:13px}
+#memoria .action{padding:10px}
+.feature-links{gap:9px;margin:4px 0 10px}
+.feature-links a{min-height:85px;padding:11px 7px;border-radius:14px}
+.feature-links a span{font-size:1.3rem}
+.feature-links strong{font-size:.95rem}
+.feature-links small{font-size:.7rem}
+.quick{border-radius:16px 16px 0 0}
+.quick a,.quick button{border:0!important;border-left:0!important;border-right:0!important;box-shadow:none!important;outline-offset:-3px}
+.quick a:before,.quick button:before,.quick a:after,.quick button:after{border:0!important;box-shadow:none!important}
+.quick a:focus-visible,.quick button:focus-visible{outline:2px solid #e9c779}
+.quick small{font-size:.67rem}
+#calendarCard{scroll-margin-top:12px}
 </style></head><body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="brand-mark" aria-hidden="true">✦</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família<br>Servita</h1><p class="sub">Maria · Fraternidade · Serviço</p><div class="header-ornament" aria-hidden="true">✧</div></header>
@@ -226,7 +261,7 @@ footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
-<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p></section>
+<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="./missas-proprias.html">Consultar Missas Próprias <span aria-hidden="true">→</span></a></section>
 <nav class="quick" aria-label="Navegação principal"><a class="nav-home" href="#conteudo" aria-label="Início">⌂<small>Início</small></a><a class="nav-liturgia" href="#celebracao" aria-label="Celebração">✝<small>Liturgia</small></a><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false"><span aria-hidden="true">▦</span><small>Calendário</small></button><a href="./causas-beatos.html" aria-label="Causas servitas"><span aria-hidden="true">♧</span><small>Causas</small></a><a href="#recursos" aria-label="Recursos"><span aria-hidden="true">•••</span><small>Mais</small></a></nav>
 
 <section class="card" id="memoria"><div class="label">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
@@ -574,7 +609,7 @@ function addSection(t,txt){let s=document.createElement('section');s.className='
 function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
 prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
-calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden))};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
+calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden));if(!calendarCard.hidden)calendarCard.scrollIntoView({behavior:scrollBehavior(),block:'start'})};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
 materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:scrollBehavior()})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 
