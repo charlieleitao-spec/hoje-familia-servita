@@ -122,3 +122,16 @@ test('GAS erro público não vaza chave nem URL interna',()=>{
 test('GAS não chama API se outra execução detém lock',()=>{
   const g=gas({busy:true});assert.equal(JSON.parse(g.run('doGet().text')).ok,false);assert.equal(g.calls.length,0);
 });
+test('GAS identifica chave inválida sem copiar a mensagem interna',()=>{
+  const g=gas({responses:[{status:400,body:{error:{message:'API key not valid. secret',errors:[{reason:'badRequest'}]}}}]});
+  assert.throws(()=>g.run('fetchFeed_()'),/BLOGGER_REQUEST_FAILED HTTP 400 API_KEY_INVALID$/);
+});
+test('GAS só registra motivo estruturado e nunca mensagem arbitrária',()=>{
+  const body={error:{message:'secret https://private.test',details:[{reason:'SERVICE_DISABLED'}]}};
+  const g=gas({responses:[{status:403,body}]});
+  assert.throws(()=>g.run('fetchFeed_()'),/BLOGGER_REQUEST_FAILED HTTP 403 SERVICE_DISABLED$/);
+  const invalid=gas({responses:[{status:403,body:{error:{details:[{reason:'secret=https://private.test'}]}}}]});
+  assert.throws(()=>invalid.run('fetchFeed_()'),/^Error: BLOGGER_REQUEST_FAILED HTTP 403$/);
+  const publicError=gas({responses:[{status:403,body}]});
+  assert.doesNotMatch(publicError.run('doGet().text'),/secret|private|SERVICE_DISABLED|403/);
+});

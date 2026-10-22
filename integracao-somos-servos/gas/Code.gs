@@ -69,7 +69,17 @@ function api_(path, params, key) {
       Utilities.sleep(400 + Math.floor(Math.random() * 200));
       continue;
     }
-    throw new Error('BLOGGER_REQUEST_FAILED');
+    // Somente código HTTP e motivo estruturado; nunca chave, URL ou mensagem da API.
+    let reason = '';
+    try {
+      const body = JSON.parse(response.getContentText());
+      const failure = body.error || {};
+      const detail = (failure.details || []).find(function (item) { return item.reason; });
+      const candidate = /API key not valid/i.test(String(failure.message || '')) ? 'API_KEY_INVALID'
+        : (detail && detail.reason) || (failure.errors && failure.errors[0] && failure.errors[0].reason);
+      if (typeof candidate === 'string' && /^[A-Za-z_]{1,80}$/.test(candidate)) reason = candidate;
+    } catch (_) {}
+    throw new Error('BLOGGER_REQUEST_FAILED HTTP ' + status + (reason ? ' ' + reason : ''));
   }
 }
 
