@@ -9,6 +9,7 @@ on:
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
       - "index.html"
+      - "MainActivity-revisado.java"
       - "causas-beatos.html"
       - "missas-proprias.html"
       - "servita.json"
@@ -60,6 +61,9 @@ jobs:
       - name: Aplicar ajustes de release
         run: git apply --check android-release.patch && git apply android-release.patch
 
+      - name: Incorporar MainActivity revisada
+        run: cp MainActivity-revisado.java android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+
       - name: Aplicar ícones Servitas
         run: |
           find android/app/src/main/res -type f -name 'ic_launcher*' -delete
@@ -92,14 +96,14 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 310  # 2.9.29 sucede 2.9.28 (309)
+          code = 311  # 2.9.30 sucede 2.9.29 (310)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.29"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.30"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.29\nAPP_VERSION_CODE=' + str(code) + '\n')
+              env.write('APP_VERSION=2.9.30\nAPP_VERSION_CODE=' + str(code) + '\n')
           print('APK versionName=2.9.28 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
