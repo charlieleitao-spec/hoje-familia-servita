@@ -104,7 +104,7 @@ jobs:
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
               env.write('APP_VERSION=2.9.30\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.28 versionCode=' + str(code))
+          print('APK versionName=2.9.30 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
