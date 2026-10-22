@@ -10,4 +10,7 @@ for(const [year,expected] of [[2025,'2025-4-11'],[2026,'2026-3-27'],[2027,'2027-
  assert.equal(mariaJuntoACruz(year),expected,'Ano '+year);
 }
 assert.equal(mariaJuntoACruz(2027),'2027-3-19','Conflito litúrgico com São José: exige regra de precedência, não resolvida por este teste');
-console.log('7 datas corretas; precedência litúrgica de 2027 continua pendente de validação.');
+function festaExibida(year){const date=mariaJuntoACruz(year);return date.endsWith('-3-19')?null:date;}
+assert.equal(festaExibida(2027),null,'São José prevalece em 19/03/2027; transferência não presumida');
+assert.equal(festaExibida(2026),'2026-3-27');
+console.log('7 datas calculadas; colisão de 2027 bloqueada na exibição.');
