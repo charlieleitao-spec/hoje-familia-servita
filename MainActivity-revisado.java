@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 /**
- * Família Servita 2.9.30 (versionCode 311)
+ * Família Servita 2.9.31 (versionCode 312)
  *
  * Correção: links para arquivos (PDF das folhas mensais, "folhas do ano",
  * "pacote completo", .ics) ficavam presos dentro do WebView, que não exibe
