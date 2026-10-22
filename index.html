@@ -311,6 +311,8 @@ function mariaJuntoACruz(date){
  const easter=easterSunday(date.getFullYear()),feast=new Date(easter);
  feast.setDate(feast.getDate()-9);
  if(date.getFullYear()!==feast.getFullYear()||date.getMonth()!==feast.getMonth()||date.getDate()!==feast.getDate())return null;
+ // A solenidade de São José (19/03) precede esta festa; não presumir transferência.
+ if(date.getMonth()===2&&date.getDate()===19)return null;
  return {titulo:'Santa Maria junto à Cruz',grau:'festa',tipo_material:'sem_material_proprio',data:'Sexta-feira após o V domingo da Quaresma',bio:'Festa própria da Ordem dos Servos de Maria. Os textos oficiais da Missa e da Liturgia das Horas estão disponíveis no site da Cúria Geral. Esta ficha não reproduz os textos litúrgicos.',memoria_liturgica:null};
 }
 function celebrationForDate(date){return records[key(date)]||mariaJuntoACruz(date)}
