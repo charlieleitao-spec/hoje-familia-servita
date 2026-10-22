@@ -22,3 +22,6 @@ jobs:
           node-version: '22'
       - run: node --test integracao-somos-servos/tests/*.test.cjs
       - run: python3 -m unittest discover -s integracao-somos-servos/tests -p 'test_*.py'
+      - name: Verificar implantação pública e CORS sem credenciais
+        timeout-minutes: 3
+        run: node integracao-somos-servos/tests/smoke-live.cjs

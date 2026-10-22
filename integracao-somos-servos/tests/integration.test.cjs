@@ -6,7 +6,7 @@ const path = require('node:path');
 const root = path.join(__dirname,'..');
 const html = fs.readFileSync(path.join(root,'../somos-servos.html'),'utf8');
 const source = html.match(/<script>([\s\S]*?)<\/script>/)[1]
-  .replace("const API_URL = '';", "const API_URL = 'https://script.google.com/macros/s/TEST/exec';");
+  .replace(/const API_URL = '[^']*';/,  "const API_URL = 'https://script.google.com/macros/s/TEST/exec';");
 const KEY = 'familia-servita:somos-servos:v1';
 const feed = () => ({schemaVersion:1,ok:true,stale:false,generatedAt:'2026-10-22T10:00:00Z',
   posts:[{title:'Nossa Senhora',url:'https://somosservos.blogspot.com/2026/10/maria.html',published:'2026-10-22T09:00:00Z',thumbnail:null}],materials:[]});

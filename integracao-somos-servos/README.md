@@ -11,7 +11,18 @@ HTTPS tanto online quanto offline. Só há postagens offline após uma consulta
 bem-sucedida nesta tela. Não se captura silenciosamente a navegação no blog.
 Os recursos exibem links públicos, sem copiar calendários nem alterar graus.
 
-## Ativação do Apps Script
+## Implantação atual
+
+Publicado em 22/10/2026, versão 1, executando como proprietário e com acesso
+para qualquer pessoa. `testarConfiguracao` leu 20 postagens; a URL `/exec`
+retornou JSON `ok:true`. A URL está configurada no HTML canônico e será
+incorporada ao APK pelo build. A chave permanece exclusivamente no GAS.
+
+Projeto: https://script.google.com/home/projects/1fR3OWjZeFbRlciWTEAqniODTbvM_BbbESu7wHVPYW2ha5k1SYKz_SAP5/edit
+
+Endpoint: https://script.google.com/macros/s/AKfycbwvAnolHxpcUrBZaUXqR7uDVyxt6Jsokk_ZJ4XfRdt3ZPQyTMxkJnIE-U5VgmdMv2kj/exec
+
+## Reconfiguração do Apps Script
 
 1. No Google Cloud, ative Blogger API v3 e crie uma chave restrita a essa API.
 2. Crie um projeto Apps Script e copie `gas/Code.gs` e `gas/appsscript.json`.
@@ -58,8 +69,12 @@ file:// anterior. Uma reinstalação sem preservar dados exige nova consulta onl
 
 `python3 -m unittest discover -s integracao-somos-servos/tests -p 'test_*.py'`
 
-São testes locais com mocks, sem credenciais Google. Ainda precisam de validação:
-implantação real, CORS, compilação APK e reabertura em modo avião no Samsung A56.
+Os testes unitários usam mocks, sem credenciais Google. `assembleDebug` foi
+compilado no GitHub Actions. O teste adicional `smoke-live.cjs` consulta a
+implantação real sem cookies, verifica JSON e os cabeçalhos CORS ao longo dos
+redirecionamentos. Ele exige conectividade e não substitui o teste no WebView.
+Ainda precisam de validação: fetch no WebView, APK release e reabertura em modo
+avião no Samsung A56.
 Este código só lê posts publicados; não cria postagens ou gatilhos periódicos.
 
 Fontes oficiais:

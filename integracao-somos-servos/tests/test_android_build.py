@@ -1,3 +1,4 @@
+import re
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -11,7 +12,7 @@ spec.loader.exec_module(module)
 
 class AndroidPreparation(unittest.TestCase):
     def fixture(self, root):
-        (root / "somos-servos.html").write_text((ROOT / "somos-servos.html").read_text())
+        (root / "somos-servos.html").write_text(re.sub(r"const API_URL = '[^']*';", "const API_URL = '';", (ROOT / "somos-servos.html").read_text()))
         manifest = root / "android/app/src/main/AndroidManifest.xml"
         manifest.parent.mkdir(parents=True)
         manifest.write_text('<manifest/>')
@@ -34,6 +35,14 @@ class AndroidPreparation(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     module.preparar(root, url)
             self.assertFalse((root / "android/app/src/main/assets/somos-servos.html").exists())
+
+    def test_release_uses_endpoint_from_canonical_html(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.fixture(root)
+            (root / "somos-servos.html").write_text((ROOT / "somos-servos.html").read_text())
+            result = module.preparar(root)
+            self.assertEqual(result.read_text(), (ROOT / "somos-servos.html").read_text())
 
     def test_native_route_and_build_copy_are_present(self):
         java = (ROOT / "MainActivity-revisado.java").read_text()
