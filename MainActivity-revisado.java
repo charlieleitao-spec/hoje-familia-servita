@@ -11,6 +11,9 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import java.io.IOException;
+import java.io.ByteArrayInputStream;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -19,7 +22,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 /**
- * Família Servita 2.9.30 (versionCode 311)
+ * Família Servita 2.9.31 (versionCode 312)
  *
  * Correção: links para arquivos (PDF das folhas mensais, "folhas do ano",
  * "pacote completo", .ics) ficavam presos dentro do WebView, que não exibe
@@ -31,7 +34,7 @@ public class MainActivity extends Activity {
     private static final String HOST = "charlieleitao-spec.github.io";
     private static final String APP_PATH = "/hoje-familia-servita/";
     private static final String HOME = "https://" + HOST + APP_PATH;
-    private static final String OFFLINE = "file:///android_asset/offline.html";
+    private static final String OFFLINE = HOME + "somos-servos.html";
 
     private static final String[] FILE_EXTENSIONS = {
             ".pdf", ".ics", ".zip", ".docx", ".doc", ".xlsx", ".csv"
@@ -61,6 +64,25 @@ public class MainActivity extends Activity {
         s.setAllowContentAccess(false);
 
         webView.setWebViewClient(new WebViewClient() {
+            // A mesma URL HTTPS serve o asset local online e offline.
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                Uri uri = request.getUrl();
+                if ("https".equalsIgnoreCase(uri.getScheme()) && HOST.equalsIgnoreCase(uri.getHost())
+                        && (APP_PATH + "somos-servos.html").equals(uri.getPath())) {
+                    try {
+                        return new WebResourceResponse("text/html", "UTF-8",
+                                getAssets().open("somos-servos.html"));
+                    } catch (IOException error) {
+                        // Resposta finita: não iniciar um ciclo de fallback se faltar o asset.
+                        return new WebResourceResponse("text/plain", "UTF-8", 500, "Missing asset",
+                                java.util.Collections.emptyMap(), new ByteArrayInputStream(
+                                "Pagina local indisponivel.".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+                    }
+                }
+                return null;
+            }
+
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();

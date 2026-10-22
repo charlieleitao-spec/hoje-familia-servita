@@ -10,6 +10,9 @@ on:
       - "familia-servita-android-icons.zip"
       - "index.html"
       - "MainActivity-revisado.java"
+      - "somos-servos.html"
+      - "integracao-somos-servos/**"
+      - "scripts/preparar-blog-android.py"
       - "causas-beatos.html"
       - "missas-proprias.html"
       - "servita.json"
@@ -23,8 +26,12 @@ on:
       - "favicon-64.png"
       - ".github/workflows/build-android.yml"
   push:
-    branches: [main]
+    branches: [main, feat/somos-servos-gas-offline-20261022]
     paths:
+      - "MainActivity-revisado.java"
+      - "somos-servos.html"
+      - "integracao-somos-servos/**"
+      - "scripts/preparar-blog-android.py"
       - "android-source.zip"
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
@@ -64,6 +71,17 @@ jobs:
       - name: Incorporar MainActivity revisada
         run: cp MainActivity-revisado.java android/app/src/main/java/br/org/servitas/familia/MainActivity.java
 
+      - name: Incorporar leitor local do Somos Servos
+        env:
+          SOMOS_SERVOS_GAS_URL: ${{ vars.SOMOS_SERVOS_GAS_URL }}
+          BUILD_EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$BUILD_EVENT" = "pull_request" ]; then
+            python3 scripts/preparar-blog-android.py --allow-unconfigured
+          else
+            python3 scripts/preparar-blog-android.py
+          fi
+
       - name: Aplicar ícones Servitas
         run: |
           find android/app/src/main/res -type f -name 'ic_launcher*' -delete
@@ -96,15 +114,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 311  # 2.9.30 sucede 2.9.29 (310)
+          code = 312  # 2.9.31 sucede 2.9.30 (311)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.30"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.31"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.30\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.30 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.31\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.31 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -126,7 +144,13 @@ jobs:
         with:
           gradle-version: "8.9"
 
+      - name: Compilar Android de teste sem credenciais de assinatura
+        if: github.event_name == 'pull_request'
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
       - name: Restaurar keystore de release
+        if: github.event_name != 'pull_request'
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           KS_PASS: ${{ secrets.KS_PASS }}
@@ -136,15 +160,18 @@ jobs:
           printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/app/servita.jks
 
       - name: Compilar APK release assinado
+        if: github.event_name != 'pull_request'
         working-directory: android
         env:
           KS_PASS: ${{ secrets.KS_PASS }}
         run: gradle --no-daemon assembleRelease
 
       - name: Preparar nome público
+        if: github.event_name != 'pull_request'
         run: cp android/app/build/outputs/apk/release/app-release.apk "Familia-Servita-${APP_VERSION}.apk"
 
       - name: Verificar assinatura e compatibilidade do APK
+        if: github.event_name != 'pull_request'
         run: |
           APKSIGNER="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/apksigner"
           AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
@@ -173,6 +200,7 @@ jobs:
           grep -E "mipmap/ic_launcher(_round|_monochrome)?" apk-resources.txt | head -12
           echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
       - name: Guardar artefato
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: Familia-Servita-${{ env.APP_VERSION }}-release
@@ -187,9 +215,10 @@ jobs:
           body: |
             APK release assinado do Hoje na Família Servita.
 
-            - rodapé mais próximo da última seção, com menos espaço vazio;
-            - margem inferior adaptada à área de navegação do celular;
-            - identificação e versão em linhas próprias, com quebra de texto;
-            - mantém os controles acessíveis e ajustes do leitor da versão anterior.
+            - leitor local de postagens do Somos Servos integrado ao WebView;
+            - atualização pelo Apps Script com Blogger API v3;
+            - cache local para conservar a última consulta válida sem internet;
+            - links para os materiais litúrgicos da Família Servita.
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
+
 

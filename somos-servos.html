@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src https:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'">
+<title>Somos Servos · Família Servita</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f4ed;color:#233344;font:18px/1.5 Georgia,serif}main{max-width:740px;margin:auto;padding:24px 18px 40px}h1{font-size:1.8rem;line-height:1.2;margin:4px 0 20px}h2{font-size:1.25rem}header small,time,#status{font: .9rem/1.5 system-ui,sans-serif}header small{color:#526478}button,a{touch-action:manipulation}button{min-height:48px;padding:10px 20px;border:1px solid #173b67;border-radius:8px;background:#173b67;color:white;font:inherit}button:disabled{opacity:.6}a{color:#173b67;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #a95616;outline-offset:4px}article{border-top:1px solid #d6d9dc;padding:18px 0;display:flow-root}article a{display:block;min-height:48px;font-size:1.1rem}img{width:96px;height:96px;object-fit:cover;border-radius:6px;float:left;margin:0 14px 10px 0}time{display:block;color:#526478}#status{min-height:3em;margin:18px 0}ul{padding:0;list-style:none}li a{display:block;min-height:48px;padding:12px 0}#empty{color:#526478}
+</style>
+</head>
+<body><main>
+<header><small>Ordem dos Servos de Maria</small><h1>Somos Servos</h1></header>
+<button id="refresh" type="button">Atualizar postagens</button>
+<p id="status" role="status" aria-live="polite">Carregando…</p>
+<section aria-label="Últimas postagens" id="posts"></section>
+<p id="empty" hidden>Nenhuma postagem disponível.</p>
+<section aria-labelledby="resources-title"><h2 id="resources-title">Recursos da família servita</h2><ul id="materials"></ul></section>
+<noscript>Ative o JavaScript para consultar as postagens.</noscript>
+</main>
+<script>
+'use strict';
+// URL pública de leitura; a chave Blogger permanece nas propriedades do GAS.
+const API_URL = 'https://script.google.com/macros/s/AKfycbwvAnolHxpcUrBZaUXqR7uDVyxt6Jsokk_ZJ4XfRdt3ZPQyTMxkJnIE-U5VgmdMv2kj/exec';
+const CACHE_KEY = 'familia-servita:somos-servos:v1';
+const FALLBACK_MATERIALS = [
+  {title:'Hoje na Família Servita',url:'https://charlieleitao-spec.github.io/hoje-familia-servita/'},
+  {title:'Folhas do ano (PDF)',url:'https://charlieleitao-spec.github.io/hoje-familia-servita/recursos/pdfs/folha-servita-ano-completo.pdf'},
+  {title:'Pacote completo',url:'https://charlieleitao-spec.github.io/hoje-familia-servita/recursos/folha-servita-pacote.zip'},
+  {title:'Calendário servita',url:'https://charlieleitao-spec.github.io/hoje-familia-servita/servitas.ics'}
+];
+function safeUrl(value) {
+  if (typeof value !== 'string' || value.length > 4096) return null;
+  try { const url = new URL(value); return url.protocol === 'https:' && !url.username && !url.password ? url.href : null; }
+  catch (_) { return null; }
+}
+function validate(data) {
+  if (!data || data.schemaVersion !== 1 || data.ok !== true ||
+      !Number.isFinite(Date.parse(data.generatedAt)) || !Array.isArray(data.posts) ||
+      data.posts.length > 20 || typeof data.stale !== 'boolean') throw new Error('Invalid feed');
+  const posts = data.posts.map(p => {
+    if (!p || typeof p.title !== 'string' || !safeUrl(p.url) ||
+        !Number.isFinite(Date.parse(p.published))) throw new Error('Invalid post');
+    const url = new URL(p.url);
+    if (url.hostname !== 'somosservos.blogspot.com') throw new Error('Invalid blog');
+    return {title:p.title.slice(0,500),url:url.href,published:p.published,thumbnail:safeUrl(p.thumbnail)};
+  });
+  const materials = Array.isArray(data.materials) ? data.materials.slice(0,20).filter(m =>
+    m && typeof m.title === 'string' && safeUrl(m.url) &&
+    new URL(m.url).hostname === 'charlieleitao-spec.github.io').map(m =>
+    ({title:m.title.slice(0,200),url:safeUrl(m.url)})) : FALLBACK_MATERIALS;
+  return {schemaVersion:1,ok:true,stale:data.stale,generatedAt:data.generatedAt,posts,materials};
+}
+function readCache() {
+  try { const raw = localStorage.getItem(CACHE_KEY); return raw ? validate(JSON.parse(raw)) : null; }
+  catch (_) { return null; }
+}
+function saveCache(data) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); return true; }
+  catch (_) { return false; } // Quota/storage bloqueado não impede exibição online.
+}
+const statusNode = document.getElementById('status');
+const refreshButton = document.getElementById('refresh');
+let current = readCache();
+let busy = false;
+function dateText(value) {
+  return new Date(value).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',dateStyle:'short',timeStyle:'short'});
+}
+function link(title,url) {
+  const a = document.createElement('a'); a.textContent = title; a.href = url;
+  a.rel = 'noopener noreferrer'; return a; // mesma janela; o Android encaminha links externos.
+}
+function render(data) {
+  const posts = document.getElementById('posts'); posts.replaceChildren();
+  for (const p of (data ? data.posts : [])) {
+    const article = document.createElement('article');
+    if (p.thumbnail) {
+      const img = document.createElement('img'); img.alt = ''; img.loading = 'lazy';
+      img.referrerPolicy = 'no-referrer'; img.src = p.thumbnail;
+      img.addEventListener('error',()=>img.remove(),{once:true}); article.append(img);
+    }
+    article.append(link(p.title,p.url));
+    const time = document.createElement('time'); time.dateTime = p.published;
+    time.textContent = dateText(p.published); article.append(time); posts.append(article);
+  }
+  document.getElementById('empty').hidden = !!(data && data.posts.length);
+  const resources = document.getElementById('materials'); resources.replaceChildren();
+  for (const m of (data ? data.materials : FALLBACK_MATERIALS)) {
+    const li = document.createElement('li'); li.append(link(m.title,m.url)); resources.append(li);
+  }
+}
+async function update() {
+  if (busy) return;
+  if (!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(API_URL)) {
+    statusNode.textContent = current ? 'Dados salvos de ' + dateText(current.generatedAt) + '. Atualização ainda não configurada.' : 'A atualização das postagens ainda não foi configurada.';
+    return;
+  }
+  busy = true; refreshButton.disabled = true;
+  statusNode.textContent = current ? 'Exibindo dados salvos. Buscando atualizações…' : 'Buscando postagens…';
+  const controller = new AbortController();
+  const timer = setTimeout(()=>controller.abort(),15000);
+  try {
+    // GET simples: sem cabeçalhos extras, cookies, preflight ou mode:no-cors.
+    const response = await fetch(API_URL,{method:'GET',mode:'cors',credentials:'omit',redirect:'follow',cache:'no-store',signal:controller.signal});
+    if (!response.ok) throw new Error('HTTP failure');
+    const raw = await response.text();
+    if (raw.length > 200000) throw new Error('Oversize response');
+    const data = validate(JSON.parse(raw));
+    // Uma resposta antiga do servidor nunca sobrescreve dados mais recentes já salvos.
+    if (current && Date.parse(data.generatedAt) < Date.parse(current.generatedAt)) throw new Error('Older response');
+    current = data; const persisted = saveCache(data); render(data);
+    statusNode.textContent = (data.stale ? 'Servidor temporariamente indisponível. Dados de ' : 'Atualizado em ') + dateText(data.generatedAt) + (persisted ? '.' : '. Não foi possível salvar para uso sem internet.');
+  } catch (_) {
+    statusNode.textContent = current ? 'Não foi possível atualizar. Exibindo dados salvos de ' + dateText(current.generatedAt) + '.' : 'Não foi possível conectar. Conecte-se à internet e toque em Atualizar postagens para salvar a primeira consulta.';
+  } finally { clearTimeout(timer); busy = false; refreshButton.disabled = false; }
+}
+render(current);
+refreshButton.addEventListener('click',update);
+window.addEventListener('online',update);
+window.addEventListener('offline',()=>{
+  if (!busy) statusNode.textContent = current ? 'Sem conexão. Dados salvos de ' + dateText(current.generatedAt) + '.' : 'Sem conexão e sem postagens salvas.';
+});
+update();
+</script></body></html>
