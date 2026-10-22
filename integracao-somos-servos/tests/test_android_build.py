@@ -42,8 +42,18 @@ class AndroidPreparation(unittest.TestCase):
         self.assertIn('shouldInterceptRequest', java)
         self.assertNotIn('setAllowUniversalAccessFromFileURLs(true)', java)
         workflow = (ROOT / ".github/workflows/build-android.yml").read_text()
-        self.assertLess(workflow.index('unzip -q android-source.zip'), workflow.index('run: python3 scripts/preparar-blog-android.py'))
+        self.assertLess(workflow.index('unzip -q android-source.zip'), workflow.index('python3 scripts/preparar-blog-android.py'))
         self.assertIn('href="./somos-servos.html"', (ROOT / "index.html").read_text())
+
+    def test_debug_allows_empty_but_never_untrusted_endpoint(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.fixture(root)
+            result = module.preparar(root, allow_unconfigured=True)
+            self.assertIn("const API_URL = '';", result.read_text())
+            for url in ["https://evil.test/exec", "https://script.google.com/macros/s/X/dev"]:
+                with self.assertRaises(ValueError):
+                    module.preparar(root, url, allow_unconfigured=True)
 
 
 if __name__ == "__main__":

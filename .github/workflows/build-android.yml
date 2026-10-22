@@ -74,7 +74,13 @@ jobs:
       - name: Incorporar leitor local do Somos Servos
         env:
           SOMOS_SERVOS_GAS_URL: ${{ vars.SOMOS_SERVOS_GAS_URL }}
-        run: python3 scripts/preparar-blog-android.py
+          BUILD_EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$BUILD_EVENT" = "pull_request" ]; then
+            python3 scripts/preparar-blog-android.py --allow-unconfigured
+          else
+            python3 scripts/preparar-blog-android.py
+          fi
 
       - name: Aplicar ícones Servitas
         run: |
@@ -138,7 +144,13 @@ jobs:
         with:
           gradle-version: "8.9"
 
+      - name: Compilar Android de teste sem credenciais de assinatura
+        if: github.event_name == 'pull_request'
+        working-directory: android
+        run: gradle --no-daemon assembleDebug
+
       - name: Restaurar keystore de release
+        if: github.event_name != 'pull_request'
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           KS_PASS: ${{ secrets.KS_PASS }}
@@ -148,15 +160,18 @@ jobs:
           printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/app/servita.jks
 
       - name: Compilar APK release assinado
+        if: github.event_name != 'pull_request'
         working-directory: android
         env:
           KS_PASS: ${{ secrets.KS_PASS }}
         run: gradle --no-daemon assembleRelease
 
       - name: Preparar nome público
+        if: github.event_name != 'pull_request'
         run: cp android/app/build/outputs/apk/release/app-release.apk "Familia-Servita-${APP_VERSION}.apk"
 
       - name: Verificar assinatura e compatibilidade do APK
+        if: github.event_name != 'pull_request'
         run: |
           APKSIGNER="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/apksigner"
           AAPT="${ANDROID_HOME}/build-tools/$(ls "${ANDROID_HOME}/build-tools" | sort -V | tail -1)/aapt"
@@ -185,6 +200,7 @@ jobs:
           grep -E "mipmap/ic_launcher(_round|_monochrome)?" apk-resources.txt | head -12
           echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
       - name: Guardar artefato
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: Familia-Servita-${{ env.APP_VERSION }}-release

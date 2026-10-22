@@ -24,13 +24,16 @@ Os recursos exibem links públicos, sem copiar calendários nem alterar graus.
 6. Insira a URL pública `/exec` na constante `API_URL` de `somos-servos.html`.
    Assim o site e o APK usam a mesma implantação. Alternativamente, para o APK,
    defina a variável de repositório `SOMOS_SERVOS_GAS_URL`; ela tem precedência
-   sobre o valor do HTML. O build recusa URL ausente, /dev ou host diferente.
+   sobre o valor do HTML. O build release recusa URL ausente, /dev ou host diferente.
 7. Antes de mesclar, teste o fetch no WebView: a abertura direta da URL no
    navegador não comprova CORS. Depois gere nova versão e valide no aparelho.
 
 O workflow incorpora o HTML após descompactar o Android. Não altera o ZIP-fonte,
 assinatura ou versionCode nesta etapa. A compilação release exige configurar a
 URL e escolher uma versão superior à instalada antes da distribuição.
+No PR, o workflow executa `assembleDebug`, sem restaurar o keystore ou publicar
+artefatos. Apenas nesse modo aceita URL vazia: a tela informa que a atualização
+não foi configurada. URLs inválidas continuam rejeitadas. Não há endpoint fictício.
 
 ## Comportamento e limites
 
