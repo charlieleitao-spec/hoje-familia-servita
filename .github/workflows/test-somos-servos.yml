@@ -1,0 +1,24 @@
+name: Testar integração Somos Servos
+on:
+  pull_request:
+    paths:
+      - 'integracao-somos-servos/**'
+      - 'somos-servos.html'
+      - 'MainActivity-revisado.java'
+      - 'scripts/preparar-blog-android.py'
+      - '.github/workflows/test-somos-servos.yml'
+      - '.github/workflows/build-android.yml'
+      - 'index.html'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test integracao-somos-servos/tests/*.test.cjs
+      - run: python3 -m unittest discover -s integracao-somos-servos/tests -p 'test_*.py'

@@ -10,6 +10,9 @@ on:
       - "familia-servita-android-icons.zip"
       - "index.html"
       - "MainActivity-revisado.java"
+      - "somos-servos.html"
+      - "integracao-somos-servos/**"
+      - "scripts/preparar-blog-android.py"
       - "causas-beatos.html"
       - "missas-proprias.html"
       - "servita.json"
@@ -25,6 +28,10 @@ on:
   push:
     branches: [main]
     paths:
+      - "MainActivity-revisado.java"
+      - "somos-servos.html"
+      - "integracao-somos-servos/**"
+      - "scripts/preparar-blog-android.py"
       - "android-source.zip"
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
@@ -63,6 +70,11 @@ jobs:
 
       - name: Incorporar MainActivity revisada
         run: cp MainActivity-revisado.java android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+
+      - name: Incorporar leitor local do Somos Servos
+        env:
+          SOMOS_SERVOS_GAS_URL: ${{ vars.SOMOS_SERVOS_GAS_URL }}
+        run: python3 scripts/preparar-blog-android.py
 
       - name: Aplicar ícones Servitas
         run: |
@@ -192,4 +204,5 @@ jobs:
             - identificação e versão em linhas próprias, com quebra de texto;
             - mantém os controles acessíveis e ajustes do leitor da versão anterior.
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
+
 
