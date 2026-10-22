@@ -301,6 +301,21 @@ function parseDate(value){
  return date.getFullYear()===+m[1]&&date.getMonth()===+m[2]-1&&date.getDate()===+m[3]?date:null;
 }
 const initialDate=new URLSearchParams(location.search).get('data');let current=parseDate(initialDate)||new Date(),records={},active=null,loadError='';const pad=n=>String(n).padStart(2,'0'),key=d=>pad(d.getMonth()+1)+'-'+pad(d.getDate());
+// Festa móvel OSM: sexta-feira após o V domingo da Quaresma (Páscoa - 9 dias).
+// Não substitui uma celebração já cadastrada na mesma data; precedência requer revisão.
+function easterSunday(year){
+ const a=year%19,b=Math.floor(year/100),c=year%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k+7)%7,m=Math.floor((a+11*h+22*l)/451),n=h+l-7*m+114;
+ return new Date(year,Math.floor(n/31)-1,n%31+1,12);
+}
+function mariaJuntoACruz(date){
+ const easter=easterSunday(date.getFullYear()),feast=new Date(easter);
+ feast.setDate(feast.getDate()-9);
+ if(date.getFullYear()!==feast.getFullYear()||date.getMonth()!==feast.getMonth()||date.getDate()!==feast.getDate())return null;
+ // A solenidade de São José (19/03) precede esta festa; não presumir transferência.
+ if(date.getMonth()===2&&date.getDate()===19)return null;
+ return {titulo:'Santa Maria junto à Cruz',grau:'festa',tipo_material:'sem_material_proprio',data:'Sexta-feira após o V domingo da Quaresma',bio:'Festa própria da Ordem dos Servos de Maria. Os textos oficiais da Missa e da Liturgia das Horas estão disponíveis no site da Cúria Geral. Esta ficha não reproduz os textos litúrgicos.',memoria_liturgica:null};
+}
+function celebrationForDate(date){return records[key(date)]||mariaJuntoACruz(date)}
 const hourNames={invitatorio:'Invitatório',oficio_leituras:'Ofício das Leituras',laudes:'Laudes',hora_media:'Hora Média',vesperas:'Vésperas',completas:'Completas'};
 function updateConnectionNotice(){
  const offline=!navigator.onLine;
@@ -330,7 +345,7 @@ function renderBio(text){
 }
 const memoriaSection=document.getElementById('memoria');
 function render(){
- date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=records[key(current)]||null;
+ date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=celebrationForDate(current)||null;
  title.textContent=active?displayCelebrationTitle(active):'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';celebrationStatus.textContent=active?.data||loadError;
  memory.textContent=active?displayCelebrationTitle(active):'Memória e espiritualidade';
  const memoria=active?.memoria_liturgica;
@@ -610,7 +625,7 @@ function diagnoseHour(txt,wrap){
 }
 function addSection(t,txt){let s=document.createElement('section');s.className='section';let h=t?`<h3>${escapeHtml(t)}</h3>`:'';s.innerHTML=h+`<div class="littext">${escapeHtml(txt)}</div>`;content.appendChild(s)}
 function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=records[key(d)];if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
+function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=celebrationForDate(d);if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
 prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
 calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden));if(!calendarCard.hidden)calendarCard.scrollIntoView({behavior:scrollBehavior(),block:'start'})};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
 materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:scrollBehavior()})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
