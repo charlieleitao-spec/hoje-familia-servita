@@ -3,10 +3,13 @@
 Escopo aprovado para Liturgia OSM e Hoje na Família Servita. Não publicar nem incorporar documentos normativos sem validação da fonte.
 
 ## Catálogo prioritário
-1. Constituições da Ordem dos Servos de Maria — **pendente**: obter edição integral em português e verificar vigência normativa.
-2. Regra de Santo Agostinho — **pendente**: obter tradução integral autorizada e verificar edição.
+1. Constituições da Ordem dos Servos de Maria — **fonte portuguesa identificada**: volume oficial da Cúria Geral OSM (Roma, 2015), PDF de 152 páginas fornecido pelo responsável do projeto; conferir eventuais atualizações normativas antes de afirmar vigência atual.
+2. Regra de Santo Agostinho — **fonte portuguesa identificada** no mesmo volume oficial de 2015, juntamente com o Diretório Geral.
 3. Ratio Institutionis OSM — fonte portuguesa indicada: https://servidimaria.net/sitoosm/po/formacao/ratio/texto.pdf ; verificar integridade, licença e edição antes de empacotar.
 4. Regra de Vida da Ordem Secular — fonte portuguesa indicada: https://servidimaria.net/sitoosm/po/regrossm.pdf ; documento distinto da Regra de Santo Agostinho; verificar integridade, licença e edição antes de empacotar.
+
+## Direitos de reprodução e distribuição
+O volume de 2015 declara reserva de direitos de reprodução, inclusive parcial. A disponibilização offline dentro de APK distribuído depende de autorização da Cúria Geral OSM ou outra base jurídica documentada. Até lá, manter apenas metadados, apresentação editorial original e link oficial verificado, sem incorporar o PDF ou sua transcrição integral.
 
 ## Critérios de implementação
 - Entrada única em «Recursos da Família Servita», sem excesso de botões.
