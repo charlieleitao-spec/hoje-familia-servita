@@ -9,7 +9,7 @@ Escopo aprovado para Liturgia OSM e Hoje na Família Servita. Não publicar nem 
 4. Regra de Vida da Ordem Secular — fonte portuguesa indicada: https://servidimaria.net/sitoosm/po/regrossm.pdf ; documento distinto da Regra de Santo Agostinho; verificar integridade, licença e edição antes de empacotar.
 
 ## Direitos de reprodução e distribuição
-O volume de 2015 declara reserva de direitos de reprodução, inclusive parcial. O responsável pelo projeto informou em 23/10/2026 que a Ordem possui autorização para distribuir os documentos nos aplicativos. A confirmação é declaração do responsável, sem comprovante anexado neste repositório; registrar escopo e origem da autorização antes da distribuição pública. É possível avançar com preparação e testes da integração offline, verificando os arquivos e suas edições.
+O volume de 2015 declara reserva de direitos de reprodução, inclusive parcial. O responsável pelo projeto confirmou em 23/10/2026 que a autorização de distribuição nos aplicativos abrange os cinco conjuntos documentais previstos: Constituições OSM, Regra de Santo Agostinho, Diretório Geral (no volume de 2015), Ratio Institutionis OSM e Regra de Vida da Ordem Secular. A confirmação é declaração do responsável; não há comprovante anexado neste repositório. É possível avançar com preparação e testes da integração offline, verificando os arquivos e suas edições.
 
 ## Critérios de implementação
 - Entrada única em «Recursos da Família Servita», sem excesso de botões.
