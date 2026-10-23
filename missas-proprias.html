@@ -24,8 +24,9 @@ input{width:100%;border:1px solid #cfc6b7;border-radius:10px;padding:12px;font:i
 .mass{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .mass h2{font:700 1.12rem Georgia,serif;color:var(--navy);margin:0 0 4px}
 .meta{font-size:.88rem;color:var(--muted)}
-.open{flex:0 0 auto;display:inline-block;background:var(--navy);color:#fff;border-radius:10px;padding:10px 12px;text-decoration:none;font-weight:800;font-size:.9rem}
-@media(max-width:540px){.mass{align-items:flex-start;flex-direction:column}.open{width:100%;text-align:center}}
+.mass .open{flex:0 0 auto;width:auto;max-width:100%;min-height:44px;box-sizing:border-box;background:#f6f8fb;color:var(--navy);border:1px solid #bdcbd9;border-radius:8px;padding:8px 14px;text-decoration:none;font-weight:600;font-size:14px!important;line-height:1.4!important;white-space:nowrap}
+.mass .open:hover{background:#edf2f7;border-color:var(--navy)}
+@media(max-width:540px){.mass{align-items:flex-start;flex-direction:column;gap:10px}.mass .open{align-self:flex-start;width:auto}}
 
 /* Sistema tipográfico global — alinhado ao padrão editorial do Somos Servos */
 :root{--ss-reading-font:Georgia,"Noto Serif","Times New Roman",serif;--ss-body-size:17px}
@@ -69,7 +70,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <header><div>ORDEM DOS SERVOS DE MARIA</div><h1>Missas Próprias OSM</h1><p>Formulários do Missal da Ordem</p></header>
 <main id="conteudo" tabindex="-1">
 <div class="top"><a class="back" href="./">‹ Voltar ao Hoje</a><span class="count" id="count"></span></div>
-<div class="intro">Catálogo com 32 formulários próprios da Ordem, incluindo celebrações fixas, móveis e Missas de Santa Maria no Sábado. Os PDFs são cópias dos formulários oficiais, hospedadas no projeto Liturgia OSM. A abertura do PDF requer conexão com a internet.</div>
+<div class="intro">Catálogo com 32 formulários próprios da Ordem, incluindo celebrações fixas, móveis e Missas de Santa Maria no Sábado. Os PDFs são cópias dos formulários oficiais, hospedadas no projeto Liturgia OSM. No navegador, a abertura do PDF requer conexão com a internet. No aplicativo Android 2.9.32 ou posterior, esses documentos ficam disponíveis no leitor interno, com ampliação e impressão.</div>
 <section class="intro">
 <label for="search">Buscar celebração</label>
 <input id="search" type="search" placeholder="Nome, data ou categoria" autocomplete="off">
@@ -105,7 +106,7 @@ function render(){
  });
  document.getElementById('count').textContent=filtered.length+' de '+celebrations.length+' formulários';
  document.getElementById('list').innerHTML=filtered.map(function(item){
-   const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir formulário PDF</a>';
+   const link='<a class="open" target="_blank" rel="noopener noreferrer" href="'+pdfBase+encodeURIComponent(item.pdf)+'" aria-label="Abrir o formulário da Missa de '+esc(item.title)+'">Abrir PDF</a>';
    const canonical=canonicalByDate.get(item.date);
    const fullRank=canonical?.categoria==='beato'?(canonical.genero==='f'?'Beata':'Beato'):item.rank;
    const fullTitle=canonical?.categoria==='beato'?fullRank+' '+String(canonical.title).replace(/^(?:B\.|Beato|Beata)\s+/i,''):item.title;

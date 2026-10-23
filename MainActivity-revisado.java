@@ -22,12 +22,11 @@ import android.widget.Toast;
 import java.util.Locale;
 
 /**
- * Família Servita 2.9.31 (versionCode 312)
+ * Família Servita 2.9.32 (versionCode 313)
  *
- * Correção: links para arquivos (PDF das folhas mensais, "folhas do ano",
- * "pacote completo", .ics) ficavam presos dentro do WebView, que não exibe
- * PDF e não tinha DownloadListener — o toque não fazia nada. Agora esses
- * links (e qualquer download) abrem fora do app, no navegador/visualizador.
+ * PDFs litúrgicos e folhas do ano abrem no leitor Android local, com
+ * ampliação, navegação e impressão. ZIP, ICS e demais links continuam
+ * abrindo no navegador ou aplicativo correspondente.
  */
 public class MainActivity extends Activity {
 
@@ -171,6 +170,15 @@ public class MainActivity extends Activity {
     }
 
     private void openExternal(Uri uri) {
+        PdfLink.Document pdf = PdfLink.resolve(uri.toString());
+        if (pdf != null) {
+            Intent reader = new Intent(this, LocalPdfActivity.class);
+            reader.putExtra("path", pdf.path);
+            reader.putExtra("page", pdf.page);
+            reader.putExtra("title", "Família Servita · PDF");
+            startActivity(reader);
+            return;
+        }
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         } catch (ActivityNotFoundException | SecurityException e) {
