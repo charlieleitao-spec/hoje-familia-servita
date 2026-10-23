@@ -236,7 +236,7 @@ jobs:
             adb shell svc wifi disable
             adb shell svc data disable
             adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation | tee pdf-android-validation.txt
-            grep -q 'validation=PASS' pdf-android-validation.txt
+            grep -Fxq 'PASS: 76 PDFs; 366 pages; original print bytes; zoom; Android printing; cancel and return.' pdf-android-validation.txt
 
       - name: Guardar evidências dos PDFs
         if: always() && github.event_name != 'pull_request'
