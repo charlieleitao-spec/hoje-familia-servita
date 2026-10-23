@@ -1,0 +1,321 @@
+{
+  "repository": "charlieleitao-spec/liturgia-osm",
+  "commit": "b2b6a61f2878e4e841bebee9ca1ab199d9e4f576",
+  "documents": [
+    {
+      "path": "data/pdfs/missal/adviento.pdf",
+      "sha256": "d751c967720f57681922952bdecb86402369c5325a3a76c6e7e8ea83d30f42f3",
+      "size": 59253
+    },
+    {
+      "path": "data/pdfs/missal/agustin.pdf",
+      "sha256": "f816489213a0c843ee5a97c6296a7e61c9b0fb8e44777bf627eef3ae6d3dcc61",
+      "size": 41247
+    },
+    {
+      "path": "data/pdfs/missal/andres.pdf",
+      "sha256": "b9a3332294f880a10fcd445e48abb9571b1673552bda5797d9e141272f91b1c3",
+      "size": 74498
+    },
+    {
+      "path": "data/pdfs/missal/antonio.pdf",
+      "sha256": "fd53e2ebba92d9dc4fe62b14f2be2ff32dab24b44da519733cbdb846a448aeba",
+      "size": 58692
+    },
+    {
+      "path": "data/pdfs/missal/benincasa.pdf",
+      "sha256": "eaf6201fe1d9c4f93e7cbc892cd50894070f0dc2b7637d0ac237aae7bf4e7a79",
+      "size": 40747
+    },
+    {
+      "path": "data/pdfs/missal/bonaforli.pdf",
+      "sha256": "17d468ac0de5243726e0fec131475942b54b1c1f867d4c860522ac191b8b05ec",
+      "size": 49627
+    },
+    {
+      "path": "data/pdfs/missal/bonapistoia.pdf",
+      "sha256": "ffea38e550ad07a7d78dc64390fe2d098b77d3fef7c746b161687d4285ad7a03",
+      "size": 48844
+    },
+    {
+      "path": "data/pdfs/missal/clelia.pdf",
+      "sha256": "81241b210185e9a8d47c1d67f8bcbad77552b9202819b1a3b510f9d51db14af6",
+      "size": 49936
+    },
+    {
+      "path": "data/pdfs/missal/difuntos.pdf",
+      "sha256": "991f02da531e0535da42a7bbbf78be93c9fd2e4323c91bb24a4894e194ba255f",
+      "size": 52147
+    },
+    {
+      "path": "data/pdfs/missal/dolorosa.pdf",
+      "sha256": "29fd08b1802e46c1fb66ebd7a148b10c5cbab9890dca9c01762c117bf567e744",
+      "size": 86451
+    },
+    {
+      "path": "data/pdfs/missal/filipe.pdf",
+      "sha256": "85385f5eac49c881f1803aa09893ff0bd6e699a1057e64583eabfc97f4bde2b9",
+      "size": 96664
+    },
+    {
+      "path": "data/pdfs/missal/francisco.pdf",
+      "sha256": "fde488f531c3744f14a466297cb5bd08c7512c77765be29b570d9b761c4e16b0",
+      "size": 40463
+    },
+    {
+      "path": "data/pdfs/missal/fundadores.pdf",
+      "sha256": "814a07670148134156e696c901e8b3313d1c282e4e1e5668d82777468cebb3a5",
+      "size": 87074
+    },
+    {
+      "path": "data/pdfs/missal/isabel.pdf",
+      "sha256": "d32727671815b6ad0d1231131eefc183f367452a4900b46f7ef3512f3ca30cb7",
+      "size": 49331
+    },
+    {
+      "path": "data/pdfs/missal/jeronimo.pdf",
+      "sha256": "28c1eb18ad94b51e114b153c4f5fd7dcc066cac2bf266800852b4a4bf1e982c6",
+      "size": 48867
+    },
+    {
+      "path": "data/pdfs/missal/joaquin.pdf",
+      "sha256": "d4b705c31b26c6e57c8a190dec8d80a17c6b4097af16204b7efcc9220f6a4265",
+      "size": 54647
+    },
+    {
+      "path": "data/pdfs/missal/juana.pdf",
+      "sha256": "caf87ea785bc8e456569be6a1bec1018928aadf69fa0342c535cce64017491fb",
+      "size": 48176
+    },
+    {
+      "path": "data/pdfs/missal/juanangel.pdf",
+      "sha256": "cad071ac84928c712a26b3749d4ab7439c1e741c91c8b9a395da8f611c9a04b9",
+      "size": 51454
+    },
+    {
+      "path": "data/pdfs/missal/juliana.pdf",
+      "sha256": "99aed0c4b48faad0856ea8f72956cd02a77b9a36ddd031c644439da6d45efa84",
+      "size": 65978
+    },
+    {
+      "path": "data/pdfs/missal/maria1.pdf",
+      "sha256": "939e84edcb03f11f622b81be07988a63e6669e53b3bb21518eccb52b8f6b5c50",
+      "size": 61429
+    },
+    {
+      "path": "data/pdfs/missal/maria2.pdf",
+      "sha256": "afc50512b5b05d3a94e0e36cb5b91d75214c45afad72155a04189fb0c02281b5",
+      "size": 75763
+    },
+    {
+      "path": "data/pdfs/missal/mariagracia.pdf",
+      "sha256": "983c9d9f03c6e93d2cac159f60c3da94b3eda6ad30bc1c260d7e3ce0ca25d90c",
+      "size": 49884
+    },
+    {
+      "path": "data/pdfs/missal/msenario.pdf",
+      "sha256": "a75d84b0fbddd202963a38352826c8e242e69315c4e97202ed28dd05bcecb7d4",
+      "size": 69559
+    },
+    {
+      "path": "data/pdfs/missal/navidad.pdf",
+      "sha256": "462a8fdb71be0030aff90db75123ac65e035e2e059fcbd02e44e4a68f4e65cb1",
+      "size": 50721
+    },
+    {
+      "path": "data/pdfs/missal/pascua.pdf",
+      "sha256": "63b2c3e37752af9198454d3acf57bb45c268253657b165721724d6047a8db2df",
+      "size": 53420
+    },
+    {
+      "path": "data/pdfs/missal/peregrino.pdf",
+      "sha256": "df66cc47c5df6fb9319160e7d91f77d027f072eb82d3171c88f3adfd9fb3d5e0",
+      "size": 86133
+    },
+    {
+      "path": "data/pdfs/missal/piecruz.pdf",
+      "sha256": "2c9ac2daaa8fa26dbb7230190f364817aa92383414f596a66f622812366f4a1a",
+      "size": 82669
+    },
+    {
+      "path": "data/pdfs/missal/tiago.pdf",
+      "sha256": "1bfb90353228961d999ac845d2bc37e24b52039b8b77ac551c04985f7c6799d0",
+      "size": 40907
+    },
+    {
+      "path": "data/pdfs/missal/todosantos.pdf",
+      "sha256": "b84221bd2b94fd418c950a7e5d62fff85a08ddfbc21485d213818805417366bd",
+      "size": 61577
+    },
+    {
+      "path": "data/pdfs/missal/tomas.pdf",
+      "sha256": "1271d7a07e9e6caf61615e4a14aa552cc90ec725697153ce5dd7c5292de930d7",
+      "size": 39941
+    },
+    {
+      "path": "data/pdfs/missal/ubaldo.pdf",
+      "sha256": "1d599e4902cbb77e56f9be19ef860303651d96eb1945adf5f6c4630973192cca",
+      "size": 40028
+    },
+    {
+      "path": "data/pdfs/missal/villa.pdf",
+      "sha256": "a2fa0841e4d3bc87f4fa4138faf6d07521e29dadcfd990adef39efd8d4cee506",
+      "size": 57012
+    },
+    {
+      "path": "data/pdfs/oficios/adviento.pdf",
+      "sha256": "1638cf6570896fc3d40830632010f1c94a4b952c88c60caef2b74ba53bb15765",
+      "size": 64584
+    },
+    {
+      "path": "data/pdfs/oficios/agustin.pdf",
+      "sha256": "5e0a8e0139aab0f207c79d057a425fd6a04b924f26d18b0601f77499cb20322c",
+      "size": 72736
+    },
+    {
+      "path": "data/pdfs/oficios/andres.pdf",
+      "sha256": "19cf2a2e2fe527a6234bb472396e874198baa982c8b564d3a9b1a220f2f0785e",
+      "size": 27529
+    },
+    {
+      "path": "data/pdfs/oficios/antonio.pdf",
+      "sha256": "da33929fc38dcaf68a02f21b5bd27ffaa64065faa6bbfcad4533418c44368262",
+      "size": 78643
+    },
+    {
+      "path": "data/pdfs/oficios/benincasa.pdf",
+      "sha256": "f7a7fc7a642dd19177602c0b8666ab529fa59ee36badecfb2bdd4e29da9cec45",
+      "size": 26390
+    },
+    {
+      "path": "data/pdfs/oficios/bonaforli.pdf",
+      "sha256": "0933c15196235c2072d02670a6c68375552d154b2b47a3675d31ae08afe0bf3d",
+      "size": 32420
+    },
+    {
+      "path": "data/pdfs/oficios/bonapistoia.pdf",
+      "sha256": "ffd05d81dec3d2b7080e27ace60a43f396561c1baaf2f6d4ae638d995b709a8b",
+      "size": 28755
+    },
+    {
+      "path": "data/pdfs/oficios/clelia.pdf",
+      "sha256": "ad3b599e49b6dc4e25a8174e1ba73f1e2237d7f66e72425252b5fe4ff7b8a4c1",
+      "size": 30525
+    },
+    {
+      "path": "data/pdfs/oficios/difuntos.pdf",
+      "sha256": "8582c154aa73b50d37366b23d7f3f5a74d0fcf950b515c50217de3ced7460b2e",
+      "size": 142162
+    },
+    {
+      "path": "data/pdfs/oficios/dolorosa.pdf",
+      "sha256": "65ca76ddeb8071433c5e2d296a9f13dac421838cd980ef202f5e0f8cafc81048",
+      "size": 156972
+    },
+    {
+      "path": "data/pdfs/oficios/filipe.pdf",
+      "sha256": "e37957b33001c7d935956e082dc980682d45e37c35671b5a92d1eab3968eff55",
+      "size": 81235
+    },
+    {
+      "path": "data/pdfs/oficios/francisco.pdf",
+      "sha256": "5c6bd36bb70da2ee22c7760d5db61d58021f5910fd8c299a19b7beedac9ca63c",
+      "size": 35510
+    },
+    {
+      "path": "data/pdfs/oficios/fundadores.pdf",
+      "sha256": "ad62f88e391fbdf49e2abaa2a189466d96887fd5458c92b450887e66187d47b7",
+      "size": 132519
+    },
+    {
+      "path": "data/pdfs/oficios/isabel.pdf",
+      "sha256": "c0d0341a2ed212a6af4cecf862f7952d396bd0034c1d9f1f61e7be943499f474",
+      "size": 31736
+    },
+    {
+      "path": "data/pdfs/oficios/jeronimo.pdf",
+      "sha256": "20e098a76a854a3997a9a1fbf655e3bbc70c21d704ad0caae314e83e2989e738",
+      "size": 27949
+    },
+    {
+      "path": "data/pdfs/oficios/joaquin.pdf",
+      "sha256": "9133348d85d976142bf132b19649b563c64fa36103e3174801000c382459eec1",
+      "size": 38041
+    },
+    {
+      "path": "data/pdfs/oficios/juana.pdf",
+      "sha256": "01f396470c82b56c6ab163619f5b728c06ca815712ab46f50a905899a1314fe0",
+      "size": 43730
+    },
+    {
+      "path": "data/pdfs/oficios/juanangel.pdf",
+      "sha256": "8903f19d5ef33f0928b1aa4dbc599cd56f9ea6816d871a63bbb72dba2a125f8c",
+      "size": 35426
+    },
+    {
+      "path": "data/pdfs/oficios/juliana.pdf",
+      "sha256": "1df33721af885aaf309749164ca3b618063805b8da354f1faa742d09afc7cd33",
+      "size": 82884
+    },
+    {
+      "path": "data/pdfs/oficios/mariagracia.pdf",
+      "sha256": "f4f228c83bf0d070756e86f61d9325fa3c19e2731474890b65d0c8b52711cda8",
+      "size": 46095
+    },
+    {
+      "path": "data/pdfs/oficios/msenario.pdf",
+      "sha256": "1edec618340a8e13f49c3d3fa42f55759b6c2f9f9f0aae119080edd9b52ef42a",
+      "size": 42678
+    },
+    {
+      "path": "data/pdfs/oficios/navidad.pdf",
+      "sha256": "f99973f76e1e7c1cee4d8244995436524339878a3cb53c9693ca147b5c15257c",
+      "size": 48526
+    },
+    {
+      "path": "data/pdfs/oficios/ordinario.pdf",
+      "sha256": "da6e0f649dec8d3cb27b09c842ad6a507e42b1fd18c86736d4242e4ede4aea4f",
+      "size": 238546
+    },
+    {
+      "path": "data/pdfs/oficios/pascua.pdf",
+      "sha256": "31107e3011360c6321d7fc5c3ae180e3662ebacbaf26518d41df817c00fd66a3",
+      "size": 46984
+    },
+    {
+      "path": "data/pdfs/oficios/peregrino.pdf",
+      "sha256": "62d70e23f2ecbfb1666d792737a15812bfaa3f93d8689dea0c0cfc30002bd157",
+      "size": 75593
+    },
+    {
+      "path": "data/pdfs/oficios/piecruz.pdf",
+      "sha256": "e8dd73208e624141b389f62b0dad9bdba23c9c131983cc3edff8ed7e67d5e97b",
+      "size": 128386
+    },
+    {
+      "path": "data/pdfs/oficios/tiago.pdf",
+      "sha256": "202fe0361819ba28e2ac7f55d854f75469194911beeb27fa4c1f65a68df3591b",
+      "size": 36099
+    },
+    {
+      "path": "data/pdfs/oficios/todosantos.pdf",
+      "sha256": "91df469d4c61aacc2fe7aa752d7a45c6cfd7fdfb406a5b79074b5193eb4971a3",
+      "size": 129463
+    },
+    {
+      "path": "data/pdfs/oficios/tomas.pdf",
+      "sha256": "1b8150a8463c16b204907427b095ad3b1b319f54d9c4fc47c57cea5f2d43e57d",
+      "size": 27899
+    },
+    {
+      "path": "data/pdfs/oficios/ubaldo.pdf",
+      "sha256": "d14fe954a60066070aa80deee1056821fdef1b34963eb84a2bdbc2cea6b74fed",
+      "size": 30779
+    },
+    {
+      "path": "data/pdfs/oficios/villa.pdf",
+      "sha256": "01b971629f312e11ca598dd55a837eff1efeffc1901ec37b992ffc0cb42fd602",
+      "size": 30068
+    }
+  ]
+}

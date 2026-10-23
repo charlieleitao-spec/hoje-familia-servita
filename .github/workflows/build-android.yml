@@ -9,6 +9,9 @@ on:
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
       - "index.html"
+      - "android-pdf/**"
+      - "scripts/preparar-pdfs-android.py"
+      - "tests/pdf-link/**"
       - "MainActivity-revisado.java"
       - "somos-servos.html"
       - "integracao-somos-servos/**"
@@ -26,8 +29,11 @@ on:
       - "favicon-64.png"
       - ".github/workflows/build-android.yml"
   push:
-    branches: [main, feat/somos-servos-gas-offline-20261022]
+    branches: [main, feat/somos-servos-gas-offline-20261022, feat/pdf-reader-offline]
     paths:
+      - "android-pdf/**"
+      - "scripts/preparar-pdfs-android.py"
+      - "tests/pdf-link/**"
       - "MainActivity-revisado.java"
       - "somos-servos.html"
       - "integracao-somos-servos/**"
@@ -70,6 +76,9 @@ jobs:
 
       - name: Incorporar MainActivity revisada
         run: cp MainActivity-revisado.java android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+
+      - name: Incorporar leitor e PDFs locais
+        run: python3 scripts/preparar-pdfs-android.py
 
       - name: Incorporar leitor local do Somos Servos
         env:
@@ -114,15 +123,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 312  # 2.9.31 sucede 2.9.30 (311)
+          code = 313  # 2.9.32 sucede 2.9.31 (312)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.31"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.32"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.31\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.31 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.32\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.32 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -144,6 +153,12 @@ jobs:
         with:
           gradle-version: "8.9"
 
+      - name: Testar resolução dos PDFs
+        run: |
+          mkdir -p /tmp/pdf-link-test
+          javac -d /tmp/pdf-link-test android-pdf/PdfLink.java tests/pdf-link/PdfLinkTest.java
+          java -cp /tmp/pdf-link-test br.org.servitas.familia.PdfLinkTest
+
       - name: Compilar Android de teste sem credenciais de assinatura
         if: github.event_name == 'pull_request'
         working-directory: android
@@ -164,7 +179,7 @@ jobs:
         working-directory: android
         env:
           KS_PASS: ${{ secrets.KS_PASS }}
-        run: gradle --no-daemon assembleRelease
+        run: gradle --no-daemon assembleRelease assembleReleaseAndroidTest
 
       - name: Preparar nome público
         if: github.event_name != 'pull_request'
@@ -199,6 +214,38 @@ jobs:
           for resource in ic_launcher ic_launcher_round ic_launcher_monochrome; do grep -q "mipmap/$resource" apk-resources.txt; done
           grep -E "mipmap/ic_launcher(_round|_monochrome)?" apk-resources.txt | head -12
           echo "Assinatura SHA-256 igual à versão distribuída: $ATUAL_CERT"
+      - name: Habilitar KVM para validar o leitor Android
+        if: github.event_name != 'pull_request'
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Validar PDFs e impressão Android sem conexão
+        if: github.event_name != 'pull_request'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            adb install Familia-Servita-2.9.32.apk
+            adb install -t android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
+            adb shell svc wifi disable
+            adb shell svc data disable
+            adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation | tee pdf-android-validation.txt
+            grep -q 'validation=PASS' pdf-android-validation.txt
+
+      - name: Guardar evidências dos PDFs
+        if: always() && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacao-pdfs-2.9.32
+          path: pdf-android-validation.txt
+          if-no-files-found: warn
+
       - name: Guardar artefato
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
@@ -215,6 +262,7 @@ jobs:
           body: |
             APK release assinado do Hoje na Família Servita.
 
+            - leitor interno dos PDFs, com ampliação e impressão do documento original;
             - leitor local de postagens do Somos Servos integrado ao WebView;
             - atualização pelo Apps Script com Blogger API v3;
             - cache local para conservar a última consulta válida sem internet;
