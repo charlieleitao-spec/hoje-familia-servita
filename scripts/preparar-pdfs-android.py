@@ -19,7 +19,9 @@ def preparar(root: Path) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         content = None
         # Existing copies are reusable only when their hash matches the pinned source.
-        if target.is_file() and hashlib.sha256(target.read_bytes()).hexdigest() == item['sha256']:
+        if (root / item['path']).is_file() and hashlib.sha256((root / item['path']).read_bytes()).hexdigest() == item['sha256']:
+            content = (root / item['path']).read_bytes()
+        elif target.is_file() and hashlib.sha256(target.read_bytes()).hexdigest() == item['sha256']:
             content = target.read_bytes()
         else:
             error = None
@@ -49,6 +51,10 @@ def preparar(root: Path) -> None:
         if not sheet.read_bytes().startswith(b'%PDF'):
             raise ValueError(f'Folha inválida: {sheet.name}')
         shutil.copyfile(sheet, target / sheet.name)
+    for asset in ['biblioteca-servita.html', 'data/biblioteca-servita-catalogo.json']:
+        destination = main / 'assets/public' / asset
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / asset, destination)
     java = main / 'java/br/org/servitas/familia'
     java.mkdir(parents=True, exist_ok=True)
     for name in ['PdfLink', 'LocalPdfActivity', 'LocalPdfStore', 'LocalPdfPrintAdapter']:

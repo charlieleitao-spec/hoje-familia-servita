@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 /**
- * Família Servita 2.9.32 (versionCode 313)
+ * Família Servita 2.9.33 (versionCode 314)
  *
  * PDFs litúrgicos e folhas do ano abrem no leitor Android local, com
  * ampliação, navegação e impressão. ZIP, ICS e demais links continuam
@@ -77,6 +77,18 @@ public class MainActivity extends Activity {
                         return new WebResourceResponse("text/plain", "UTF-8", 500, "Missing asset",
                                 java.util.Collections.emptyMap(), new ByteArrayInputStream(
                                 "Pagina local indisponivel.".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+                    }
+                }
+                if ("https".equalsIgnoreCase(uri.getScheme()) && HOST.equalsIgnoreCase(uri.getHost())) {
+                    String local = null, mime = "text/html";
+                    if ((APP_PATH + "biblioteca-servita.html").equals(uri.getPath())) local = "biblioteca-servita.html";
+                    if ((APP_PATH + "data/biblioteca-servita-catalogo.json").equals(uri.getPath())) {
+                        local = "data/biblioteca-servita-catalogo.json"; mime = "application/json";
+                    }
+                    if (local != null) {
+                        try { return new WebResourceResponse(mime, "UTF-8", getAssets().open("public/" + local)); }
+                        catch (IOException error) { return new WebResourceResponse("text/plain", "UTF-8", 500, "Missing asset",
+                            java.util.Collections.emptyMap(), new ByteArrayInputStream("Documento indisponivel.".getBytes(java.nio.charset.StandardCharsets.UTF_8))); }
                     }
                 }
                 return null;

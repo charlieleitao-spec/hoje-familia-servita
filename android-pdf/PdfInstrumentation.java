@@ -13,6 +13,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.Arrays;
 import br.org.servitas.familia.LocalPdfActivity;
+import br.org.servitas.familia.MainActivity;
+import android.webkit.WebView;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import br.org.servitas.familia.LocalPdfStore;
 import br.org.servitas.familia.LocalPdfPrintAdapter;
 
@@ -24,7 +29,7 @@ public final class PdfInstrumentation extends Instrumentation {
         try {
             Context context = getTargetContext();
             int files = 0, pages = 0;
-            for (String directory : new String[]{"data/pdfs/missal", "data/pdfs/oficios", "recursos/pdfs"}) {
+            for (String directory : new String[]{"data/pdfs/missal", "data/pdfs/oficios", "data/pdfs/biblioteca", "recursos/pdfs"}) {
                 for (String name : context.getAssets().list("public/" + directory)) {
                     if (!name.endsWith(".pdf")) continue;
                     String path = directory + "/" + name;
@@ -45,7 +50,34 @@ public final class PdfInstrumentation extends Instrumentation {
                     }
                 }
             }
-            if (files != 76 || pages < 342) throw new Exception("PDF inventory " + files + "/" + pages);
+            if (files != 79 || pages != 618) throw new Exception("PDF inventory " + files + "/" + pages);
+            Activity library = startActivitySync(new Intent(context, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            java.lang.reflect.Field field = MainActivity.class.getDeclaredField("webView");
+            field.setAccessible(true);
+            WebView web = (WebView) field.get(library);
+            runOnMainSync(() -> web.loadUrl("https://charlieleitao-spec.github.io/hoje-familia-servita/biblioteca-servita.html"));
+            boolean catalogLoaded = false;
+            for (int attempt = 0; attempt < 80; attempt++) {
+                CountDownLatch latch = new CountDownLatch(1);
+                AtomicReference<String> value = new AtomicReference<>("");
+                runOnMainSync(() -> web.evaluateJavascript("document.querySelectorAll('#documents article').length",
+                    resultValue -> { value.set(resultValue); latch.countDown(); }));
+                latch.await(2, TimeUnit.SECONDS);
+                if ("5".equals(value.get())) { catalogLoaded = true; break; }
+                Thread.sleep(250);
+            }
+            if (!catalogLoaded) throw new Exception("Library catalogue did not open offline");
+            runOnMainSync(library::finish);
+            for (int initialPage : new int[]{43, 25, 131}) {
+                Activity direct = startActivitySync(new Intent(context, LocalPdfActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    .putExtra("path", "data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf").putExtra("page", initialPage));
+                waitForIdleSync();
+                runOnMainSync(() -> {
+                    android.widget.TextView position = direct.getWindow().getDecorView().findViewWithTag("pdf-position");
+                    if (!position.getText().toString().startsWith("Página " + initialPage + " de")) throw new AssertionError("Library page " + initialPage);
+                    direct.finish();
+                });
+            }
             Activity viewer = startActivitySync(new Intent(context, LocalPdfActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("path", "recursos/pdfs/folha-servita-ano-completo.pdf")
                 .putExtra("page", 2).putExtra("title", "Folhas do ano"));

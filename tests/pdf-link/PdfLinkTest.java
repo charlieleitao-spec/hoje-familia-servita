@@ -15,6 +15,11 @@ public final class PdfLinkTest {
         check(PdfLink.resolve(valid[2]).page == 3);
         check(PdfLink.resolve(valid[3]).path.equals("data/pdfs/oficios/antonio.pdf"));
         check(PdfLink.resolve(valid[2].replace("page=3", "page=0")).page == 1);
+        for (int page : new int[]{43,25,131}) {
+            PdfLink.Document library = PdfLink.resolve("https://charlieleitao-spec.github.io/hoje-familia-servita/data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf#page=" + page);
+            check(library != null && library.page == page && library.path.equals("data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf"));
+        }
+        check(PdfLink.resolve("https://raw.githubusercontent.com/charlieleitao-spec/liturgia-osm/main/www/data/pdfs/biblioteca/ratio-institutionis-osm-2015.pdf") != null);
         String[] rejected = {
             "javascript:alert(1)", "file:///data/pdfs/missal/antonio.pdf",
             "https://evil.example/antonio.pdf",

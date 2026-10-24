@@ -9,6 +9,9 @@ on:
       - "android-release.patch"
       - "familia-servita-android-icons.zip"
       - "index.html"
+      - "biblioteca-servita.html"
+      - "data/biblioteca-servita-catalogo.json"
+      - "scripts/sync-biblioteca.py"
       - "android-pdf/**"
       - "scripts/preparar-pdfs-android.py"
       - "tests/pdf-link/**"
@@ -31,6 +34,9 @@ on:
   push:
     branches: [main, feat/somos-servos-gas-offline-20261022, feat/pdf-reader-offline]
     paths:
+      - "biblioteca-servita.html"
+      - "data/biblioteca-servita-catalogo.json"
+      - "scripts/sync-biblioteca.py"
       - "android-pdf/**"
       - "scripts/preparar-pdfs-android.py"
       - "tests/pdf-link/**"
@@ -64,6 +70,9 @@ jobs:
     steps:
       - name: Baixar o projeto
         uses: actions/checkout@v4
+
+      - name: Incorporar PDFs da Biblioteca Servita
+        run: python3 scripts/sync-biblioteca.py
 
       - name: Validar arquivos web
         run: node scripts/check-web.cjs
@@ -123,15 +132,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 313  # 2.9.32 sucede 2.9.31 (312)
+          code = 314  # 2.9.33 sucede 2.9.32 (313)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.32"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.33"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.32\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.32 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.33\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.33 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -231,18 +240,18 @@ jobs:
           profile: pixel_6
           disable-animations: true
           script: |
-            adb install Familia-Servita-2.9.32.apk
+            adb install Familia-Servita-2.9.33.apk
             adb install -t android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
             adb shell svc wifi disable
             adb shell svc data disable
             adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation | tee pdf-android-validation.txt
-            grep -Fxq 'PASS: 76 PDFs; 366 pages; original print bytes; zoom; Android printing; cancel and return.' pdf-android-validation.txt
+            grep -Fxq 'PASS: 79 PDFs; 618 pages; original print bytes; zoom; Android printing; cancel and return.' pdf-android-validation.txt
 
       - name: Guardar evidências dos PDFs
         if: always() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: validacao-pdfs-2.9.32
+          name: validacao-pdfs-2.9.33
           path: pdf-android-validation.txt
           if-no-files-found: warn
 
@@ -269,20 +278,24 @@ jobs:
             *) echo "Não foi possível verificar a versão publicada (HTTP $status)."; exit 1 ;;
           esac
 
+      - name: Preservar PDFs verificados para consulta web
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pdfs/biblioteca/
+          if ! git diff --cached --quiet; then
+            git commit -m "Inclui PDFs verificados da Biblioteca Servita"
+            git push origin HEAD:main
+          fi
+
       - name: Publicar versão Android
         if: github.ref == 'refs/heads/main' && steps.published_release.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: android-v${{ env.APP_VERSION }}
           name: Família Servita ${{ env.APP_VERSION }} para Android
-          body: |
-            APK release assinado do Hoje na Família Servita.
-
-            - leitor interno dos PDFs, com ampliação e impressão do documento original;
-            - leitor local de postagens do Somos Servos integrado ao WebView;
-            - atualização pelo Apps Script com Blogger API v3;
-            - cache local para conservar a última consulta válida sem internet;
-            - links para os materiais litúrgicos da Família Servita.
+          body_path: docs/releases/2.9.33.md
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
 
 

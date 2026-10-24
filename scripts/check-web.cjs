@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const vm=require('node:vm');
 const assert=require('node:assert/strict');
-for(const name of ['index.html','causas-beatos.html','missas-proprias.html']){
+for(const name of ['index.html','causas-beatos.html','missas-proprias.html','biblioteca-servita.html']){
  const html=fs.readFileSync(name,'utf8');
  for(const [,script] of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi))new vm.Script(script,{filename:name});
 }

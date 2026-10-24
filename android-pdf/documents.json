@@ -1,6 +1,6 @@
 {
   "repository": "charlieleitao-spec/liturgia-osm",
-  "commit": "b2b6a61f2878e4e841bebee9ca1ab199d9e4f576",
+  "commit": "ef6a874dffcc94cf9d1a9eb3bbdaafa99d77517b",
   "documents": [
     {
       "path": "data/pdfs/missal/adviento.pdf",
@@ -316,6 +316,21 @@
       "path": "data/pdfs/oficios/villa.pdf",
       "sha256": "01b971629f312e11ca598dd55a837eff1efeffc1901ec37b992ffc0cb42fd602",
       "size": 30068
+    },
+    {
+      "path": "data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf",
+      "sha256": "dde52f1feeed23b275f27bb230a7d56c27949272dade68504b1bd5423c79341a",
+      "size": 1070418
+    },
+    {
+      "path": "data/pdfs/biblioteca/ratio-institutionis-osm-2015.pdf",
+      "sha256": "9291d4b292f34b2751ad391fddc9f76840dd5df51e2a8b1918fbd681188188d2",
+      "size": 1872785
+    },
+    {
+      "path": "data/pdfs/biblioteca/regra-vida-ordem-secular-1995.pdf",
+      "sha256": "8a33963bbc8c88d3a40466b4ae13664df264e492359ec6fd97e889125d5452d8",
+      "size": 244252
     }
   ]
 }

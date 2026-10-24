@@ -23,6 +23,8 @@ public final class PdfLink {
             if (host.equals("charlieleitao-spec.github.io")) {
                 if (path.startsWith("/hoje-familia-servita/recursos/pdfs/"))
                     local = path.substring("/hoje-familia-servita/".length());
+                else if (path.startsWith("/hoje-familia-servita/data/pdfs/biblioteca/"))
+                    local = path.substring("/hoje-familia-servita/".length());
                 else if (path.startsWith("/liturgia-osm/data/pdfs/"))
                     local = path.substring("/liturgia-osm/".length());
                 else if (path.startsWith("/liturgia-osm/www/data/pdfs/"))
@@ -37,7 +39,7 @@ public final class PdfLink {
                 else if (path.startsWith(prefix + "lhoras/"))
                     local = "data/pdfs/oficios/" + path.substring((prefix + "lhoras/").length());
             }
-            if (local == null || !local.matches("(?:data/pdfs/(?:missal|oficios)/[a-z0-9-]+|recursos/pdfs/folha-servita-[a-z0-9-]+)\\.pdf")) return null;
+            if (local == null || !local.matches("(?:data/pdfs/(?:missal|oficios|biblioteca)/[a-z0-9-]+|recursos/pdfs/folha-servita-[a-z0-9-]+)\\.pdf")) return null;
             int page = 1;
             String fragment = uri.getRawFragment();
             if (fragment != null) for (String parameter : fragment.split("&")) {

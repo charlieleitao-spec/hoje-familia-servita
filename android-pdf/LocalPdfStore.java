@@ -11,7 +11,7 @@ import java.io.IOException;
 /** Opens only packaged PDFs. No HTTP, storage permission or external viewer. */
 public final class LocalPdfStore {
     public static boolean isValidPath(String path) {
-        return path != null && path.matches("(?:data/pdfs/(?:missal|oficios)/[a-z0-9-]+|recursos/pdfs/folha-servita-[a-z0-9-]+)\\.pdf");
+        return path != null && path.matches("(?:data/pdfs/(?:missal|oficios|biblioteca)/[a-z0-9-]+|recursos/pdfs/folha-servita-[a-z0-9-]+)\\.pdf");
     }
     public static PdfRenderer open(Context context, String path) throws IOException {
         if(!isValidPath(path))
