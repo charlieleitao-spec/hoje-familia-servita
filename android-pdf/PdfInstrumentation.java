@@ -51,6 +51,51 @@ public final class PdfInstrumentation extends Instrumentation {
                 }
             }
             if (files != 79 || pages != 618) throw new Exception("PDF inventory " + files + "/" + pages);
+            Activity viewer = startActivitySync(new Intent(context, LocalPdfActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("path", "recursos/pdfs/folha-servita-ano-completo.pdf")
+                .putExtra("page", 2).putExtra("title", "Folhas do ano"));
+            waitForIdleSync();
+            boolean focused = false;
+            for (int attempt = 0; attempt < 80; attempt++) {
+                java.util.concurrent.atomic.AtomicBoolean hasFocus = new java.util.concurrent.atomic.AtomicBoolean();
+                runOnMainSync(() -> hasFocus.set(viewer.hasWindowFocus()));
+                if (hasFocus.get()) { focused = true; break; }
+                Thread.sleep(250);
+            }
+            if (!focused) throw new Exception("PDF viewer did not gain window focus");
+            runOnMainSync(() -> {
+                View root = viewer.getWindow().getDecorView();
+                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 2 de")) throw new AssertionError("Initial page");
+                root.findViewWithTag("pdf-zoom-in").performClick();
+                if (!root.findViewWithTag("pdf-page").getContentDescription().toString().contains("125%")) throw new AssertionError("Zoom");
+                root.findViewWithTag("pdf-print").performClick();
+            });
+            boolean opened = false;
+            for (int attempt = 0; attempt < 240; attempt++) {
+                android.view.accessibility.AccessibilityNodeInfo root = getUiAutomation().getRootInActiveWindow();
+                if (root != null && "com.android.printspooler".equals(String.valueOf(root.getPackageName()))) { opened = true; break; }
+                Thread.sleep(250);
+            }
+            if (!opened) {
+                android.view.accessibility.AccessibilityNodeInfo window = getUiAutomation().getRootInActiveWindow();
+                throw new Exception("Print UI did not open; active window: " + (window == null ? "none" : window.getPackageName() + " / " + window.getText()));
+            }
+            getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);
+            boolean returned = false;
+            for (int attempt = 0; attempt < 60; attempt++) {
+                android.view.accessibility.AccessibilityNodeInfo root = getUiAutomation().getRootInActiveWindow();
+                if (root != null && context.getPackageName().equals(String.valueOf(root.getPackageName()))) { returned = true; break; }
+                Thread.sleep(250);
+            }
+            if (!returned) throw new Exception("Print cancel did not return");
+            runOnMainSync(() -> {
+                View root = viewer.getWindow().getDecorView();
+                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 2 de")) throw new AssertionError("Page after print");
+                if (!root.findViewWithTag("pdf-page").getContentDescription().toString().contains("125%")) throw new AssertionError("Zoom after print");
+                root.findViewWithTag("pdf-next").performClick();
+                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 3 de")) throw new AssertionError("Next page");
+                root.findViewWithTag("pdf-close").performClick();
+            });
             Activity library = startActivitySync(new Intent(context, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             java.lang.reflect.Field field = MainActivity.class.getDeclaredField("webView");
             field.setAccessible(true);
@@ -77,41 +122,8 @@ public final class PdfInstrumentation extends Instrumentation {
                     if (!position.getText().toString().startsWith("Página " + initialPage + " de")) throw new AssertionError("Library page " + initialPage);
                     direct.finish();
                 });
+                waitForIdleSync();
             }
-            Activity viewer = startActivitySync(new Intent(context, LocalPdfActivity.class)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("path", "recursos/pdfs/folha-servita-ano-completo.pdf")
-                .putExtra("page", 2).putExtra("title", "Folhas do ano"));
-            waitForIdleSync();
-            runOnMainSync(() -> {
-                View root = viewer.getWindow().getDecorView();
-                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 2 de")) throw new AssertionError("Initial page");
-                root.findViewWithTag("pdf-zoom-in").performClick();
-                if (!root.findViewWithTag("pdf-page").getContentDescription().toString().contains("125%")) throw new AssertionError("Zoom");
-                root.findViewWithTag("pdf-print").performClick();
-            });
-            boolean opened = false;
-            for (int attempt = 0; attempt < 60; attempt++) {
-                android.view.accessibility.AccessibilityNodeInfo root = getUiAutomation().getRootInActiveWindow();
-                if (root != null && "com.android.printspooler".equals(String.valueOf(root.getPackageName()))) { opened = true; break; }
-                Thread.sleep(250);
-            }
-            if (!opened) throw new Exception("Print UI did not open");
-            getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);
-            boolean returned = false;
-            for (int attempt = 0; attempt < 60; attempt++) {
-                android.view.accessibility.AccessibilityNodeInfo root = getUiAutomation().getRootInActiveWindow();
-                if (root != null && context.getPackageName().equals(String.valueOf(root.getPackageName()))) { returned = true; break; }
-                Thread.sleep(250);
-            }
-            if (!returned) throw new Exception("Print cancel did not return");
-            runOnMainSync(() -> {
-                View root = viewer.getWindow().getDecorView();
-                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 2 de")) throw new AssertionError("Page after print");
-                if (!root.findViewWithTag("pdf-page").getContentDescription().toString().contains("125%")) throw new AssertionError("Zoom after print");
-                root.findViewWithTag("pdf-next").performClick();
-                if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 3 de")) throw new AssertionError("Next page");
-                root.findViewWithTag("pdf-close").performClick();
-            });
             result.putString("validation", "PASS");
             result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\n");
             finish(Activity.RESULT_OK, result);

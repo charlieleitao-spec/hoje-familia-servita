@@ -252,7 +252,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: validacao-pdfs-2.9.33
-          path: pdf-android-validation.txt
+          path: |
+            pdf-android-validation.txt
+            pdf-logcat.txt
+            pdf-window.xml
           if-no-files-found: warn
 
       - name: Guardar artefato
