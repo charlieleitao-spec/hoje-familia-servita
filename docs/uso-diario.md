@@ -24,4 +24,4 @@ npm install --prefix /tmp/servita-dom-qa jsdom --no-package-lock --no-audit --no
 NODE_PATH=/tmp/servita-dom-qa/node_modules node tests/uso-diario-dom.cjs
 ```
 
-Os nove destinos do blog foram verificados nesta revisão. Não foram repetidos os roteiros anteriores do Samsung A56, os testes de PDF ou o build Android. A proposta ainda requer conferência visual da nova interface no computador e no celular. Não houve publicação desta proposta.
+Os nove destinos do blog foram verificados nesta revisão. Não foram repetidos os roteiros anteriores do Samsung A56, os testes de PDF ou o build Android. Em 27/10/2026, o usuário confirmou a prévia após a solicitação de conferência do calendário, do compartilhamento e da retomada. Essa confirmação não especifica um novo teste em aparelho físico. A inspeção visual pelo navegador deste ambiente permaneceu indisponível. Integração web autorizada pela confirmação; APK e versão Android preservados.
