@@ -14,7 +14,7 @@ main{max-width:800px;margin:auto;padding:16px}.nav{display:grid;grid-template-co
 .card{background:#fff;border:1px solid var(--b);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #0000000b}.label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);font-weight:800}
 h2{font:700 1.43rem Georgia,serif;color:var(--a);margin:5px 0 8px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;background:#eef3f8;color:var(--a);font-size:.79rem;font-weight:800}.cause-prayer{margin:14px 0 0;padding:15px 16px;background:#fbf7ed;border:1px solid #d8c38f;border-left:4px solid var(--o);border-radius:12px}.cause-prayer-title{text-align:center;text-transform:uppercase;letter-spacing:.08em;color:#7b2632;font-size:.76rem;font-weight:900;margin-bottom:8px}.cause-prayer-text{white-space:pre-line;text-align:center;font:1.04rem/1.75 Georgia,serif;color:#3c3324}
 .bio{text-align:left;hyphens:none;overflow-wrap:anywhere}.bio p{margin:0 0 .95em;white-space:pre-line}.bio p:last-child{margin-bottom:0}.muted{color:var(--m)}.source-line{margin-top:13px;color:var(--m);font-size:.79rem;line-height:1.45}.editorial-note{margin-top:10px;padding:10px 12px;border:1px solid #e0d3b7;background:#fbf7ed;border-radius:10px;color:#655633;font-size:.9rem;line-height:1.5}.actions{display:grid;gap:9px;margin-top:17px}.action{display:block;width:100%;border-radius:12px;padding:13px;text-align:center;text-decoration:none;font-weight:800;border:0;font-size:.95rem}
-.action[hidden]{display:none!important}
+.action#resumeCard[hidden],#shareCopy[hidden],#shareCopyLabel[hidden]{display:none!important}
 .gold{background:#f4ead5;color:#654e1f;border:1px solid #dac28d}.secondary{border:1px solid var(--a);color:var(--a);background:#fff}
 #reader[hidden],#calendarCard[hidden]{display:none}.hours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:4px 0 14px;width:100%;max-width:100%;overflow:hidden}
 .hours button{white-space:normal;min-width:0;width:100%;max-width:100%;overflow-wrap:anywhere;min-height:43px;border:1px solid var(--a);background:#fff;color:var(--a);border-radius:11px;padding:8px 9px;font-weight:800;line-height:1.2}
@@ -255,18 +255,36 @@ main{padding-top:12px}
 .quick small{font-size:.67rem}
 #calendarCard{scroll-margin-top:12px}
 #memoria.empty-memory{padding:12px 3px 8px}#memoria.empty-memory .label{margin-bottom:3px}#memoria.empty-memory h2{font-size:1.2rem;margin:4px 0 6px}#memoria.empty-memory .bio{font-size:.87rem;color:#62676d;line-height:1.4}#memoria.empty-memory .actions{margin-top:10px}.feature-links{scroll-margin-bottom:110px}html{scroll-padding-bottom:120px}main{padding-bottom:max(150px,calc(130px + env(safe-area-inset-bottom,0px)))}
+
+/* Recursos de uso diário: calendário mensal, partilha e retomada. */
+[hidden]{display:none!important}
+.month-nav{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:4px;margin:12px 0}
+.month-nav h3{text-align:center;font-size:18px!important;margin:0}
+.month-nav button,.month-grid button{min-height:44px;border:1px solid var(--b);background:#fff;color:var(--a);border-radius:6px;padding:4px;font:inherit}
+.month-grid{width:100%;table-layout:fixed;border-spacing:2px;text-align:center}
+.month-grid th{font-size:12px;font-weight:400}.month-grid td{padding:0;vertical-align:top}
+.month-grid button{width:100%;min-width:0;position:relative;line-height:1.2!important}
+.month-grid button[aria-pressed=true]{background:var(--a);color:#fff;border-color:var(--a)}
+.month-grid button[aria-current=date]{outline:2px solid var(--o);outline-offset:-3px}
+.calendar-event{display:block;font-size:10px;line-height:10px;color:var(--o)}
+.daily-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.daily-actions button{min-height:44px;padding:8px 12px;border:1px solid var(--b);border-radius:8px;background:#fff;color:var(--a);font:inherit;cursor:pointer}
+#resumeCard{border-bottom:1px solid var(--b);padding:10px 0 16px;margin-bottom:14px}
+#resumeCard p{margin:4px 0}#shareCopy{width:100%;min-height:44px;font:inherit;margin-top:6px}
+#memoria.devotional .bio{font-size:16px;line-height:1.66}#memoria.devotional .editorial-note{padding:0;border:0;background:transparent}
 </style></head><body>
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="brand-mark" aria-hidden="true">✦</div><div class="ey">Ordem dos Servos de Maria</div><h1>Hoje na Família<br>Servita</h1><p class="sub">Maria · Fraternidade · Serviço</p><div class="header-ornament" aria-hidden="true">✧</div></header>
 <main id="conteudo" tabindex="-1">
 <div class="nav"><button id="prev" aria-label="Dia anterior" title="Dia anterior">‹</button><div class="date" id="date" aria-live="polite" aria-atomic="true"></div><button id="next" aria-label="Próximo dia" title="Próximo dia">›</button></div>
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
-<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"></section>
-<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="https://liturgiadiaria.edicoescnbb.com.br/" target="_blank" rel="noopener noreferrer">Consultar liturgia do dia <span aria-hidden="true">↗</span></a></section>
+<section id="resumeCard" aria-label="Retomar leitura" hidden><p id="resumeDescription"></p><div class="daily-actions"><button id="resumeBtn">Continuar leitura</button><button id="dismissResume">Dispensar</button></div></section>
+<section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><div class="month-nav"><button id="prevMonth" aria-label="Mês anterior">‹</button><h3 id="monthTitle" aria-live="polite"></h3><button id="nextMonth" aria-label="Próximo mês">›</button></div><table class="month-grid" aria-labelledby="monthTitle"><thead><tr><th scope="col"><abbr title="Domingo">D</abbr></th><th scope="col"><abbr title="Segunda-feira">S</abbr></th><th scope="col"><abbr title="Terça-feira">T</abbr></th><th scope="col"><abbr title="Quarta-feira">Q</abbr></th><th scope="col"><abbr title="Quinta-feira">Q</abbr></th><th scope="col"><abbr title="Sexta-feira">S</abbr></th><th scope="col"><abbr title="Sábado">S</abbr></th></tr></thead><tbody id="monthDays"></tbody></table><p class="source-line">O ponto dourado indica uma memória ou celebração servita cadastrada; não determina a precedência litúrgica. A borda dourada indica hoje.</p><label for="picker">Ir para uma data</label><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"><div class="daily-actions"><button id="calendarToday">Hoje</button><button id="closeCalendar">Fechar calendário</button></div></section>
+<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="https://liturgiadiaria.edicoescnbb.com.br/" target="_blank" rel="noopener noreferrer">Consultar liturgia do dia <span aria-hidden="true">↗</span></a><div class="daily-actions"><button id="shareDay">Compartilhar esta data</button></div><p id="shareStatus" class="source-line" role="status" aria-live="polite"></p><label id="shareCopyLabel" for="shareCopy" hidden>Copie o link desta data</label><input id="shareCopy" type="text" readonly hidden></section>
 <nav class="quick" aria-label="Navegação principal"><a class="nav-home" href="#conteudo" aria-label="Início">⌂<small>Início</small></a><a class="nav-liturgia" href="#celebracao" aria-label="Celebração">✝<small>Liturgia</small></a><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false"><span aria-hidden="true">▦</span><small>Calendário</small></button><a href="./causas-beatos.html" aria-label="Causas servitas"><span aria-hidden="true">♧</span><small>Causas</small></a><a href="#recursos" aria-label="Recursos"><span aria-hidden="true">•••</span><small>Mais</small></a></nav>
 
-<section class="card" id="memoria"><div class="label">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
-<div class="actions"><button id="materialBtn" class="action gold" hidden></button><a class="action secondary" href="https://somosservos.blogspot.com/">Aprofundar no Somos Servos</a></div></section>
+<section class="card" id="memoria"><div class="label" id="memoryLabel">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" id="prayerLabel" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
+<div class="actions"><button id="materialBtn" class="action gold" hidden></button><a id="formationLink" class="action secondary" href="https://somosservos.blogspot.com/p/biblioteca-e-formacao-servita.html">Aprofundar na Biblioteca e Formação Servita</a></div></section>
 <section class="card" id="reader" hidden>
  <div class="toolbar"><button id="closeReader">Fechar</button></div>
  <div class="label" id="readerLabel">Liturgia</div><h2 id="readerTitle"></h2>
@@ -344,47 +362,143 @@ function renderBio(text){
  const paragraphs=String(text||'').replace(/\r/g,'').split(/\n[ \t]*\n+/).map(p=>p.trim()).filter(Boolean);
  paragraphs.forEach(text=>{const p=document.createElement('p');p.textContent=text;bio.appendChild(p)});
 }
+// BEGIN DAILY HELPERS
+const DAILY_REFLECTIONS=[
+ {title:'Com Maria, escutar a Palavra',text:'Maria acolhe a Palavra de Deus e a guarda no coração. Na vida cotidiana, também podemos reservar um momento de silêncio antes de responder, decidir ou agir. Hoje, leia Lc 2,19 e escolha uma palavra para levar consigo. Deixe que essa escuta ilumine uma situação concreta.',prayer:'Senhor Jesus, ensina-nos a escutar tua Palavra com Maria e a responder com confiança e disponibilidade. Amém.',anchor:'mariologia'},
+ {title:'Cultivar a fraternidade',text:'A fraternidade cresce em gestos simples: escutar sem interromper, repartir uma responsabilidade e buscar a reconciliação. A origem comunitária dos Servos de Maria recorda que ninguém precisa caminhar sozinho. Hoje, leia Jo 13,34–35 e escolha uma pessoa a quem oferecer atenção e acolhida.',prayer:'Senhor, dá-nos paciência para escutar, humildade para pedir perdão e generosidade para caminhar com os irmãos. Amém.',anchor:'historia'},
+ {title:'Servir com atenção e constância',text:'O serviço vivido com Maria começa pela atenção às necessidades de quem está próximo. Nem sempre exige grandes iniciativas; pode ser uma visita, uma ajuda discreta ou uma tarefa assumida com fidelidade. Hoje, leia Lc 1,39–45 e escolha um serviço possível, respeitando a vontade de quem recebe o cuidado.',prayer:'Senhor, desperta em nós a prontidão de Maria. Ajuda-nos a reconhecer quem precisa de cuidado e a servir com discrição e perseverança. Amém.',anchor:'espiritualidade'}
+];
+const BIBLIOTECA_URL='https://somosservos.blogspot.com/p/biblioteca-e-formacao-servita.html';
+const READING_KEY='familia-servita-ultima-leitura-v1';
+function dateValue(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function dailyReflection(d){const day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);return DAILY_REFLECTIONS[((day%3)+3)%3]}
+function monthDates(year,month){
+ const first=new Date(year,month,1,12),last=new Date(year,month+1,0,12);
+ if(first.getFullYear()<100||first.getFullYear()>9999)return null;
+ return {year:first.getFullYear(),month:first.getMonth(),offset:first.getDay(),days:last.getDate()};
+}
+function dailyShareData(d,record){
+ const url=new URL('https://charlieleitao-spec.github.io/hoje-familia-servita/');url.searchParams.set('data',dateValue(d));
+ const label=record?displayCelebrationTitle(record):'Liturgia do dia';
+ return {title:'Hoje na Família Servita',text:`${label} — ${fmt.format(d)}`,url:url.href};
+}
+function dailyFormation(record,reflection){
+ if(reflection)return {label:'Aprofundar na Biblioteca e Formação Servita',url:BIBLIOTECA_URL+'#'+reflection.anchor};
+ const name=String(record?.titulo||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const links=[
+  [/sete.*fundadores/,'Os Sete Santos Fundadores','os-sete-santos-fundadores-dos-servos-de.html'],
+  [/pucci/,'Santo Antônio Maria Pucci','santo-antonio-maria-pucci-osm.html'],
+  [/peregrino/,'São Peregrino Laziosi','sao-peregrino-laziosi-osm.html'],
+  [/juliana/,'Santa Juliana Falconieri','santa-juliana-falconieri.html'],
+  [/benizi/,'São Filipe Benizi','sao-filipe-benizi-osm.html'],
+  [/moscini/,'Frei Egídio Maria Moscini','servo-de-deus-frei-egidio-maria-moscini.html'],
+  [/baldassarri/,'Frei Paulino M. Baldassarri','servo-de-deus-frei-paulino-m.html'],
+  [/senhora.*dores|maria.*cruz/,'Nossa Senhora das Dores','nossa-senhora-das-dores.html']
+ ];
+ for(const [pattern,label,path] of links)if(pattern.test(name))return {label:'Ler sobre '+label+' no Somos Servos',url:'https://somosservos.blogspot.com/p/'+path};
+ return {label:'Aprofundar na Biblioteca e Formação Servita',url:BIBLIOTECA_URL+(record?'#historia':'')};
+}
+function readLastReading(){
+ try{const saved=JSON.parse(localStorage.getItem(READING_KEY)||'null');if(!saved||!parseDate(saved.date))return null;if(saved.hour!==null&&saved.hour!==undefined&&(typeof saved.hour!=='string'||saved.hour.length>80))return null;return {date:saved.date,hour:saved.hour||null}}catch{return null}
+}
+let resumeCandidate=readLastReading(),resumeDismissed=false,viewYear=current.getFullYear(),viewMonth=current.getMonth();
+function rememberReading(hour=null){
+ resumeDismissed=true;
+ try{localStorage.setItem(READING_KEY,JSON.stringify({date:dateValue(current),hour}))}catch{}
+}
+function showResumeOffer(){
+ resumeCard.hidden=true;
+ if(resumeDismissed||!resumeCandidate||loadError||initialDate)return;
+ const savedDate=parseDate(resumeCandidate.date),record=celebrationForDate(savedDate);
+ const hour=(resumeCandidate.hour?.endsWith(':ii-vesperas')?'II Vésperas':hourNames[resumeCandidate.hour])||(resumeCandidate.hour==='textos_proprios'?'Textos próprios':'');
+ resumeDescription.textContent=`Retomar ${record?displayCelebrationTitle(record):'a leitura'} em ${fmt.format(savedDate)}${hour?' · '+hour:''}.`;
+ resumeCard.hidden=false;
+}
+function closeMonthlyCalendar(){calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false');calendarBtn.focus()}
+function renderMonth(year,month){
+ const model=monthDates(year,month);if(!model)return;
+ viewYear=model.year;viewMonth=model.month;
+ monthTitle.textContent=new Intl.DateTimeFormat('pt-BR',{month:'long',year:'numeric'}).format(new Date(viewYear,viewMonth,1,12));
+ prevMonth.disabled=viewYear===100&&viewMonth===0;nextMonth.disabled=viewYear===9999&&viewMonth===11;
+ monthDays.replaceChildren();let row;
+ for(let slot=0;slot<Math.ceil((model.offset+model.days)/7)*7;slot++){
+  if(slot%7===0){row=document.createElement('tr');monthDays.appendChild(row)}
+  const cell=document.createElement('td');row.appendChild(cell);const day=slot-model.offset+1;if(day<1||day>model.days)continue;
+  const d=new Date(viewYear,viewMonth,day,12),record=celebrationForDate(d),button=document.createElement('button');button.type='button';button.textContent=String(day);
+  button.setAttribute('aria-label',fmt.format(d)+(record?' · '+displayCelebrationTitle(record):''));button.setAttribute('aria-pressed',String(dateValue(d)===dateValue(current)));
+  if(dateValue(d)===dateValue(new Date()))button.setAttribute('aria-current','date');
+  if(record){const dot=document.createElement('span');dot.className='calendar-event';dot.textContent='●';dot.setAttribute('aria-hidden','true');button.appendChild(dot)}
+  button.onclick=()=>{current=d;render(true);closeMonthlyCalendar();date.focus()};cell.appendChild(button);
+ }
+}
+async function shareCurrentDay(){
+ const data=dailyShareData(current,active);shareStatus.textContent='';shareCopy.hidden=true;shareCopyLabel.hidden=true;
+ if(typeof navigator.share==='function'){
+  try{await navigator.share(data);return}catch(error){if(error?.name==='AbortError')return}
+ }
+ try{if(typeof navigator.clipboard?.writeText!=='function')throw new Error('clipboard');await navigator.clipboard.writeText(data.url);shareStatus.textContent='Link desta data copiado.'}
+ catch{shareCopy.value=data.url;shareCopy.hidden=false;shareCopyLabel.hidden=false;shareCopy.focus();shareCopy.select();shareStatus.textContent='Selecione e copie o link para compartilhar.'}
+}
+function setupDailyFeatures(){
+ date.tabIndex=-1;
+ prevMonth.onclick=()=>renderMonth(viewYear,viewMonth-1);nextMonth.onclick=()=>renderMonth(viewYear,viewMonth+1);
+ closeCalendar.onclick=closeMonthlyCalendar;calendarToday.onclick=()=>{current=new Date();render(true);closeMonthlyCalendar();date.focus()};
+ shareDay.onclick=shareCurrentDay;
+ resumeBtn.onclick=()=>{if(!resumeCandidate)return;current=parseDate(resumeCandidate.date);resumeDismissed=true;render();if(active&&['oficio_proprio','textos_proprios'].includes(active.tipo_material))openMaterial(resumeCandidate.hour);else rememberReading()};
+ dismissResume.onclick=()=>{resumeDismissed=true;resumeCard.hidden=true;try{localStorage.removeItem(READING_KEY)}catch{}};
+}
+// END DAILY HELPERS
+
 const memoriaSection=document.getElementById('memoria');
-function render(){
+function render(remember=false){
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=celebrationForDate(current)||null;
  title.textContent=active?displayCelebrationTitle(active):'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';celebrationStatus.textContent=active?.data||loadError;
- memory.textContent=active?displayCelebrationTitle(active):'Memória e espiritualidade';
+ const reflection=!active&&!loadError?dailyReflection(current):null;
+ memoryLabel.textContent=reflection?'Espiritualidade servita':'Memória servita';
+ memory.textContent=active?displayCelebrationTitle(active):reflection?.title||'Memória e espiritualidade';
  const memoria=active?.memoria_liturgica;
- const bioText=memoria?.breve_vida||active?.bio||'Hoje não há memória servita cadastrada nesta base.';
+ const bioText=memoria?.breve_vida||active?.bio||reflection?.text||loadError||'Hoje não há memória servita cadastrada nesta base.';
  renderBio(bioText);
- memoriaSection.classList.toggle('empty-memory',!active);
+ memoriaSection.classList.toggle('empty-memory',!active&&!reflection);
+ memoriaSection.classList.toggle('devotional',!!reflection);
  const causeText=active?.oracao_causa||'';causePrayer.hidden=true;causePrayer.innerHTML='';
  if((active?.categoria==='servo_de_deus'||/^(?:Servo|Serva) de Deus\b/i.test(active?.titulo||''))&&causeText){
    const sourcePrayer=String(causeText),heading=sourcePrayer.match(/^\s*(ORAÇÃO PELA BEATIFICAÇÃO E CANONIZAÇÃO)\s*/i);
    const prayerBody=heading?sourcePrayer.slice(heading[0].length).trimStart():sourcePrayer;
    causePrayer.hidden=false;causePrayer.innerHTML='<div class="cause-prayer-title">'+escapeHtml(heading?.[1]||'Oração pela beatificação e canonização')+'</div><div class="cause-prayer-text">'+escapeHtml(prayerBody)+'</div>';
  }
- const prayer=memoria?.oracao_propria||active?.prayer||active?.oracao||'';
+ const prayer=memoria?.oracao_propria||active?.prayer||active?.oracao||reflection?.prayer||'';
+ prayerLabel.textContent=reflection?'Oração pessoal':'Oração';
  saintPrayer.hidden=!prayer;saintPrayerText.textContent=prayer;
  const fontes=memoria?.fontes||{},sourceItems=[];
  if(bioText&&fontes.biografia)sourceItems.push('Biografia: '+sourceLabel(fontes.biografia));
  if(prayer&&fontes.oracao)sourceItems.push('Oração: '+sourceLabel(fontes.oracao));
  memSources.hidden=!sourceItems.length;memSources.textContent=sourceItems.join(' · ');
  memSources.title=[fontes.biografia,fontes.oracao].filter(Boolean).join(' · ');
- const note=memoria?.editorial_note||'';
+ const note=memoria?.editorial_note||(reflection?'Reflexão devocional e oração pessoal propostas para os leitores. Não são textos litúrgicos e não indicam uma celebração do dia.':'');
  memEditorialNote.hidden=!note;memEditorialNote.textContent=note;
  materialBtn.hidden=true; materialBtn.textContent='';
  if(active?.tipo_material==='oficio_proprio'){materialBtn.hidden=false;materialBtn.textContent='Rezar o Ofício'}
  else if(active?.tipo_material==='textos_proprios'){materialBtn.hidden=false;materialBtn.textContent=active?.material?.secoes?.some(s=>/Ofício das Leituras/i.test(s.titulo||''))?'Ofício das Leituras':'Ver textos próprios'};
+ const formation=dailyFormation(active,reflection);formationLink.href=formation.url;formationLink.textContent=formation.label;
+ shareDay.disabled=!!loadError;shareStatus.textContent='';shareCopy.hidden=true;shareCopyLabel.hidden=true;
+ if(remember){rememberReading();resumeCard.hidden=true}
+ renderMonth(current.getFullYear(),current.getMonth());showResumeOffer();
  reader.hidden=true;picker.value=`${current.getFullYear()}-${pad(current.getMonth()+1)}-${pad(current.getDate())}`;renderUpcoming()
 }
-function openMaterial(){
+function openMaterial(preferredHour=null){
  if(!active)return;readerTitle.textContent=displayCelebrationTitle(active);hours.innerHTML='';content.innerHTML='';
  if(active.tipo_material==='oficio_proprio'){
    readerLabel.textContent='Liturgia das Horas';let entries=[];
    Object.entries(active.material?.horas||{}).forEach(([key,obj])=>{
      let parts=String(obj.texto||'').split(/^II Vésperas\s*$/im);
      entries.push({key,titulo:obj.titulo,texto:parts[0].trim()});
-     if(parts.length>1)entries.push({key:'vesperas',titulo:'II Vésperas',texto:parts.slice(1).join('\n').trim()});
+     if(parts.length>1)entries.push({key:key+':ii-vesperas',titulo:'II Vésperas',texto:parts.slice(1).join('\n').trim()});
    });
-   entries.forEach((entry,i)=>{let b=document.createElement('button');b.textContent=entry.titulo==='II Vésperas'?'II Vésperas':hourNames[entry.key]||entry.titulo||entry.key;b.onclick=()=>showHour(entry,b);hours.appendChild(b);if(i===0)setTimeout(()=>b.click(),0)})
+   entries.forEach((entry)=>{let b=document.createElement('button');b.dataset.hourKey=entry.key;b.textContent=entry.titulo==='II Vésperas'?'II Vésperas':hourNames[entry.key]||entry.titulo||entry.key;b.onclick=()=>showHour(entry,b);hours.appendChild(b)});
+   const chosen=[...hours.children].find(b=>b.dataset.hourKey===preferredHour)||hours.children[0];if(chosen)chosen.click();
  } else {
-   readerLabel.textContent='Textos próprios';hours.innerHTML='';
+   readerLabel.textContent='Textos próprios';hours.innerHTML='';rememberReading('textos_proprios');
    const sections=active.material?.secoes;
    if(Array.isArray(sections)){
      sections.forEach(s=>addSection(s.titulo,s.texto))
@@ -404,6 +518,7 @@ function openMaterial(){
  reader.hidden=false;reader.scrollIntoView({behavior:scrollBehavior()})
 }
 function showHour(entry,btn){
+ rememberReading(entry.key);
  [...hours.children].forEach(x=>x.classList.remove('active'));btn.classList.add('active');
  content.innerHTML='';renderLiturgicalHour(entry.titulo,entry.texto)
 }
@@ -626,10 +741,10 @@ function diagnoseHour(txt,wrap){
 }
 function addSection(t,txt){let s=document.createElement('section');s.className='section';let h=t?`<h3>${escapeHtml(t)}</h3>`:'';s.innerHTML=h+`<div class="littext">${escapeHtml(txt)}</div>`;content.appendChild(s)}
 function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=celebrationForDate(d);if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render();scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
-prev.onclick=()=>{current.setDate(current.getDate()-1);render()};next.onclick=()=>{current.setDate(current.getDate()+1);render()};todayBtn.onclick=()=>{current=new Date();render()};
-calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden));if(!calendarCard.hidden)calendarCard.scrollIntoView({behavior:scrollBehavior(),block:'start'})};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render();calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
-materialBtn.onclick=openMaterial;closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:scrollBehavior()})};updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+function renderUpcoming(){let arr=[];for(let i=1;i<=370&&arr.length<5;i++){let d=new Date(current);d.setDate(d.getDate()+i);let x=celebrationForDate(d);if(x)arr.push([d,x])}upcoming.innerHTML='';arr.forEach(([d,x])=>{let b=document.createElement('button');b.className='event';b.innerHTML=`<strong>${escapeHtml(displayCelebrationTitle(x))}</strong>${sf.format(d)}`;b.onclick=()=>{current=new Date(d);render(true);scrollTo({top:0,behavior:scrollBehavior()})};upcoming.appendChild(b)})}
+prev.onclick=()=>{current.setDate(current.getDate()-1);render(true)};next.onclick=()=>{current.setDate(current.getDate()+1);render(true)};todayBtn.onclick=()=>{current=new Date();render(true)};
+calendarBtn.onclick=()=>{calendarCard.hidden=!calendarCard.hidden;calendarBtn.setAttribute('aria-expanded',String(!calendarCard.hidden));if(!calendarCard.hidden)calendarCard.scrollIntoView({behavior:scrollBehavior(),block:'start'})};picker.onchange=e=>{const selected=parseDate(e.target.value);if(!selected)return;current=selected;render(true);calendarCard.hidden=true;calendarBtn.setAttribute('aria-expanded','false')};
+materialBtn.onclick=()=>openMaterial();closeReader.onclick=()=>{reader.hidden=true;memory.scrollIntoView({behavior:scrollBehavior()})};setupDailyFeatures();updateConnectionNotice();window.addEventListener('online',updateConnectionNotice);window.addEventListener('offline',updateConnectionNotice);load();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 
 
