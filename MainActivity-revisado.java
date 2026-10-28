@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 /**
- * Família Servita 2.9.33 (versionCode 314)
+ * Família Servita 2.9.36 (versionCode 317)
  *
  * PDFs litúrgicos e folhas do ano abrem no leitor Android local, com
  * ampliação, navegação e impressão. ZIP, ICS e demais links continuam
