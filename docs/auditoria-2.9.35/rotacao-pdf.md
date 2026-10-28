@@ -23,4 +23,10 @@ Abrir Biblioteca na página 43, avançar à 44, ampliar a 125%, girar retrato/pa
 Auditoria de 28/10/2026; código/tag android-v2.9.35 no commit fc95e842a92bb2e727e19a1631e76bc7eec96f74.
 APK público Familia-Servita-2.9.35.apk: SHA-256 5c4388ba0ebebab693e534853048ee5adf31acf3fb8177de3d737ebda1a4ff82, igual ao digest da release. Inspeção estática: contêiner ZIP sem erro de CRC; 79 PDFs abertos com pypdf em modo estrito, 618 páginas. Isso não equivale a renderização ou teste Android. A assinatura v2 informada na análise de origem não foi verificada criptograficamente nesta auditoria.
 
-Nenhum teste em aparelho ou emulador foi executado nesta auditoria. Testes existentes citados abaixo foram apenas lidos. Este PR contém somente documentação: não altera calendário, graus, datas, as 32 páginas, conteúdo litúrgico, downloads PDF/ZIP, CNBB em nova aba ou navegação aprovada na 2.9.31. Sem implementação, publicação ou merge.
+Nenhum teste em aparelho ou emulador foi executado nesta auditoria. Testes existentes citados abaixo foram apenas lidos. A auditoria inicial não alterou o aplicativo: não altera calendário, graus, datas, as 32 páginas, conteúdo litúrgico, downloads PDF/ZIP, CNBB em nova aba ou navegação aprovada na 2.9.31. Sem publicação ou merge. O andamento posterior está registrado abaixo.
+
+## Andamento após autorização para seguir
+
+Preparado teste de instrumentação: abre página 43, avança para 44, amplia a 125%, gira para paisagem e retrato, exige recriação da Activity e confere página, ampliação e orientação. Inclui workflow de emulador API 35 com build debug sem chave de release e sem publicação. Leitor de produção inalterado. YAML e espaços verificados localmente; execução Android ainda pendente.
+
+PR mantido em rascunho. Sem merge, release, alteração litúrgica ou mudança dos destinos e comportamentos de download/navegação aprovados.

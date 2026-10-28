@@ -124,13 +124,57 @@ public final class PdfInstrumentation extends Instrumentation {
                 });
                 waitForIdleSync();
             }
+            verifyRotation(context);
             result.putString("validation", "PASS");
-            result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\n");
+            result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\nPASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.\n");
             finish(Activity.RESULT_OK, result);
         } catch (Throwable error) {
             result.putString("validation", "FAIL");
             result.putString("stream", android.util.Log.getStackTraceString(error));
             finish(Activity.RESULT_CANCELED, result);
+        }
+    }
+    private void assertReaderState(Activity activity) {
+        runOnMainSync(() -> {
+            View root=activity.getWindow().getDecorView();
+            if(!((android.widget.TextView)root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 44 de"))
+                throw new AssertionError("Page lost on rotation");
+            if(!root.findViewWithTag("pdf-page").getContentDescription().toString().contains("125%"))
+                throw new AssertionError("Zoom lost on rotation");
+        });
+    }
+    private void verifyRotation(Context context) throws Exception {
+        Activity active=null;
+        try {
+            if(!getUiAutomation().setRotation(android.app.UiAutomation.ROTATION_FREEZE_0))
+                throw new Exception("Cannot set initial portrait rotation");
+            active=startActivitySync(new Intent(context,LocalPdfActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .putExtra("path","data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf").putExtra("page",43));
+            waitForIdleSync();
+            final Activity initial=active;
+            runOnMainSync(() -> {
+                View root=initial.getWindow().getDecorView();
+                root.findViewWithTag("pdf-next").performClick();
+                root.findViewWithTag("pdf-zoom-in").performClick();
+            });
+            assertReaderState(active);
+            for(int rotation:new int[]{android.app.UiAutomation.ROTATION_FREEZE_90,android.app.UiAutomation.ROTATION_FREEZE_0}) {
+                ActivityMonitor monitor=addMonitor(LocalPdfActivity.class.getName(),null,false);
+                try {
+                    if(!getUiAutomation().setRotation(rotation))throw new Exception("Cannot rotate PDF viewer");
+                    Activity recreated=waitForMonitorWithTimeout(monitor,15000);
+                    if(recreated==null||recreated==active)throw new Exception("PDF Activity was not recreated by rotation");
+                    active=recreated;
+                    waitForIdleSync();
+                    int expected=rotation==android.app.UiAutomation.ROTATION_FREEZE_90?
+                        android.content.res.Configuration.ORIENTATION_LANDSCAPE:android.content.res.Configuration.ORIENTATION_PORTRAIT;
+                    if(active.getResources().getConfiguration().orientation!=expected)throw new Exception("Unexpected PDF orientation");
+                    assertReaderState(active);
+                } finally {removeMonitor(monitor);}
+            }
+        } finally {
+            if(active!=null){final Activity last=active;runOnMainSync(last::finish);}
+            getUiAutomation().setRotation(android.app.UiAutomation.ROTATION_UNFREEZE);
         }
     }
 }
