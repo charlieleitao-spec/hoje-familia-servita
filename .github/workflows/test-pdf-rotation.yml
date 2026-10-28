@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'android-pdf/**'
+      - 'somos-servos.html'
+      - 'biblioteca-servita.html'
+      - '.github/workflows/build-android.yml'
       - 'scripts/test-signed-update-2.9.35.py'
       - '.github/workflows/test-pdf-rotation.yml'
   workflow_dispatch:
@@ -21,13 +24,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Reunir propostas fixadas para teste conjunto sem merge
+      - name: Validar fontes integradas
         run: |
-          git fetch origin fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 ee1934751c09e8126a85414f703e2e96454465c3 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e 403aaba6b9796e0cd6c9df61d8794f1242f69385
-          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 -- somos-servos.html | git apply
-          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 ee1934751c09e8126a85414f703e2e96454465c3 -- index.html | git apply
-          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e -- biblioteca-servita.html | git apply
-          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 403aaba6b9796e0cd6c9df61d8794f1242f69385 -- somos-servos.html | git apply
           node scripts/check-web.cjs
           node --test integracao-somos-servos/tests/*.test.cjs
       - name: Baixar releases assinadas e verificar hashes
@@ -51,8 +49,8 @@ jobs:
           assert "testBuildType 'release'" in text
           text=text.replace("testBuildType 'release'", "testBuildType 'debug'")
           text=text.replace('android {', 'android {\n    buildTypes { debug { applicationIdSuffix ".validacao" } }', 1)
-          text=re.sub(r'versionCode\s+\d+', 'versionCode 316', text, count=1)
-          text=re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.35-validacao.1"', text, count=1)
+          text=re.sub(r'versionCode\s+\d+', 'versionCode 317', text, count=1)
+          text=re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.36-validacao.1"', text, count=1)
           p.write_text(text)
           manifest=Path('android/app/src/main/AndroidManifest.xml')
           xml=manifest.read_text()
@@ -81,7 +79,7 @@ jobs:
             adb install android/app/build/outputs/apk/debug/app-debug.apk
             adb install -t android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
             adb shell dumpsys package br.org.servitas.familia | grep 'versionName=2.9.35'
-            adb shell dumpsys package br.org.servitas.familia.validacao | grep 'versionName=2.9.35-validacao.1'
+            adb shell dumpsys package br.org.servitas.familia.validacao | grep 'versionName=2.9.36-validacao.1'
             adb shell svc wifi disable
             adb shell svc data disable
             adb shell am instrument -w br.org.servitas.familia.validacao.test/br.org.servitas.familia.validation.PdfInstrumentation > pdf-rotation.txt
@@ -90,15 +88,15 @@ jobs:
             grep -Fxq 'PASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.' pdf-rotation.txt
       - name: Preparar APK de validação aprovado
         run: |
-          cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.9.35-validacao-1.apk
-          sha256sum Familia-Servita-2.9.35-validacao-1.apk > Familia-Servita-2.9.35-validacao-1.sha256
+          cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.9.36-validacao-1.apk
+          sha256sum Familia-Servita-2.9.36-validacao-1.apk > Familia-Servita-2.9.36-validacao-1.sha256
       - name: Guardar APK de teste separado do oficial
         uses: actions/upload-artifact@v4
         with:
-          name: Familia-Servita-2.9.35-validacao-1
+          name: Familia-Servita-2.9.36-validacao-1
           path: |
-            Familia-Servita-2.9.35-validacao-1.apk
-            Familia-Servita-2.9.35-validacao-1.sha256
+            Familia-Servita-2.9.36-validacao-1.apk
+            Familia-Servita-2.9.36-validacao-1.sha256
       - name: Guardar evidência
         if: always()
         uses: actions/upload-artifact@v4

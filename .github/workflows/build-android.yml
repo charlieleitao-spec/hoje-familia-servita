@@ -13,6 +13,7 @@ on:
       - "data/biblioteca-servita-catalogo.json"
       - "scripts/sync-biblioteca.py"
       - "android-pdf/**"
+      - "scripts/verify-android-update.py"
       - "scripts/preparar-pdfs-android.py"
       - "tests/pdf-link/**"
       - "MainActivity-revisado.java"
@@ -38,6 +39,7 @@ on:
       - "data/biblioteca-servita-catalogo.json"
       - "scripts/sync-biblioteca.py"
       - "android-pdf/**"
+      - "scripts/verify-android-update.py"
       - "scripts/preparar-pdfs-android.py"
       - "tests/pdf-link/**"
       - "MainActivity-revisado.java"
@@ -132,15 +134,15 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 316  # 2.9.35 sucede 2.9.34 (315)
+          code = 317  # 2.9.36 sucede 2.9.35 (316)
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.35"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.36"', s, count=1)
           p.write_text(s)
           with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.35\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.35 versionCode=' + str(code))
+              env.write('APP_VERSION=2.9.36\nAPP_VERSION_CODE=' + str(code) + '\n')
+          print('APK versionName=2.9.36 versionCode=' + str(code))
           PY
       - name: Validar fontes Android de release
         run: |
@@ -239,21 +241,38 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -memory 3072 -cores 2
           script: |
-            adb install Familia-Servita-2.9.35.apk
+            adb shell input keyevent KEYCODE_WAKEUP
+            adb shell wm dismiss-keyguard
+            adb shell am force-stop com.google.android.apps.nexuslauncher
+            adb install Familia-Servita-anterior.apk
+            adb shell dumpsys package br.org.servitas.familia > package-before-update.txt
+            adb install -r Familia-Servita-2.9.36.apk
+            adb shell dumpsys package br.org.servitas.familia > package-after-update.txt
+            python3 scripts/verify-android-update.py package-before-update.txt package-after-update.txt
             adb install -t android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
+            adb shell cmd connectivity airplane-mode enable
             adb shell svc wifi disable
             adb shell svc data disable
+            adb shell sleep 3
+            adb shell dumpsys connectivity > connectivity-offline.txt
+            grep -Eq 'Active default network: (none|null|\(none\)|-1)' connectivity-offline.txt
             adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation | tee pdf-android-validation.txt
             grep -Fxq 'PASS: 79 PDFs; 618 pages; original print bytes; zoom; Android printing; cancel and return.' pdf-android-validation.txt
+            grep -Fxq 'PASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.' pdf-android-validation.txt
+            grep -Fxq 'PASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.' pdf-android-validation.txt
 
       - name: Guardar evidências dos PDFs
         if: always() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: validacao-pdfs-2.9.35
+          name: validacao-pdfs-2.9.36
           path: |
             pdf-android-validation.txt
+            package-before-update.txt
+            package-after-update.txt
+            connectivity-offline.txt
             pdf-logcat.txt
             pdf-window.xml
           if-no-files-found: warn
@@ -298,7 +317,7 @@ jobs:
         with:
           tag_name: android-v${{ env.APP_VERSION }}
           name: Família Servita ${{ env.APP_VERSION }} para Android
-          body_path: docs/releases/2.9.35.md
+          body_path: docs/releases/2.9.36.md
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
 
 
