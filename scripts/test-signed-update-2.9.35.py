@@ -19,7 +19,8 @@ def package_state(label):
     (OUT / (label + '-package.txt')).write_text(text)
     result = {}
     for key in ('userId', 'firstInstallTime', 'ceDataInode', 'versionName'):
-        match = re.search(r'\b' + key + r'=([^\r\n]+)', text)
+        field = r'(?:userId|appId)' if key == 'userId' else key
+        match = re.search(r'\b' + field + r'=([^\r\n]+)', text)
         if not match:
             raise AssertionError('Missing package field ' + key)
         result[key] = match[1].strip() if key == 'firstInstallTime' else match[1].split()[0]

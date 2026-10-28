@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'android-pdf/**'
+      - 'scripts/test-signed-update-2.9.35.py'
       - '.github/workflows/test-pdf-rotation.yml'
   workflow_dispatch:
 permissions:
