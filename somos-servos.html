@@ -116,7 +116,8 @@ async function update() {
     current = data; const persisted = saveCache(data); render(data);
     statusNode.textContent = (data.stale ? 'Servidor temporariamente indisponível. Dados de ' : 'Atualizado em ') + dateText(data.generatedAt) + (persisted ? '.' : '. Não foi possível salvar para uso sem internet.');
   } catch (_) {
-    statusNode.textContent = current ? 'Não foi possível atualizar. Exibindo dados salvos de ' + dateText(current.generatedAt) + '.' : 'Não foi possível conectar. Conecte-se à internet e toque em Atualizar postagens para salvar a primeira consulta.';
+    const unavailable = 'Não foi possível atualizar as postagens. Verifique a conexão e tente novamente. Se o problema continuar, o serviço pode estar temporariamente indisponível ou o endereço de atualização pode precisar ser atualizado.';
+    statusNode.textContent = unavailable + (current ? ' Exibindo dados salvos de ' + dateText(current.generatedAt) + '.' : ' Toque em Atualizar postagens para salvar a primeira consulta quando o serviço estiver disponível.');
   } finally { clearTimeout(timer); busy = false; refreshButton.disabled = false; }
 }
 render(current);
