@@ -280,7 +280,8 @@ main{padding-top:12px}
 <div id="connectionNotice" class="lit-warning" role="status" aria-live="polite" hidden></div>
 <section id="resumeCard" aria-label="Retomar leitura" hidden><p id="resumeDescription"></p><div class="daily-actions"><button id="resumeBtn">Continuar leitura</button><button id="dismissResume">Dispensar</button></div></section>
 <section class="card" id="calendarCard" hidden><div class="label">Escolher uma data</div><h2>Calendário</h2><div class="month-nav"><button id="prevMonth" aria-label="Mês anterior">‹</button><h3 id="monthTitle" aria-live="polite"></h3><button id="nextMonth" aria-label="Próximo mês">›</button></div><table class="month-grid" aria-labelledby="monthTitle"><thead><tr><th scope="col"><abbr title="Domingo">D</abbr></th><th scope="col"><abbr title="Segunda-feira">S</abbr></th><th scope="col"><abbr title="Terça-feira">T</abbr></th><th scope="col"><abbr title="Quarta-feira">Q</abbr></th><th scope="col"><abbr title="Quinta-feira">Q</abbr></th><th scope="col"><abbr title="Sexta-feira">S</abbr></th><th scope="col"><abbr title="Sábado">S</abbr></th></tr></thead><tbody id="monthDays"></tbody></table><p class="source-line">O ponto dourado indica uma memória ou celebração servita cadastrada; não determina a precedência litúrgica. A borda dourada indica hoje.</p><label for="picker">Ir para uma data</label><input id="picker" type="date" aria-label="Data da celebração" min="0100-01-01" max="9999-12-31"><div class="daily-actions"><button id="calendarToday">Hoje</button><button id="closeCalendar">Fechar calendário</button></div></section>
-<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="https://liturgiadiaria.edicoescnbb.com.br/" target="_blank" rel="noopener noreferrer">Consultar liturgia do dia <span aria-hidden="true">↗</span></a><div class="daily-actions"><button id="shareDay">Compartilhar esta data</button></div><p id="shareStatus" class="source-line" role="status" aria-live="polite"></p><label id="shareCopyLabel" for="shareCopy" hidden>Copie o link desta data</label><input id="shareCopy" type="text" readonly hidden></section>
+<section class="card" id="celebracao"><div class="label">Celebração do dia</div><h2 id="title">Carregando…</h2><span class="badge" id="badge">Família Servita</span><p id="status" class="muted"></p><a class="celebration-link" href="https://liturgiadiaria.edicoescnbb.com.br/" target="_blank" rel="noopener noreferrer">Consultar liturgia do dia <span aria-hidden="true">↗</span></a><div class="daily-actions"><button id="dailyLiturgyBtn" aria-expanded="false" aria-controls="dailyLiturgyPanel">Referências da Missa</button><button id="shareDay">Compartilhar esta data</button></div><p id="shareStatus" class="source-line" role="status" aria-live="polite"></p><label id="shareCopyLabel" for="shareCopy" hidden>Copie o link desta data</label><input id="shareCopy" type="text" readonly hidden></section>
+<section class="card" id="dailyLiturgyPanel" aria-labelledby="dailyLiturgyHeading" hidden><h2 id="dailyLiturgyHeading">Liturgia da Missa</h2><p id="dailyLiturgyStatus" role="status" aria-live="polite"></p><div id="dailyLiturgyResult"></div><p class="source-line">Consulta do calendário geral pela API comunitária Liturgia Diária. Nas celebrações servitas, confira os textos próprios e as precedências aplicáveis.</p><p><a href="https://liturgiadiaria.edicoescnbb.com.br/" target="_blank" rel="noopener noreferrer">Ler os textos completos na CNBB</a> · <a href="https://github.com/Dancrf/liturgia-diaria" target="_blank" rel="noopener noreferrer">Sobre a fonte</a></p></section>
 <nav class="quick" aria-label="Navegação principal"><a class="nav-home" href="#conteudo" aria-label="Início">⌂<small>Início</small></a><a class="nav-liturgia" href="#celebracao" aria-label="Celebração">✝<small>Liturgia</small></a><button id="todayBtn" class="today-reset" aria-label="Voltar ao dia de hoje" title="Voltar ao dia de hoje">Hoje</button><button id="calendarBtn" aria-controls="calendarCard" aria-expanded="false"><span aria-hidden="true">▦</span><small>Calendário</small></button><a href="./causas-beatos.html" aria-label="Causas servitas"><span aria-hidden="true">♧</span><small>Causas</small></a><a href="#recursos" aria-label="Recursos"><span aria-hidden="true">•••</span><small>Mais</small></a></nav>
 
 <section class="card" id="memoria"><div class="label" id="memoryLabel">Memória servita</div><h2 id="memory">Família Servita</h2><div id="bio" class="bio"></div><div id="causePrayer" class="cause-prayer" hidden></div><div id="saintPrayer" class="prayer-block" hidden><div class="label" id="prayerLabel" style="margin-top:18px">Oração</div><div id="saintPrayerText" class="littext"></div></div><div id="memSources" class="source-line" hidden></div><div id="memEditorialNote" class="editorial-note" hidden></div>
@@ -449,8 +450,70 @@ function setupDailyFeatures(){
 }
 // END DAILY HELPERS
 
+// Consulta complementar: guarda apenas data, celebração, cor e referências.
+const DAILY_LITURGY_CACHE='familia-servita-missa-referencias-v1';
+let dailyLiturgyRequest=0;
+function normalizeDailyLiturgy(data,expectedDate){
+ if(!data||data.data!==expectedDate||typeof data.liturgia!=='string'||!data.liturgia.trim()||data.liturgia.length>240||!data.leituras||typeof data.leituras!=='object')throw Error('Resposta inválida');
+ const groups=[['primeiraLeitura','Primeira leitura'],['salmo','Salmo'],['segundaLeitura','Segunda leitura'],['evangelho','Evangelho'],['extras','Outras leituras']];
+ const references=[];
+ for(const [key,label] of groups){
+  const items=data.leituras[key];if(items!==undefined&&!Array.isArray(items))throw Error('Leituras inválidas');
+  for(const item of (items||[]).slice(0,20)){
+   if(typeof item?.referencia==='string'&&item.referencia.trim()&&item.referencia.length<=180)references.push({label,reference:item.referencia.trim()});
+  }
+ }
+ if(!references.length)throw Error('Sem referências');
+ return {data:expectedDate,liturgia:data.liturgia.trim(),cor:typeof data.cor==='string'&&data.cor.length<=30?data.cor:'',references};
+}
+function readDailyLiturgy(key){
+ try{const all=JSON.parse(localStorage.getItem(DAILY_LITURGY_CACHE)||'{}'),item=all[key];
+  if(!item||!Array.isArray(item.references)||!item.references.length||item.references.length>100||typeof item.liturgia!=='string'||item.liturgia.length>240||typeof item.cor!=='string'||item.cor.length>30||item.data!==key)return null;
+  if(item.references.some(x=>typeof x.label!=='string'||x.label.length>40||typeof x.reference!=='string'||x.reference.length>180))return null;
+  return item;
+ }catch{return null}
+}
+function saveDailyLiturgy(item){
+ try{let all=JSON.parse(localStorage.getItem(DAILY_LITURGY_CACHE)||'{}');if(!all||Array.isArray(all)||typeof all!=='object')all={};delete all[item.data];all[item.data]=item;const entries=Object.entries(all).slice(-30);localStorage.setItem(DAILY_LITURGY_CACHE,JSON.stringify(Object.fromEntries(entries)))}catch{}
+}
+function resetDailyLiturgy(){
+ dailyLiturgyRequest++;
+ document.getElementById('dailyLiturgyPanel').hidden=true;
+ document.getElementById('dailyLiturgyBtn').setAttribute('aria-expanded','false');
+ document.getElementById('dailyLiturgyResult').replaceChildren();
+ document.getElementById('dailyLiturgyStatus').textContent='';
+}
+function showDailyLiturgy(item){
+ const root=document.getElementById('dailyLiturgyResult');root.replaceChildren();
+ const h=document.createElement('h3');h.textContent=item.liturgia;root.append(h);
+ const p=document.createElement('p');p.textContent=item.data+(item.cor?' · Cor litúrgica: '+item.cor:'');root.append(p);
+ const list=document.createElement('ul');for(const ref of item.references){const li=document.createElement('li');li.textContent=ref.label+': '+ref.reference;list.append(li)}root.append(list);
+}
+async function openDailyLiturgy(){
+ const panel=document.getElementById('dailyLiturgyPanel'),button=document.getElementById('dailyLiturgyBtn'),status=document.getElementById('dailyLiturgyStatus');
+ if(!panel.hidden){resetDailyLiturgy();return}
+ panel.hidden=false;button.setAttribute('aria-expanded','true');
+ const selected=new Date(current),expected=`${pad(selected.getDate())}/${pad(selected.getMonth()+1)}/${selected.getFullYear()}`,request=++dailyLiturgyRequest,cached=readDailyLiturgy(expected);
+ if(cached)showDailyLiturgy(cached);
+ status.textContent=cached?'Referências salvas. Consultando atualização…':'Consultando referências…';
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+ try{
+  if(!navigator.onLine)throw Error('Sem rede');
+  const url=new URL('https://liturgia.up.railway.app/v2/');url.search=new URLSearchParams({dia:selected.getDate(),mes:selected.getMonth()+1,ano:selected.getFullYear()});
+  const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('Serviço indisponível');
+  const item=normalizeDailyLiturgy(await response.json(),expected);
+  if(request!==dailyLiturgyRequest)return;
+  showDailyLiturgy(item);saveDailyLiturgy(item);status.textContent='Referências de '+expected+'.';
+ }catch{
+  if(request!==dailyLiturgyRequest)return;
+  status.textContent=cached?'Sem atualização no momento. Exibindo referências salvas de '+expected+'.':'Não foi possível consultar esta data. Tente novamente com internet ou consulte a CNBB.';
+ }finally{clearTimeout(timer)}
+}
+document.getElementById('dailyLiturgyBtn').onclick=openDailyLiturgy;
+
 const memoriaSection=document.getElementById('memoria');
 function render(remember=false){
+ resetDailyLiturgy();
  date.textContent=fmt.format(current).replace(/^./,c=>c.toUpperCase());active=celebrationForDate(current)||null;
  title.textContent=active?displayCelebrationTitle(active):'Liturgia do dia';badge.textContent=active?labelType(active.tipo_material):'Família Servita';celebrationStatus.textContent=active?.data||loadError;
  const reflection=!active&&!loadError?dailyReflection(current):null;
