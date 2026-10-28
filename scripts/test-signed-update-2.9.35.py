@@ -27,6 +27,24 @@ def package_state(label):
     return result
 
 
+def set_offline(label):
+    adb('shell', 'cmd', 'connectivity', 'airplane-mode', 'enable')
+    adb('shell', 'svc', 'wifi', 'disable')
+    adb('shell', 'svc', 'data', 'disable')
+    consecutive = 0
+    for _ in range(20):
+        connectivity = adb('shell', 'dumpsys', 'connectivity')
+        (OUT / (label + '-connectivity.txt')).write_text(connectivity)
+        if re.search(r'Active default network:\s*(?:none|null|\(none\)|-1)(?:\s|$)', connectivity):
+            consecutive += 1
+            if consecutive == 3:
+                return
+        else:
+            consecutive = 0
+        time.sleep(1)
+    raise AssertionError('Emulator still has an active default network')
+
+
 def wait_text(wanted, label):
     for _ in range(30):
         try:
@@ -44,7 +62,8 @@ def wait_text(wanted, label):
                 continue
             for node in root.iter():
                 text = node.get('text', '') + ' ' + node.get('content-desc', '')
-                if wanted in text:
+                matches = node.get('text') == wanted if wanted == 'Somos Servos' else wanted in text
+                if matches:
                     return node
         except (subprocess.CalledProcessError, ET.ParseError):
             pass
@@ -56,19 +75,11 @@ try:
     adb('shell', 'input', 'keyevent', 'KEYCODE_WAKEUP')
     adb('shell', 'wm', 'dismiss-keyguard')
     adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher')
-    adb('shell', 'svc', 'wifi', 'disable')
-    adb('shell', 'svc', 'data', 'disable')
-    for _ in range(10):
-        connectivity = adb('shell', 'dumpsys', 'connectivity')
-        (OUT / 'connectivity.txt').write_text(connectivity)
-        if re.search(r'Active default network:\s*(?:none|null|\(none\)|-1)\b', connectivity):
-            break
-        time.sleep(1)
-    else:
-        raise AssertionError('Emulator still has an active default network')
+    set_offline('initial')
     print(adb('install', 'published-2.9.34.apk'), flush=True)
     before = package_state('before')
     assert before['versionName'] == '2.9.34', before
+    set_offline('before-launch')
     adb('shell', 'am', 'start', '-W', '-n', PACKAGE + '/.MainActivity')
     wait_text('Somos Servos', 'before-offline')
     # No uninstall or clear between the two signed releases.
@@ -77,6 +88,8 @@ try:
     assert after['versionName'] == '2.9.35', after
     for key in ('userId', 'firstInstallTime', 'ceDataInode'):
         assert before[key] == after[key], (key, before, after)
+    print('PASS: Signed update retained UID, firstInstallTime and data inode.', flush=True)
+    set_offline('after-update')
     adb('shell', 'am', 'start', '-W', '-n', PACKAGE + '/.MainActivity')
     wait_text('Somos Servos', 'after-offline')
     # Open a packaged PDF through the existing fallback UI after updating.
@@ -86,6 +99,7 @@ try:
     assert len(bounds) == 4 and bounds[2] > bounds[0] and bounds[3] > bounds[1], bounds
     adb('shell', 'input', 'tap', str((bounds[0] + bounds[2]) // 2), str((bounds[1] + bounds[3]) // 2))
     wait_text('Página 1 de', 'after-local-pdf')
+    set_offline('after-local-pdf')
     subprocess.run(['adb', 'exec-out', 'screencap', '-p'], stdout=(OUT / 'after-local-pdf.png').open('wb'), check=True)
     message = 'PASS: Published signed 2.9.34 -> 2.9.35 installed with -r; UID, firstInstallTime and data inode retained; offline fallback and packaged PDF opened.'
     print(message, flush=True)
