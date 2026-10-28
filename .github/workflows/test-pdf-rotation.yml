@@ -1,4 +1,4 @@
-name: Verificar rotação do PDF em Android
+name: Verificar atualização assinada e propostas offline em Android
 on:
   pull_request:
     paths:
@@ -20,6 +20,21 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+      - name: Reunir propostas fixadas para teste conjunto sem merge
+        run: |
+          git fetch origin fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 ee1934751c09e8126a85414f703e2e96454465c3 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e 403aaba6b9796e0cd6c9df61d8794f1242f69385
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 -- somos-servos.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 ee1934751c09e8126a85414f703e2e96454465c3 -- index.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e -- biblioteca-servita.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 403aaba6b9796e0cd6c9df61d8794f1242f69385 -- somos-servos.html | git apply
+          node scripts/check-web.cjs
+          node --test integracao-somos-servos/tests/*.test.cjs
+      - name: Baixar releases assinadas e verificar hashes
+        run: |
+          curl -fL --retry 3 https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.34/Familia-Servita-2.9.34.apk -o published-2.9.34.apk
+          curl -fL --retry 3 https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.35/Familia-Servita-2.9.35.apk -o published-2.9.35.apk
+          echo '462cee5bdac5e729ffced57e2b3d41d9058a9b865d4de49c4c360703d1061308  published-2.9.34.apk' | sha256sum --check
+          echo '5c4388ba0ebebab693e534853048ee5adf31acf3fb8177de3d737ebda1a4ff82  published-2.9.35.apk' | sha256sum --check
       - name: Preparar aplicativo de teste
         run: |
           python3 scripts/sync-biblioteca.py
@@ -42,7 +57,7 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
-      - name: Executar leitor offline e rotação
+      - name: Executar atualização real e propostas em etapas separadas
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
@@ -51,6 +66,8 @@ jobs:
           profile: pixel_6
           disable-animations: true
           script: |
+            python3 scripts/test-signed-update-2.9.35.py
+            adb uninstall br.org.servitas.familia
             adb install android/app/build/outputs/apk/debug/app-debug.apk
             adb install -t android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
             adb shell svc wifi disable
@@ -58,10 +75,13 @@ jobs:
             adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation > pdf-rotation.txt
             cat pdf-rotation.txt
             grep -Fxq 'PASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.' pdf-rotation.txt
+            grep -Fxq 'PASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.' pdf-rotation.txt
       - name: Guardar evidência
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-rotation-api35
-          path: pdf-rotation.txt
+          name: signed-update-and-offline-api35
+          path: |
+            pdf-rotation.txt
+            update-evidence/
           if-no-files-found: warn

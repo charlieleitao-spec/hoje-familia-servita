@@ -124,15 +124,63 @@ public final class PdfInstrumentation extends Instrumentation {
                 });
                 waitForIdleSync();
             }
+            verifyOfflineLibraryLinks(context);
             verifyRotation(context);
             result.putString("validation", "PASS");
-            result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\nPASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.\n");
+            result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\nPASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.\nPASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.\n");
             finish(Activity.RESULT_OK, result);
         } catch (Throwable error) {
             result.putString("validation", "FAIL");
             result.putString("stream", android.util.Log.getStackTraceString(error));
             finish(Activity.RESULT_CANCELED, result);
         }
+    }
+    private boolean webIs(WebView web,String expression) throws Exception {
+        CountDownLatch latch=new CountDownLatch(1);
+        AtomicReference<String> value=new AtomicReference<>("");
+        runOnMainSync(() -> web.evaluateJavascript(expression,resultValue -> {value.set(resultValue);latch.countDown();}));
+        if(!latch.await(3,TimeUnit.SECONDS))throw new Exception("WebView callback timeout");
+        return "true".equals(value.get());
+    }
+    private void waitForWeb(WebView web,String expression) throws Exception {
+        for(int attempt=0;attempt<80;attempt++){
+            if(webIs(web,expression))return;
+            Thread.sleep(250);
+        }
+        throw new Exception("Offline WebView condition failed: "+expression);
+    }
+    private void verifyOfflineLibraryLinks(Context context) throws Exception {
+        Activity main=startActivitySync(new Intent(context,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        try {
+            java.lang.reflect.Field field=MainActivity.class.getDeclaredField("webView");
+            field.setAccessible(true);
+            WebView web=(WebView)field.get(main);
+            // Clear the web cache, then let HOME fail without a network; no direct fallback load.
+            runOnMainSync(() -> {web.clearCache(true);web.loadUrl("https://charlieleitao-spec.github.io/hoje-familia-servita/");});
+            waitForWeb(web,"!!document.getElementById('offline-title')");
+            runOnMainSync(() -> web.evaluateJavascript("document.querySelector('a[href$=\"biblioteca-servita.html\"]').click()",null));
+            waitForWeb(web,"document.querySelectorAll('#documents article').length===5");
+            int[] pages={43,25,131};
+            for(int index=0;index<pages.length;index++){
+                final int selected=index,expectedPage=pages[index];
+                ActivityMonitor monitor=addMonitor(LocalPdfActivity.class.getName(),null,false);
+                Activity reader=null;
+                try {
+                    runOnMainSync(() -> web.evaluateJavascript("document.querySelectorAll('#documents article a')["+selected+"].click()",null));
+                    reader=waitForMonitorWithTimeout(monitor,15000);
+                    if(reader==null)throw new Exception("Library PDF link did not open native viewer");
+                    waitForIdleSync();
+                    final Activity opened=reader;
+                    runOnMainSync(() -> {
+                        android.widget.TextView position=opened.getWindow().getDecorView().findViewWithTag("pdf-position");
+                        if(!position.getText().toString().startsWith("Página "+expectedPage+" de"))throw new AssertionError("Library link page "+expectedPage);
+                    });
+                } finally {
+                    removeMonitor(monitor);
+                    if(reader!=null){final Activity opened=reader;runOnMainSync(opened::finish);waitForIdleSync();}
+                }
+            }
+        } finally {runOnMainSync(main::finish);}
     }
     private void assertReaderState(Activity activity) {
         runOnMainSync(() -> {
