@@ -1,0 +1,110 @@
+name: Verificar atualização assinada e propostas offline em Android
+on:
+  pull_request:
+    paths:
+      - 'android-pdf/**'
+      - 'scripts/test-signed-update-2.9.35.py'
+      - '.github/workflows/test-pdf-rotation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pdf-rotation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Reunir propostas fixadas para teste conjunto sem merge
+        run: |
+          git fetch origin fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 ee1934751c09e8126a85414f703e2e96454465c3 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e 403aaba6b9796e0cd6c9df61d8794f1242f69385
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 c17d194a85a5d6dcb00dc3bc5199dcaec1f33439 -- somos-servos.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 ee1934751c09e8126a85414f703e2e96454465c3 -- index.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 39ba3d7a18bf77660c09c7f0c3f9fa8490968d7e -- biblioteca-servita.html | git apply
+          git diff fc95e842a92bb2e727e19a1631e76bc7eec96f74 403aaba6b9796e0cd6c9df61d8794f1242f69385 -- somos-servos.html | git apply
+          node scripts/check-web.cjs
+          node --test integracao-somos-servos/tests/*.test.cjs
+      - name: Baixar releases assinadas e verificar hashes
+        run: |
+          curl -fL --retry 3 https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.34/Familia-Servita-2.9.34.apk -o published-2.9.34.apk
+          curl -fL --retry 3 https://github.com/charlieleitao-spec/hoje-familia-servita/releases/download/android-v2.9.35/Familia-Servita-2.9.35.apk -o published-2.9.35.apk
+          echo '462cee5bdac5e729ffced57e2b3d41d9058a9b865d4de49c4c360703d1061308  published-2.9.34.apk' | sha256sum --check
+          echo '5c4388ba0ebebab693e534853048ee5adf31acf3fb8177de3d737ebda1a4ff82  published-2.9.35.apk' | sha256sum --check
+      - name: Preparar aplicativo de teste
+        run: |
+          python3 scripts/sync-biblioteca.py
+          unzip -q android-source.zip
+          cp MainActivity-revisado.java android/app/src/main/java/br/org/servitas/familia/MainActivity.java
+          python3 scripts/preparar-pdfs-android.py
+          python3 scripts/preparar-blog-android.py --allow-unconfigured
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('android/app/build.gradle')
+          text=p.read_text()
+          assert "testBuildType 'release'" in text
+          text=text.replace("testBuildType 'release'", "testBuildType 'debug'")
+          text=text.replace('android {', 'android {\n    buildTypes { debug { applicationIdSuffix ".validacao" } }', 1)
+          text=re.sub(r'versionCode\s+\d+', 'versionCode 316', text, count=1)
+          text=re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.35-validacao.1"', text, count=1)
+          p.write_text(text)
+          manifest=Path('android/app/src/main/AndroidManifest.xml')
+          xml=manifest.read_text()
+          assert 'android:label="Família Servita"' in xml
+          manifest.write_text(xml.replace('android:label="Família Servita"', 'android:label="Família Servita — Teste"', 1))
+          PY
+      - name: Compilar APK e instrumentação debug
+        working-directory: android
+        run: gradle --no-daemon assembleDebug assembleDebugAndroidTest
+      - name: Habilitar KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Executar atualização real e propostas em etapas separadas
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -memory 3072 -cores 2
+          script: |
+            python3 scripts/test-signed-update-2.9.35.py
+            adb install android/app/build/outputs/apk/debug/app-debug.apk
+            adb install -t android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+            adb shell dumpsys package br.org.servitas.familia | grep 'versionName=2.9.35'
+            adb shell dumpsys package br.org.servitas.familia.validacao | grep 'versionName=2.9.35-validacao.1'
+            adb shell svc wifi disable
+            adb shell svc data disable
+            adb shell am instrument -w br.org.servitas.familia.validacao.test/br.org.servitas.familia.validation.PdfInstrumentation > pdf-rotation.txt
+            cat pdf-rotation.txt
+            grep -Fxq 'PASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.' pdf-rotation.txt
+            grep -Fxq 'PASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.' pdf-rotation.txt
+      - name: Preparar APK de validação aprovado
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.9.35-validacao-1.apk
+          sha256sum Familia-Servita-2.9.35-validacao-1.apk > Familia-Servita-2.9.35-validacao-1.sha256
+      - name: Guardar APK de teste separado do oficial
+        uses: actions/upload-artifact@v4
+        with:
+          name: Familia-Servita-2.9.35-validacao-1
+          path: |
+            Familia-Servita-2.9.35-validacao-1.apk
+            Familia-Servita-2.9.35-validacao-1.sha256
+      - name: Guardar evidência
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: signed-update-and-offline-api35
+          path: |
+            pdf-rotation.txt
+            update-evidence/
+          if-no-files-found: warn
