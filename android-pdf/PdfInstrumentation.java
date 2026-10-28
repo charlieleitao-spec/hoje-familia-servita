@@ -96,6 +96,7 @@ public final class PdfInstrumentation extends Instrumentation {
                 if (!((android.widget.TextView) root.findViewWithTag("pdf-position")).getText().toString().startsWith("Página 3 de")) throw new AssertionError("Next page");
                 root.findViewWithTag("pdf-close").performClick();
             });
+            verifyOfflineLibraryLinks(context);
             Activity library = startActivitySync(new Intent(context, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             java.lang.reflect.Field field = MainActivity.class.getDeclaredField("webView");
             field.setAccessible(true);
@@ -124,7 +125,6 @@ public final class PdfInstrumentation extends Instrumentation {
                 });
                 waitForIdleSync();
             }
-            verifyOfflineLibraryLinks(context);
             verifyRotation(context);
             result.putString("validation", "PASS");
             result.putString("stream", "PASS: " + files + " PDFs; " + pages + " pages; original print bytes; zoom; Android printing; cancel and return.\nPASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.\nPASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.\n");
@@ -147,7 +147,11 @@ public final class PdfInstrumentation extends Instrumentation {
             if(webIs(web,expression))return;
             Thread.sleep(250);
         }
-        throw new Exception("Offline WebView condition failed: "+expression);
+        CountDownLatch latch=new CountDownLatch(1);
+        AtomicReference<String> details=new AtomicReference<>("");
+        runOnMainSync(() -> web.evaluateJavascript("JSON.stringify({url:location.href,title:document.title,body:document.body?document.body.innerText.slice(0,1200):''})",value->{details.set(value);latch.countDown();}));
+        latch.await(3,TimeUnit.SECONDS);
+        throw new Exception("Offline WebView condition failed: "+expression+"; state="+details.get());
     }
     private void verifyOfflineLibraryLinks(Context context) throws Exception {
         Activity main=startActivitySync(new Intent(context,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -155,8 +159,8 @@ public final class PdfInstrumentation extends Instrumentation {
             java.lang.reflect.Field field=MainActivity.class.getDeclaredField("webView");
             field.setAccessible(true);
             WebView web=(WebView)field.get(main);
-            // Clear the web cache, then let HOME fail without a network; no direct fallback load.
-            runOnMainSync(() -> {web.clearCache(true);web.loadUrl("https://charlieleitao-spec.github.io/hoje-familia-servita/");});
+            // This is the first MainActivity in a fresh debug installation without a network.
+            // Its onCreate loads HOME once; avoid a second request racing the fallback.
             waitForWeb(web,"!!document.getElementById('offline-title')");
             runOnMainSync(() -> web.evaluateJavascript("document.querySelector('a[href$=\"biblioteca-servita.html\"]').click()",null));
             waitForWeb(web,"document.querySelectorAll('#documents article').length===5");
