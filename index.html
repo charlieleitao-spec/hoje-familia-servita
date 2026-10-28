@@ -706,7 +706,7 @@ function renderLiturgicalHour(title,txt){
      addText(line,'reading-body');return;
    }
 
-   if(/^(Escolhe-se|Salmos do|Salmos e cântico|Salmos e c[âa]ntico|Como no|Do Comum|Quando esta memória|Antífona e salmos)/i.test(line)){flushPsalmBuffer(false);addText(line,'rubric');return}
+   if(currentHead!=='HINO' && /^(Escolhe-se|Salmos do|Salmos e cântico|Salmos e c[âa]ntico|Como no|Do Comum|Quando esta memória|Antífona e salmos)/i.test(line)){flushPsalmBuffer(false);addText(line,'rubric');return}
    if(/[†*]/.test(line)){addText(line,'verse');return}
    if(currentHead==='HINO'){addHinoLine(line);return}
    if(currentHead==='PRECES'){addPrecesLine(line);return}
@@ -731,7 +731,7 @@ function enhanceSeries(wrap){
 function diagnoseHour(txt,wrap){
  if(/\bSALMODIA\b/i.test(txt)){
    let ants=(txt.match(/^Ant\.\s*\d+/gmi)||[]).length;
-   let ps=(txt.match(/^(Salmo|Cântico|Cântico)\s+/gmi)||[]).length;
+   let ps=(txt.match(/^(?:Salmo|Cântico(?!\s+evang[ée]lico))\s+/gmi)||[]).length;
    if(ants>=3 && ps===0){
      let w=document.createElement('div');w.className='lit-warning';
      w.textContent='A fonte contém antífonas, mas não traz os salmos desta salmodia neste registro.';

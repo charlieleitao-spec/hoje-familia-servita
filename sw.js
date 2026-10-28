@@ -1,4 +1,4 @@
-const CACHE='familia-servita-2.9.36-daily-v1';
+const CACHE='familia-servita-2.9.36-reader-v2';
 const ASSETS=['./','./index.html','./biblioteca-servita.html','./data/biblioteca-servita-catalogo.json','./data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf','./data/pdfs/biblioteca/ratio-institutionis-osm-2015.pdf','./data/pdfs/biblioteca/regra-vida-ordem-secular-1995.pdf','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.36','./servita.json','./santoral.json','./icon-192.png?v=2.9.36','./icon-512.png?v=2.9.36','./favicon-32.png?v=2.9.36','./favicon-64.png?v=2.9.36'];
 
 self.addEventListener('install',e=>{
