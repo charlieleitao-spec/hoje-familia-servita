@@ -66,6 +66,7 @@ jobs:
           arch: x86_64
           profile: pixel_6
           disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -memory 3072 -cores 2
           script: |
             python3 scripts/test-signed-update-2.9.35.py
             adb uninstall br.org.servitas.familia

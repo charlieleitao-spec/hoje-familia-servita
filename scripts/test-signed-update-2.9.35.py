@@ -28,11 +28,20 @@ def package_state(label):
 
 
 def wait_text(wanted, label):
-    for _ in range(60):
+    for _ in range(30):
         try:
             adb('shell', 'uiautomator', 'dump', '/sdcard/update-window.xml')
             adb('pull', '/sdcard/update-window.xml', str(OUT / (label + '.xml')))
             root = ET.parse(OUT / (label + '.xml')).getroot()
+            # Only dismiss the emulator launcher's observed ANR, never the app's errors.
+            if any('Pixel Launcher isn\'t responding' in node.get('text', '') for node in root.iter()):
+                (OUT / 'launcher-anr.xml').write_bytes(ET.tostring(root))
+                close = next(node for node in root.iter() if node.get('text') == 'Close app')
+                bounds = list(map(int, re.findall(r'\d+', close.get('bounds', ''))))
+                adb('shell', 'input', 'tap', str((bounds[0] + bounds[2]) // 2), str((bounds[1] + bounds[3]) // 2))
+                print('Emulator Pixel Launcher ANR dismissed; application errors are not dismissed.', flush=True)
+                adb('shell', 'am', 'start', '-W', '-n', PACKAGE + '/.MainActivity')
+                continue
             for node in root.iter():
                 text = node.get('text', '') + ' ' + node.get('content-desc', '')
                 if wanted in text:
@@ -44,8 +53,19 @@ def wait_text(wanted, label):
 
 
 try:
+    adb('shell', 'input', 'keyevent', 'KEYCODE_WAKEUP')
+    adb('shell', 'wm', 'dismiss-keyguard')
+    adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher')
     adb('shell', 'svc', 'wifi', 'disable')
     adb('shell', 'svc', 'data', 'disable')
+    for _ in range(10):
+        connectivity = adb('shell', 'dumpsys', 'connectivity')
+        (OUT / 'connectivity.txt').write_text(connectivity)
+        if re.search(r'Active default network:\s*(?:none|null|\(none\)|-1)\b', connectivity):
+            break
+        time.sleep(1)
+    else:
+        raise AssertionError('Emulator still has an active default network')
     print(adb('install', 'published-2.9.34.apk'), flush=True)
     before = package_state('before')
     assert before['versionName'] == '2.9.34', before
@@ -72,3 +92,5 @@ try:
     (OUT / 'result.txt').write_text(message + '\n')
 finally:
     (OUT / 'logcat.txt').write_text(adb('logcat', '-d'))
+    with (OUT / 'last-screen.png').open('wb') as screenshot:
+        subprocess.run(['adb', 'exec-out', 'screencap', '-p'], stdout=screenshot, check=True)
