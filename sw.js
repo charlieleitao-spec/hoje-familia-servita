@@ -1,5 +1,5 @@
-const CACHE='familia-servita-2.9.33-daily-v2';
-const ASSETS=['./','./index.html','./biblioteca-servita.html','./data/biblioteca-servita-catalogo.json','./data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf','./data/pdfs/biblioteca/ratio-institutionis-osm-2015.pdf','./data/pdfs/biblioteca/regra-vida-ordem-secular-1995.pdf','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.33','./servita.json','./santoral.json','./icon-192.png?v=2.9.33','./icon-512.png?v=2.9.33','./favicon-32.png?v=2.9.33','./favicon-64.png?v=2.9.33'];
+const CACHE='familia-servita-2.9.34-daily-v1';
+const ASSETS=['./','./index.html','./biblioteca-servita.html','./data/biblioteca-servita-catalogo.json','./data/pdfs/biblioteca/constituicoes-regra-diretorio-osm-2015.pdf','./data/pdfs/biblioteca/ratio-institutionis-osm-2015.pdf','./data/pdfs/biblioteca/regra-vida-ordem-secular-1995.pdf','./causas-beatos.html','./missas-proprias.html','./manifest.webmanifest?v=2.9.34','./servita.json','./santoral.json','./icon-192.png?v=2.9.34','./icon-512.png?v=2.9.34','./favicon-32.png?v=2.9.34','./favicon-64.png?v=2.9.34'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
