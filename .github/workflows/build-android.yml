@@ -25,6 +25,8 @@ on:
       - "servita.json"
       - "santoral.json"
       - "scripts/check-web.cjs"
+      - "tests/uso-diario-dom.cjs"
+      - "tests/missa-api-dom.cjs"
       - "manifest.webmanifest"
       - "sw.js"
       - "icon-192.png"
@@ -55,6 +57,8 @@ on:
       - "servita.json"
       - "santoral.json"
       - "scripts/check-web.cjs"
+      - "tests/uso-diario-dom.cjs"
+      - "tests/missa-api-dom.cjs"
       - "manifest.webmanifest"
       - "sw.js"
       - "icon-192.png"
@@ -67,7 +71,51 @@ permissions:
   contents: write
 
 jobs:
+  web:
+    runs-on: ubuntu-latest
+    outputs:
+      android_required: ${{ steps.scope.outputs.android_required }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validar aplicação web e integrações
+        run: |
+          node scripts/check-web.cjs
+          node --test tests/*.test.* integracao-somos-servos/tests/integration.test.cjs
+          npm install --prefix "$RUNNER_TEMP/familia-dom" --no-package-lock --no-audit --no-fund jsdom@26.1.0
+          export NODE_PATH="$RUNNER_TEMP/familia-dom/node_modules"
+          node tests/uso-diario-dom.cjs
+          node tests/missa-api-dom.cjs
+      - name: Identificar necessidade de APK
+        id: scope
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import os, subprocess
+          event = os.environ['GITHUB_EVENT_NAME']
+          before = os.environ.get('BEFORE_SHA', '')
+          web_only = {'index.html', 'sw.js', 'tests/uso-diario-dom.cjs',
+                      'tests/missa-api-dom.cjs', '.github/workflows/build-android.yml'}
+          required = True
+          if event == 'push' and before and set(before) != {'0'}:
+              paths = subprocess.check_output(
+                  ['git', 'diff', '--name-only', before, os.environ['GITHUB_SHA']],
+                  text=True).splitlines()
+              required = not paths or any(path not in web_only for path in paths)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('android_required=' + str(required).lower() + '\n')
+          print('APK necessário.' if required else
+                'Alteração somente web: APK publicado preservado. Validação web concluída.')
+          PY
+
   build:
+    needs: web
+    if: needs.web.outputs.android_required == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Baixar o projeto
