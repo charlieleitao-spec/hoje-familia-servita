@@ -45,10 +45,19 @@ jobs:
           python3 scripts/preparar-blog-android.py --allow-unconfigured
           python3 - <<'PY'
           from pathlib import Path
+          import re
           p=Path('android/app/build.gradle')
           text=p.read_text()
           assert "testBuildType 'release'" in text
-          p.write_text(text.replace("testBuildType 'release'", "testBuildType 'debug'"))
+          text=text.replace("testBuildType 'release'", "testBuildType 'debug'")
+          text=text.replace('android {', 'android {\n    buildTypes { debug { applicationIdSuffix ".validacao" } }', 1)
+          text=re.sub(r'versionCode\s+\d+', 'versionCode 316', text, count=1)
+          text=re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.35-validacao.1"', text, count=1)
+          p.write_text(text)
+          manifest=Path('android/app/src/main/AndroidManifest.xml')
+          xml=manifest.read_text()
+          assert 'android:label="Família Servita"' in xml
+          manifest.write_text(xml.replace('android:label="Família Servita"', 'android:label="Família Servita — Teste"', 1))
           PY
       - name: Compilar APK e instrumentação debug
         working-directory: android
@@ -69,15 +78,27 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -memory 3072 -cores 2
           script: |
             python3 scripts/test-signed-update-2.9.35.py
-            adb uninstall br.org.servitas.familia
             adb install android/app/build/outputs/apk/debug/app-debug.apk
             adb install -t android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+            adb shell dumpsys package br.org.servitas.familia | grep 'versionName=2.9.35'
+            adb shell dumpsys package br.org.servitas.familia.validacao | grep 'versionName=2.9.35-validacao.1'
             adb shell svc wifi disable
             adb shell svc data disable
-            adb shell am instrument -w br.org.servitas.familia.test/br.org.servitas.familia.validation.PdfInstrumentation > pdf-rotation.txt
+            adb shell am instrument -w br.org.servitas.familia.validacao.test/br.org.servitas.familia.validation.PdfInstrumentation > pdf-rotation.txt
             cat pdf-rotation.txt
             grep -Fxq 'PASS: PDF rotation retains page 44 and zoom 125% in landscape and portrait.' pdf-rotation.txt
             grep -Fxq 'PASS: Fresh offline fallback opens Library links at pages 43, 25 and 131.' pdf-rotation.txt
+      - name: Preparar APK de validação aprovado
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk Familia-Servita-2.9.35-validacao-1.apk
+          sha256sum Familia-Servita-2.9.35-validacao-1.apk > Familia-Servita-2.9.35-validacao-1.sha256
+      - name: Guardar APK de teste separado do oficial
+        uses: actions/upload-artifact@v4
+        with:
+          name: Familia-Servita-2.9.35-validacao-1
+          path: |
+            Familia-Servita-2.9.35-validacao-1.apk
+            Familia-Servita-2.9.35-validacao-1.sha256
       - name: Guardar evidência
         if: always()
         uses: actions/upload-artifact@v4
