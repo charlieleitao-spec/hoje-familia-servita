@@ -1,4 +1,5 @@
 """Check package identity and data directory across a real adb install -r."""
+import os
 import re
 import sys
 from pathlib import Path
@@ -25,7 +26,8 @@ before, after = (state(path) for path in sys.argv[1:3])
 for key in ('uid', 'firstInstallTime', 'ceDataInode'):
     if before[key] != after[key]:
         raise AssertionError('Update changed ' + key)
-if after['versionName'] != '2.9.36' or after['versionCode'] != '317':
+if (after['versionName'] != os.environ['APP_VERSION'] or
+        after['versionCode'] != os.environ['APP_VERSION_CODE']):
     raise AssertionError('Unexpected release version: ' + str(after))
 if int(after['versionCode']) <= int(before['versionCode']):
     raise AssertionError('versionCode did not increase')

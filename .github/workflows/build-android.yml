@@ -67,6 +67,10 @@ on:
       - "favicon-64.png"
       - ".github/workflows/build-android.yml"
 
+env:
+  APP_VERSION: "2.9.37"
+  APP_VERSION_CODE: "318"
+
 permissions:
   contents: write
 
@@ -75,6 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       android_required: ${{ steps.scope.outputs.android_required }}
+      release_exists: ${{ steps.published_release.outputs.exists }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -100,7 +105,7 @@ jobs:
           event = os.environ['GITHUB_EVENT_NAME']
           before = os.environ.get('BEFORE_SHA', '')
           web_only = {'index.html', 'sw.js', 'tests/uso-diario-dom.cjs',
-                      'tests/missa-api-dom.cjs', '.github/workflows/build-android.yml'}
+                      'tests/missa-api-dom.cjs'}
           required = True
           if event == 'push' and before and set(before) != {'0'}:
               paths = subprocess.check_output(
@@ -113,9 +118,25 @@ jobs:
                 'Alteração somente web: APK publicado preservado. Validação web concluída.')
           PY
 
+      - name: Preservar versões Android já publicadas
+        id: published_release
+        if: steps.scope.outputs.android_required == 'true' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/tags/android-v${APP_VERSION}")
+          case "$status" in
+            200) echo "exists=true" >> "$GITHUB_OUTPUT"; echo "Versão já publicada: preservar o APK existente." ;;
+            404) echo "exists=false" >> "$GITHUB_OUTPUT" ;;
+            *) echo "Não foi possível verificar a versão publicada (HTTP $status)."; exit 1 ;;
+          esac
+
   build:
     needs: web
-    if: needs.web.outputs.android_required == 'true'
+    if: needs.web.outputs.android_required == 'true' && needs.web.outputs.release_exists != 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Baixar o projeto
@@ -182,15 +203,14 @@ jobs:
           m = re.search(r'versionCode\s+(\d+)', s)
           if not m:
               raise SystemExit('versionCode não encontrado')
-          code = 317  # 2.9.36 sucede 2.9.35 (316)
+          code = int(os.environ['APP_VERSION_CODE'])
+          version = os.environ['APP_VERSION']
           s = re.sub(r'versionCode\s+\d+', f'versionCode {code}', s, count=1)
           if not re.search(r'versionName\s+"[^"]+"', s):
               raise SystemExit('versionName não encontrado')
-          s = re.sub(r'versionName\s+"[^"]+"', 'versionName "2.9.36"', s, count=1)
+          s = re.sub(r'versionName\s+"[^"]+"', f'versionName "{version}"', s, count=1)
           p.write_text(s)
-          with open(os.environ['GITHUB_ENV'], 'a') as env:
-              env.write('APP_VERSION=2.9.36\nAPP_VERSION_CODE=' + str(code) + '\n')
-          print('APK versionName=2.9.36 versionCode=' + str(code))
+          print(f'APK versionName={version} versionCode={code}')
           PY
       - name: Validar fontes Android de release
         run: |
@@ -296,7 +316,7 @@ jobs:
             adb shell am force-stop com.google.android.apps.nexuslauncher
             adb install Familia-Servita-anterior.apk
             adb shell dumpsys package br.org.servitas.familia > package-before-update.txt
-            adb install -r Familia-Servita-2.9.36.apk
+            adb install -r "Familia-Servita-${APP_VERSION}.apk"
             adb shell dumpsys package br.org.servitas.familia > package-after-update.txt
             python3 scripts/verify-android-update.py package-before-update.txt package-after-update.txt
             adb install -t android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
@@ -315,7 +335,7 @@ jobs:
         if: always() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: validacao-pdfs-2.9.36
+          name: validacao-pdfs-${{ env.APP_VERSION }}
           path: |
             pdf-android-validation.txt
             package-before-update.txt
@@ -332,22 +352,6 @@ jobs:
           name: Familia-Servita-${{ env.APP_VERSION }}-release
           path: Familia-Servita-${{ env.APP_VERSION }}.apk
 
-      - name: Preservar versões Android já publicadas
-        id: published_release
-        if: github.ref == 'refs/heads/main'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          status=$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/tags/android-v${APP_VERSION}")
-          case "$status" in
-            200) echo "exists=true" >> "$GITHUB_OUTPUT"; echo "Versão já publicada: preservar o APK existente." ;;
-            404) echo "exists=false" >> "$GITHUB_OUTPUT" ;;
-            *) echo "Não foi possível verificar a versão publicada (HTTP $status)."; exit 1 ;;
-          esac
-
       - name: Preservar PDFs verificados para consulta web
         if: github.ref == 'refs/heads/main'
         run: |
@@ -360,12 +364,12 @@ jobs:
           fi
 
       - name: Publicar versão Android
-        if: github.ref == 'refs/heads/main' && steps.published_release.outputs.exists == 'false'
+        if: github.ref == 'refs/heads/main' && needs.web.outputs.release_exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: android-v${{ env.APP_VERSION }}
           name: Família Servita ${{ env.APP_VERSION }} para Android
-          body_path: docs/releases/2.9.36.md
+          body_path: docs/releases/${{ env.APP_VERSION }}.md
           files: Familia-Servita-${{ env.APP_VERSION }}.apk
 
 
