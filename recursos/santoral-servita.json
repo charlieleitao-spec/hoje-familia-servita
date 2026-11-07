@@ -3,7 +3,7 @@
   "titulo": "Santoral da Família Servita",
   "fonte": "Liturgia OSM",
   "fonte_url": "https://github.com/charlieleitao-spec/liturgia-osm/blob/main/www/data/santoral.json",
-  "fonte_sha256": "63894992bd8639af7076ae7cf62ccdb2d3f83c0b950ddb113598721ad27e7eef",
+  "fonte_sha256": "236517e3ee81cc8194f446b700cefaed54eb10b9967a3e9d9056edbe407544a6",
   "nota": "Datas de referência. Observar o calendário oficial e suas precedências.",
   "celebracoes": [
     {
