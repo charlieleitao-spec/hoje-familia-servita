@@ -71,6 +71,7 @@ async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-f
   dom=await open({datesRaw});d=dom.window.document;assert.equal(d.querySelector('#saveDay').disabled,true);assert.equal(dom.window.localStorage.getItem(dateKey),datesRaw);assert.equal(d.querySelector('#savedDatesList img'),null);dom.window.close();
  }
  dom=await open({storageDenied:true});d=dom.window.document;assert.equal(d.querySelector('#saveDay').disabled,true);assert.match(d.querySelector('#saveDayStatus').textContent,/preservados/);dom.window.close();
+ dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=0100-01-01'});w=dom.window;d=w.document;d.querySelector('#saveDay').click();assert.equal(w.localStorage.getItem(dateKey),'["0100-01-01"]');assert.equal(d.activeElement.id,'savedDatesTitle');dom.window.close();
  console.log('PASS: datas guardadas sem duplicação, anos distintos, persistência, abertura, remoção, próximas antes de passadas, falha de armazenamento e dados inválidos preservados.');
  assert.deepEqual(errors,[]);console.log('PASS: uso diário; estrofe completa e ordenada de Laudes 16/11; aviso nas onze horas afetadas; salmodia com salmo presente sem falso aviso; sem erros de execução.');
 })().catch(e=>{console.error(e);process.exit(1)});
