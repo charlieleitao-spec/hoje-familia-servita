@@ -3,11 +3,12 @@ const fs=require('node:fs');const assert=require('node:assert/strict');
 const root=require('node:path').join(__dirname,'../');
 const html=fs.readFileSync(root+'index.html','utf8');const records=JSON.parse(fs.readFileSync(root+'servita.json','utf8'));
 const errors=[];
-async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-familia-servita/',failure=false,storageDenied=false}={}){
+async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-familia-servita/',failure=false,storageDenied=false,datesRaw=null}={}){
  const vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
  const dom=new JSDOM(html,{url,runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
  w.matchMedia=()=>({matches:true});w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
  w.fetch=async()=>{if(failure)throw Error('rede');return {ok:true,json:async()=>records}};
+ if(datesRaw!==null)w.localStorage.setItem('familia-servita-datas-pessoais-v1',datesRaw);
  if(saved)w.localStorage.setItem('familia-servita-ultima-leitura-v1',JSON.stringify(saved));
  if(storageDenied)Object.defineProperty(w,'localStorage',{get(){throw Error('negado')}});
  }});await new Promise(r=>setImmediate(r));return dom;
@@ -51,5 +52,26 @@ async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-f
  d.querySelector('#content').replaceChildren();w.renderLiturgicalHour('Laudes',complete);
  assert.equal(d.querySelector('#content .lit-warning'),null,'Salmo presente não deve gerar aviso');
  dom.window.close();
+ const dateKey='familia-servita-datas-pessoais-v1';
+ dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=2026-08-23'});w=dom.window;d=w.document;
+ d.querySelector('#saveDay').click();assert.equal(d.querySelector('#calendarCard').hidden,false);assert.equal(d.querySelector('#saveDay').getAttribute('aria-pressed'),'true');
+ assert.equal(w.localStorage.getItem(dateKey),'["2026-08-23"]');assert.equal(d.querySelectorAll('#monthDays .calendar-saved').length,1);
+ d.querySelector('#closeCalendar').click();d.querySelector('#saveDay').click();assert.equal(w.localStorage.getItem(dateKey),'[]');
+ d.querySelector('#saveDay').click();d.querySelector('#picker').value='2027-08-23';d.querySelector('#picker').dispatchEvent(new w.Event('change'));d.querySelector('#saveDay').click();
+ assert.equal(JSON.parse(w.localStorage.getItem(dateKey)).length,2,'Anos diferentes têm marcações distintas');
+ let datesRaw=w.localStorage.getItem(dateKey);dom.window.close();
+ dom=await open({datesRaw});w=dom.window;d=w.document;assert.equal(d.querySelectorAll('#savedDatesList li').length,2);
+ [...d.querySelectorAll('#savedDatesList li')].find(row=>row.textContent.includes('2026')).querySelector('button').click();assert.equal(d.querySelector('#picker').value,'2026-08-23');assert.equal(d.querySelector('#calendarCard').hidden,true);assert.match(d.querySelector('#title').textContent,/Filipe/);
+ d.querySelector('#calendarBtn').click();[...d.querySelectorAll('#savedDatesList li')].find(row=>row.textContent.includes('2026')).querySelector('button[aria-label^="Remover"]').click();assert.equal(JSON.parse(w.localStorage.getItem(dateKey)).length,1);assert.equal(d.querySelector('#saveDay').getAttribute('aria-pressed'),'false');
+ dom.window.close();
+ dom=await open({datesRaw:'["2000-01-01","2099-01-01"]'});w=dom.window;d=w.document;
+ assert.match(d.querySelector('#savedDatesList li').textContent,/2099/);assert.match(d.querySelectorAll('#savedDatesList li')[1].textContent,/Data passada/);
+ const before=w.localStorage.getItem(dateKey);w.Storage.prototype.setItem=()=>{throw Error('quota')};d.querySelector('#saveDay').click();assert.equal(w.localStorage.getItem(dateKey),before);assert.match(d.querySelector('#saveDayStatus').textContent,/Não foi possível/);dom.window.close();
+ for(const datesRaw of ['{invalid','["2026-02-30"]','["<img src=x>"]']){
+  dom=await open({datesRaw});d=dom.window.document;assert.equal(d.querySelector('#saveDay').disabled,true);assert.equal(dom.window.localStorage.getItem(dateKey),datesRaw);assert.equal(d.querySelector('#savedDatesList img'),null);dom.window.close();
+ }
+ dom=await open({storageDenied:true});d=dom.window.document;assert.equal(d.querySelector('#saveDay').disabled,true);assert.match(d.querySelector('#saveDayStatus').textContent,/preservados/);dom.window.close();
+ dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=0100-01-01'});w=dom.window;d=w.document;d.querySelector('#saveDay').click();assert.equal(w.localStorage.getItem(dateKey),'["0100-01-01"]');assert.equal(d.activeElement.id,'savedDatesTitle');dom.window.close();
+ console.log('PASS: datas guardadas sem duplicação, anos distintos, persistência, abertura, remoção, próximas antes de passadas, falha de armazenamento e dados inválidos preservados.');
  assert.deepEqual(errors,[]);console.log('PASS: uso diário; estrofe completa e ordenada de Laudes 16/11; aviso nas onze horas afetadas; salmodia com salmo presente sem falso aviso; sem erros de execução.');
 })().catch(e=>{console.error(e);process.exit(1)});
