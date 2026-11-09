@@ -1,0 +1,36 @@
+name: Conferir Minhas datas
+on:
+  pull_request:
+    branches: [main]
+    paths: ['index.html', 'sw.js', 'tests/uso-diario-dom.cjs', 'tests/datas-visual.mjs', '.github/workflows/validate-saved-dates.yml']
+permissions:
+  contents: read
+jobs:
+  datas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Conferir fontes e comportamento
+        run: |
+          node scripts/check-web.cjs
+          node --test tests/*.test.* integracao-somos-servos/tests/integration.test.cjs
+          npm install --prefix "$RUNNER_TEMP/datas-qa" --no-package-lock --no-audit --no-fund jsdom@26.1.0 playwright@1.56.1
+          NODE_PATH="$RUNNER_TEMP/datas-qa/node_modules" node tests/uso-diario-dom.cjs
+          NODE_PATH="$RUNNER_TEMP/datas-qa/node_modules" node tests/missa-api-dom.cjs
+      - name: Conferir navegador e reabertura offline
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+        run: |
+          ln -s "$RUNNER_TEMP/datas-qa/node_modules" node_modules
+          node tests/datas-visual.mjs
+      - name: Guardar capturas e resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: minhas-datas-conferencia
+          path: validation-datas/
+          if-no-files-found: warn
