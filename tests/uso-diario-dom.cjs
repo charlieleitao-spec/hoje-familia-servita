@@ -36,18 +36,19 @@ async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-f
  d.querySelector('#materialBtn').click();d.querySelector('[data-hour-key="laudes"]').click();
  const stanza=[...d.querySelectorAll('.hymn-stanza')].at(-1);
  assert.deepEqual([...stanza.children].map(e=>e.textContent),['Honra e louvor ao Deus trino,','como no céu aqui na terra demos:','erguendo a nossa voz no mesmo hino,','sem fim louvemos. Amém!']);
- assert.ok(d.querySelector('#content .lit-warning'),'Laudes 16/11 precisa sinalizar salmodia ausente');
- let checked=0;
- for(const item of Object.values(records))for(const hour of Object.values(item.material?.horas||{})){
+ assert.equal(d.querySelector('#content .lit-warning'),null,'Laudes 16/11 tem salmodia');
+ for(const label of ['Salmo 62','Salmo 149','LEITURA BREVE','RESPONSÓRIO','PRECES']) assert.ok(d.querySelector('#content').textContent.toUpperCase().includes(label.toUpperCase()),label);
+ const checked=[];
+ for(const [date,item] of Object.entries(records))for(const [key,hour] of Object.entries(item.material?.horas||{})){
   const text=hour.texto||'';
   const ants=(text.match(/^Ant\.\s*\d+/gmi)||[]).length;
   const titles=text.split('\n').filter(line=>/^(Salmo|Cântico)\s+/i.test(line));
   if(ants>=3&&titles.length&&titles.every(line=>/^Cântico evangélico/i.test(line))){
    d.querySelector('#content').replaceChildren();w.renderLiturgicalHour(hour.titulo,text);
-   assert.ok(d.querySelector('#content .lit-warning'),item.titulo+' '+hour.titulo);checked++;
+   assert.ok(d.querySelector('#content .lit-warning'),item.titulo+' '+hour.titulo);checked.push(date+':'+key);
   }
  }
- assert.equal(checked,11,'Cobrir as onze horas afetadas da base real');
+ assert.deepEqual(checked.sort(),['01-12:vesperas','05-04:vesperas','06-19:vesperas','08-23:vesperas','08-28:vesperas']);
  const complete='SALMODIA\nAnt. 1 Primeira\nSalmo 62\nMeu Deus, sois vós.\nAnt. 2 Segunda\nAnt. 3 Terceira\nCântico evangélico (Benedictus)';
  d.querySelector('#content').replaceChildren();w.renderLiturgicalHour('Laudes',complete);
  assert.equal(d.querySelector('#content .lit-warning'),null,'Salmo presente não deve gerar aviso');
@@ -73,5 +74,5 @@ async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-f
  dom=await open({storageDenied:true});d=dom.window.document;assert.equal(d.querySelector('#saveDay').disabled,true);assert.match(d.querySelector('#saveDayStatus').textContent,/preservados/);dom.window.close();
  dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=0100-01-01'});w=dom.window;d=w.document;d.querySelector('#saveDay').click();assert.equal(w.localStorage.getItem(dateKey),'["0100-01-01"]');assert.equal(d.activeElement.id,'savedDatesTitle');dom.window.close();
  console.log('PASS: datas guardadas sem duplicação, anos distintos, persistência, abertura, remoção, próximas antes de passadas, falha de armazenamento e dados inválidos preservados.');
- assert.deepEqual(errors,[]);console.log('PASS: uso diário; estrofe completa e ordenada de Laudes 16/11; aviso nas onze horas afetadas; salmodia com salmo presente sem falso aviso; sem erros de execução.');
+ assert.deepEqual(errors,[]);console.log('PASS: uso diário; estrofe completa e ordenada de Laudes 16/11; aviso nas cinco Vésperas com remissão ao Comum; salmodia com salmo presente sem falso aviso; sem erros de execução.');
 })().catch(e=>{console.error(e);process.exit(1)});
