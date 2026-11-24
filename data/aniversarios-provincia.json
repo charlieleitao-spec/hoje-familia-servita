@@ -10,6 +10,7 @@
     "elenco-provincial": {"titulo": "Província São Peregrino — elenco de aniversariantes, nov. 2025"},
     "calendarium-osm": {"titulo": "Calendarium Ordinis Servorum Mariae — Anniversaria", "url": "https://servidimaria.net/sitoosm/it/testi-osm/closm.pdf"},
     "mattioli": {"titulo": "Catholic-Hierarchy — Dom Júlio Maria Mattioli, OSM", "url": "https://www.catholic-hierarchy.org/bishop/bmattioli.html"},
+    "memoria-amigoni": {"titulo": "Somos Servos — Frei Jerônimo Maria Amigoni, memória e gratidão", "url": "https://somosservos.blogspot.com/2026/10/frei-jeronimo-maria-amigoni-osm-memoria.html"},
     "cosmo-2019": {"titulo": "COSMO, jan.–abr. 2019 — necrológio OSM", "url": "https://servidimaria.net/sitoosm/it/c.pdf"}
   },
   "datas": {
@@ -64,6 +65,7 @@
     "10-05": {"natalicios": [{"nome": "Dom João Maria Messi", "fonte": "elenco-provincial"}]},
     "10-12": {"falecimentos": [{"nome": "Frei Antônio M. Venturoli", "ano": 1997, "fonte": "in-memoriam"}]},
     "10-13": {"natalicios": [{"nome": "Frei Moisés Maria de Oliveira Coelho", "fonte": "anuario-2026"}]},
+    "10-28": {"falecimentos": [{"nome": "Frei Jerônimo Maria Amigoni", "ano": 1990, "fonte": "memoria-amigoni"}]},
     "11-04": {"falecimentos": [{"nome": "Frei Dionísio M. Mandaio", "ano": 2020, "fonte": "in-memoriam"}]},
     "11-16": {"natalicios": [{"nome": "Frei José Rosa Maria Alves", "fonte": "anuario-2023"}]},
     "11-20": {"natalicios": [{"nome": "Frei Amaro (Mário) Maria Nunes Cardiga", "fonte": "elenco-provincial"}]},
