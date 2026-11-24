@@ -1,5 +1,6 @@
 {
   "fontes": {
+    "escola-padre-peregrino": {"titulo": "Escola Padre Peregrino Carneiro de Lima — centenário de seu patrono", "url": "https://escolapadreperegrino.wordpress.com/2013/07/10/centenrio-do-pe-peregrino/"},
     "inter-nos": {"titulo": "Inter Nos, dez. 2024–fev. 2025", "url": "https://cdnc.heyzine.com/files/uploaded/2d7316bff2b73c0f417331bb7702287404434dc1.pdf"},
     "anuario-2026": {"titulo": "Anuário 2026 da Diocese de Criciúma", "url": "https://www.diocesecriciuma.com.br/pdf/anuario-2026.pdf"},
     "anuario-2023": {"titulo": "Anuário 2023 da Diocese de Criciúma", "url": "https://www.diocesecriciuma.com.br/pdf/anuario-2023.pdf"},
@@ -47,6 +48,7 @@
     "07-01": {"natalicios": [{"nome": "Frei Rinaldo Maria Stecanela Oliveira", "fonte": "elenco-provincial"}]},
     "07-06": {"natalicios": [{"nome": "Frei Moisés Valério Maria Esteves Silva", "fonte": "elenco-provincial"}]},
     "07-07": {"natalicios": [{"nome": "Frei Victor Jaime Maria", "fonte": "elenco-provincial"}]},
+    "07-14": {"falecimentos": [{"nome": "Frei Peregrino M. Carneiro de Lima", "ano": 1992, "fonte": "escola-padre-peregrino"}]},
     "07-20": {"natalicios": [{"nome": "Frei Domingos José Maria Gravata", "fonte": "elenco-provincial"}]},
     "07-27": {"natalicios": [{"nome": "Frei Paulo Sérgio Maria Angeloni", "fonte": "elenco-provincial"}]},
     "07-30": {"natalicios": [{"nome": "Frei Gerson Júnior Maria da Silva Gomes", "fonte": "anuario-2023"}]},
