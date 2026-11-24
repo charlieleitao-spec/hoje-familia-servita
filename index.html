@@ -507,13 +507,15 @@ function renderProvincialDates(){
    const item=document.createElement('li');
    item.textContent=entry.nome+', OSM'+(entry.ano?' († '+entry.ano+')':'');
    const source=provincialCalendar.fontes[entry.fonte];
-   const link=document.createElement('a');
-   link.className='source-line';
-   link.href=source.url;
-   link.target='_blank';
-   link.rel='noopener noreferrer';
-   link.textContent=source.titulo;
-   item.append(document.createElement('br'),link);
+   const citation=document.createElement(source.url?'a':'span');
+   citation.className='source-line';
+   citation.textContent=source.titulo;
+   if(source.url){
+    citation.href=source.url;
+    citation.target='_blank';
+    citation.rel='noopener noreferrer';
+   }
+   item.append(document.createElement('br'),citation);
    list.appendChild(item);
   }
   provincialDatesContent.append(heading,list);

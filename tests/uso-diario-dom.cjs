@@ -83,6 +83,14 @@ async function open({saved=null,url='https://charlieleitao-spec.github.io/hoje-f
  d.querySelector('#picker').value='2027-11-24';d.querySelector('#picker').dispatchEvent(new w.Event('change'));
  assert.match(provincial.textContent,/Frei José Antônio Maria Flesch/);
  dom.window.close();
+ dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=2026-06-05'});w=dom.window;d=w.document;
+ const provincialHeadings=[...d.querySelectorAll('#provincialDates h3')].map(heading=>heading.textContent);
+ assert.deepEqual(provincialHeadings,['Aniversários natalícios','Memória dos falecidos']);
+ assert.match(d.querySelector('#provincialDates span.source-line').textContent,/elenco de aniversariantes/);
+ assert.match(d.querySelector('#provincialDates a.source-line').href,/in-memoriam/);
+ assert.match(d.querySelector('#provincialDates').textContent,/Frei Pedro Maria Lucietti/);
+ assert.match(d.querySelector('#provincialDates').textContent,/Frei Mário M. Scuppa/);
+ dom.window.close();
  const dateKey='familia-servita-datas-pessoais-v1';
  dom=await open({url:'https://charlieleitao-spec.github.io/hoje-familia-servita/?data=2026-08-23'});w=dom.window;d=w.document;
  d.querySelector('#saveDay').click();assert.equal(d.querySelector('#calendarCard').hidden,false);assert.equal(d.querySelector('#saveDay').getAttribute('aria-pressed'),'true');
